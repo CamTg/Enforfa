@@ -1,0 +1,18 @@
+{
+  "title": "Enforfa",
+  "weeks": [
+    {
+      "id": "w1",
+      "title": "Tuần 1: Âm, chữ và lời chào",
+      "lessons": [
+        { "id": "w1-l1", "title": "Chào hỏi và cách học", "file": "content/w1/l1.json" },
+        { "id": "w1-l2", "title": "Bảng chữ cái, phần đầu" },
+        { "id": "w1-l3", "title": "Bảng chữ cái, phần cuối, và đánh vần tên" },
+        { "id": "w1-l4", "title": "Nguyên âm dài và ngắn" },
+        { "id": "w1-l5", "title": "Trọng âm và âm /ə/" },
+        { "id": "w1-l6", "title": "Âm th và số từ 0 đến 10" },
+        { "id": "w1-l7", "title": "Ôn tuần và việc làm thật" }
+      ]
+    }
+  ]
+}
