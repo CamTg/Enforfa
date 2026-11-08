@@ -141,7 +141,7 @@ export function renderLesson(root, lesson, { onExit }) {
         { class: "finish" },
         h("div", { class: "finish-mark" }, icon("check")),
         h("h1", {}, "Bạn đã học xong bài này"),
-        h("p", {}, `${(lesson.cards || []).length} thẻ từ của bài đã vào kho ôn. Từ ngày mai, mỗi lần mở app bạn ôn chúng vài phút trước khi học bài mới.`),
+        h("p", {}, `${(lesson.cards || []).length} thẻ từ của bài này đã được thêm vào phần ôn. Từ ngày mai, khi có thẻ đến hạn, trang chính sẽ hiện nút Ôn từ.`),
         h("label", { for: "note", class: "field-label" }, "Ghi chú của bạn cho bài này"),
         area,
         h("p", { class: "hint" }, "Ghi chú tự lưu trên máy này.")
@@ -294,7 +294,7 @@ export function renderLesson(root, lesson, { onExit }) {
             setReady(true);
           } else {
             feedback.className = "feedback is-wrong";
-            feedback.textContent = "Chưa đúng. Bấm vào chữ trong câu để trả nó về, rồi xếp lại.";
+            feedback.textContent = "Chưa đúng. Bấm vào một chữ trong câu để đưa nó về chỗ cũ, rồi xếp lại.";
           }
         } else {
           feedback.textContent = "";

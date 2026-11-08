@@ -23,6 +23,9 @@ let switching = false;
 
 player.addEventListener("ended", () => clear(true));
 player.addEventListener("pause", () => {
+  // Khi tệp phát hết, trình duyệt báo "pause" trước rồi mới báo "ended".
+  // Bỏ qua lần "pause" ấy để không nhầm là người học bấm dừng.
+  if (player.ended) return;
   if (switching) {
     switching = false;
     return;
