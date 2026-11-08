@@ -7,6 +7,7 @@ Thư mục model cần hai tệp: kokoro-v1.0.onnx và voices-v1.0.bin, tải t�
 https://github.com/thewh1teagle/kokoro-onnx/releases (bản model-files-v1.0).
 
 Mỗi bài học (content/**/*.json) có mục "audio": { id: {text, voice, speed?, ipa?} }.
+- "speed" nhỏ hơn 1 (ví dụ 0.85) làm câu chậm lại sau khi tạo, không đổi cao độ.
 - Có "ipa" thì công cụ đọc đúng theo phiên âm ấy. Mọi từ dùng để dạy phát âm
   nên có "ipa", vì bộ đoán phiên âm tự động có lúc đọc sai (ví dụ "live" thành /laɪv/).
 - Tệp ra: audio/<id bài>/<id âm>.mp3, kèm manifest.json ghi dấu của từng câu.
@@ -24,12 +25,14 @@ import numpy as np
 import soundfile as sf
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_SPEED = 0.95
+# Đổi số này khi đổi cách tạo âm thanh, để mọi tệp được tạo lại.
+PIPELINE = 2
 
 
 def fingerprint(spec):
     key = json.dumps(
-        {k: spec.get(k) for k in ("text", "voice", "speed", "ipa")}, sort_keys=True
+        {"pipeline": PIPELINE, **{k: spec.get(k) for k in ("text", "voice", "speed", "ipa")}},
+        sort_keys=True,
     )
     return hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
 
@@ -75,22 +78,26 @@ def main():
             if not args.force and manifest.get(audio_id) == fp and target.exists():
                 skipped += 1
                 continue
-            speed = spec.get("speed", DEFAULT_SPEED)
-            if spec.get("ipa"):
-                samples, sr = kokoro.create(
-                    spec["ipa"], voice=spec["voice"], speed=speed,
-                    lang="en-us", is_phonemes=True,
-                )
-            else:
-                samples, sr = kokoro.create(
-                    spec["text"], voice=spec["voice"], speed=speed, lang="en-us"
-                )
+            # Kokoro luôn đọc ở tốc độ thường. Ép nó đọc chậm thì nó chèn một
+            # âm hữu thanh trước phụ âm đầu ("seat" thành "a-seat"), nhất là ở từ
+            # đứng một mình. Câu nào cần chậm thì kéo chậm sau bằng rubberband,
+            # cách này giữ nguyên cao độ và độ sắc của phụ âm.
+            source = spec.get("ipa") or spec["text"]
+            samples, sr = kokoro.create(
+                source, voice=spec["voice"], speed=1.0,
+                lang="en-us", is_phonemes=bool(spec.get("ipa")),
+            )
             samples = trim(samples, sr)
+            tempo = spec.get("speed", 1.0)
+            filters = []
+            if tempo < 1.0:
+                filters = ["-af", f"rubberband=tempo={tempo}:transients=crisp:"
+                           "detector=compound:formant=preserved:pitchq=quality"]
             with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
                 sf.write(tmp.name, samples, sr)
                 subprocess.run(
-                    ["ffmpeg", "-loglevel", "error", "-y", "-i", tmp.name,
-                     "-ac", "1", "-b:a", "48k", str(target)],
+                    ["ffmpeg", "-loglevel", "error", "-y", "-i", tmp.name, *filters,
+                     "-ac", "1", "-b:a", "64k", str(target)],
                     check=True,
                 )
             manifest[audio_id] = fp

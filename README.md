@@ -53,7 +53,7 @@ tools/build_audio.py tạo âm thanh từ nội dung bài
    python tools/build_audio.py --models /đường/dẫn/thư-mục-model
    ```
 
-   Thư mục model cần `kokoro-v1.0.onnx` và `voices-v1.0.bin`, tải từ [kokoro-onnx releases](https://github.com/thewh1teagle/kokoro-onnx/releases). Công cụ cũng cần `ffmpeg`.
+   Thư mục model cần `kokoro-v1.0.onnx` và `voices-v1.0.bin`, tải từ [kokoro-onnx releases](https://github.com/thewh1teagle/kokoro-onnx/releases). Công cụ cũng cần `ffmpeg` có bộ lọc `rubberband` (bản ffmpeg đầy đủ trên hầu hết hệ điều hành đều có).
 
 Với từ dùng để dạy phát âm, luôn ghi thêm trường `ipa` trong phần `audio`. Bộ đoán phiên âm tự động có lúc đọc sai, ví dụ đọc "live" thành /laɪv/.
 
