@@ -71,23 +71,54 @@ function renderHome() {
       : h("p", { class: "hint" }, "Hôm nay chưa có thẻ từ nào đến hạn ôn.")
   );
 
-  const weeks = course.weeks.map((week) =>
-    h(
+  const weeks = course.weeks.map((week) => {
+    const ready = week.lessons.filter((l) => l.file).length;
+    return h(
       "section",
       { class: "week" },
       h("h2", {}, week.title),
+      week.goal && h("p", { class: "week-goal" }, week.goal),
       h(
         "ol",
         { class: "lesson-list" },
         ...week.lessons.map((l, i) => {
           const state = lessonState(l);
-          const label = { done: "Đã học", started: "Đang học", new: "Chưa học", coming: "Đang soạn" }[state];
-          const inner = [h("span", { class: "lesson-num" }, String(i + 1)), h("span", { class: "lesson-name" }, l.title), h("span", { class: `badge badge-${state}` }, label)];
-          return h("li", {}, l.file ? h("a", { class: `lesson-item is-${state}`, href: `#/bai/${l.id}` }, ...inner) : h("div", { class: "lesson-item is-coming" }, ...inner));
+          const num = h("span", { class: "lesson-num" }, String(i + 1));
+          const name = h("span", { class: "lesson-name" }, l.title);
+          if (!l.file) return h("li", {}, h("div", { class: "lesson-item is-coming" }, num, name));
+          const label = { done: "Đã học", started: "Đang học", new: "Chưa học" }[state];
+          return h("li", {}, h("a", { class: `lesson-item is-${state}`, href: `#/bai/${l.id}` }, num, name, h("span", { class: `badge badge-${state}` }, label)));
         })
+      ),
+      ready < week.lessons.length &&
+        h("p", { class: "hint week-note" }, `Đã có ${ready} trên ${week.lessons.length} bài của tuần. Các bài còn lại đang được soạn.`)
+    );
+  });
+
+  // Lộ trình: ba chặng của cả chương trình, chặng đang học được đánh dấu.
+  const currentWeek = course.weeks.find((w) => w.lessons.some((l) => l.file && lessonState(l) !== "done")) || course.weeks.at(-1);
+  const currentStage = currentWeek?.stage || 1;
+  const roadmap =
+    course.stages &&
+    h(
+      "section",
+      { class: "roadmap" },
+      h("h2", {}, "Lộ trình"),
+      h("p", { class: "hint" }, `Chương trình có ${course.totalWeeks} tuần, chia ba chặng. Bạn đang ở tuần ${currentWeek?.number || 1}.`),
+      h(
+        "ol",
+        { class: "stages" },
+        ...course.stages.map((st) =>
+          h(
+            "li",
+            { class: `stage${st.id === currentStage ? " is-current" : ""}`, "aria-current": st.id === currentStage ? "step" : false },
+            h("p", { class: "stage-weeks" }, st.id === currentStage ? `${st.weeks} · Bạn đang ở đây` : st.weeks),
+            h("p", { class: "stage-title" }, `Chặng ${st.id}: ${st.title}`),
+            h("p", { class: "stage-goal" }, `Hết chặng này, bạn ${st.goal.charAt(0).toLowerCase()}${st.goal.slice(1)}`)
+          )
+        )
       )
-    )
-  );
+    );
 
   root.replaceChildren(
     h(
@@ -103,7 +134,8 @@ function renderHome() {
         h("p", { class: "warn" }, "Trình duyệt này đang không cho lưu dữ liệu, nên tiến độ sẽ mất khi đóng trang. Bạn mở app bằng cửa sổ thường, không dùng chế độ ẩn danh."),
       todayBlock,
       reviewBlock,
-      ...weeks
+      ...weeks,
+      roadmap
     ),
     h("footer", { class: "home-foot" }, h("a", { href: "#/gioi-thieu" }, "Về Enforfa và quyền riêng tư"))
   );
