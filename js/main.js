@@ -129,6 +129,16 @@ function renderWelcome() {
       sayChip("Hello", (btn) => play(audioUrl(first.id, "hello"), btn), "say-big", "Xin chào"),
       h("p", {}, "Mỗi ngày, trước khi học bài mới, bạn ôn các thẻ từ đến hạn ở trang chính. Bạn dừng được ở bất cứ bước nào, và lần sau mở app, bài tiếp tục từ chỗ đó."),
     ],
+    () => [
+      h("h1", {}, "Nghe trước rồi mới đọc"),
+      h("p", {}, "Nhiều từ tiếng Anh không đọc theo mặt chữ như tiếng Việt, nên nhìn chữ viết bạn chưa chắc đoán được cách đọc. Gặp từ nào, bạn cũng bấm nghe trước rồi mới đọc theo."),
+      h("p", {}, "Bạn đừng ghi cách đọc bằng chữ Việt, như \"hê-lô\" cho hello: quen ghi như vậy thì dần dần bạn sẽ đọc tiếng Anh theo âm tiếng Việt, và người nói tiếng Anh khó nghe ra."),
+    ],
+    () => [
+      h("h1", {}, "Gõ tiếng Anh trên điện thoại"),
+      h("p", {}, "Ở phần Viết, bạn gõ câu tiếng Anh trên bàn phím điện thoại. Trước khi gõ, bạn chuyển sang bàn phím tiếng Anh, vì bàn phím tiếng Việt kiểu Telex sẽ tự đổi chữ tiếng Anh, như \"too\" thành \"tô\" hay \"meet\" thành \"mêt\"."),
+      h("p", {}, "Trên iPhone, bạn bấm nút quả địa cầu ở góc dưới bàn phím cho tới khi bàn phím hiện chữ English. Trên điện thoại Android, cách đổi tùy loại bàn phím; thường là bấm nút quả địa cầu hoặc giữ phím cách."),
+    ],
     () => {
       const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
       const parts = [h("h1", {}, "Đưa Enforfa ra màn hình chính")];
@@ -150,7 +160,8 @@ function renderWelcome() {
       return parts;
     },
   ];
-  const order = isInstalled() ? screens.slice(0, 2) : screens;
+  // Màn hình cuối (đưa app ra màn hình chính) bỏ đi nếu app đã được cài.
+  const order = isInstalled() ? screens.slice(0, -1) : screens;
   let i = 0;
   const body = h("main", { class: "welcome", id: "main", tabindex: "-1" });
   const dots = h("p", { class: "welcome-dots", "aria-hidden": "true" });
@@ -223,18 +234,24 @@ function renderHome() {
       : h("p", { class: "hint" }, "Hôm nay chưa có thẻ từ nào đến hạn ôn.")
   );
 
-  // Thẻ lộ trình: tuần đang học, chặng đang ở, và lối vào bản đồ.
+  // Thẻ lộ trình: tuần đang học, mỗi bài của tuần là một ô trên thanh tiến độ.
   const { number: weekNo, stage } = progressPosition();
-  const stamps = stampCount(lessons.map((l) => l.id));
+  const thisWeek = course.weeks.find((w) => w.number === weekNo);
+  const weekLessons = thisWeek ? thisWeek.lessons : [];
+  const doneInWeek = weekLessons.filter((l) => lessonState(l) === "done").length;
   const roadmap =
     course.stages &&
     h(
       "a",
       { class: "roadmap-card", href: "#/lo-trinh" },
-      h("span", { class: "roadmap-label" }, "Lộ trình"),
-      h("span", { class: "roadmap-main" }, `Tuần ${weekNo} trên ${course.totalWeeks} · Chặng ${stage.id}: ${stage.title}`),
-      h("span", { class: "meter" }, h("span", { style: `width:${Math.round(((weekNo - 1) / course.totalWeeks) * 100)}%` })),
-      stamps > 0 && h("span", { class: "roadmap-stamps" }, `${stamps} con dấu Thử ngoài đời`),
+      h("span", { class: "roadmap-label" }, `Lộ trình · Tuần ${weekNo} trên ${course.totalWeeks} · Chặng ${stage.id}`),
+      h("span", { class: "roadmap-main" }, thisWeek ? thisWeek.title : stage.title),
+      h(
+        "span",
+        { class: "segments", role: "img", "aria-label": `Đã học ${doneInWeek} trên ${weekLessons.length} bài của tuần` },
+        ...weekLessons.map((l) => h("span", { class: `seg is-${lessonState(l)}` }))
+      ),
+      h("span", { class: "roadmap-count" }, `Đã học ${doneInWeek} trên ${weekLessons.length} bài của tuần`),
       h("span", { class: "roadmap-cta" }, "Xem bản đồ lộ trình")
     );
 
@@ -381,14 +398,76 @@ function learnerStats() {
   const cards = store.list("cards").length;
   const stamps = store.list("stamps").length;
   const days = streak();
-  const stat = (n, label) => h("li", {}, h("span", { class: "stat-num" }, String(n)), h("span", {}, label));
+  const stat = (n, label, href) =>
+    h(
+      "li",
+      {},
+      href
+        ? h("a", { class: "stat-link", href }, h("span", { class: "stat-num" }, String(n)), h("span", {}, label), h("span", { class: "stat-more" }, "Xem kho thẻ"))
+        : [h("span", { class: "stat-num" }, String(n)), h("span", {}, label)]
+    );
   return h(
     "ul",
     { class: "stats" },
     stat(lessonsDone, "bài đã học xong"),
-    stat(cards, "thẻ từ trong kho ôn"),
+    stat(cards, "thẻ từ trong kho ôn", "#/the-tu"),
     stat(days, "ngày học liên tiếp"),
     stat(stamps, "con dấu Thử ngoài đời")
+  );
+}
+
+// Kho thẻ từ: mọi thẻ người học đã có, xếp theo bài, kèm ngày ôn lại.
+async function renderCardArchive() {
+  document.title = "Kho thẻ từ · Enforfa";
+  const all = store.list("cards");
+  const metas = allLessons().filter((l) => l.file);
+  const groups = [];
+  for (const meta of metas) {
+    const mine = all.filter((c) => c.lessonId === meta.id);
+    if (!mine.length) continue;
+    const lesson = await getLesson(meta);
+    const byId = new Map(mine.map((c) => [c.cardId, c]));
+    const items = lesson.cards.filter((c) => byId.has(c.id)).map((card) => ({ card, state: byId.get(card.id) }));
+    groups.push({ meta, lesson, items });
+  }
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+  const when = (due) => {
+    if (due <= today.getTime()) return "Ôn hôm nay";
+    const d = new Date(due);
+    return `Ôn lại ngày ${d.getDate()}/${d.getMonth() + 1}`;
+  };
+  root.replaceChildren(
+    h(
+      "header",
+      { class: "lesson-head" },
+      h("div", { class: "lesson-head-row" }, h("a", { class: "btn-back", href: "#/cua-ban", "aria-label": "Về trang Của bạn" }, icon("back")), h("p", { class: "lesson-title" }, "Kho thẻ từ"))
+    ),
+    h(
+      "main",
+      { class: "archive", id: "main" },
+      h("p", { class: "hint" }, `${all.length} thẻ từ. Thẻ nào bạn nhớ lâu thì ngày ôn lại cách xa hơn. Bấm vào thẻ để nghe.`),
+      !groups.length && h("p", {}, "Kho còn trống. Học xong một bài, thẻ từ của bài ấy sẽ vào đây."),
+      ...groups.map(({ meta, lesson, items }) =>
+        h(
+          "section",
+          { class: "archive-group" },
+          h("h2", {}, lesson.title),
+          h(
+            "ul",
+            { class: "archive-list" },
+            ...items.map(({ card, state }) =>
+              h(
+                "li",
+                {},
+                sayChip(card.en, (btn) => play(audioUrl(meta.id, card.audio), btn), "", card.vi),
+                h("span", { class: "archive-due" }, when(state.due))
+              )
+            )
+          )
+        )
+      )
+    )
   );
 }
 
@@ -503,13 +582,17 @@ async function route() {
       }
       const lesson = await getLesson(meta);
       document.title = `${lesson.title} · Enforfa`;
-      renderLesson(root, lesson, { onExit: () => (location.hash = "#/") });
+      const list = allLessons();
+      const next = list.slice(list.indexOf(meta) + 1).find((l) => l.file);
+      renderLesson(root, lesson, { onExit: () => (location.hash = "#/"), next });
     } else if (hash === "#/on-tu") {
       await renderReview();
     } else if (hash === "#/chao-mung") {
       renderWelcome();
     } else if (hash === "#/lo-trinh") {
       renderMapPage();
+    } else if (hash === "#/the-tu") {
+      await renderCardArchive();
     } else if (hash === "#/cua-ban") {
       renderLearner();
     } else if (hash === "#/gioi-thieu") {
@@ -538,7 +621,7 @@ function tabBar(hash) {
   const tab = (href, iconName, label, extra) =>
     h(
       "a",
-      { class: `tab${hash === href || (href === "#/cua-ban" && hash === "#/gioi-thieu") ? " is-on" : ""}`, href, "aria-current": hash === href ? "page" : null },
+      { class: `tab${hash === href || (href === "#/cua-ban" && (hash === "#/gioi-thieu" || hash === "#/the-tu")) ? " is-on" : ""}`, href, "aria-current": hash === href ? "page" : null },
       icon(iconName),
       h("span", {}, label),
       extra || null
