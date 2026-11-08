@@ -487,3 +487,8 @@ textarea:focus { border-color: var(--action); outline: none; }
 .check-item label { flex: 1; }
 .goal-before { border-left: 4px solid var(--marker); background: var(--sheet); padding: 8px 12px; margin-bottom: 16px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
 .goal-before p { margin: 4px 0; }
+
+.machine-title { font-weight: 700; margin: 0 0 4px; }
+.btn.is-listening { border-color: var(--rec); color: var(--rec); opacity: 1; animation: listening 1.2s ease-in-out infinite; }
+@keyframes listening { 50% { background: var(--wrong-soft); } }
+@media (prefers-reduced-motion: reduce) { .btn.is-listening { animation: none; background: var(--wrong-soft); } }

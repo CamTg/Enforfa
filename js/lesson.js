@@ -877,9 +877,14 @@ function machineCheck(step) {
   const compared = targets.filter((t) => !t.skip);
 
   const box = h("div", { class: "machine" });
-  const button = h("button", { class: "btn btn-outline btn-wide", type: "button" }, icon("mic"), "Cho máy nghe thử");
+  const button = h("button", { class: "btn btn-outline btn-wide", type: "button" }, icon("mic"), "Nói lại cho máy nghe");
   const panel = h("div", { class: "machine-panel", role: "status" });
-  box.append(button, panel);
+  box.append(
+    h("p", { class: "machine-title" }, "Cho máy nghe thử"),
+    h("p", { class: "hint" }, "Máy không nghe bản thu ở trên. Muốn biết máy nghe ra những từ nào, bạn bấm nút dưới đây rồi nói lại câu mẫu một lần nữa."),
+    button,
+    panel
+  );
 
   function bestMatch(alternatives) {
     let best = null;
@@ -892,7 +897,8 @@ function machineCheck(step) {
 
   async function run(mode) {
     button.disabled = true;
-    button.replaceChildren(icon("mic"), "Máy đang nghe, bạn nói câu mẫu");
+    button.classList.add("is-listening");
+    button.replaceChildren(icon("mic"), "Máy đang nghe. Bạn nói câu mẫu ngay bây giờ");
     panel.replaceChildren();
     try {
       const alts = await listenOnce(mode);
@@ -913,7 +919,8 @@ function machineCheck(step) {
       panel.replaceChildren(h("p", { class: "hint" }, LISTEN_ERRORS[err] || "Máy chưa nghe được lần này. Bạn thử lại."));
     } finally {
       button.disabled = false;
-      button.replaceChildren(icon("mic"), "Cho máy nghe thử lần nữa");
+      button.classList.remove("is-listening");
+      button.replaceChildren(icon("mic"), "Nói lại cho máy nghe lần nữa");
     }
   }
 
@@ -928,7 +935,7 @@ function machineCheck(step) {
     });
     cancel.addEventListener("click", () => panel.replaceChildren());
     panel.replaceChildren(
-      h("p", {}, "Máy sẽ nghe câu bạn nói, đổi thành chữ, rồi tô những từ khớp với câu mẫu. Đây chỉ là gợi ý, không phải điểm, và không được lưu lại."),
+      h("p", {}, "Sau khi bạn đồng ý, máy bắt đầu nghe ngay, và bạn nói lại câu mẫu một lần. Máy đổi câu bạn nói thành chữ, rồi tô những từ khớp với câu mẫu. Đây chỉ là gợi ý, không phải điểm, và không được lưu lại."),
       h("p", {}, LIMIT_NOTE),
       mode === "cloud"
         ? h("p", {}, "Để đổi câu bạn nói thành chữ, app gửi câu ấy tới dịch vụ nhận dạng giọng nói của trình duyệt, của Google hoặc Apple. Nếu bạn đồng ý, bấm Đồng ý; nếu không, bạn vẫn học bình thường bằng cách so với câu mẫu.")
