@@ -6,6 +6,7 @@ import { dueCards, grade } from "./srs.js";
 import { play, audioUrl } from "./audio.js";
 import { renderLesson } from "./lesson.js";
 import { stopStep, exportData } from "./timing.js";
+import { renderMap } from "./map.js";
 
 const root = document.getElementById("app");
 let course = null;
@@ -32,6 +33,113 @@ function lessonState(meta) {
   if (p?.done) return "done";
   if (p && p.step > 0) return "started";
   return "new";
+}
+
+// Tuần đang học: tuần đầu tiên còn bài chưa học xong.
+function progressPosition() {
+  const current = course.weeks.find((w) => w.lessons.some((l) => lessonState(l) !== "done")) || course.weeks.at(-1);
+  const number = current?.number || 1;
+  const stage = course.stages.find((st) => number >= st.from && number <= st.to) || course.stages[0];
+  return { number, stage };
+}
+
+function weekState(n) {
+  const { number } = progressPosition();
+  if (n < number) return "done";
+  if (n === number) return "current";
+  return "future";
+}
+
+function renderMapPage() {
+  document.title = "Lộ trình · Enforfa";
+  const { number } = progressPosition();
+  root.replaceChildren(
+    h(
+      "header",
+      { class: "lesson-head" },
+      h("div", { class: "lesson-head-row" }, h("a", { class: "btn-back", href: "#/", "aria-label": "Về trang chính" }, icon("back")), h("p", { class: "lesson-title" }, "Lộ trình"))
+    ),
+    h("main", { class: "map-page", id: "main" }, renderMap(course, number, weekState))
+  );
+  const here = root.querySelector(".map-week.is-current");
+  if (here) here.scrollIntoView({ block: "center" });
+}
+
+// ---- Chào người mới ----
+
+function isInstalled() {
+  return window.matchMedia?.("(display-mode: standalone)").matches || navigator.standalone === true;
+}
+
+function renderWelcome() {
+  document.title = "Chào bạn · Enforfa";
+  const first = allLessons().find((l) => l.file);
+  const screens = [
+    () => [
+      h("h1", {}, "Chào bạn đến với Enforfa"),
+      h("p", {}, "Enforfa giúp bạn học tiếng Anh từ con số không, mỗi ngày một bài khoảng 30 phút, giảng bằng tiếng Việt."),
+      h("p", {}, `Chương trình dài ${course.totalWeeks} tuần, đưa bạn tới trình độ đủ để giao tiếp và làm việc với người nói tiếng Anh. App miễn phí và không cần tài khoản.`),
+    ],
+    () => [
+      h("h1", {}, "Cách học"),
+      h("p", {}, "Mỗi bài có năm phần nối nhau: Nghe, Học, Luyện, Nói và Viết."),
+      h("p", {}, "Cụm tiếng Anh nào được tô màu vàng thì bấm vào là nghe. Bạn thử bấm vào cụm dưới đây:"),
+      sayChip("Hello", (btn) => play(audioUrl(first.id, "hello"), btn), "say-big", "Xin chào"),
+      h("p", {}, "Mỗi ngày, trước khi học bài mới, bạn ôn các thẻ từ đến hạn ở trang chính. Bạn dừng được ở bất cứ bước nào, và lần sau mở app, bài tiếp tục từ chỗ đó."),
+    ],
+    () => {
+      const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
+      const parts = [h("h1", {}, "Đưa Enforfa ra màn hình chính")];
+      parts.push(h("p", {}, "Khi Enforfa nằm trên màn hình chính, bạn mở app như mọi ứng dụng khác, không phải gõ địa chỉ. Những bài đã mở trước đó vẫn học được khi không có mạng."));
+      if (installPrompt) {
+        const btn = h("button", { class: "btn btn-secondary btn-wide", type: "button" }, "Thêm vào màn hình chính");
+        btn.addEventListener("click", async () => {
+          installPrompt.prompt();
+          await installPrompt.userChoice.catch(() => {});
+          installPrompt = null;
+          btn.replaceWith(h("p", { class: "hint" }, "Xong. Từ nay bạn mở Enforfa từ màn hình chính."));
+        });
+        parts.push(btn);
+      } else if (ios) {
+        parts.push(h("p", {}, "Trên iPhone, bạn mở trang này bằng Safari, bấm nút Chia sẻ (hình vuông có mũi tên chỉ lên) ở thanh dưới, rồi chọn Thêm vào màn hình chính."));
+      } else {
+        parts.push(h("p", {}, "Bạn mở menu của trình duyệt (thường là nút ba chấm ở góc trên), rồi chọn Thêm vào màn hình chính hoặc Cài đặt ứng dụng."));
+      }
+      return parts;
+    },
+  ];
+  const order = isInstalled() ? screens.slice(0, 2) : screens;
+  let i = 0;
+  const body = h("main", { class: "welcome", id: "main", tabindex: "-1" });
+  const dots = h("p", { class: "welcome-dots", "aria-hidden": "true" });
+  const nextBtn = h("button", { class: "btn btn-primary", type: "button" });
+  const skip = h("button", { class: "btn btn-quiet", type: "button" }, "Bỏ qua");
+  const finish = () => {
+    store.put("settings", "onboarded", { at: Date.now() });
+    location.hash = first ? `#/bai/${first.id}` : "#/";
+  };
+  skip.addEventListener("click", () => {
+    store.put("settings", "onboarded", { at: Date.now() });
+    route();
+  });
+  nextBtn.addEventListener("click", () => {
+    if (i < order.length - 1) {
+      i += 1;
+      draw();
+    } else finish();
+  });
+  function draw() {
+    body.replaceChildren(...order[i](), dots);
+    dots.textContent = order.map((_, k) => (k === i ? "●" : "○")).join(" ");
+    nextBtn.textContent = i < order.length - 1 ? "Tiếp tục" : "Bắt đầu bài 1";
+    body.focus({ preventScroll: true });
+  }
+  root.replaceChildren(
+    h("header", { class: "home-head" }, h("p", { class: "brand" }, "Enforfa")),
+    body,
+    h("footer", { class: "lesson-foot" }, skip, nextBtn)
+  );
+  draw();
 }
 
 // ---- Trang chính ----
@@ -95,29 +203,17 @@ function renderHome() {
     );
   });
 
-  // Lộ trình: ba chặng của cả chương trình, chặng đang học được đánh dấu.
-  const currentWeek = course.weeks.find((w) => w.lessons.some((l) => l.file && lessonState(l) !== "done")) || course.weeks.at(-1);
-  const currentStage = currentWeek?.stage || 1;
+  // Thẻ lộ trình: tuần đang học, chặng đang ở, và lối vào bản đồ.
+  const { number: weekNo, stage } = progressPosition();
   const roadmap =
     course.stages &&
     h(
-      "section",
-      { class: "roadmap" },
-      h("h2", {}, "Lộ trình"),
-      h("p", { class: "hint" }, `Chương trình có ${course.totalWeeks} tuần, chia ba chặng. Bạn đang ở tuần ${currentWeek?.number || 1}.`),
-      h(
-        "ol",
-        { class: "stages" },
-        ...course.stages.map((st) =>
-          h(
-            "li",
-            { class: `stage${st.id === currentStage ? " is-current" : ""}`, "aria-current": st.id === currentStage ? "step" : false },
-            h("p", { class: "stage-weeks" }, st.id === currentStage ? `${st.weeks} · Bạn đang ở đây` : st.weeks),
-            h("p", { class: "stage-title" }, `Chặng ${st.id}: ${st.title}`),
-            h("p", { class: "stage-goal" }, `Hết chặng này, bạn ${st.goal.charAt(0).toLowerCase()}${st.goal.slice(1)}`)
-          )
-        )
-      )
+      "a",
+      { class: "roadmap-card", href: "#/lo-trinh" },
+      h("span", { class: "roadmap-label" }, "Lộ trình"),
+      h("span", { class: "roadmap-main" }, `Tuần ${weekNo} trên ${course.totalWeeks} · Chặng ${stage.id}: ${stage.title}`),
+      h("span", { class: "meter" }, h("span", { style: `width:${Math.round(((weekNo - 1) / course.totalWeeks) * 100)}%` })),
+      h("span", { class: "roadmap-cta" }, "Xem bản đồ lộ trình")
     );
 
   root.replaceChildren(
@@ -134,8 +230,8 @@ function renderHome() {
         h("p", { class: "warn" }, "Trình duyệt này đang không cho lưu dữ liệu, nên tiến độ sẽ mất khi đóng trang. Bạn mở app bằng cửa sổ thường, không dùng chế độ ẩn danh."),
       todayBlock,
       reviewBlock,
-      ...weeks,
-      roadmap
+      roadmap,
+      ...weeks
     ),
     h("footer", { class: "home-foot" }, h("a", { href: "#/gioi-thieu" }, "Về Enforfa và quyền riêng tư"))
   );
@@ -245,7 +341,7 @@ function renderAbout() {
       "main",
       { class: "about", id: "main" },
       h("h1", {}, "Enforfa là gì"),
-      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt mới sang Mỹ. Mỗi ngày một bài, giảng bằng tiếng Việt, xoay quanh những việc bạn sẽ gặp ngay: chào hỏi, đánh vần tên, đi khám, làm giấy tờ, đi làm."),
+      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Mỗi ngày một bài, giảng bằng tiếng Việt, giúp bạn nghe, nói, đọc, viết đủ để giao tiếp và làm việc với người nói tiếng Anh: từ chào hỏi, đánh vần tên, tới đi khám, làm giấy tờ và đi làm."),
       h("h2", {}, "Dữ liệu của bạn"),
       h("p", {}, "Tiến độ, thẻ từ và ghi chú được lưu ngay trên điện thoại hay máy tính bạn đang dùng. App chưa có tài khoản, nên đổi máy hoặc xóa dữ liệu trình duyệt thì những thứ này sẽ mất."),
       h("p", {}, "Bản thu giọng của bạn chỉ nằm trên máy này. App không gửi bản thu đi đâu."),
@@ -255,6 +351,7 @@ function renderAbout() {
       exportBlock(),
       h("h2", {}, "Giọng đọc và nguồn"),
       h("p", {}, "Giọng đọc mẫu được tạo bằng Kokoro, một công cụ chuyển văn bản thành giọng nói mã nguồn mở. Nội dung bài học phát hành theo giấy phép CC BY 4.0, mã nguồn theo giấy phép MIT."),
+      h("p", {}, h("a", { href: "#/chao-mung" }, "Xem lại hướng dẫn cách học")),
       h("p", {}, h("a", { href: "https://github.com/CamTg/Enforfa" }, "Mã nguồn của Enforfa trên GitHub"))
     )
   );
@@ -303,8 +400,14 @@ async function route() {
       renderLesson(root, lesson, { onExit: () => (location.hash = "#/") });
     } else if (hash === "#/on-tu") {
       await renderReview();
+    } else if (hash === "#/chao-mung") {
+      renderWelcome();
+    } else if (hash === "#/lo-trinh") {
+      renderMapPage();
     } else if (hash === "#/gioi-thieu") {
       renderAbout();
+    } else if (!store.get("settings", "onboarded") && store.list("progress").length === 0) {
+      renderWelcome();
     } else {
       renderHome();
     }
@@ -326,3 +429,17 @@ loadJSON("content/course.json")
   .catch(() => {
     root.replaceChildren(h("main", { class: "home" }, h("p", { class: "warn" }, "Không tải được app. Bạn kiểm tra kết nối mạng rồi mở lại trang.")));
   });
+
+// ---- Cài app và chạy khi không có mạng ----
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+
+// Android và Chrome cho phép hiện hộp cài app; giữ sự kiện lại để nút "Thêm vào
+// màn hình chính" dùng khi người học bấm.
+let installPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  installPrompt = e;
+});
