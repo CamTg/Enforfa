@@ -40,7 +40,7 @@ js/map.js           bản đồ lộ trình
 js/recorder.js      thu âm, lưu bản thu ngay trên máy
 js/audio.js         phát âm thanh mẫu
 content/course.json danh sách tuần và bài
-content/w1/l1.json  nội dung một bài
+content/w1/l1.json  nội dung một bài (tuần 1 có đủ bảy bài, l1 đến l7)
 audio/<id bài>/     âm thanh mẫu đã tạo sẵn
 tools/build_audio.py tạo âm thanh từ nội dung bài
 ```
@@ -58,7 +58,9 @@ tools/build_audio.py tạo âm thanh từ nội dung bài
 
    Thư mục model cần `kokoro-v1.0.onnx` và `voices-v1.0.bin`, tải từ [kokoro-onnx releases](https://github.com/thewh1teagle/kokoro-onnx/releases). Công cụ cũng cần `ffmpeg` có bộ lọc `rubberband` (bản ffmpeg đầy đủ trên hầu hết hệ điều hành đều có).
 
-Với từ dùng để dạy phát âm, luôn ghi thêm trường `ipa` trong phần `audio`. Bộ đoán phiên âm tự động có lúc đọc sai, ví dụ đọc "live" thành /laɪv/.
+Các kiểu bước dùng được trong một bài: `text`, `listen` (lượt 1, 2, 3; `layout` là `grid` hay `pairs`), `choose` (`audio` có thể là danh sách để nghe nối nhau; `layout: "row"` cho lựa chọn ngắn), `order`, `speak` (`ask` là câu hỏi phát trước câu mẫu), `write` (`mode` là `dictation`, `intro`, `letters` hay `field`), `cloze`, `checklist`, `goal`, `compare`. Bước nào có `review` (danh sách mã thẻ) thì khi người học làm sai, các thẻ ấy lên đầu lịch ôn.
+
+Với từ dùng để dạy phát âm, luôn ghi thêm trường `ipa` trong phần `audio`. Chuỗi đánh vần hay số điện thoại dùng trường `spell` (danh sách phiên âm từng phần) để mỗi phần được đọc riêng, cách nhau rõ ràng. Bộ đoán phiên âm tự động có lúc đọc sai, ví dụ đọc "live" thành /laɪv/.
 
 ## Dữ liệu và quyền riêng tư
 

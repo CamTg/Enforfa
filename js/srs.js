@@ -18,6 +18,17 @@ export function addCards(lessonId, cards) {
   }
 }
 
+/**
+ * Đưa các thẻ lên đầu lịch ôn (đến hạn ngay), khi người học làm sai một câu có
+ * dùng chúng. ids có dạng "<id bài>/<id thẻ>". Thẻ chưa có trong kho thì bỏ qua.
+ */
+export function bumpCards(ids) {
+  for (const id of ids) {
+    const card = store.get("cards", id);
+    if (card) store.put("cards", id, { box: 0, due: Date.now() });
+  }
+}
+
 export function dueCards(now = Date.now()) {
   return store
     .list("cards")

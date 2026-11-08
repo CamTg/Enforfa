@@ -12,27 +12,33 @@
         },
         {
           "id": "w1-l2",
-          "title": "Bảng chữ cái, phần đầu"
+          "title": "Bảng chữ cái, phần đầu",
+          "file": "content/w1/l2.json"
         },
         {
           "id": "w1-l3",
-          "title": "Bảng chữ cái, phần cuối, và đánh vần tên"
+          "title": "Bảng chữ cái, phần cuối, và đánh vần tên",
+          "file": "content/w1/l3.json"
         },
         {
           "id": "w1-l4",
-          "title": "Nguyên âm dài và ngắn"
+          "title": "Nguyên âm dài và ngắn",
+          "file": "content/w1/l4.json"
         },
         {
           "id": "w1-l5",
-          "title": "Trọng âm và âm /ə/"
+          "title": "Trọng âm và âm /ə/",
+          "file": "content/w1/l5.json"
         },
         {
           "id": "w1-l6",
-          "title": "Âm th và số từ 0 đến 10"
+          "title": "Âm th và số từ 0 đến 10",
+          "file": "content/w1/l6.json"
         },
         {
           "id": "w1-l7",
-          "title": "Ôn tuần và thử ngoài đời"
+          "title": "Ôn tuần và thử ngoài đời",
+          "file": "content/w1/l7.json"
         }
       ],
       "stage": 1,

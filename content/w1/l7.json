@@ -1,0 +1,877 @@
+{
+  "id": "w1-l7",
+  "title": "Ôn tuần và thử ngoài đời",
+  "goal": "Bài này không có phần học mới. Bạn ôn những gì đã học trong tuần qua một cuộc hội thoại ở thư viện, làm một bài kiểm tra nhỏ, rồi tự đánh giá và đặt mục tiêu cho tuần sau.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "staff": {
+      "name": "Nhân viên",
+      "voice": "af_bella"
+    }
+  },
+  "listenNote": "Một đoạn hội thoại ở thư viện, nghe ba lượt, và một bài kiểm tra nhỏ mười câu",
+  "audio": {
+    "r1": {
+      "text": "Hi. Can I have your last name, please?",
+      "voice": "af_bella"
+    },
+    "r2": {
+      "text": "Sorry?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "r3": {
+      "text": "Your last name, please.",
+      "voice": "af_bella"
+    },
+    "r4": {
+      "text": "Nguyen. N, G, U, Y, E, N.",
+      "voice": "af_heart",
+      "spell": [
+        "ŋwˈɪn.",
+        "ˈɛn.",
+        "dʒˈiː.",
+        "jˈuː.",
+        "wˈaɪ.",
+        "ˈiː.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "r5": {
+      "text": "And your first name?",
+      "voice": "af_bella"
+    },
+    "r6": {
+      "text": "Lan. L, A, N.",
+      "voice": "af_heart",
+      "spell": [
+        "lˈɑːn.",
+        "ˈɛl.",
+        "ˈeɪ.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "r7": {
+      "text": "What's your phone number?",
+      "voice": "af_bella"
+    },
+    "r8": {
+      "text": "Seven one three, five five five, oh one four two.",
+      "voice": "af_heart",
+      "spell": [
+        "sˈɛvən wˈʌn θɹˈiː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn fˈɔːɹ tˈuː."
+      ],
+      "gap": 0.4
+    },
+    "r9": {
+      "text": "Thank you, Lan.",
+      "voice": "af_bella",
+      "ipa": "θˈæŋk juː, lˈɑːn."
+    },
+    "c_hi": {
+      "text": "Hi.",
+      "voice": "af_bella"
+    },
+    "c_can_i": {
+      "text": "Can I have your last name, please?",
+      "voice": "af_bella"
+    },
+    "c_nguyen": {
+      "text": "Nguyen.",
+      "voice": "af_heart",
+      "ipa": "ŋwˈɪn."
+    },
+    "c_spell": {
+      "text": "N, G, U, Y, E, N.",
+      "voice": "af_heart",
+      "spell": [
+        "ˈɛn.",
+        "dʒˈiː.",
+        "jˈuː.",
+        "wˈaɪ.",
+        "ˈiː.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "c_lan": {
+      "text": "Lan.",
+      "voice": "af_heart",
+      "ipa": "lˈɑːn."
+    },
+    "c_lan_spell": {
+      "text": "L, A, N.",
+      "voice": "af_heart",
+      "spell": [
+        "ˈɛl.",
+        "ˈeɪ.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "can_i_have": {
+      "text": "Can I have your last name, please?",
+      "voice": "af_heart"
+    },
+    "library_card": {
+      "text": "library card",
+      "voice": "af_heart"
+    },
+    "q_vo": {
+      "text": "V, O.",
+      "voice": "am_michael",
+      "spell": [
+        "vˈiː.",
+        "ˈoʊ."
+      ],
+      "gap": 0.5
+    },
+    "q_dang": {
+      "text": "D, A, N, G.",
+      "voice": "am_michael",
+      "spell": [
+        "dˈiː.",
+        "ˈeɪ.",
+        "ˈɛn.",
+        "dʒˈiː."
+      ],
+      "gap": 0.5
+    },
+    "q_sit": {
+      "text": "sit",
+      "voice": "af_heart",
+      "ipa": "sˈɪt.",
+      "speed": 0.9
+    },
+    "q_leave": {
+      "text": "leave",
+      "voice": "af_heart",
+      "ipa": "lˈiːv.",
+      "speed": 0.9
+    },
+    "q_three": {
+      "text": "three",
+      "voice": "af_heart",
+      "ipa": "θɹˈiː.",
+      "speed": 0.9
+    },
+    "q_i": {
+      "text": "I",
+      "voice": "af_heart",
+      "ipa": "ˈaɪ.",
+      "speed": 0.9
+    },
+    "q_hotel": {
+      "text": "hotel",
+      "voice": "af_heart",
+      "ipa": "hoʊtˈɛl."
+    },
+    "q_doctor": {
+      "text": "doctor",
+      "voice": "af_heart",
+      "ipa": "dˈɑːktɚ."
+    },
+    "q_how": {
+      "text": "Hi! How are you?",
+      "voice": "am_michael"
+    },
+    "q_phone": {
+      "text": "346-555-0129",
+      "voice": "am_michael",
+      "spell": [
+        "θɹˈiː fˈɔːɹ sˈɪks,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn tˈuː nˈaɪn."
+      ],
+      "gap": 0.5
+    },
+    "ask_last": {
+      "text": "Can I have your last name, please?",
+      "voice": "af_bella"
+    },
+    "ask_first": {
+      "text": "And your first name?",
+      "voice": "af_bella"
+    },
+    "ask_phone": {
+      "text": "What's your phone number?",
+      "voice": "af_bella"
+    },
+    "m_last": {
+      "text": "Nguyen. N, G, U, Y, E, N.",
+      "voice": "af_heart",
+      "spell": [
+        "ŋwˈɪn.",
+        "ˈɛn.",
+        "dʒˈiː.",
+        "jˈuː.",
+        "wˈaɪ.",
+        "ˈiː.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "m_first": {
+      "text": "Lan. L, A, N.",
+      "voice": "af_heart",
+      "spell": [
+        "lˈɑːn.",
+        "ˈɛl.",
+        "ˈeɪ.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "m_phone": {
+      "text": "Seven one three, five five five, oh one four two.",
+      "voice": "af_heart",
+      "spell": [
+        "sˈɛvən wˈʌn θɹˈiː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn fˈɔːɹ tˈuː."
+      ],
+      "gap": 0.4
+    },
+    "m_intro": {
+      "text": "Hi. My name is Lan. Nice to meet you.",
+      "voice": "af_heart",
+      "speed": 0.9,
+      "ipa": "hˈaɪ. maɪ nˈeɪm ɪz lˈɑːn. nˈaɪs tə mˈiːt juː."
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Làm thẻ thư viện",
+          "body": [
+            "Bài này không có phần học mới. Bạn ôn những gì đã học trong tuần qua một cuộc hội thoại: Lan đến thư viện làm {{library_card|thẻ thư viện}}.",
+            "Thư viện công cộng ở Mỹ cho làm thẻ miễn phí, và đây thường là một trong những nơi đầu tiên người mới sang cần đến. Bạn nghe đoạn hội thoại ba lượt như ở bài 1."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Ở thư viện, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "r1",
+              "chunks": [
+                {
+                  "en": "Hi.",
+                  "vi": "Chào chị.",
+                  "audio": "c_hi"
+                },
+                {
+                  "en": "Can I have your last name, please?",
+                  "vi": "Chị cho tôi biết họ của chị được không?",
+                  "audio": "c_can_i"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "r2",
+              "chunks": [
+                {
+                  "en": "Sorry?",
+                  "vi": "Chị nói gì cơ?",
+                  "audio": "r2"
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "r3",
+              "chunks": [
+                {
+                  "en": "Your last name, please.",
+                  "vi": "Họ của chị.",
+                  "audio": "r3"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "r4",
+              "chunks": [
+                {
+                  "en": "Nguyen.",
+                  "vi": "Nguyễn.",
+                  "audio": "c_nguyen"
+                },
+                {
+                  "en": "N, G, U, Y, E, N.",
+                  "vi": "N, G, U, Y, E, N.",
+                  "audio": "c_spell"
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "r5",
+              "chunks": [
+                {
+                  "en": "And your first name?",
+                  "vi": "Còn tên của chị?",
+                  "audio": "r5"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "r6",
+              "chunks": [
+                {
+                  "en": "Lan.",
+                  "vi": "Lan.",
+                  "audio": "c_lan"
+                },
+                {
+                  "en": "L, A, N.",
+                  "vi": "L, A, N.",
+                  "audio": "c_lan_spell"
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "r7",
+              "chunks": [
+                {
+                  "en": "What's your phone number?",
+                  "vi": "Số điện thoại của chị là gì?",
+                  "audio": "r7"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "r8",
+              "chunks": [
+                {
+                  "en": "Seven one three, five five five, oh one four two.",
+                  "vi": "713-555-0142.",
+                  "audio": "r8"
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "r9",
+              "chunks": [
+                {
+                  "en": "Thank you, Lan.",
+                  "vi": "Cảm ơn chị Lan.",
+                  "audio": "r9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Ở thư viện, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "r1",
+              "vi": "Chào chị. Chị cho tôi biết họ của chị được không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r2",
+              "vi": "Chị nói gì cơ?"
+            },
+            {
+              "speaker": "staff",
+              "audio": "r3",
+              "vi": "Họ của chị ạ."
+            },
+            {
+              "speaker": "lan",
+              "audio": "r4",
+              "vi": "Nguyễn. N, G, U, Y, E, N."
+            },
+            {
+              "speaker": "staff",
+              "audio": "r5",
+              "vi": "Còn tên của chị?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r6",
+              "vi": "Lan. L, A, N."
+            },
+            {
+              "speaker": "staff",
+              "audio": "r7",
+              "vi": "Số điện thoại của chị là gì?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r8",
+              "vi": "713-555-0142."
+            },
+            {
+              "speaker": "staff",
+              "audio": "r9",
+              "vi": "Cảm ơn chị Lan."
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Ở thư viện, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "r1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r2"
+            },
+            {
+              "speaker": "staff",
+              "audio": "r3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r4"
+            },
+            {
+              "speaker": "staff",
+              "audio": "r5"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r6"
+            },
+            {
+              "speaker": "staff",
+              "audio": "r7"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r8"
+            },
+            {
+              "speaker": "staff",
+              "audio": "r9"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Một câu hỏi lịch sự",
+          "body": [
+            "Nhân viên hỏi {{can_i_have|Chị cho tôi biết họ của chị được không?}} Đây là cách hỏi lịch sự, nghĩa giống What's your last name?",
+            "Khi nghe chưa kịp, Lan nói Sorry? lên giọng, như bạn đã học ở bài 1, và nhân viên nói lại ngắn hơn."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onlai",
+      "title": "Ôn lại",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Kiểm tra nhỏ",
+          "body": [
+            "Phần này có mười câu, ôn lại bài 1 đến bài 6. App không chấm điểm. Câu nào bạn chọn sai, thẻ từ liên quan được đưa lên đầu lịch ôn để bạn gặp lại sớm."
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe Minh đánh vần một họ rồi gõ lại.",
+          "audio": "q_vo",
+          "answer": "V, O",
+          "review": [
+            "w1-l3/o",
+            "w1-l2/v"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe Minh đánh vần một họ rồi gõ lại.",
+          "audio": "q_dang",
+          "answer": "D, A, N, G",
+          "review": [
+            "w1-l2/g",
+            "w1-l3/n"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "options": [
+            {
+              "text": "E"
+            },
+            {
+              "text": "I",
+              "correct": true
+            }
+          ],
+          "audio": "q_i",
+          "layout": "row",
+          "explain": "I đọc là /aɪ/, E đọc là /iː/.",
+          "review": [
+            "w1-l3/i"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "options": [
+            {
+              "text": "seat"
+            },
+            {
+              "text": "sit",
+              "correct": true
+            }
+          ],
+          "audio": "q_sit",
+          "layout": "row",
+          "explain": "sit có âm /ɪ/ ngắn.",
+          "review": [
+            "w1-l4/sit",
+            "w1-l4/seat"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "options": [
+            {
+              "text": "leave",
+              "correct": true
+            },
+            {
+              "text": "live"
+            }
+          ],
+          "audio": "q_leave",
+          "layout": "row",
+          "explain": "leave có âm /iː/ dài.",
+          "review": [
+            "w1-l4/leave",
+            "w1-l4/live"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "options": [
+            {
+              "text": "three",
+              "correct": true
+            },
+            {
+              "text": "tree"
+            }
+          ],
+          "audio": "q_three",
+          "layout": "row",
+          "explain": "three có âm /θ/.",
+          "review": [
+            "w1-l6/3",
+            "w1-l6/think"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe từ hotel rồi bấm vào âm tiết được nhấn.",
+          "audio": "q_hotel",
+          "layout": "row",
+          "options": [
+            {
+              "text": "ho"
+            },
+            {
+              "text": "tel",
+              "correct": true
+            }
+          ],
+          "explain": "hotel đọc là ho-TEL.",
+          "review": [
+            "w1-l5/hotel"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe từ doctor rồi bấm vào âm tiết được nhấn.",
+          "audio": "q_doctor",
+          "layout": "row",
+          "options": [
+            {
+              "text": "doc",
+              "correct": true
+            },
+            {
+              "text": "tor"
+            }
+          ],
+          "explain": "doctor đọc là DOC-tor.",
+          "review": [
+            "w1-l5/doctor",
+            "w1-l5/need-doctor"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe một số điện thoại rồi gõ lại đủ mười chữ số.",
+          "audio": "q_phone",
+          "answer": "346-555-0129",
+          "review": [
+            "w1-l6/oh",
+            "w1-l6/9"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Một người quen chào bạn. Bạn đáp thế nào?",
+          "options": [
+            {
+              "text": "Good, thanks. And you?",
+              "correct": true
+            },
+            {
+              "text": "Nice to meet you."
+            },
+            {
+              "text": "My name is Lan."
+            }
+          ],
+          "audio": "q_how",
+          "explain": "Gặp lại người quen, bạn đáp ngắn rồi hỏi lại.",
+          "review": [
+            "w1-l1/good-thanks",
+            "w1-l1/and-you"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn đóng vai Lan trong đoạn hội thoại ở thư viện, dùng họ tên của bạn. Với số điện thoại, nếu không muốn đọc số thật, bạn dùng một số tự đặt."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "last",
+          "prompt": "Nhân viên hỏi họ của bạn. Bạn nói họ rồi đánh vần.",
+          "ask": "ask_last",
+          "model": "m_last",
+          "say": "[họ của bạn]. [đánh vần họ]",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "first",
+          "prompt": "Nhân viên hỏi tên của bạn. Bạn nói tên rồi đánh vần.",
+          "ask": "ask_first",
+          "model": "m_first",
+          "say": "[tên của bạn]. [đánh vần tên]",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "phone",
+          "prompt": "Nhân viên hỏi số điện thoại của bạn. Bạn đọc số.",
+          "ask": "ask_phone",
+          "model": "m_phone",
+          "say": "[số điện thoại của bạn]",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "intro",
+          "prompt": "Giới thiệu bạn, như ở bài 1.",
+          "model": "m_intro",
+          "say": "Hi. My name is [tên bạn]. Nice to meet you."
+        },
+        {
+          "type": "compare",
+          "prompt": "So với bài 1",
+          "first": "w1-l1/intro",
+          "latest": "w1-l7/intro",
+          "firstLabel": "Bản thu đầu tiên ở bài 1",
+          "latestLabel": "Bản thu hôm nay",
+          "body": [
+            "Bạn nghe bản thu câu giới thiệu đầu tiên của bạn ở bài 1, rồi nghe bản vừa thu. Để ý xem câu nói của bạn bây giờ trôi hơn, rõ hơn ở chỗ nào."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn điền mẫu đơn làm thẻ thư viện bằng thông tin của mình, viết không dấu. Nếu không muốn ghi số thật, bạn dùng một số tự đặt. Những gì bạn gõ chỉ lưu trên máy này."
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "field",
+          "prompt": "Mẫu đơn làm thẻ thư viện",
+          "label": "First name",
+          "done": "Đã điền. Ô First name ghi tên gọi."
+        },
+        {
+          "type": "write",
+          "mode": "field",
+          "prompt": "Mẫu đơn làm thẻ thư viện",
+          "label": "Last name",
+          "done": "Đã điền. Ô Last name ghi họ."
+        },
+        {
+          "type": "write",
+          "mode": "field",
+          "prompt": "Mẫu đơn làm thẻ thư viện",
+          "label": "Phone",
+          "done": "Đã điền. Ô Phone ghi số điện thoại."
+        },
+        {
+          "type": "cloze",
+          "id": "library",
+          "prompt": "Nghe lại đoạn hội thoại ở thư viện rồi gõ những chữ còn trống.",
+          "review": [
+            "w1-l3/last-name",
+            "w1-l3/first-name"
+          ],
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "r1",
+              "text": "Hi. Can I have your [[1:last]] [[2:name]], please?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r2",
+              "text": "[[1:Sorry]]?"
+            },
+            {
+              "speaker": "staff",
+              "audio": "r3",
+              "text": "Your last name, [[2:please]]."
+            },
+            {
+              "speaker": "lan",
+              "audio": "r4",
+              "text": "Nguyen. N, G, U, Y, E, N."
+            },
+            {
+              "speaker": "staff",
+              "audio": "r5",
+              "text": "And your [[1:first]] name?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r6",
+              "text": "Lan. L, A, N."
+            },
+            {
+              "speaker": "staff",
+              "audio": "r7",
+              "text": "What's your [[1:phone]] [[2:number]]?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r8",
+              "text": "Seven one [[2:three]], five five five, [[2:oh]] one four two."
+            },
+            {
+              "speaker": "staff",
+              "audio": "r9",
+              "text": "[[1:Thank]] you, Lan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tongket",
+      "title": "Tổng kết",
+      "steps": [
+        {
+          "type": "checklist",
+          "id": "week1",
+          "prompt": "Bạn đánh dấu những việc đã làm được",
+          "note": "Không ai chấm phần này. Việc nào chưa đánh dấu được, bạn ôn lại bài có việc ấy.",
+          "items": [
+            "Tôi chào và nói được tên mình.",
+            "Tôi nhờ được người khác nói lại hoặc nói chậm hơn.",
+            "Tôi đánh vần được họ tên mình mà không cần nhìn.",
+            "Tôi biết ô nào trên mẫu đơn ghi họ, ô nào ghi tên.",
+            "Tôi đọc được số điện thoại của mình.",
+            "Tôi nói được mình từ đâu đến.",
+            "Tôi trả lời được những câu hỏi ngắn về họ tên và số điện thoại của tôi."
+          ]
+        },
+        {
+          "type": "goal",
+          "key": "w1",
+          "week": 1,
+          "prompt": "Mục tiêu tuần sau",
+          "body": [
+            "Bạn chọn một việc muốn làm được bằng tiếng Anh trong tuần tới, như tự đánh vần tên mình khi gọi điện cho một văn phòng, rồi gõ vào ô dưới đây. Đầu bài ôn của tuần sau, app hiện lại mục tiêu này để bạn xem mình đã làm được chưa."
+          ],
+          "label": "Mục tiêu của bạn cho tuần sau",
+          "placeholder": "Ví dụ: tự đánh vần tên mình khi gọi điện đặt lịch khám"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "can-i-have",
+      "en": "Can I have your last name, please?",
+      "vi": "Cho tôi biết họ của bạn được không?",
+      "audio": "can_i_have"
+    },
+    {
+      "id": "library-card",
+      "en": "library card",
+      "vi": "thẻ thư viện",
+      "audio": "library_card"
+    }
+  ],
+  "canDo": [
+    "Làm thẻ thư viện bằng tiếng Anh: nói và đánh vần họ tên, đọc số điện thoại.",
+    "Biết những phần nào của tuần 1 còn cần ôn.",
+    "Đặt một mục tiêu nhỏ cho tuần sau."
+  ],
+  "realTask": "Tuần này, bạn chọn một trong hai việc. Một là đến thư viện gần nhà làm thẻ thư viện, tự nói và đánh vần họ tên của bạn. Hai là đánh vần họ tên và đọc số điện thoại cho một người nói tiếng Anh, như hàng xóm, đồng nghiệp hay người thân, nhờ họ viết lại, rồi xem họ viết có đúng không."
+}

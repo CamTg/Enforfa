@@ -1,0 +1,908 @@
+{
+  "id": "w1-l5",
+  "title": "Trọng âm và âm /ə/",
+  "goal": "Hết bài này, bạn biết mỗi từ tiếng Anh có một âm tiết được nhấn, đọc đúng trọng âm của mười từ thường gặp, và nói được mình từ đâu đến.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "kate": {
+      "name": "Kate",
+      "voice": "af_bella"
+    }
+  },
+  "listenNote": "Mười từ thường gặp, và một đoạn hội thoại ngắn nghe ba lượt",
+  "audio": {
+    "doctor": {
+      "text": "doctor",
+      "voice": "af_heart",
+      "ipa": "dˈɑːktɚ."
+    },
+    "s_doctor": {
+      "text": "doctor",
+      "voice": "af_heart",
+      "ipa": "dˈɑːktɚ.",
+      "speed": 0.75
+    },
+    "hospital": {
+      "text": "hospital",
+      "voice": "af_heart",
+      "ipa": "hˈɑːspɪɾəl."
+    },
+    "s_hospital": {
+      "text": "hospital",
+      "voice": "af_heart",
+      "ipa": "hˈɑːspɪɾəl.",
+      "speed": 0.75
+    },
+    "hotel": {
+      "text": "hotel",
+      "voice": "af_heart",
+      "ipa": "hoʊtˈɛl."
+    },
+    "s_hotel": {
+      "text": "hotel",
+      "voice": "af_heart",
+      "ipa": "hoʊtˈɛl.",
+      "speed": 0.75
+    },
+    "apartment": {
+      "text": "apartment",
+      "voice": "af_heart",
+      "ipa": "əpˈɑːɹtmənt."
+    },
+    "s_apartment": {
+      "text": "apartment",
+      "voice": "af_heart",
+      "ipa": "əpˈɑːɹtmənt.",
+      "speed": 0.75
+    },
+    "america": {
+      "text": "America",
+      "voice": "af_heart",
+      "ipa": "əmˈɛɹɪkə."
+    },
+    "s_america": {
+      "text": "America",
+      "voice": "af_heart",
+      "ipa": "əmˈɛɹɪkə.",
+      "speed": 0.75
+    },
+    "banana": {
+      "text": "banana",
+      "voice": "af_heart",
+      "ipa": "bənˈænə."
+    },
+    "s_banana": {
+      "text": "banana",
+      "voice": "af_heart",
+      "ipa": "bənˈænə.",
+      "speed": 0.75
+    },
+    "about": {
+      "text": "about",
+      "voice": "af_heart",
+      "ipa": "əbˈaʊt."
+    },
+    "s_about": {
+      "text": "about",
+      "voice": "af_heart",
+      "ipa": "əbˈaʊt.",
+      "speed": 0.75
+    },
+    "problem": {
+      "text": "problem",
+      "voice": "af_heart",
+      "ipa": "pɹˈɑːbləm."
+    },
+    "s_problem": {
+      "text": "problem",
+      "voice": "af_heart",
+      "ipa": "pɹˈɑːbləm.",
+      "speed": 0.75
+    },
+    "vietnam": {
+      "text": "Vietnam",
+      "voice": "af_heart",
+      "ipa": "vˌiːɛtnˈɑːm."
+    },
+    "s_vietnam": {
+      "text": "Vietnam",
+      "voice": "af_heart",
+      "ipa": "vˌiːɛtnˈɑːm.",
+      "speed": 0.75
+    },
+    "vietnamese": {
+      "text": "Vietnamese",
+      "voice": "af_heart",
+      "ipa": "vˌiːɛtnəmˈiːz."
+    },
+    "s_vietnamese": {
+      "text": "Vietnamese",
+      "voice": "af_heart",
+      "ipa": "vˌiːɛtnəmˈiːz.",
+      "speed": 0.75
+    },
+    "hotel_wrong": {
+      "text": "hotel (sai trọng âm)",
+      "voice": "af_heart",
+      "ipa": "hˈoʊtɛl."
+    },
+    "schwa": {
+      "text": "/ə/",
+      "voice": "af_heart",
+      "ipa": "ˈə.",
+      "speed": 0.9
+    },
+    "k1": {
+      "text": "Hi, I'm Kate. Where are you from?",
+      "voice": "af_bella"
+    },
+    "k2": {
+      "text": "I'm from Vietnam.",
+      "voice": "af_heart",
+      "ipa": "aɪm fɹʌm vˌiːɛtnˈɑːm."
+    },
+    "k3": {
+      "text": "Welcome to Houston!",
+      "voice": "af_bella",
+      "ipa": "wˈɛlkʌm tə hjˈuːstən!"
+    },
+    "k4": {
+      "text": "Thank you.",
+      "voice": "af_heart"
+    },
+    "c_kate": {
+      "text": "Hi, I'm Kate.",
+      "voice": "af_bella"
+    },
+    "c_where": {
+      "text": "Where are you from?",
+      "voice": "af_bella"
+    },
+    "im_from": {
+      "text": "I'm from…",
+      "voice": "af_heart",
+      "ipa": "aɪm fɹʌm"
+    },
+    "where_from": {
+      "text": "Where are you from?",
+      "voice": "af_heart"
+    },
+    "welcome": {
+      "text": "Welcome to Houston!",
+      "voice": "af_heart",
+      "ipa": "wˈɛlkʌm tə hjˈuːstən!"
+    },
+    "need_doctor": {
+      "text": "I need a doctor.",
+      "voice": "af_heart",
+      "ipa": "aɪ nˈiːd ə dˈɑːktɚ."
+    },
+    "m_from": {
+      "text": "I'm from Vietnam.",
+      "voice": "af_heart",
+      "ipa": "aɪm fɹʌm vˌiːɛtnˈɑːm.",
+      "speed": 0.9
+    },
+    "m_doctor": {
+      "text": "I need a doctor.",
+      "voice": "af_heart",
+      "ipa": "aɪ nˈiːd ə dˈɑːktɚ.",
+      "speed": 0.9
+    },
+    "m_words1": {
+      "text": "doctor, hospital, hotel, apartment, America.",
+      "voice": "af_heart",
+      "spell": [
+        "dˈɑːktɚ.",
+        "hˈɑːspɪɾəl.",
+        "hoʊtˈɛl.",
+        "əpˈɑːɹtmənt.",
+        "əmˈɛɹɪkə."
+      ],
+      "gap": 0.6
+    },
+    "m_words2": {
+      "text": "banana, about, problem, Vietnam, Vietnamese.",
+      "voice": "af_heart",
+      "spell": [
+        "bənˈænə.",
+        "əbˈaʊt.",
+        "pɹˈɑːbləm.",
+        "vˌiːɛtnˈɑːm.",
+        "vˌiːɛtnəmˈiːz."
+      ],
+      "gap": 0.6
+    },
+    "ask_from": {
+      "text": "Where are you from?",
+      "voice": "af_bella"
+    },
+    "w_from": {
+      "text": "I'm from Vietnam.",
+      "voice": "am_michael",
+      "ipa": "aɪm fɹʌm vˌiːɛtnˈɑːm.",
+      "speed": 0.9
+    },
+    "w_doctor": {
+      "text": "I need a doctor.",
+      "voice": "am_michael",
+      "ipa": "aɪ nˈiːd ə dˈɑːktɚ.",
+      "speed": 0.9
+    },
+    "wd_doctor": {
+      "text": "doctor",
+      "voice": "am_michael",
+      "ipa": "dˈɑːktɚ.",
+      "speed": 0.9
+    },
+    "wd_hotel": {
+      "text": "hotel",
+      "voice": "am_michael",
+      "ipa": "hoʊtˈɛl.",
+      "speed": 0.9
+    },
+    "wd_apartment": {
+      "text": "apartment",
+      "voice": "am_michael",
+      "ipa": "əpˈɑːɹtmənt.",
+      "speed": 0.9
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Mười từ thường gặp",
+          "body": [
+            "Người Việt quen đọc đều từng âm tiết. Trong tiếng Anh, mỗi từ có một âm tiết được nhấn, và khi đọc sai chỗ nhấn, người nghe khó nhận ra từ dù từng âm đều đúng.",
+            "Bạn nghe mười từ. Mỗi từ có cách ghi âm tiết được nhấn bằng chữ in hoa. Bấm Nghe cả đoạn để nghe cả mười từ đọc chậm; bấm vào từng từ để nghe ở tốc độ nói thường."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Mười từ",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "s_doctor",
+              "chunks": [
+                {
+                  "en": "doctor",
+                  "vi": "DOC-tor · bác sĩ",
+                  "audio": "doctor"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_hospital",
+              "chunks": [
+                {
+                  "en": "hospital",
+                  "vi": "HOS-pi-tal · bệnh viện",
+                  "audio": "hospital"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_hotel",
+              "chunks": [
+                {
+                  "en": "hotel",
+                  "vi": "ho-TEL · khách sạn",
+                  "audio": "hotel"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_apartment",
+              "chunks": [
+                {
+                  "en": "apartment",
+                  "vi": "a-PART-ment · căn hộ",
+                  "audio": "apartment"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_america",
+              "chunks": [
+                {
+                  "en": "America",
+                  "vi": "a-ME-ri-ca · nước Mỹ",
+                  "audio": "america"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_banana",
+              "chunks": [
+                {
+                  "en": "banana",
+                  "vi": "ba-NA-na · quả chuối",
+                  "audio": "banana"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_about",
+              "chunks": [
+                {
+                  "en": "about",
+                  "vi": "a-BOUT · về, khoảng",
+                  "audio": "about"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_problem",
+              "chunks": [
+                {
+                  "en": "problem",
+                  "vi": "PROB-lem · vấn đề",
+                  "audio": "problem"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_vietnam",
+              "chunks": [
+                {
+                  "en": "Vietnam",
+                  "vi": "vi-et-NAM · Việt Nam",
+                  "audio": "vietnam"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "s_vietnamese",
+              "chunks": [
+                {
+                  "en": "Vietnamese",
+                  "vi": "vi-et-na-MESE · người Việt, tiếng Việt",
+                  "audio": "vietnamese"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Ngày đầu đi làm",
+          "body": [
+            "Ngày đầu đi làm, Lan gặp một đồng nghiệp tên là Kate. Bạn nghe đoạn hội thoại ba lượt như ở bài 1."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Ngày đầu đi làm, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "kate",
+              "audio": "k1",
+              "chunks": [
+                {
+                  "en": "Hi, I'm Kate.",
+                  "vi": "Chào chị, tôi là Kate.",
+                  "audio": "c_kate"
+                },
+                {
+                  "en": "Where are you from?",
+                  "vi": "Chị từ đâu đến?",
+                  "audio": "c_where"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "k2",
+              "chunks": [
+                {
+                  "en": "I'm from Vietnam.",
+                  "vi": "Tôi từ Việt Nam đến.",
+                  "audio": "k2"
+                }
+              ]
+            },
+            {
+              "speaker": "kate",
+              "audio": "k3",
+              "chunks": [
+                {
+                  "en": "Welcome to Houston!",
+                  "vi": "Chào mừng chị đến Houston!",
+                  "audio": "k3"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "k4",
+              "chunks": [
+                {
+                  "en": "Thank you.",
+                  "vi": "Cảm ơn chị.",
+                  "audio": "k4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Ngày đầu đi làm, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "kate",
+              "audio": "k1",
+              "vi": "Chào chị, tôi là Kate. Chị từ đâu đến?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "k2",
+              "vi": "Tôi từ Việt Nam đến."
+            },
+            {
+              "speaker": "kate",
+              "audio": "k3",
+              "vi": "Chào mừng chị đến Houston!"
+            },
+            {
+              "speaker": "lan",
+              "audio": "k4",
+              "vi": "Cảm ơn chị."
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Ngày đầu đi làm, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "kate",
+              "audio": "k1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "k2"
+            },
+            {
+              "speaker": "kate",
+              "audio": "k3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "k4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Âm tiết được nhấn",
+          "body": [
+            "Trong tiếng Việt, âm tiết nào cũng đọc rõ như nhau. Trong tiếng Anh, mỗi từ có một âm tiết được nhấn: âm tiết ấy đọc to hơn, dài hơn và rõ hơn, còn các âm tiết khác đọc nhẹ và nhanh."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Cách app ghi trọng âm",
+          "body": [
+            "App viết âm tiết được nhấn bằng chữ in hoa: {{doctor|DOC-tor}}, {{hospital|HOS-pi-tal}}, {{hotel|ho-TEL}}, {{apartment|a-PART-ment}}.",
+            "Bạn nghe từng từ và để ý: âm tiết in hoa nghe to và dài hơn hẳn các âm tiết còn lại."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Âm /ə/",
+          "body": [
+            "Âm tiết không được nhấn thường đọc lướt thành một âm rất nhẹ, ghi là {{schwa|/ə/}}. Chẳng hạn chữ \"a\" đầu của {{about|a-BOUT}} hay chữ \"a\" cuối của {{banana|ba-NA-na}}.",
+            "Bạn đọc nhẹ âm này, đừng đọc rõ thành \"a\" như trong tiếng Việt."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nhấn không phải là thêm dấu",
+          "body": [
+            "Nhấn trọng âm là đọc âm tiết ấy to và dài hơn với giọng tự nhiên. Người Việt hay nhầm việc này với thêm dấu sắc, nên bạn đừng đọc âm tiết được nhấn như một chữ tiếng Việt có dấu."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Việt Nam trong tiếng Anh",
+          "body": [
+            "Tên nước Việt Nam trong tiếng Anh là {{vietnam|vi-et-NAM}}, nhấn ở âm tiết cuối. Người Việt hay tiếng Việt là {{vietnamese|vi-et-na-MESE}}.",
+            "Muốn nói mình từ Việt Nam đến, bạn nói {{im_from|Tôi từ… đến}} rồi thêm Vietnam: {{k2}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Hỏi và đáp về quê quán",
+          "body": [
+            "Khi gặp người mới đến, người ta hay hỏi {{where_from|Bạn từ đâu đến?}} và nói {{welcome|Chào mừng bạn đến Houston!}} Bạn đáp {{k4|Cảm ơn.}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Khi cần bác sĩ",
+          "body": [
+            "Câu {{need_doctor|Tôi cần bác sĩ.}} có trọng âm ở DOC. Nếu bạn nhấn sai thành doc-TOR, người nghe dễ không nhận ra từ, nên câu này đáng luyện kỹ."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Nghe từ hotel rồi bấm vào âm tiết được nhấn.",
+          "audio": "hotel",
+          "layout": "row",
+          "options": [
+            {
+              "text": "ho"
+            },
+            {
+              "text": "tel",
+              "correct": true
+            }
+          ],
+          "explain": "hotel đọc là ho-TEL.",
+          "review": [
+            "w1-l5/hotel"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe từ doctor rồi bấm vào âm tiết được nhấn.",
+          "audio": "doctor",
+          "layout": "row",
+          "options": [
+            {
+              "text": "doc",
+              "correct": true
+            },
+            {
+              "text": "tor"
+            }
+          ],
+          "explain": "doctor đọc là DOC-tor.",
+          "review": [
+            "w1-l5/doctor"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe từ apartment rồi bấm vào âm tiết được nhấn.",
+          "audio": "apartment",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a"
+            },
+            {
+              "text": "part",
+              "correct": true
+            },
+            {
+              "text": "ment"
+            }
+          ],
+          "explain": "apartment đọc là a-PART-ment.",
+          "review": [
+            "w1-l5/apartment"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe từ banana rồi bấm vào âm tiết được nhấn.",
+          "audio": "banana",
+          "layout": "row",
+          "options": [
+            {
+              "text": "ba"
+            },
+            {
+              "text": "na",
+              "correct": true
+            },
+            {
+              "text": "na"
+            }
+          ],
+          "explain": "banana đọc là ba-NA-na; hai âm \"a\" còn lại đọc nhẹ thành /ə/.",
+          "review": []
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe từ Vietnamese rồi bấm vào âm tiết được nhấn.",
+          "audio": "vietnamese",
+          "layout": "row",
+          "options": [
+            {
+              "text": "vi"
+            },
+            {
+              "text": "et"
+            },
+            {
+              "text": "na"
+            },
+            {
+              "text": "mese",
+              "correct": true
+            }
+          ],
+          "explain": "Vietnamese đọc là vi-et-na-MESE.",
+          "review": [
+            "w1-l5/vietnamese"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe từ Vietnam rồi bấm vào âm tiết được nhấn.",
+          "audio": "vietnam",
+          "layout": "row",
+          "options": [
+            {
+              "text": "vi"
+            },
+            {
+              "text": "et"
+            },
+            {
+              "text": "nam",
+              "correct": true
+            }
+          ],
+          "explain": "Vietnam đọc là vi-et-NAM.",
+          "review": [
+            "w1-l5/vietnam"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai cách đọc từ hotel. Cách nào đúng trọng âm?",
+          "options": [
+            {
+              "label": "Cách 1",
+              "audio": "hotel_wrong"
+            },
+            {
+              "label": "Cách 2",
+              "audio": "hotel",
+              "correct": true
+            }
+          ],
+          "explain": "hotel nhấn ở âm tiết sau: ho-TEL.",
+          "review": [
+            "w1-l5/hotel"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Kate hỏi \"Where are you from?\". Bạn đáp thế nào?",
+          "audio": "ask_from",
+          "options": [
+            {
+              "text": "I'm from Vietnam.",
+              "correct": true
+            },
+            {
+              "text": "I live in Vietnam."
+            },
+            {
+              "text": "Welcome to Houston!"
+            }
+          ],
+          "explain": "Where are you from? hỏi bạn từ đâu đến, nên bạn đáp I'm from…",
+          "review": [
+            "w1-l5/im-from"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn đọc theo mẫu, thu âm, rồi nghe lại xem âm tiết được nhấn trong bản của bạn có to và dài hơn các âm tiết khác không."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "words1",
+          "prompt": "Đọc năm từ đầu.",
+          "model": "m_words1",
+          "say": "DOC-tor, HOS-pi-tal, ho-TEL, a-PART-ment, a-ME-ri-ca",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "words2",
+          "prompt": "Đọc năm từ sau.",
+          "model": "m_words2",
+          "say": "ba-NA-na, a-BOUT, PROB-lem, vi-et-NAM, vi-et-na-MESE",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "from",
+          "prompt": "Kate hỏi bạn từ đâu đến. Bạn trả lời.",
+          "ask": "ask_from",
+          "model": "m_from",
+          "say": "I'm from Vietnam."
+        },
+        {
+          "type": "speak",
+          "id": "doctor",
+          "prompt": "Nói rằng bạn cần bác sĩ.",
+          "model": "m_doctor",
+          "say": "I need a doctor."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "wd_doctor",
+          "answer": "doctor",
+          "review": [
+            "w1-l5/doctor"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "wd_hotel",
+          "answer": "hotel",
+          "review": [
+            "w1-l5/hotel"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "wd_apartment",
+          "answer": "apartment",
+          "review": [
+            "w1-l5/apartment"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w_from",
+          "answer": "I'm from Vietnam."
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w_doctor",
+          "answer": "I need a doctor."
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "doctor",
+      "en": "doctor",
+      "vi": "bác sĩ · DOC-tor",
+      "audio": "doctor"
+    },
+    {
+      "id": "hospital",
+      "en": "hospital",
+      "vi": "bệnh viện · HOS-pi-tal",
+      "audio": "hospital"
+    },
+    {
+      "id": "hotel",
+      "en": "hotel",
+      "vi": "khách sạn · ho-TEL",
+      "audio": "hotel"
+    },
+    {
+      "id": "apartment",
+      "en": "apartment",
+      "vi": "căn hộ · a-PART-ment",
+      "audio": "apartment"
+    },
+    {
+      "id": "america",
+      "en": "America",
+      "vi": "nước Mỹ · a-ME-ri-ca",
+      "audio": "america"
+    },
+    {
+      "id": "problem",
+      "en": "problem",
+      "vi": "vấn đề · PROB-lem",
+      "audio": "problem"
+    },
+    {
+      "id": "vietnam",
+      "en": "Vietnam",
+      "vi": "Việt Nam · vi-et-NAM",
+      "audio": "vietnam"
+    },
+    {
+      "id": "vietnamese",
+      "en": "Vietnamese",
+      "vi": "người Việt, tiếng Việt · vi-et-na-MESE",
+      "audio": "vietnamese"
+    },
+    {
+      "id": "im-from",
+      "en": "I'm from…",
+      "vi": "Tôi từ… đến",
+      "audio": "im_from"
+    },
+    {
+      "id": "where-from",
+      "en": "Where are you from?",
+      "vi": "Bạn từ đâu đến?",
+      "audio": "where_from"
+    },
+    {
+      "id": "welcome",
+      "en": "Welcome to…!",
+      "vi": "Chào mừng bạn đến…!",
+      "audio": "welcome"
+    },
+    {
+      "id": "need-doctor",
+      "en": "I need a doctor.",
+      "vi": "Tôi cần bác sĩ.",
+      "audio": "need_doctor"
+    }
+  ],
+  "canDo": [
+    "Biết mỗi từ tiếng Anh có một âm tiết được nhấn.",
+    "Đọc đúng trọng âm của mười từ thường gặp, như DOC-tor, ho-TEL.",
+    "Nói mình từ đâu đến, và đáp khi người khác chào mừng."
+  ],
+  "realTask": "Hôm nay, nếu có người nói tiếng Anh hỏi bạn từ đâu đến, bạn đáp I'm from Vietnam, nhấn ở NAM. Nếu không ai hỏi, bạn chủ động hỏi một đồng nghiệp hay hàng xóm Where are you from?"
+}

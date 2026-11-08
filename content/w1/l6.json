@@ -1,0 +1,1204 @@
+{
+  "id": "w1-l6",
+  "title": "Âm th và số từ 0 đến 10",
+  "goal": "Hết bài này, bạn đọc được hai âm th, đếm từ 0 đến 10 với đủ âm cuối, và đọc được số điện thoại của mình.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "staff": {
+      "name": "Nhân viên",
+      "voice": "af_bella"
+    },
+    "man": {
+      "name": "Người nghe máy",
+      "voice": "am_fenrir"
+    }
+  },
+  "listenNote": "Hai đoạn hội thoại về số điện thoại, mỗi đoạn nghe ba lượt, và các số từ 0 đến 10",
+  "audio": {
+    "n0": {
+      "text": "zero",
+      "voice": "af_heart",
+      "ipa": "zˈiəɹoʊ.",
+      "speed": 0.9
+    },
+    "n1": {
+      "text": "one",
+      "voice": "af_heart",
+      "ipa": "wˈʌn.",
+      "speed": 0.9
+    },
+    "n2": {
+      "text": "two",
+      "voice": "af_heart",
+      "ipa": "tˈuː.",
+      "speed": 0.9
+    },
+    "n3": {
+      "text": "three",
+      "voice": "af_heart",
+      "ipa": "θɹˈiː.",
+      "speed": 0.9
+    },
+    "n4": {
+      "text": "four",
+      "voice": "af_heart",
+      "ipa": "fˈɔːɹ.",
+      "speed": 0.9
+    },
+    "n5": {
+      "text": "five",
+      "voice": "af_heart",
+      "ipa": "fˈaɪv.",
+      "speed": 0.9
+    },
+    "n6": {
+      "text": "six",
+      "voice": "af_heart",
+      "ipa": "sˈɪks.",
+      "speed": 0.9
+    },
+    "n7": {
+      "text": "seven",
+      "voice": "af_heart",
+      "ipa": "sˈɛvən.",
+      "speed": 0.9
+    },
+    "n8": {
+      "text": "eight",
+      "voice": "af_heart",
+      "ipa": "ˈeɪt.",
+      "speed": 0.9
+    },
+    "n9": {
+      "text": "nine",
+      "voice": "af_heart",
+      "ipa": "nˈaɪn.",
+      "speed": 0.9
+    },
+    "n10": {
+      "text": "ten",
+      "voice": "af_heart",
+      "ipa": "tˈɛn.",
+      "speed": 0.9
+    },
+    "oh": {
+      "text": "oh",
+      "voice": "af_heart",
+      "ipa": "ˈoʊ.",
+      "speed": 0.9
+    },
+    "think": {
+      "text": "think",
+      "voice": "af_heart",
+      "ipa": "θˈɪŋk.",
+      "speed": 0.9
+    },
+    "thank_you": {
+      "text": "thank you",
+      "voice": "af_heart",
+      "ipa": "θˈæŋk juː.",
+      "speed": 0.9
+    },
+    "this": {
+      "text": "this",
+      "voice": "af_heart",
+      "ipa": "ðˈɪs.",
+      "speed": 0.9
+    },
+    "that": {
+      "text": "that",
+      "voice": "af_heart",
+      "ipa": "ðˈæt.",
+      "speed": 0.9
+    },
+    "mother": {
+      "text": "mother",
+      "voice": "af_heart",
+      "ipa": "mˈʌðɚ.",
+      "speed": 0.9
+    },
+    "tree": {
+      "text": "tree",
+      "voice": "af_heart",
+      "ipa": "tɹˈiː.",
+      "speed": 0.9
+    },
+    "three": {
+      "text": "three",
+      "voice": "af_heart",
+      "ipa": "θɹˈiː.",
+      "speed": 0.9
+    },
+    "th1": {
+      "text": "/θ/",
+      "voice": "af_heart",
+      "ipa": "θ.",
+      "speed": 0.9
+    },
+    "th2": {
+      "text": "/ð/",
+      "voice": "af_heart",
+      "ipa": "ð.",
+      "speed": 0.9
+    },
+    "a1": {
+      "text": "What's your phone number?",
+      "voice": "af_bella"
+    },
+    "a2": {
+      "text": "It's 713-555-0142.",
+      "voice": "af_heart",
+      "spell": [
+        "ɪts",
+        "sˈɛvən wˈʌn θɹˈiː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn fˈɔːɹ tˈuː."
+      ],
+      "gap": 0.35
+    },
+    "a3": {
+      "text": "Thank you.",
+      "voice": "af_bella"
+    },
+    "b1": {
+      "text": "Hello?",
+      "voice": "am_fenrir"
+    },
+    "b2": {
+      "text": "Hi. Is this Minh?",
+      "voice": "af_heart",
+      "ipa": "hˈaɪ. ɪz ðɪs mˈɪn?"
+    },
+    "b3": {
+      "text": "Sorry, you have the wrong number.",
+      "voice": "am_fenrir"
+    },
+    "b4": {
+      "text": "Is this 713-555-0186?",
+      "voice": "af_heart",
+      "spell": [
+        "ɪz ðˈɪs",
+        "sˈɛvən wˈʌn θɹˈiː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn ˈeɪt sˈɪks?"
+      ],
+      "gap": 0.3
+    },
+    "b5": {
+      "text": "No, this is 713-555-0168.",
+      "voice": "am_fenrir",
+      "spell": [
+        "nˈoʊ, ðɪs ɪz",
+        "sˈɛvən wˈʌn θɹˈiː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn sˈɪks ˈeɪt."
+      ],
+      "gap": 0.3
+    },
+    "b6": {
+      "text": "Oh, sorry!",
+      "voice": "af_heart"
+    },
+    "b7": {
+      "text": "That's OK. Bye.",
+      "voice": "am_fenrir"
+    },
+    "c_hi": {
+      "text": "Hi.",
+      "voice": "af_heart"
+    },
+    "c_is_minh": {
+      "text": "Is this Minh?",
+      "voice": "af_heart",
+      "ipa": "ɪz ðɪs mˈɪn?"
+    },
+    "c_sorry": {
+      "text": "Sorry,",
+      "voice": "am_fenrir"
+    },
+    "c_wrong": {
+      "text": "you have the wrong number.",
+      "voice": "am_fenrir"
+    },
+    "c_ok": {
+      "text": "That's OK.",
+      "voice": "am_fenrir"
+    },
+    "c_bye": {
+      "text": "Bye.",
+      "voice": "am_fenrir"
+    },
+    "count": {
+      "text": "zero, one, two, three, four, five, six, seven, eight, nine, ten.",
+      "voice": "af_heart",
+      "spell": [
+        "zˈiəɹoʊ.",
+        "wˈʌn.",
+        "tˈuː.",
+        "θɹˈiː.",
+        "fˈɔːɹ.",
+        "fˈaɪv.",
+        "sˈɪks.",
+        "sˈɛvən.",
+        "ˈeɪt.",
+        "nˈaɪn.",
+        "tˈɛn."
+      ],
+      "gap": 0.45
+    },
+    "phone_example": {
+      "text": "seven one three, five five five, oh one four two",
+      "voice": "af_heart",
+      "spell": [
+        "sˈɛvən wˈʌn θɹˈiː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn fˈɔːɹ tˈuː."
+      ],
+      "gap": 0.45
+    },
+    "phone_number": {
+      "text": "phone number",
+      "voice": "af_heart"
+    },
+    "whats_phone": {
+      "text": "What's your phone number?",
+      "voice": "af_heart"
+    },
+    "its": {
+      "text": "It's…",
+      "voice": "af_heart",
+      "ipa": "ɪts"
+    },
+    "is_this": {
+      "text": "Is this…?",
+      "voice": "af_heart",
+      "ipa": "ɪz ðˈɪs?"
+    },
+    "wrong_number": {
+      "text": "You have the wrong number.",
+      "voice": "af_heart"
+    },
+    "oh_sorry": {
+      "text": "Oh, sorry!",
+      "voice": "af_heart"
+    },
+    "ask_phone": {
+      "text": "What's your phone number?",
+      "voice": "af_bella"
+    },
+    "m_phone": {
+      "text": "It's 713-555-0142.",
+      "voice": "af_heart",
+      "spell": [
+        "ɪts",
+        "sˈɛvən wˈʌn θɹˈiː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn fˈɔːɹ tˈuː."
+      ],
+      "gap": 0.4
+    },
+    "m_thank": {
+      "text": "Thank you.",
+      "voice": "af_heart",
+      "speed": 0.9
+    },
+    "q_0168": {
+      "text": "713-555-0168",
+      "voice": "am_michael",
+      "spell": [
+        "sˈɛvən wˈʌn θɹˈiː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn sˈɪks ˈeɪt."
+      ],
+      "gap": 0.4
+    },
+    "w_num1": {
+      "text": "281-555-0193",
+      "voice": "am_michael",
+      "spell": [
+        "tˈuː ˈeɪt wˈʌn,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn nˈaɪn θɹˈiː."
+      ],
+      "gap": 0.5
+    },
+    "w_num2": {
+      "text": "832-555-0157",
+      "voice": "am_michael",
+      "spell": [
+        "ˈeɪt θɹˈiː tˈuː,",
+        "fˈaɪv fˈaɪv fˈaɪv,",
+        "ˈoʊ wˈʌn fˈaɪv sˈɛvən."
+      ],
+      "gap": 0.5
+    },
+    "w_whats": {
+      "text": "What's your phone number?",
+      "voice": "am_michael",
+      "speed": 0.9
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Số điện thoại",
+          "body": [
+            "Bạn nghe hai đoạn hội thoại, mỗi đoạn ba lượt như ở bài 1. Ở đoạn 1, nhân viên quầy đăng ký hỏi số điện thoại của Lan. Ở đoạn 2, Lan gọi cho Minh nhưng bấm nhầm số.",
+            "Sau hai đoạn hội thoại, bạn nghe các số từ 0 đến 10."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Đoạn 1, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "a1",
+              "chunks": [
+                {
+                  "en": "What's your phone number?",
+                  "vi": "Số điện thoại của chị là gì?",
+                  "audio": "a1"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "a2",
+              "chunks": [
+                {
+                  "en": "It's 713-555-0142.",
+                  "vi": "Số 713-555-0142.",
+                  "audio": "a2"
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "a3",
+              "chunks": [
+                {
+                  "en": "Thank you.",
+                  "vi": "Cảm ơn chị.",
+                  "audio": "a3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Đoạn 1, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "a1",
+              "vi": "Số điện thoại của chị là gì?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "a2",
+              "vi": "Số 713-555-0142."
+            },
+            {
+              "speaker": "staff",
+              "audio": "a3",
+              "vi": "Cảm ơn chị."
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Đoạn 1, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "a1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "a2"
+            },
+            {
+              "speaker": "staff",
+              "audio": "a3"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Đoạn 2, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "man",
+              "audio": "b1",
+              "chunks": [
+                {
+                  "en": "Hello?",
+                  "vi": "A lô?",
+                  "audio": "b1"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "b2",
+              "chunks": [
+                {
+                  "en": "Hi.",
+                  "vi": "Chào anh.",
+                  "audio": "c_hi"
+                },
+                {
+                  "en": "Is this Minh?",
+                  "vi": "Có phải Minh không ạ?",
+                  "audio": "c_is_minh"
+                }
+              ]
+            },
+            {
+              "speaker": "man",
+              "audio": "b3",
+              "chunks": [
+                {
+                  "en": "Sorry,",
+                  "vi": "Xin lỗi,",
+                  "audio": "c_sorry"
+                },
+                {
+                  "en": "you have the wrong number.",
+                  "vi": "chị gọi nhầm số rồi.",
+                  "audio": "c_wrong"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "b4",
+              "chunks": [
+                {
+                  "en": "Is this 713-555-0186?",
+                  "vi": "Có phải số 713-555-0186 không ạ?",
+                  "audio": "b4"
+                }
+              ]
+            },
+            {
+              "speaker": "man",
+              "audio": "b5",
+              "chunks": [
+                {
+                  "en": "No, this is 713-555-0168.",
+                  "vi": "Không, số này là 713-555-0168.",
+                  "audio": "b5"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "b6",
+              "chunks": [
+                {
+                  "en": "Oh, sorry!",
+                  "vi": "Ôi, xin lỗi anh!",
+                  "audio": "b6"
+                }
+              ]
+            },
+            {
+              "speaker": "man",
+              "audio": "b7",
+              "chunks": [
+                {
+                  "en": "That's OK.",
+                  "vi": "Không sao.",
+                  "audio": "c_ok"
+                },
+                {
+                  "en": "Bye.",
+                  "vi": "Chào chị.",
+                  "audio": "c_bye"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Đoạn 2, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "man",
+              "audio": "b1",
+              "vi": "A lô?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "b2",
+              "vi": "Chào anh. Có phải Minh không ạ?"
+            },
+            {
+              "speaker": "man",
+              "audio": "b3",
+              "vi": "Xin lỗi, chị gọi nhầm số rồi."
+            },
+            {
+              "speaker": "lan",
+              "audio": "b4",
+              "vi": "Có phải số 713-555-0186 không ạ?"
+            },
+            {
+              "speaker": "man",
+              "audio": "b5",
+              "vi": "Không, số này là 713-555-0168."
+            },
+            {
+              "speaker": "lan",
+              "audio": "b6",
+              "vi": "Ôi, xin lỗi anh!"
+            },
+            {
+              "speaker": "man",
+              "audio": "b7",
+              "vi": "Không sao. Chào chị."
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Đoạn 2, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "man",
+              "audio": "b1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "b2"
+            },
+            {
+              "speaker": "man",
+              "audio": "b3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "b4"
+            },
+            {
+              "speaker": "man",
+              "audio": "b5"
+            },
+            {
+              "speaker": "lan",
+              "audio": "b6"
+            },
+            {
+              "speaker": "man",
+              "audio": "b7"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Các số từ 0 đến 10",
+          "layout": "grid",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "n0",
+              "chunks": [
+                {
+                  "en": "zero",
+                  "vi": "0 · /ˈzɪroʊ/",
+                  "audio": "n0"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n1",
+              "chunks": [
+                {
+                  "en": "one",
+                  "vi": "1 · /wʌn/",
+                  "audio": "n1"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n2",
+              "chunks": [
+                {
+                  "en": "two",
+                  "vi": "2 · /tuː/",
+                  "audio": "n2"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n3",
+              "chunks": [
+                {
+                  "en": "three",
+                  "vi": "3 · /θriː/",
+                  "audio": "n3"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n4",
+              "chunks": [
+                {
+                  "en": "four",
+                  "vi": "4 · /fɔːr/",
+                  "audio": "n4"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n5",
+              "chunks": [
+                {
+                  "en": "five",
+                  "vi": "5 · /faɪv/",
+                  "audio": "n5"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n6",
+              "chunks": [
+                {
+                  "en": "six",
+                  "vi": "6 · /sɪks/",
+                  "audio": "n6"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n7",
+              "chunks": [
+                {
+                  "en": "seven",
+                  "vi": "7 · /ˈsɛvən/",
+                  "audio": "n7"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n8",
+              "chunks": [
+                {
+                  "en": "eight",
+                  "vi": "8 · /eɪt/",
+                  "audio": "n8"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n9",
+              "chunks": [
+                {
+                  "en": "nine",
+                  "vi": "9 · /naɪn/",
+                  "audio": "n9"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "n10",
+              "chunks": [
+                {
+                  "en": "ten",
+                  "vi": "10 · /tɛn/",
+                  "audio": "n10"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Hai âm th",
+          "body": [
+            "Tiếng Anh có hai âm viết là \"th\", và tiếng Việt không có âm nào giống chúng, kể cả \"th\" trong \"thương\".",
+            "Bài dạy âm th cùng với số vì {{three|ba}} là số người Việt hay đọc thành {{tree|cái cây}}."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Cách đọc",
+          "body": [
+            "Để đọc hai âm này, bạn đặt đầu lưỡi giữa hai hàm răng rồi thổi hơi ra. Soi gương, bạn sẽ thấy đầu lưỡi lộ ra giữa hai hàm răng.",
+            "Âm {{th1|/θ/}} chỉ có hơi, như trong {{think|nghĩ}}, {{three}}, {{thank_you|cảm ơn}}.",
+            "Âm {{th2|/ð/}} có rung ở cổ họng, như trong {{this|cái này}}, {{that|cái kia}}, {{mother|mẹ}}."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Các số từ 0 đến 10",
+          "body": [
+            "{{n0}}, {{n1}}, {{n2}}, {{n3}}, {{n4}}, {{n5}}, {{n6}}, {{n7}}, {{n8}}, {{n9}}, {{n10}}."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Âm cuối của các số",
+          "body": [
+            "Bạn đọc đủ âm cuối của từng số: {{n5}} kết thúc bằng /v/, {{n8}} bằng /t/, {{n9}} bằng /n/.",
+            "Riêng {{n6}} kết thúc bằng hai âm /k/ và /s/ liền nhau, và bạn cần đọc đủ cả hai. Thiếu âm cuối thì five và nine, hay six và sick, nghe rất dễ lẫn."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Đọc số điện thoại",
+          "body": [
+            "Số điện thoại ở Mỹ có mười chữ số, chia ba nhóm 3, 3 và 4, và được đọc từng chữ số một. Số 0 thường đọc là {{oh}}.",
+            "Chẳng hạn 713-555-0142 đọc là {{phone_example}}. Giữa hai nhóm, bạn nghỉ một chút để người nghe kịp ghi."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Hỏi và đáp",
+          "body": [
+            "Người ta hỏi số điện thoại của bạn bằng câu {{whats_phone|Số điện thoại của bạn là gì?}} Bạn đáp {{its|Số…}} rồi đọc số."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Khi gọi nhầm số",
+          "body": [
+            "Khi bạn gọi nhầm số, người nghe máy sẽ nói {{wrong_number|Bạn gọi nhầm số rồi.}}",
+            "Bạn hỏi lại số mình định gọi bằng {{is_this|Có phải… không?}} rồi xin lỗi bằng {{oh_sorry|Ôi, xin lỗi!}}",
+            "Ở đoạn 2, số Lan định gọi và số Lan bấm nhầm chỉ khác nhau ở hai chữ số cuối, 86 và 68, nên bạn nghe kỹ từng chữ số."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "three",
+          "options": [
+            {
+              "text": "three",
+              "correct": true
+            },
+            {
+              "text": "tree"
+            }
+          ],
+          "layout": "row",
+          "explain": "three có âm /θ/: đầu lưỡi giữa hai hàm răng.",
+          "review": [
+            "w1-l6/three"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "tree",
+          "options": [
+            {
+              "text": "three"
+            },
+            {
+              "text": "tree",
+              "correct": true
+            }
+          ],
+          "layout": "row",
+          "explain": "tree bắt đầu bằng /t/, không có âm th."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "think",
+          "options": [
+            {
+              "text": "think",
+              "correct": true
+            },
+            {
+              "text": "sink"
+            }
+          ],
+          "layout": "row",
+          "explain": "think có âm /θ/, sink có âm /s/.",
+          "review": [
+            "w1-l6/think"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một số rồi chọn số bạn vừa nghe.",
+          "audio": "n5",
+          "options": [
+            {
+              "text": "5",
+              "correct": true
+            },
+            {
+              "text": "9"
+            }
+          ],
+          "layout": "row",
+          "explain": "five kết thúc bằng /v/.",
+          "review": [
+            "w1-l6/5"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một số rồi chọn số bạn vừa nghe.",
+          "audio": "n9",
+          "options": [
+            {
+              "text": "5"
+            },
+            {
+              "text": "9",
+              "correct": true
+            }
+          ],
+          "layout": "row",
+          "explain": "nine kết thúc bằng /n/.",
+          "review": [
+            "w1-l6/9"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một số rồi chọn số bạn vừa nghe.",
+          "audio": "n6",
+          "options": [
+            {
+              "text": "3"
+            },
+            {
+              "text": "6",
+              "correct": true
+            },
+            {
+              "text": "7"
+            },
+            {
+              "text": "8"
+            }
+          ],
+          "layout": "row",
+          "explain": "six kết thúc bằng /ks/.",
+          "review": [
+            "w1-l6/6"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một số rồi chọn số bạn vừa nghe.",
+          "audio": "n8",
+          "options": [
+            {
+              "text": "3"
+            },
+            {
+              "text": "6"
+            },
+            {
+              "text": "8",
+              "correct": true
+            },
+            {
+              "text": "10"
+            }
+          ],
+          "layout": "row",
+          "explain": "eight kết thúc bằng /t/.",
+          "review": [
+            "w1-l6/8"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một số điện thoại rồi chọn số bạn vừa nghe.",
+          "audio": "q_0168",
+          "options": [
+            {
+              "text": "713-555-0186"
+            },
+            {
+              "text": "713-555-0168",
+              "correct": true
+            }
+          ],
+          "explain": "Hai chữ số cuối là six eight: 68.",
+          "review": [
+            "w1-l6/6",
+            "w1-l6/8"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Bạn gọi nhầm số. Người nghe máy nói gì?",
+          "options": [
+            {
+              "text": "You have the wrong number.",
+              "correct": true
+            },
+            {
+              "text": "What's your phone number?"
+            },
+            {
+              "text": "Thank you."
+            }
+          ],
+          "explain": "You have the wrong number nghĩa là \"Bạn gọi nhầm số rồi\".",
+          "review": [
+            "w1-l6/wrong-number"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn đọc theo mẫu và thu âm. Với số điện thoại, nếu không muốn đọc số thật, bạn dùng một số tự đặt."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "count",
+          "prompt": "Đếm từ 0 đến 10, đọc đủ âm cuối.",
+          "model": "count",
+          "say": "zero, one, two, three, four, five, six, seven, eight, nine, ten",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "thank",
+          "prompt": "Nói cảm ơn, đầu lưỡi đặt giữa hai hàm răng.",
+          "model": "m_thank",
+          "say": "Thank you."
+        },
+        {
+          "type": "speak",
+          "id": "phone",
+          "prompt": "Nhân viên hỏi số điện thoại của bạn. Bạn trả lời.",
+          "ask": "ask_phone",
+          "model": "m_phone",
+          "say": "It's [số điện thoại của bạn].",
+          "check": false
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe một số điện thoại rồi gõ lại đủ mười chữ số.",
+          "audio": "w_num1",
+          "answer": "281-555-0193",
+          "note": "Bạn gõ có gạch nối hay không đều được."
+        },
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe một số điện thoại rồi gõ lại đủ mười chữ số.",
+          "audio": "w_num2",
+          "answer": "832-555-0157"
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w_whats",
+          "answer": "What's your phone number?"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "0",
+      "en": "zero",
+      "vi": "0 /ˈzɪroʊ/",
+      "audio": "n0"
+    },
+    {
+      "id": "1",
+      "en": "one",
+      "vi": "1 /wʌn/",
+      "audio": "n1"
+    },
+    {
+      "id": "2",
+      "en": "two",
+      "vi": "2 /tuː/",
+      "audio": "n2"
+    },
+    {
+      "id": "3",
+      "en": "three",
+      "vi": "3 /θriː/",
+      "audio": "n3"
+    },
+    {
+      "id": "4",
+      "en": "four",
+      "vi": "4 /fɔːr/",
+      "audio": "n4"
+    },
+    {
+      "id": "5",
+      "en": "five",
+      "vi": "5 /faɪv/",
+      "audio": "n5"
+    },
+    {
+      "id": "6",
+      "en": "six",
+      "vi": "6 /sɪks/",
+      "audio": "n6"
+    },
+    {
+      "id": "7",
+      "en": "seven",
+      "vi": "7 /ˈsɛvən/",
+      "audio": "n7"
+    },
+    {
+      "id": "8",
+      "en": "eight",
+      "vi": "8 /eɪt/",
+      "audio": "n8"
+    },
+    {
+      "id": "9",
+      "en": "nine",
+      "vi": "9 /naɪn/",
+      "audio": "n9"
+    },
+    {
+      "id": "10",
+      "en": "ten",
+      "vi": "10 /tɛn/",
+      "audio": "n10"
+    },
+    {
+      "id": "oh",
+      "en": "oh",
+      "vi": "số 0 khi đọc số điện thoại",
+      "audio": "oh"
+    },
+    {
+      "id": "think",
+      "en": "think",
+      "vi": "nghĩ · /θɪŋk/",
+      "audio": "think"
+    },
+    {
+      "id": "thank-you",
+      "en": "thank you",
+      "vi": "cảm ơn",
+      "audio": "thank_you"
+    },
+    {
+      "id": "this",
+      "en": "this",
+      "vi": "cái này · /ðɪs/",
+      "audio": "this"
+    },
+    {
+      "id": "that",
+      "en": "that",
+      "vi": "cái kia · /ðæt/",
+      "audio": "that"
+    },
+    {
+      "id": "phone-number",
+      "en": "phone number",
+      "vi": "số điện thoại",
+      "audio": "phone_number"
+    },
+    {
+      "id": "whats-phone",
+      "en": "What's your phone number?",
+      "vi": "Số điện thoại của bạn là gì?",
+      "audio": "whats_phone"
+    },
+    {
+      "id": "its",
+      "en": "It's…",
+      "vi": "Số… / Nó là…",
+      "audio": "its"
+    },
+    {
+      "id": "is-this",
+      "en": "Is this…?",
+      "vi": "Có phải… không? (khi gọi điện)",
+      "audio": "is_this"
+    },
+    {
+      "id": "wrong-number",
+      "en": "You have the wrong number.",
+      "vi": "Bạn gọi nhầm số rồi.",
+      "audio": "wrong_number"
+    },
+    {
+      "id": "oh-sorry",
+      "en": "Oh, sorry!",
+      "vi": "Ôi, xin lỗi!",
+      "audio": "oh_sorry"
+    }
+  ],
+  "canDo": [
+    "Đọc hai âm th, như trong three và this.",
+    "Đếm từ 0 đến 10 với đủ âm cuối.",
+    "Đọc số điện thoại của mình và nghe ghi được số của người khác.",
+    "Biết nói gì khi gọi nhầm số."
+  ],
+  "realTask": "Hôm nay, bạn đọc số điện thoại của mình bằng tiếng Anh cho một người nói tiếng Anh ghi lại, như đồng nghiệp hay hàng xóm, rồi xem họ ghi có đúng không. Nếu chưa có dịp, bạn đọc to số của mình ba lần, nghỉ một chút giữa ba nhóm số."
+}

@@ -8,6 +8,9 @@ https://github.com/thewh1teagle/kokoro-onnx/releases (bản model-files-v1.0).
 
 Mỗi bài học (content/**/*.json) có mục "audio": { id: {text, voice, speed?, ipa?} }.
 - "contour": "rise" hoặc "fall" vẽ lại đường cao độ, cho câu dạy lên giọng, xuống giọng.
+- "spell": danh sách phiên âm của từng chữ cái (hay từng nhóm số). Mỗi phần được
+  đọc riêng rồi nối lại, cách nhau "gap" giây (mặc định 0.35), như khi người ta
+  đánh vần chậm và rõ cho người khác ghi. Đọc liền cả chuỗi thì Kokoro nói quá nhanh.
 - "speed" nhỏ hơn 1 (ví dụ 0.85) làm câu chậm lại sau khi tạo, không đổi cao độ.
 - Có "ipa" thì công cụ đọc đúng theo phiên âm ấy. Mọi từ dùng để dạy phát âm
   nên có "ipa", vì bộ đoán phiên âm tự động có lúc đọc sai (ví dụ "live" thành /laɪv/).
@@ -32,7 +35,12 @@ PIPELINE = 2
 
 def fingerprint(spec):
     key = json.dumps(
-        {"pipeline": PIPELINE, **{k: spec.get(k) for k in ("text", "voice", "speed", "ipa", "contour")}},
+        {
+            "pipeline": PIPELINE,
+            **{k: spec.get(k) for k in ("text", "voice", "speed", "ipa", "contour")},
+            # Khóa mới chỉ đưa vào khi có, để dấu của các câu cũ không đổi.
+            **{k: spec[k] for k in ("spell", "gap") if k in spec},
+        },
         sort_keys=True,
     )
     return hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
@@ -119,12 +127,20 @@ def main():
             # âm hữu thanh trước phụ âm đầu ("seat" thành "a-seat"), nhất là ở từ
             # đứng một mình. Câu nào cần chậm thì kéo chậm sau bằng rubberband,
             # cách này giữ nguyên cao độ và độ sắc của phụ âm.
-            source = spec.get("ipa") or spec["text"]
-            samples, sr = kokoro.create(
-                source, voice=spec["voice"], speed=1.0,
-                lang="en-us", is_phonemes=bool(spec.get("ipa")),
-            )
-            samples = trim(samples, sr)
+            if spec.get("spell"):
+                pieces = []
+                for ipa in spec["spell"]:
+                    part, sr = kokoro.create(ipa, voice=spec["voice"], speed=1.0, lang="en-us", is_phonemes=True)
+                    pieces.append(trim(part, sr))
+                gap = np.zeros(int(sr * spec.get("gap", 0.35)), dtype="float32")
+                samples = np.concatenate([x for p in pieces for x in (p, gap)][:-1])
+            else:
+                source = spec.get("ipa") or spec["text"]
+                samples, sr = kokoro.create(
+                    source, voice=spec["voice"], speed=1.0,
+                    lang="en-us", is_phonemes=bool(spec.get("ipa")),
+                )
+                samples = trim(samples, sr)
             if spec.get("contour"):
                 samples = apply_contour(samples, sr, spec["contour"])
             tempo = spec.get("speed", 1.0)
