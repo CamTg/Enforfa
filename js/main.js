@@ -243,7 +243,7 @@ function renderHome() {
       btn.addEventListener("click", () => {
         addStamp(pendingStamp.id);
         chime();
-        renderHome();
+        route();
       });
       return box;
     })();
@@ -367,18 +367,36 @@ async function renderReview() {
 
 // ---- Giới thiệu và quyền riêng tư ----
 
+function learnerStats() {
+  const lessonsDone = store.list("progress").filter((p) => p.done).length;
+  const cards = store.list("cards").length;
+  const stamps = store.list("stamps").length;
+  const days = streak();
+  const stat = (n, label) => h("li", {}, h("span", { class: "stat-num" }, String(n)), h("span", {}, label));
+  return h(
+    "ul",
+    { class: "stats" },
+    stat(lessonsDone, "bài đã học xong"),
+    stat(cards, "thẻ từ trong kho ôn"),
+    stat(days, "ngày học liên tiếp"),
+    stat(stamps, "con dấu Thử ngoài đời")
+  );
+}
+
 function renderAbout() {
-  document.title = "Về Enforfa";
+  document.title = "Của bạn · Enforfa";
   root.replaceChildren(
     h(
       "header",
       { class: "lesson-head" },
-      h("div", { class: "lesson-head-row" }, h("a", { class: "btn-back", href: "#/", "aria-label": "Về trang chính" }, icon("back")), h("p", { class: "lesson-title" }, "Về Enforfa"))
+      h("div", { class: "lesson-head-row" }, h("a", { class: "btn-back", href: "#/", "aria-label": "Về trang chính" }, icon("back")), h("p", { class: "lesson-title" }, "Của bạn"))
     ),
     h(
       "main",
       { class: "about", id: "main" },
-      h("h1", {}, "Enforfa là gì"),
+      h("h1", {}, "Việc học của bạn"),
+      learnerStats(),
+      h("h2", {}, "Enforfa là gì"),
       h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Chương trình giúp bạn nghe, nói, đọc, viết đủ để giao tiếp và làm việc với người nói tiếng Anh: từ chào hỏi, đánh vần tên, tới đi khám, làm giấy tờ và đi làm."),
       h("h2", {}, "Cài đặt"),
       soundToggle(),
@@ -452,7 +470,10 @@ async function route() {
   try {
     if (hash.startsWith("#/bai/")) {
       const meta = allLessons().find((l) => l.id === hash.slice(6));
-      if (!meta?.file) return renderHome();
+      if (!meta?.file) {
+        location.hash = "#/";
+        return;
+      }
       const lesson = await getLesson(meta);
       document.title = `${lesson.title} · Enforfa`;
       renderLesson(root, lesson, { onExit: () => (location.hash = "#/") });
@@ -469,12 +490,38 @@ async function route() {
     } else {
       renderHome();
     }
+    const page = location.hash || "#/";
+    const withTabs = !page.startsWith("#/bai/") && page !== "#/chao-mung" && !root.querySelector(".welcome");
+    document.body.classList.toggle("has-tabs", withTabs);
+    if (withTabs) root.append(tabBar(page));
   } catch (err) {
     console.error(err);
     root.replaceChildren(
       h("main", { class: "home", id: "main" }, h("p", { class: "warn" }, "Không tải được bài. Bạn kiểm tra kết nối mạng rồi mở lại trang."), h("a", { class: "btn btn-secondary", href: "#/" }, "Về trang chính"))
     );
   }
+}
+
+// Thanh điều hướng ở cuối màn hình, có ở mọi trang trừ lúc đang học một bài
+// và màn hình chào người mới.
+function tabBar(hash) {
+  const due = dueCards().length;
+  const tab = (href, iconName, label, extra) =>
+    h(
+      "a",
+      { class: `tab${hash === href ? " is-on" : ""}`, href, "aria-current": hash === href ? "page" : null },
+      icon(iconName),
+      h("span", {}, label),
+      extra || null
+    );
+  return h(
+    "nav",
+    { class: "tabbar", "aria-label": "Các trang chính" },
+    tab("#/", "home", "Trang chính"),
+    tab("#/on-tu", "cards", "Ôn từ", due ? h("span", { class: "tab-badge", "aria-label": `${due} thẻ đến hạn` }, String(due > 99 ? "99+" : due)) : null),
+    tab("#/lo-trinh", "map", "Lộ trình"),
+    tab("#/gioi-thieu", "person", "Của bạn")
+  );
 }
 
 window.addEventListener("hashchange", route);

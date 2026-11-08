@@ -22,6 +22,10 @@ const ICONS = {
   stop: '<rect x="7" y="7" width="10" height="10" rx="2"/>',
   back: '<path d="M15.5 5 8.5 12l7 7-1.4 1.4L5.7 12l8.4-8.4z"/>',
   check: '<path d="M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z"/>',
+  home: '<path d="M12 3 2.5 11h2.7v9.5h5.3v-6h3v6h5.3V11h2.7z"/>',
+  cards: '<path d="M4 6h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2v10h12V8zm16-4a2 2 0 0 1 2 2v10h-2V6H7V4z"/>',
+  map: '<path d="m15 4.5-6-2-6 2.3v16.7l6-2.3 6 2 6-2.3V2.2zM9 4.7l6 2v12.6l-6-2z"/>',
+  person: '<path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5z"/>',
 };
 
 export function icon(name) {

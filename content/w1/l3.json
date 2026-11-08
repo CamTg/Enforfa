@@ -172,29 +172,6 @@
       ],
       "gap": 0.4
     },
-    "c_yes": {
-      "text": "Yes,",
-      "voice": "af_heart"
-    },
-    "c_right": {
-      "text": "that's right.",
-      "voice": "af_heart"
-    },
-    "c_lan": {
-      "text": "Lan.",
-      "voice": "af_heart",
-      "ipa": "lˈɑːn."
-    },
-    "c_lan_spell": {
-      "text": "L, A, N.",
-      "voice": "af_heart",
-      "spell": [
-        "ˈɛl.",
-        "ˈeɪ.",
-        "ˈɛn."
-      ],
-      "gap": 0.4
-    },
     "double": {
       "text": "double",
       "voice": "af_heart"
@@ -333,9 +310,16 @@
               "audio": "d1",
               "chunks": [
                 {
-                  "en": "What's your last name?",
-                  "vi": "Họ của chị là gì?",
-                  "audio": "d1"
+                  "en": "What's",
+                  "vi": "là gì"
+                },
+                {
+                  "en": "your",
+                  "vi": "của chị"
+                },
+                {
+                  "en": "last name?",
+                  "vi": "họ?"
                 }
               ]
             },
@@ -345,8 +329,7 @@
               "chunks": [
                 {
                   "en": "Nguyen.",
-                  "vi": "Nguyễn.",
-                  "audio": "d2"
+                  "vi": "Nguyễn."
                 }
               ]
             },
@@ -355,9 +338,16 @@
               "audio": "d3",
               "chunks": [
                 {
-                  "en": "Can you spell that?",
-                  "vi": "Chị đánh vần giúp được không?",
-                  "audio": "d3"
+                  "en": "Can you",
+                  "vi": "chị có thể"
+                },
+                {
+                  "en": "spell",
+                  "vi": "đánh vần"
+                },
+                {
+                  "en": "that?",
+                  "vi": "cái đó?"
                 }
               ]
             },
@@ -367,8 +357,7 @@
               "chunks": [
                 {
                   "en": "N, G, U, Y, E, N.",
-                  "vi": "N, G, U, Y, E, N.",
-                  "audio": "d4"
+                  "vi": "N, G, U, Y, E, N."
                 }
               ]
             },
@@ -377,9 +366,12 @@
               "audio": "d5",
               "chunks": [
                 {
-                  "en": "Is that N-G-U-Y-E-N?",
-                  "vi": "Có phải N-G-U-Y-E-N không?",
-                  "audio": "d5"
+                  "en": "Is that",
+                  "vi": "có phải là"
+                },
+                {
+                  "en": "N-G-U-Y-E-N?",
+                  "vi": "N-G-U-Y-E-N?"
                 }
               ]
             },
@@ -389,13 +381,15 @@
               "chunks": [
                 {
                   "en": "Yes,",
-                  "vi": "Vâng,",
-                  "audio": "c_yes"
+                  "vi": "vâng,"
                 },
                 {
-                  "en": "that's right.",
-                  "vi": "đúng rồi.",
-                  "audio": "c_right"
+                  "en": "that's",
+                  "vi": "đó là"
+                },
+                {
+                  "en": "right.",
+                  "vi": "đúng."
                 }
               ]
             },
@@ -404,9 +398,16 @@
               "audio": "d7",
               "chunks": [
                 {
-                  "en": "And your first name?",
-                  "vi": "Còn tên của chị?",
-                  "audio": "d7"
+                  "en": "And",
+                  "vi": "còn"
+                },
+                {
+                  "en": "your",
+                  "vi": "của chị"
+                },
+                {
+                  "en": "first name?",
+                  "vi": "tên?"
                 }
               ]
             },
@@ -416,13 +417,11 @@
               "chunks": [
                 {
                   "en": "Lan.",
-                  "vi": "Lan.",
-                  "audio": "c_lan"
+                  "vi": "Lan."
                 },
                 {
                   "en": "L, A, N.",
-                  "vi": "L, A, N.",
-                  "audio": "c_lan_spell"
+                  "vi": "L, A, N."
                 }
               ]
             }

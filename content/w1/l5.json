@@ -133,12 +133,6 @@
       "voice": "af_heart",
       "ipa": "hˈoʊtɛl."
     },
-    "schwa": {
-      "text": "/ə/",
-      "voice": "af_heart",
-      "ipa": "ˈə.",
-      "speed": 0.9
-    },
     "k1": {
       "text": "Hi, I'm Kate. Where are you from?",
       "voice": "af_bella"
@@ -156,14 +150,6 @@
     "k4": {
       "text": "Thank you.",
       "voice": "af_heart"
-    },
-    "c_kate": {
-      "text": "Hi, I'm Kate.",
-      "voice": "af_bella"
-    },
-    "c_where": {
-      "text": "Where are you from?",
-      "voice": "af_bella"
     },
     "im_from": {
       "text": "I'm from…",
@@ -383,7 +369,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "layout": "list"
         },
         {
           "type": "text",
@@ -402,14 +389,28 @@
               "audio": "k1",
               "chunks": [
                 {
-                  "en": "Hi, I'm Kate.",
-                  "vi": "Chào chị, tôi là Kate.",
-                  "audio": "c_kate"
+                  "en": "Hi,",
+                  "vi": "chào chị,"
                 },
                 {
-                  "en": "Where are you from?",
-                  "vi": "Chị từ đâu đến?",
-                  "audio": "c_where"
+                  "en": "I'm",
+                  "vi": "tôi là"
+                },
+                {
+                  "en": "Kate.",
+                  "vi": "Kate."
+                },
+                {
+                  "en": "Where",
+                  "vi": "đâu"
+                },
+                {
+                  "en": "are you",
+                  "vi": "chị"
+                },
+                {
+                  "en": "from?",
+                  "vi": "từ… đến?"
                 }
               ]
             },
@@ -418,9 +419,16 @@
               "audio": "k2",
               "chunks": [
                 {
-                  "en": "I'm from Vietnam.",
-                  "vi": "Tôi từ Việt Nam đến.",
-                  "audio": "k2"
+                  "en": "I'm",
+                  "vi": "tôi"
+                },
+                {
+                  "en": "from",
+                  "vi": "từ"
+                },
+                {
+                  "en": "Vietnam.",
+                  "vi": "Việt Nam (đến)."
                 }
               ]
             },
@@ -429,9 +437,12 @@
               "audio": "k3",
               "chunks": [
                 {
-                  "en": "Welcome to Houston!",
-                  "vi": "Chào mừng chị đến Houston!",
-                  "audio": "k3"
+                  "en": "Welcome",
+                  "vi": "chào mừng"
+                },
+                {
+                  "en": "to Houston!",
+                  "vi": "đến Houston!"
                 }
               ]
             },
@@ -441,8 +452,7 @@
               "chunks": [
                 {
                   "en": "Thank you.",
-                  "vi": "Cảm ơn chị.",
-                  "audio": "k4"
+                  "vi": "cảm ơn."
                 }
               ]
             }
@@ -523,7 +533,7 @@
           "type": "text",
           "title": "Âm /ə/",
           "body": [
-            "Âm tiết không được nhấn thường đọc lướt thành một âm rất nhẹ, ghi là {{schwa|/ə/}}. Chẳng hạn chữ \"a\" đầu của {{about|a-BOUT}} hay chữ \"a\" cuối của {{banana|ba-NA-na}}.",
+            "Âm tiết không được nhấn thường đọc lướt thành một âm rất nhẹ, ghi là /ə/. Chẳng hạn chữ \"a\" đầu của {{about|a-BOUT}} hay chữ \"a\" cuối của {{banana|ba-NA-na}}.",
             "Bạn đọc nhẹ âm này, đừng đọc rõ thành \"a\" như trong tiếng Việt."
           ]
         },

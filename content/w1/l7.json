@@ -79,47 +79,6 @@
       "voice": "af_bella",
       "ipa": "θˈæŋk juː, lˈɑːn."
     },
-    "c_hi": {
-      "text": "Hi.",
-      "voice": "af_bella"
-    },
-    "c_can_i": {
-      "text": "Can I have your last name, please?",
-      "voice": "af_bella"
-    },
-    "c_nguyen": {
-      "text": "Nguyen.",
-      "voice": "af_heart",
-      "ipa": "ŋwˈɪn."
-    },
-    "c_spell": {
-      "text": "N, G, U, Y, E, N.",
-      "voice": "af_heart",
-      "spell": [
-        "ˈɛn.",
-        "dʒˈiː.",
-        "jˈuː.",
-        "wˈaɪ.",
-        "ˈiː.",
-        "ˈɛn."
-      ],
-      "gap": 0.4
-    },
-    "c_lan": {
-      "text": "Lan.",
-      "voice": "af_heart",
-      "ipa": "lˈɑːn."
-    },
-    "c_lan_spell": {
-      "text": "L, A, N.",
-      "voice": "af_heart",
-      "spell": [
-        "ˈɛl.",
-        "ˈeɪ.",
-        "ˈɛn."
-      ],
-      "gap": 0.4
-    },
     "can_i_have": {
       "text": "Can I have your last name, please?",
       "voice": "af_heart"
@@ -274,13 +233,23 @@
               "chunks": [
                 {
                   "en": "Hi.",
-                  "vi": "Chào chị.",
-                  "audio": "c_hi"
+                  "vi": "chào chị."
                 },
                 {
-                  "en": "Can I have your last name, please?",
-                  "vi": "Chị cho tôi biết họ của chị được không?",
-                  "audio": "c_can_i"
+                  "en": "Can I have",
+                  "vi": "cho tôi xin"
+                },
+                {
+                  "en": "your",
+                  "vi": "của chị"
+                },
+                {
+                  "en": "last name,",
+                  "vi": "họ,"
+                },
+                {
+                  "en": "please?",
+                  "vi": "được không?"
                 }
               ]
             },
@@ -290,8 +259,7 @@
               "chunks": [
                 {
                   "en": "Sorry?",
-                  "vi": "Chị nói gì cơ?",
-                  "audio": "r2"
+                  "vi": "chị nói gì cơ?"
                 }
               ]
             },
@@ -300,9 +268,16 @@
               "audio": "r3",
               "chunks": [
                 {
-                  "en": "Your last name, please.",
-                  "vi": "Họ của chị.",
-                  "audio": "r3"
+                  "en": "Your",
+                  "vi": "của chị"
+                },
+                {
+                  "en": "last name,",
+                  "vi": "họ,"
+                },
+                {
+                  "en": "please.",
+                  "vi": "ạ."
                 }
               ]
             },
@@ -312,13 +287,11 @@
               "chunks": [
                 {
                   "en": "Nguyen.",
-                  "vi": "Nguyễn.",
-                  "audio": "c_nguyen"
+                  "vi": "Nguyễn."
                 },
                 {
                   "en": "N, G, U, Y, E, N.",
-                  "vi": "N, G, U, Y, E, N.",
-                  "audio": "c_spell"
+                  "vi": "N, G, U, Y, E, N."
                 }
               ]
             },
@@ -327,9 +300,16 @@
               "audio": "r5",
               "chunks": [
                 {
-                  "en": "And your first name?",
-                  "vi": "Còn tên của chị?",
-                  "audio": "r5"
+                  "en": "And",
+                  "vi": "còn"
+                },
+                {
+                  "en": "your",
+                  "vi": "của chị"
+                },
+                {
+                  "en": "first name?",
+                  "vi": "tên?"
                 }
               ]
             },
@@ -339,13 +319,11 @@
               "chunks": [
                 {
                   "en": "Lan.",
-                  "vi": "Lan.",
-                  "audio": "c_lan"
+                  "vi": "Lan."
                 },
                 {
                   "en": "L, A, N.",
-                  "vi": "L, A, N.",
-                  "audio": "c_lan_spell"
+                  "vi": "L, A, N."
                 }
               ]
             },
@@ -354,9 +332,16 @@
               "audio": "r7",
               "chunks": [
                 {
-                  "en": "What's your phone number?",
-                  "vi": "Số điện thoại của chị là gì?",
-                  "audio": "r7"
+                  "en": "What's",
+                  "vi": "là gì"
+                },
+                {
+                  "en": "your",
+                  "vi": "của chị"
+                },
+                {
+                  "en": "phone number?",
+                  "vi": "số điện thoại?"
                 }
               ]
             },
@@ -365,9 +350,16 @@
               "audio": "r8",
               "chunks": [
                 {
-                  "en": "Seven one three, five five five, oh one four two.",
-                  "vi": "713-555-0142.",
-                  "audio": "r8"
+                  "en": "Seven one three,",
+                  "vi": "bảy một ba,"
+                },
+                {
+                  "en": "five five five,",
+                  "vi": "năm năm năm,"
+                },
+                {
+                  "en": "oh one four two.",
+                  "vi": "không một bốn hai."
                 }
               ]
             },
@@ -376,9 +368,12 @@
               "audio": "r9",
               "chunks": [
                 {
-                  "en": "Thank you, Lan.",
-                  "vi": "Cảm ơn chị Lan.",
-                  "audio": "r9"
+                  "en": "Thank you,",
+                  "vi": "cảm ơn"
+                },
+                {
+                  "en": "Lan.",
+                  "vi": "chị Lan."
                 }
               ]
             }

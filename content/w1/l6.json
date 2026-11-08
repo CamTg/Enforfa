@@ -136,18 +136,6 @@
       "ipa": "θɹˈiː.",
       "speed": 0.9
     },
-    "th1": {
-      "text": "/θ/",
-      "voice": "af_heart",
-      "ipa": "θ.",
-      "speed": 0.9
-    },
-    "th2": {
-      "text": "/ð/",
-      "voice": "af_heart",
-      "ipa": "ð.",
-      "speed": 0.9
-    },
     "a1": {
       "text": "What's your phone number?",
       "voice": "af_bella"
@@ -208,31 +196,6 @@
     },
     "b7": {
       "text": "That's OK. Bye.",
-      "voice": "am_fenrir"
-    },
-    "c_hi": {
-      "text": "Hi.",
-      "voice": "af_heart"
-    },
-    "c_is_minh": {
-      "text": "Is this Minh?",
-      "voice": "af_heart",
-      "ipa": "ɪz ðɪs mˈɪn?"
-    },
-    "c_sorry": {
-      "text": "Sorry,",
-      "voice": "am_fenrir"
-    },
-    "c_wrong": {
-      "text": "you have the wrong number.",
-      "voice": "am_fenrir"
-    },
-    "c_ok": {
-      "text": "That's OK.",
-      "voice": "am_fenrir"
-    },
-    "c_bye": {
-      "text": "Bye.",
       "voice": "am_fenrir"
     },
     "count": {
@@ -368,9 +331,16 @@
               "audio": "a1",
               "chunks": [
                 {
-                  "en": "What's your phone number?",
-                  "vi": "Số điện thoại của chị là gì?",
-                  "audio": "a1"
+                  "en": "What's",
+                  "vi": "là gì"
+                },
+                {
+                  "en": "your",
+                  "vi": "của chị"
+                },
+                {
+                  "en": "phone number?",
+                  "vi": "số điện thoại?"
                 }
               ]
             },
@@ -379,9 +349,12 @@
               "audio": "a2",
               "chunks": [
                 {
-                  "en": "It's 713-555-0142.",
-                  "vi": "Số 713-555-0142.",
-                  "audio": "a2"
+                  "en": "It's",
+                  "vi": "đó là"
+                },
+                {
+                  "en": "713-555-0142.",
+                  "vi": "713-555-0142."
                 }
               ]
             },
@@ -391,8 +364,7 @@
               "chunks": [
                 {
                   "en": "Thank you.",
-                  "vi": "Cảm ơn chị.",
-                  "audio": "a3"
+                  "vi": "cảm ơn."
                 }
               ]
             }
@@ -450,8 +422,7 @@
               "chunks": [
                 {
                   "en": "Hello?",
-                  "vi": "A lô?",
-                  "audio": "b1"
+                  "vi": "A lô?"
                 }
               ]
             },
@@ -461,13 +432,15 @@
               "chunks": [
                 {
                   "en": "Hi.",
-                  "vi": "Chào anh.",
-                  "audio": "c_hi"
+                  "vi": "chào anh."
                 },
                 {
-                  "en": "Is this Minh?",
-                  "vi": "Có phải Minh không ạ?",
-                  "audio": "c_is_minh"
+                  "en": "Is this",
+                  "vi": "có phải đây là"
+                },
+                {
+                  "en": "Minh?",
+                  "vi": "Minh?"
                 }
               ]
             },
@@ -477,13 +450,15 @@
               "chunks": [
                 {
                   "en": "Sorry,",
-                  "vi": "Xin lỗi,",
-                  "audio": "c_sorry"
+                  "vi": "xin lỗi,"
                 },
                 {
-                  "en": "you have the wrong number.",
-                  "vi": "chị gọi nhầm số rồi.",
-                  "audio": "c_wrong"
+                  "en": "you have",
+                  "vi": "chị có"
+                },
+                {
+                  "en": "the wrong number.",
+                  "vi": "số sai."
                 }
               ]
             },
@@ -492,9 +467,12 @@
               "audio": "b4",
               "chunks": [
                 {
-                  "en": "Is this 713-555-0186?",
-                  "vi": "Có phải số 713-555-0186 không ạ?",
-                  "audio": "b4"
+                  "en": "Is this",
+                  "vi": "có phải đây là"
+                },
+                {
+                  "en": "713-555-0186?",
+                  "vi": "713-555-0186?"
                 }
               ]
             },
@@ -503,9 +481,16 @@
               "audio": "b5",
               "chunks": [
                 {
-                  "en": "No, this is 713-555-0168.",
-                  "vi": "Không, số này là 713-555-0168.",
-                  "audio": "b5"
+                  "en": "No,",
+                  "vi": "không,"
+                },
+                {
+                  "en": "this is",
+                  "vi": "đây là"
+                },
+                {
+                  "en": "713-555-0168.",
+                  "vi": "713-555-0168."
                 }
               ]
             },
@@ -514,9 +499,12 @@
               "audio": "b6",
               "chunks": [
                 {
-                  "en": "Oh, sorry!",
-                  "vi": "Ôi, xin lỗi anh!",
-                  "audio": "b6"
+                  "en": "Oh,",
+                  "vi": "ôi,"
+                },
+                {
+                  "en": "sorry!",
+                  "vi": "xin lỗi!"
                 }
               ]
             },
@@ -526,13 +514,11 @@
               "chunks": [
                 {
                   "en": "That's OK.",
-                  "vi": "Không sao.",
-                  "audio": "c_ok"
+                  "vi": "không sao."
                 },
                 {
                   "en": "Bye.",
-                  "vi": "Chào chị.",
-                  "audio": "c_bye"
+                  "vi": "chào chị."
                 }
               ]
             }
@@ -763,8 +749,8 @@
           "title": "Cách đọc",
           "body": [
             "Để đọc hai âm này, bạn đặt đầu lưỡi giữa hai hàm răng rồi thổi hơi ra. Soi gương, bạn sẽ thấy đầu lưỡi lộ ra giữa hai hàm răng.",
-            "Âm {{th1|/θ/}} chỉ có hơi, như trong {{think|nghĩ}}, {{three}}, {{thank_you|cảm ơn}}.",
-            "Âm {{th2|/ð/}} có rung ở cổ họng, như trong {{this|cái này}}, {{that|cái kia}}, {{mother|mẹ}}."
+            "Âm /θ/ chỉ có hơi, như trong {{think|nghĩ}}, {{three}}, {{thank_you|cảm ơn}}.",
+            "Âm /ð/ có rung ở cổ họng, như trong {{this|cái này}}, {{that|cái kia}}, {{mother|mẹ}}."
           ]
         },
         {
