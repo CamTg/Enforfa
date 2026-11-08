@@ -104,8 +104,25 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     );
   }
 
+  // Tải sẵn âm thanh của bước, để khi người học bấm nghe (hay app tự phát)
+  // thì tiếng ra ngay, không phải chờ tải qua mạng.
+  function prefetch(step) {
+    const ids = new Set();
+    const add = (id) => id && lesson.audio[id] && ids.add(id);
+    add(step.audio);
+    add(step.model);
+    (step.options || []).forEach((o) => add(o.audio));
+    (step.lines || []).forEach((l) => {
+      add(l.audio);
+      (l.chunks || []).forEach((c) => add(c.audio));
+    });
+    (step.body || []).forEach((b) => [...b.matchAll(/\{\{(\w+)/g)].forEach((m) => add(m[1])));
+    ids.forEach((id) => fetch(audioUrl(lesson.id, id)).catch(() => {}));
+  }
+
   function show() {
     const { step } = steps[index];
+    prefetch(step);
     store.put("progress", lesson.id, { step: index, total: steps.length, done: saved?.done || false });
     drawParts();
     startStep(lesson.id, index, step.type);
@@ -298,6 +315,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
       const answerLine = h("div", { class: "order-answer", "aria-live": "polite" });
       const bank = h("div", { class: "order-bank" });
       const feedback = h("p", { class: "feedback", role: "status" });
+      const replay = h("div", { class: "order-replay" });
       const tiles = step.words.map((w) => h("button", { class: "tile", type: "button", lang: "en" }, w));
 
       function draw() {
@@ -311,8 +329,12 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
             tiles.forEach((t) => (t.disabled = true));
             answerLine.classList.add("is-right");
             feedback.className = "feedback is-right";
-            feedback.textContent = "Đúng rồi.";
-            if (step.audio) sound(step.audio)();
+            feedback.textContent = step.audio ? "Đúng rồi. Bấm vào câu dưới đây để nghe lại." : "Đúng rồi.";
+            if (step.audio) {
+              const chip = sayChip(text(step.audio), sound(step.audio), "say-line", step.gloss || "");
+              replay.replaceChildren(chip);
+              sound(step.audio)(chip);
+            }
             setReady(true);
           } else {
             markWrong();
@@ -333,7 +355,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         })
       );
       draw();
-      return h("section", { class: "step step-order" }, h("h1", {}, step.prompt), answerLine, bank, feedback);
+      return h("section", { class: "step step-order" }, h("h1", {}, step.prompt), answerLine, bank, feedback, replay);
     },
 
     speak(step) {
