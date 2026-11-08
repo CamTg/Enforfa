@@ -395,6 +395,7 @@ function renderAbout() {
       h(
         "ul",
         { class: "credits" },
+        h("li", {}, "Cách học ba lượt nghe của Latinum Institute (EFL Vietnamese)."),
         h("li", {}, "Let's Learn English, Level 1, của Voice of America (VOA) Learning English. Nội dung do VOA sản xuất thuộc phạm vi công cộng."),
         h("li", {}, "English Language Proficiency Standards for Adult Education (2016), của Bộ Giáo dục Hoa Kỳ."),
         h("li", {}, "Teaching English as a Foreign Language to Large, Multilevel Classes (1992), của Peace Corps.")

@@ -3,7 +3,7 @@
 import { h, icon, sayChip } from "./ui.js";
 import { play, stop, audioUrl, isSlow, setSlow } from "./audio.js";
 import { store } from "./store.js";
-import { addCards } from "./srs.js";
+import { addCards, bumpCards } from "./srs.js";
 import { canRecord, startRecording, saveClip, getClip } from "./recorder.js";
 import { startStep, stopStep, markWrong } from "./timing.js";
 import { chime, pop, celebrate, markActive, streak, hasStamp, addStamp } from "./fun.js";
@@ -25,6 +25,24 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
 
   const sound = (audioId) => (button) => play(audioUrl(lesson.id, audioId), button);
   const text = (audioId) => lesson.audio[audioId]?.text ?? audioId;
+  // Phát một hay nhiều câu nối nhau, như hai từ cần so "giống hay khác".
+  const soundAll = (ids) => async (button) => {
+    const list = Array.isArray(ids) ? ids : [ids];
+    for (let i = 0; i < list.length; i++) {
+      const ended = await play(audioUrl(lesson.id, list[i]), button);
+      if (!ended) return;
+      if (i < list.length - 1) {
+        button.classList.add("is-playing");
+        await new Promise((r) => setTimeout(r, 600));
+      }
+    }
+    button.classList.remove("is-playing");
+  };
+  // Làm sai một câu có gắn thẻ từ thì thẻ ấy lên đầu lịch ôn.
+  const wrong = (step) => {
+    markWrong();
+    if (step?.review) bumpCards(step.review);
+  };
 
   // Đổi chuỗi có {{mã}} thành câu có cụm tiếng Anh bấm nghe được.
   // {{mã|nghĩa}} thêm một dòng nghĩa tiếng Việt nhỏ ngay dưới cụm ấy.
@@ -118,8 +136,9 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
   function prefetch(step) {
     const ids = new Set();
     const add = (id) => id && lesson.audio[id] && ids.add(id);
-    add(step.audio);
+    [].concat(step.audio || []).forEach(add);
     add(step.model);
+    add(step.ask);
     (step.options || []).forEach((o) => add(o.audio));
     (step.lines || []).forEach((l) => {
       add(l.audio);
@@ -290,7 +309,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
             h("span", {}, "Nghe")
           );
         }
-        return h("li", { class: `line line-${line.speaker}` }, h("span", { class: "who" }, who), content);
+        return h("li", { class: `line line-${line.speaker}` }, who && h("span", { class: "who" }, who), content);
       });
       return h(
         "section",
@@ -302,7 +321,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
           icon("play"),
           "Nghe cả đoạn"
         ),
-        h("ol", { class: "dialogue" }, ...lines)
+        h("ol", { class: `dialogue${step.layout ? ` is-${step.layout}` : ""}` }, ...lines)
       );
     },
 
@@ -320,7 +339,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
             feedback.textContent = `Đúng rồi. ${step.explain || ""}`.trim();
             setReady(true);
           } else {
-            markWrong();
+            wrong(step);
             chooseEl.classList.add("is-wrong");
             chooseEl.disabled = true;
             feedback.className = "feedback is-wrong";
@@ -351,11 +370,11 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         step.audio &&
           h(
             "button",
-            { class: "btn-listen btn-listen-big", type: "button", onclick: (e) => sound(step.audio)(e.currentTarget) },
+            { class: "btn-listen btn-listen-big", type: "button", onclick: (e) => soundAll(step.audio)(e.currentTarget) },
             icon("play"),
             h("span", {}, "Nghe")
           ),
-        h("div", { class: "options" }, ...options.map((o) => o.node)),
+        h("div", { class: `options${step.layout === "row" ? " is-row" : ""}` }, ...options.map((o) => o.node)),
         feedback
       );
     },
@@ -390,7 +409,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
             }
             setReady(true);
           } else {
-            markWrong();
+            wrong(step);
             feedback.className = "feedback is-wrong";
             feedback.textContent = "Chưa đúng. Bấm vào một chữ trong câu để đưa nó về chỗ cũ, rồi xếp lại.";
           }
@@ -490,7 +509,8 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         h(
           "div",
           { class: "speak-actions" },
-          h("button", { class: "btn btn-secondary", type: "button", onclick: (e) => sound(step.model)(e.currentTarget) }, icon("play"), "Nghe câu mẫu"),
+          step.ask && h("button", { class: "btn btn-secondary", type: "button", onclick: (e) => sound(step.ask)(e.currentTarget) }, icon("play"), "Nghe câu hỏi"),
+          h("button", { class: "btn btn-secondary", type: "button", onclick: (e) => sound(step.model)(e.currentTarget) }, icon("play"), step.ask ? "Nghe câu trả lời mẫu" : "Nghe câu mẫu"),
           canRecord() ? recBtn : null,
           canRecord() ? mine : null
         ),
@@ -508,10 +528,10 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         lang: "en",
         autocomplete: "off",
         autocorrect: "off",
-        autocapitalize: "sentences",
+        autocapitalize: step.mode === "letters" ? "characters" : step.mode === "field" ? "words" : "sentences",
         spellcheck: "false",
         enterkeyhint: "done",
-        "aria-label": "Câu bạn gõ",
+        "aria-label": step.label || "Câu bạn gõ",
       });
       const feedback = h("div", { class: "feedback", role: "status" });
       const check = h("button", { class: "btn btn-secondary btn-wide", type: "button" }, "Kiểm tra");
@@ -524,7 +544,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
           return;
         }
         if (VIETNAMESE_MARKS.test(typed)) {
-          markWrong();
+          wrong(step);
           feedback.className = "feedback is-wrong";
           feedback.replaceChildren(
             h(
@@ -539,20 +559,48 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         }
         setReady(true);
         if (step.mode === "intro") {
-          const ok = /\b(my name is|i'?m|i am)\s+[a-z]/.test(normalize(typed));
+          const ok = (step.pattern ? new RegExp(step.pattern) : /\b(my name is|i'?m|i am)\s+[a-z]/).test(normalize(typed));
           if (ok) {
             feedback.className = "feedback is-right";
-            feedback.replaceChildren(h("p", {}, "Đúng rồi. Câu của bạn đúng mẫu giới thiệu."));
+            feedback.replaceChildren(h("p", {}, step.patternOk || "Đúng rồi. Câu của bạn đúng mẫu giới thiệu."));
             chime();
             pop(input);
           } else {
-            markWrong();
+            wrong(step);
             feedback.className = "feedback is-wrong";
             feedback.replaceChildren(
-              h("p", {}, "Câu giới thiệu cần có My name is hoặc I'm, rồi đến tên bạn. Ví dụ:"),
+              h("p", {}, step.patternHelp || "Câu giới thiệu cần có My name is hoặc I'm, rồi đến tên bạn. Ví dụ:"),
               h("p", { class: "write-answer", lang: "en" }, step.example)
             );
           }
+          return;
+        }
+        const right = (msg = "Đúng rồi.") => {
+          feedback.className = "feedback is-right";
+          feedback.replaceChildren(h("p", {}, msg));
+          chime();
+          pop(input);
+        };
+        if (step.mode === "letters") {
+          // Đánh vần: chỉ so các chữ cái, gõ liền hay cách, hoa hay thường đều được.
+          const only = (t) => t.toUpperCase().replace(/[^A-Z0-9]/g, "");
+          if (only(typed) === only(step.answer)) return right();
+          wrong(step);
+          feedback.className = "feedback is-wrong";
+          feedback.replaceChildren(
+            h("p", {}, "Chưa đúng. Các chữ đúng là:"),
+            h("p", { class: "write-answer", lang: "en" }, step.answer),
+            h("p", {}, "Bạn nghe lại rồi gõ thêm lần nữa nếu muốn.")
+          );
+          return;
+        }
+        if (step.mode === "field") {
+          // Ô trên mẫu đơn. Có đáp án thì so đáp án; không có thì người học ghi thông tin của mình.
+          if (!step.answer) return right(step.done || "Đã điền.");
+          if (normalize(typed) === normalize(step.answer)) return right();
+          wrong(step);
+          feedback.className = "feedback is-wrong";
+          feedback.replaceChildren(h("p", {}, step.hint || "Chưa đúng. Ô này cần ghi:"), h("p", { class: "write-answer", lang: "en" }, step.answer));
           return;
         }
         const expected = words(step.answer);
@@ -565,7 +613,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
           pop(input);
           return;
         }
-        markWrong();
+        wrong(step);
         feedback.className = "feedback is-wrong";
         const shown = step.answer.split(/\s+/).map((w, i) =>
           h("span", { class: missed.has(i) ? "diff-miss" : null }, w)
@@ -596,9 +644,180 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
             h("span", {}, "Nghe")
           ),
         step.mode === "intro" && h("p", { class: "hint" }, "Ví dụ: ", h("span", { lang: "en" }, step.example)),
-        input,
+        step.note && h("p", { class: "hint" }, step.note),
+        step.mode === "field" ? h("label", { class: "form-field" }, h("span", { class: "form-label", lang: "en" }, step.label), input) : input,
         check,
         feedback
+      );
+    },
+
+    // Nghe lại một đoạn rồi điền chữ còn trống. Chỗ trống ghi trong lời thoại là
+    // [[1:chữ]] (có ở cả hai mức) hoặc [[2:chữ]] (chỉ có ở mức 2).
+    cloze(step) {
+      setReady(false);
+      const key = `${lesson.id}/${step.id || "cloze"}`;
+      let level = store.get("settings", "cloze-level")?.level || 1;
+      const body = h("div", { class: "cloze" });
+      const feedback = h("div", { class: "feedback", role: "status" });
+      const check = h("button", { class: "btn btn-secondary btn-wide", type: "button" }, "Kiểm tra");
+      let inputs = [];
+      const levelBtns = [1, 2].map((n) =>
+        h("button", { class: "btn-mark", type: "button", onclick: () => { level = n; store.put("settings", "cloze-level", { level: n }); draw(); } },
+          n === 1 ? "Mức 1: ít chỗ trống" : "Mức 2: nhiều chỗ trống")
+      );
+      function draw() {
+        levelBtns.forEach((b, i) => {
+          b.classList.toggle("is-on", i + 1 === level);
+          b.setAttribute("aria-pressed", String(i + 1 === level));
+        });
+        inputs = [];
+        feedback.className = "feedback";
+        feedback.replaceChildren();
+        setReady(false);
+        body.replaceChildren(
+          ...step.lines.map((line) => {
+            const who = lesson.speakers[line.speaker]?.name ?? "";
+            const parts = [];
+            let last = 0;
+            for (const m of line.text.matchAll(/\[\[(\d):([^\]]+)\]\]/g)) {
+              parts.push(line.text.slice(last, m.index));
+              const [, lv, word] = m;
+              if (Number(lv) <= level) {
+                const input = h("input", {
+                  class: "cloze-input", type: "text", lang: "en", autocomplete: "off", autocorrect: "off",
+                  autocapitalize: "off", spellcheck: "false", "data-answer": word, "aria-label": "Chữ còn trống",
+                  size: String(Math.max(3, word.length + 1)),
+                });
+                inputs.push(input);
+                parts.push(input);
+              } else parts.push(word);
+              last = m.index + m[0].length;
+            }
+            parts.push(line.text.slice(last));
+            return h("p", { class: "cloze-line" }, who && h("span", { class: "who" }, who), h("span", { lang: "en" }, ...parts));
+          })
+        );
+      }
+      check.addEventListener("click", () => {
+        let wrongCount = 0;
+        inputs.forEach((input) => {
+          const ok = normalize(input.value) === normalize(input.dataset.answer);
+          input.classList.toggle("is-right", ok);
+          input.classList.toggle("is-wrong", !ok);
+          if (!ok) wrongCount += 1;
+        });
+        setReady(true);
+        store.put("cloze", key, { level, wrong: wrongCount, total: inputs.length });
+        if (!wrongCount) {
+          feedback.className = "feedback is-right";
+          feedback.replaceChildren(h("p", {}, "Đúng hết rồi."));
+          chime();
+          pop(body);
+        } else {
+          wrong(step);
+          feedback.className = "feedback is-wrong";
+          feedback.replaceChildren(
+            h("p", {}, `Còn ${wrongCount} chỗ chưa đúng, được tô đỏ. Chữ đúng là:`),
+            h("p", { class: "write-answer", lang: "en" }, inputs.filter((i) => i.classList.contains("is-wrong")).map((i) => i.dataset.answer).join(", ")),
+            h("p", {}, "Bạn nghe lại rồi sửa nếu muốn, hoặc bấm Tiếp tục.")
+          );
+        }
+      });
+      draw();
+      const playAll = async (button) => {
+        for (const line of step.lines) {
+          const ended = await play(audioUrl(lesson.id, line.audio), button);
+          if (!ended) break;
+          button.classList.add("is-playing");
+          await new Promise((r) => setTimeout(r, 450));
+        }
+        button.classList.remove("is-playing");
+      };
+      return h(
+        "section",
+        { class: "step step-cloze" },
+        h("h1", {}, step.prompt),
+        h("div", { class: "cloze-levels" }, ...levelBtns),
+        h("button", { class: "btn btn-secondary btn-playall", type: "button", onclick: (e) => playAll(e.currentTarget) }, icon("play"), "Nghe cả đoạn"),
+        body,
+        check,
+        feedback
+      );
+    },
+
+    // Tự đánh giá: người học đánh dấu những việc đã làm được. Lưu trên máy.
+    checklist(step) {
+      const key = `${lesson.id}/${step.id || "check"}`;
+      const saved = store.get("selfcheck", key)?.done || [];
+      const items = step.items.map((text, i) => {
+        const box = h("input", { type: "checkbox", id: `chk-${i}` });
+        box.checked = saved.includes(i);
+        box.addEventListener("change", () => {
+          const done = items.map((it, k) => (it.box.checked ? k : -1)).filter((k) => k >= 0);
+          store.put("selfcheck", key, { done, total: step.items.length });
+        });
+        return { box, node: h("li", { class: "check-item" }, box, h("label", { for: `chk-${i}` }, text)) };
+      });
+      return h(
+        "section",
+        { class: "step step-checklist" },
+        h("h1", {}, step.prompt),
+        step.note && h("p", { class: "hint" }, step.note),
+        h("ul", { class: "check-list" }, ...items.map((it) => it.node))
+      );
+    },
+
+    // Mục tiêu cho tuần sau. Lưu trên máy; bài ôn của tuần sau hiện lại.
+    goal(step) {
+      const key = step.key || lesson.id;
+      const area = h("textarea", { id: "goal", rows: "3", placeholder: step.placeholder || "" });
+      area.value = store.get("goals", key)?.text || "";
+      let timer;
+      area.addEventListener("input", () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => store.put("goals", key, { text: area.value, week: step.week }), 300);
+      });
+      const before = step.showGoal && store.get("goals", step.showGoal)?.text;
+      return h(
+        "section",
+        { class: "step step-goal" },
+        before && h("div", { class: "goal-before" }, h("p", { class: "hint" }, "Mục tiêu bạn đặt tuần trước:"), h("p", {}, before)),
+        h("h1", {}, step.prompt),
+        ...(step.body || []).map((p) => h("p", {}, ...richText(p))),
+        h("label", { for: "goal", class: "field-label" }, step.label || "Mục tiêu của bạn"),
+        area,
+        h("p", { class: "hint" }, "Mục tiêu tự lưu trên máy này.")
+      );
+    },
+
+    // Nghe lại bản thu đầu tiên của một câu, cạnh bản thu gần nhất.
+    compare(step) {
+      const status = h("p", { class: "hint", role: "status" });
+      const btn = (clipKey, label) => {
+        const b = h("button", { class: "btn btn-secondary", type: "button", disabled: true }, icon("play"), label);
+        getClip(clipKey)
+          .then((clip) => {
+            if (!clip) return;
+            const url = URL.createObjectURL(clip.blob);
+            b.disabled = false;
+            b.onclick = (e) => play(url, e.currentTarget);
+          })
+          .catch(() => {});
+        return b;
+      };
+      const first = btn(`${step.first}:first`, step.firstLabel || "Bản thu đầu tiên");
+      const latest = btn(`${step.latest}:latest`, step.latestLabel || "Bản thu hôm nay");
+      setTimeout(() => {
+        if (first.disabled && latest.disabled) status.textContent = "Máy này chưa có bản thu nào của câu này, nên chưa có gì để so. Bạn bấm Tiếp tục.";
+        else if (first.disabled) status.textContent = "Máy này chưa có bản thu ở bài trước, nên chỉ nghe được bản hôm nay.";
+      }, 600);
+      return h(
+        "section",
+        { class: "step step-compare" },
+        h("h1", {}, step.prompt),
+        ...(step.body || []).map((p) => h("p", {}, ...richText(p))),
+        h("div", { class: "speak-actions" }, first, latest),
+        status
       );
     },
   };
@@ -611,7 +830,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     const dialogues = steps.filter(({ step }) => step.type === "listen" && step.pass === 1).length;
     const cards = (lesson.cards || []).length;
     const contents = [
-      dialogues && `${dialogues} đoạn hội thoại ngắn, mỗi đoạn nghe ba lượt`,
+      lesson.listenNote || (dialogues && `${dialogues} đoạn hội thoại ngắn, mỗi đoạn nghe ba lượt`),
       cards && `${cards} từ và cụm từ, được đưa vào phần ôn sau khi học xong`,
       `${lesson.parts.length} phần: ${lesson.parts.map((p) => p.title).join(", ")}`,
     ].filter(Boolean);

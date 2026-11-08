@@ -1,0 +1,1168 @@
+{
+  "id": "w1-l3",
+  "title": "Bảng chữ cái, phần cuối, và đánh vần tên",
+  "goal": "Hết bài này, bạn đọc đúng cả 26 chữ cái, đánh vần được họ và tên mình, và biết ô nào trên mẫu đơn ghi họ, ô nào ghi tên.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "staff": {
+      "name": "Nhân viên",
+      "voice": "af_bella"
+    }
+  },
+  "audio": {
+    "l_f": {
+      "text": "F",
+      "voice": "af_heart",
+      "ipa": "ˈɛf.",
+      "speed": 0.9
+    },
+    "l_l": {
+      "text": "L",
+      "voice": "af_heart",
+      "ipa": "ˈɛl.",
+      "speed": 0.9
+    },
+    "l_m": {
+      "text": "M",
+      "voice": "af_heart",
+      "ipa": "ˈɛm.",
+      "speed": 0.9
+    },
+    "l_n": {
+      "text": "N",
+      "voice": "af_heart",
+      "ipa": "ˈɛn.",
+      "speed": 0.9
+    },
+    "l_s": {
+      "text": "S",
+      "voice": "af_heart",
+      "ipa": "ˈɛs.",
+      "speed": 0.9
+    },
+    "l_x": {
+      "text": "X",
+      "voice": "af_heart",
+      "ipa": "ˈɛks.",
+      "speed": 0.9
+    },
+    "l_i": {
+      "text": "I",
+      "voice": "af_heart",
+      "ipa": "ˈaɪ.",
+      "speed": 0.9
+    },
+    "l_y": {
+      "text": "Y",
+      "voice": "af_heart",
+      "ipa": "wˈaɪ.",
+      "speed": 0.9
+    },
+    "l_o": {
+      "text": "O",
+      "voice": "af_heart",
+      "ipa": "ˈoʊ.",
+      "speed": 0.9
+    },
+    "l_q": {
+      "text": "Q",
+      "voice": "af_heart",
+      "ipa": "kjˈuː.",
+      "speed": 0.9
+    },
+    "l_u": {
+      "text": "U",
+      "voice": "af_heart",
+      "ipa": "jˈuː.",
+      "speed": 0.9
+    },
+    "l_w": {
+      "text": "W",
+      "voice": "af_heart",
+      "ipa": "dˈʌbəljuː.",
+      "speed": 0.9
+    },
+    "l_r": {
+      "text": "R",
+      "voice": "af_heart",
+      "ipa": "ˈɑːɹ.",
+      "speed": 0.9
+    },
+    "l_e": {
+      "text": "E",
+      "voice": "af_heart",
+      "ipa": "ˈiː.",
+      "speed": 0.9
+    },
+    "l_g": {
+      "text": "G",
+      "voice": "af_heart",
+      "ipa": "dʒˈiː.",
+      "speed": 0.9
+    },
+    "l_a": {
+      "text": "A",
+      "voice": "af_heart",
+      "ipa": "ˈeɪ.",
+      "speed": 0.9
+    },
+    "d1": {
+      "text": "What's your last name?",
+      "voice": "af_bella"
+    },
+    "d2": {
+      "text": "Nguyen.",
+      "voice": "af_heart",
+      "ipa": "ŋwˈɪn."
+    },
+    "d3": {
+      "text": "Can you spell that?",
+      "voice": "af_bella"
+    },
+    "d4": {
+      "text": "N, G, U, Y, E, N.",
+      "voice": "af_heart",
+      "spell": [
+        "ˈɛn.",
+        "dʒˈiː.",
+        "jˈuː.",
+        "wˈaɪ.",
+        "ˈiː.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "d5": {
+      "text": "Is that N-G-U-Y-E-N?",
+      "voice": "af_bella",
+      "spell": [
+        "ˈɪz ðˌæt",
+        "ˈɛn",
+        "dʒˈiː",
+        "jˈuː",
+        "wˈaɪ",
+        "ˈiː",
+        "ˈɛn?"
+      ],
+      "gap": 0.18
+    },
+    "d6": {
+      "text": "Yes, that's right.",
+      "voice": "af_heart"
+    },
+    "d7": {
+      "text": "And your first name?",
+      "voice": "af_bella"
+    },
+    "d8": {
+      "text": "Lan. L, A, N.",
+      "voice": "af_heart",
+      "spell": [
+        "lˈɑːn.",
+        "ˈɛl.",
+        "ˈeɪ.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "c_yes": {
+      "text": "Yes,",
+      "voice": "af_heart"
+    },
+    "c_right": {
+      "text": "that's right.",
+      "voice": "af_heart"
+    },
+    "c_lan": {
+      "text": "Lan.",
+      "voice": "af_heart",
+      "ipa": "lˈɑːn."
+    },
+    "c_lan_spell": {
+      "text": "L, A, N.",
+      "voice": "af_heart",
+      "spell": [
+        "ˈɛl.",
+        "ˈeɪ.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "double": {
+      "text": "double",
+      "voice": "af_heart"
+    },
+    "double_l": {
+      "text": "double L",
+      "voice": "af_heart",
+      "ipa": "dˈʌbəl ˈɛl."
+    },
+    "first_name": {
+      "text": "first name",
+      "voice": "af_heart"
+    },
+    "last_name": {
+      "text": "last name",
+      "voice": "af_heart"
+    },
+    "middle_name": {
+      "text": "middle name",
+      "voice": "af_heart"
+    },
+    "whats_your_name": {
+      "text": "What's your name?",
+      "voice": "af_heart"
+    },
+    "is_that": {
+      "text": "Is that N-G-U-Y-E-N?",
+      "voice": "af_heart",
+      "spell": [
+        "ˈɪz ðˌæt",
+        "ˈɛn",
+        "dʒˈiː",
+        "jˈuː",
+        "wˈaɪ",
+        "ˈiː",
+        "ˈɛn?"
+      ],
+      "gap": 0.18
+    },
+    "thats_right": {
+      "text": "Yes, that's right.",
+      "voice": "af_heart"
+    },
+    "no": {
+      "text": "No.",
+      "voice": "af_heart"
+    },
+    "ask_last": {
+      "text": "What's your last name?",
+      "voice": "af_bella"
+    },
+    "ask_first": {
+      "text": "What's your first name?",
+      "voice": "af_bella"
+    },
+    "m_last": {
+      "text": "Nguyen. N, G, U, Y, E, N.",
+      "voice": "af_heart",
+      "spell": [
+        "ŋwˈɪn.",
+        "ˈɛn.",
+        "dʒˈiː.",
+        "jˈuː.",
+        "wˈaɪ.",
+        "ˈiː.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "m_first": {
+      "text": "Lan. L, A, N.",
+      "voice": "af_heart",
+      "spell": [
+        "lˈɑːn.",
+        "ˈɛl.",
+        "ˈeɪ.",
+        "ˈɛn."
+      ],
+      "gap": 0.4
+    },
+    "s_pham": {
+      "text": "P, H, A, M.",
+      "voice": "am_michael",
+      "spell": [
+        "pˈiː.",
+        "ˈeɪtʃ.",
+        "ˈeɪ.",
+        "ˈɛm."
+      ],
+      "gap": 0.5
+    },
+    "s_tran": {
+      "text": "T, R, A, N.",
+      "voice": "am_michael",
+      "spell": [
+        "tˈiː.",
+        "ˈɑːɹ.",
+        "ˈeɪ.",
+        "ˈɛn."
+      ],
+      "gap": 0.5
+    },
+    "s_huynh": {
+      "text": "H, U, Y, N, H.",
+      "voice": "am_michael",
+      "spell": [
+        "ˈeɪtʃ.",
+        "jˈuː.",
+        "wˈaɪ.",
+        "ˈɛn.",
+        "ˈeɪtʃ."
+      ],
+      "gap": 0.5
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Ở quầy tiếp tân",
+          "body": [
+            "Lan đến quầy tiếp tân, và nhân viên hỏi họ tên của Lan. Bạn nghe đoạn hội thoại ba lượt như ở bài 1.",
+            "Trong đoạn này, Lan đánh vần họ và tên mình. Sau đoạn hội thoại, bạn nghe 13 chữ cái còn lại của bảng chữ cái."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Ở quầy tiếp tân, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "d1",
+              "chunks": [
+                {
+                  "en": "What's your last name?",
+                  "vi": "Họ của chị là gì?",
+                  "audio": "d1"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "chunks": [
+                {
+                  "en": "Nguyen.",
+                  "vi": "Nguyễn.",
+                  "audio": "d2"
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "d3",
+              "chunks": [
+                {
+                  "en": "Can you spell that?",
+                  "vi": "Chị đánh vần giúp được không?",
+                  "audio": "d3"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "chunks": [
+                {
+                  "en": "N, G, U, Y, E, N.",
+                  "vi": "N, G, U, Y, E, N.",
+                  "audio": "d4"
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "d5",
+              "chunks": [
+                {
+                  "en": "Is that N-G-U-Y-E-N?",
+                  "vi": "Có phải N-G-U-Y-E-N không?",
+                  "audio": "d5"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6",
+              "chunks": [
+                {
+                  "en": "Yes,",
+                  "vi": "Vâng,",
+                  "audio": "c_yes"
+                },
+                {
+                  "en": "that's right.",
+                  "vi": "đúng rồi.",
+                  "audio": "c_right"
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "d7",
+              "chunks": [
+                {
+                  "en": "And your first name?",
+                  "vi": "Còn tên của chị?",
+                  "audio": "d7"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d8",
+              "chunks": [
+                {
+                  "en": "Lan.",
+                  "vi": "Lan.",
+                  "audio": "c_lan"
+                },
+                {
+                  "en": "L, A, N.",
+                  "vi": "L, A, N.",
+                  "audio": "c_lan_spell"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Ở quầy tiếp tân, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "d1",
+              "vi": "Họ của chị là gì?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "vi": "Nguyễn."
+            },
+            {
+              "speaker": "staff",
+              "audio": "d3",
+              "vi": "Chị đánh vần giúp được không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "vi": "N, G, U, Y, E, N."
+            },
+            {
+              "speaker": "staff",
+              "audio": "d5",
+              "vi": "Có phải N-G-U-Y-E-N không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6",
+              "vi": "Vâng, đúng rồi."
+            },
+            {
+              "speaker": "staff",
+              "audio": "d7",
+              "vi": "Còn tên của chị?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d8",
+              "vi": "Lan. L, A, N."
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Ở quầy tiếp tân, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "d1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2"
+            },
+            {
+              "speaker": "staff",
+              "audio": "d3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4"
+            },
+            {
+              "speaker": "staff",
+              "audio": "d5"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6"
+            },
+            {
+              "speaker": "staff",
+              "audio": "d7"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d8"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "13 chữ cái còn lại",
+          "layout": "grid",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "l_f",
+              "chunks": [
+                {
+                  "en": "F",
+                  "vi": "/ɛf/",
+                  "audio": "l_f"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_l",
+              "chunks": [
+                {
+                  "en": "L",
+                  "vi": "/ɛl/",
+                  "audio": "l_l"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_m",
+              "chunks": [
+                {
+                  "en": "M",
+                  "vi": "/ɛm/",
+                  "audio": "l_m"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_n",
+              "chunks": [
+                {
+                  "en": "N",
+                  "vi": "/ɛn/",
+                  "audio": "l_n"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_s",
+              "chunks": [
+                {
+                  "en": "S",
+                  "vi": "/ɛs/",
+                  "audio": "l_s"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_x",
+              "chunks": [
+                {
+                  "en": "X",
+                  "vi": "/ɛks/",
+                  "audio": "l_x"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_i",
+              "chunks": [
+                {
+                  "en": "I",
+                  "vi": "/aɪ/",
+                  "audio": "l_i"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_y",
+              "chunks": [
+                {
+                  "en": "Y",
+                  "vi": "/waɪ/",
+                  "audio": "l_y"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_o",
+              "chunks": [
+                {
+                  "en": "O",
+                  "vi": "/oʊ/",
+                  "audio": "l_o"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_q",
+              "chunks": [
+                {
+                  "en": "Q",
+                  "vi": "/kjuː/",
+                  "audio": "l_q"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_u",
+              "chunks": [
+                {
+                  "en": "U",
+                  "vi": "/juː/",
+                  "audio": "l_u"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_w",
+              "chunks": [
+                {
+                  "en": "W",
+                  "vi": "/ˈdʌbəl juː/",
+                  "audio": "l_w"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_r",
+              "chunks": [
+                {
+                  "en": "R",
+                  "vi": "/ɑːr/",
+                  "audio": "l_r"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Nhóm 3: vần /ɛ/",
+          "body": [
+            "Nhóm 3 gồm những chữ có tên cùng vần /ɛ/: {{l_f}}, {{l_l}}, {{l_m}}, {{l_n}}, {{l_s}}, {{l_x}}.",
+            "Tên của những chữ này bắt đầu bằng âm /ɛ/, gần giống \"e\" trong tiếng Việt, rồi mới đến phụ âm. Bạn đọc rõ phụ âm ở cuối: {{l_f}} có /f/, {{l_s}} có /s/, {{l_x}} có /ks/."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nhóm 4: vần /aɪ/",
+          "body": [
+            "Nhóm 4 gồm hai chữ: {{l_i|/aɪ/}} và {{l_y|/waɪ/}}.",
+            "Chữ I trong tiếng Anh đọc khác hẳn chữ \"i\" trong tiếng Việt, nên khi đánh vần, người Việt hay lẫn E với I. Bạn luyện cặp này nhiều lần: {{l_e|/iː/}} và {{l_i|/aɪ/}}."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Năm chữ còn lại",
+          "body": [
+            "Chữ {{l_o|/oʊ/}} đọc tròn môi rồi khép dần.",
+            "Ba chữ {{l_q}}, {{l_u}}, {{l_w}} cùng vần /juː/. Chữ W đọc là \"double-u\", nghĩa là \"hai chữ U\".",
+            "Chữ {{l_r|/ɑːr/}} đọc với lưỡi cong lên ở cuối."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Hai chữ giống nhau",
+          "body": [
+            "Khi hai chữ giống nhau đứng liền nhau, người nói tiếng Anh đánh vần là {{double}}. Chẳng hạn \"LL\" đọc là {{double_l}}."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Đọc lại để kiểm",
+          "body": [
+            "Người ghi tên thường đọc lại các chữ để kiểm, như {{is_that|Có phải N-G-U-Y-E-N không?}}",
+            "Nếu đúng, bạn đáp {{thats_right|Vâng, đúng rồi.}} Nếu sai, bạn đáp {{no}} rồi đánh vần lại, chậm hơn."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Họ và tên trên giấy tờ",
+          "body": [
+            "Trên giấy tờ ở Mỹ, {{first_name|tên}} là tên gọi (Lan), {{last_name|họ}} là họ (Nguyen), {{middle_name|tên đệm}} là tên đệm.",
+            "Mẫu đơn có khi hỏi họ trước, có khi hỏi tên trước, nên bạn đọc tên ô trước khi điền. Khi có người hỏi {{whats_your_name|Bạn tên gì?}}, bạn nói cả tên lẫn họ, tên đứng trước: Lan Nguyen.",
+            "Bạn cũng nên chọn một cách ghi tên và ghi giống nhau trên mọi giấy tờ."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Tên không dấu",
+          "body": [
+            "Trên giấy tờ ở Mỹ, tên tiếng Việt được viết không dấu, chẳng hạn Nguyễn viết là Nguyen, Trần viết là Tran. Khi đánh vần, bạn cũng chỉ đọc các chữ cái, không đọc dấu."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_f",
+          "layout": "row",
+          "options": [
+            {
+              "text": "F",
+              "correct": true
+            },
+            {
+              "text": "L"
+            },
+            {
+              "text": "S"
+            },
+            {
+              "text": "X"
+            }
+          ],
+          "review": [
+            "w1-l3/f"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_r",
+          "layout": "row",
+          "options": [
+            {
+              "text": "A"
+            },
+            {
+              "text": "O"
+            },
+            {
+              "text": "R",
+              "correct": true
+            },
+            {
+              "text": "U"
+            }
+          ],
+          "review": [
+            "w1-l3/r"
+          ],
+          "explain": "R đọc là /ɑːr/, lưỡi cong lên ở cuối."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_w",
+          "layout": "row",
+          "options": [
+            {
+              "text": "Q"
+            },
+            {
+              "text": "U"
+            },
+            {
+              "text": "V"
+            },
+            {
+              "text": "W",
+              "correct": true
+            }
+          ],
+          "review": [
+            "w1-l3/w"
+          ],
+          "explain": "W đọc là \"double-u\"."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_y",
+          "layout": "row",
+          "options": [
+            {
+              "text": "I"
+            },
+            {
+              "text": "J"
+            },
+            {
+              "text": "W"
+            },
+            {
+              "text": "Y",
+              "correct": true
+            }
+          ],
+          "review": [
+            "w1-l3/y"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_i",
+          "layout": "row",
+          "options": [
+            {
+              "text": "E"
+            },
+            {
+              "text": "I",
+              "correct": true
+            }
+          ],
+          "review": [
+            "w1-l3/i"
+          ],
+          "explain": "I đọc là /aɪ/, còn E đọc là /iː/."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_e",
+          "layout": "row",
+          "options": [
+            {
+              "text": "E",
+              "correct": true
+            },
+            {
+              "text": "I"
+            }
+          ],
+          "review": [
+            "w1-l2/e"
+          ],
+          "explain": "E đọc là /iː/, còn I đọc là /aɪ/."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_g",
+          "layout": "row",
+          "options": [
+            {
+              "text": "G",
+              "correct": true
+            },
+            {
+              "text": "J"
+            }
+          ],
+          "review": [
+            "w1-l2/g"
+          ],
+          "explain": "G đọc là /dʒiː/, J đọc là /dʒeɪ/."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_a",
+          "layout": "row",
+          "options": [
+            {
+              "text": "A",
+              "correct": true
+            },
+            {
+              "text": "R"
+            }
+          ],
+          "review": [
+            "w1-l2/a"
+          ],
+          "explain": "A đọc là /eɪ/, R đọc là /ɑːr/."
+        },
+        {
+          "type": "choose",
+          "prompt": "Lan Nguyen điền mẫu đơn. Ô Last name ghi gì?",
+          "options": [
+            {
+              "text": "Nguyen",
+              "correct": true
+            },
+            {
+              "text": "Lan"
+            }
+          ],
+          "explain": "Last name là họ.",
+          "review": [
+            "w1-l3/last-name"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Còn ô First name ghi gì?",
+          "options": [
+            {
+              "text": "Nguyen"
+            },
+            {
+              "text": "Lan",
+              "correct": true
+            }
+          ],
+          "explain": "First name là tên gọi.",
+          "review": [
+            "w1-l3/first-name"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Ở phần này, bạn nghe câu hỏi của nhân viên, rồi thu âm câu trả lời bằng họ tên của bạn. Câu trả lời mẫu dùng họ tên của Lan."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "last",
+          "prompt": "Nhân viên hỏi họ của bạn. Bạn nói họ rồi đánh vần.",
+          "ask": "ask_last",
+          "model": "m_last",
+          "say": "[họ của bạn]. [đánh vần họ]",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "first",
+          "prompt": "Nhân viên hỏi tên của bạn. Bạn nói tên rồi đánh vần.",
+          "ask": "ask_first",
+          "model": "m_first",
+          "say": "[tên của bạn]. [đánh vần tên]",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "right",
+          "prompt": "Nhân viên đọc lại đúng họ của bạn. Bạn xác nhận.",
+          "model": "thats_right",
+          "say": "Yes, that's right."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe Minh đánh vần một họ của người Việt rồi gõ lại.",
+          "audio": "s_pham",
+          "answer": "P, H, A, M",
+          "note": "Bạn gõ liền hay cách nhau đều được."
+        },
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe Minh đánh vần một họ của người Việt rồi gõ lại.",
+          "audio": "s_tran",
+          "answer": "T, R, A, N",
+          "review": [
+            "w1-l3/r"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe Minh đánh vần một họ của người Việt rồi gõ lại.",
+          "audio": "s_huynh",
+          "answer": "H, U, Y, N, H",
+          "review": [
+            "w1-l3/u",
+            "w1-l3/y"
+          ]
+        },
+        {
+          "type": "text",
+          "body": [
+            "Hai bước sau là một mẫu đơn. Bạn điền họ và tên thật của bạn, viết không dấu. Những gì bạn gõ chỉ lưu trên máy này."
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "field",
+          "prompt": "Điền họ của bạn.",
+          "label": "Last name",
+          "done": "Đã điền. Ô Last name ghi họ."
+        },
+        {
+          "type": "write",
+          "mode": "field",
+          "prompt": "Điền tên của bạn.",
+          "label": "First name",
+          "done": "Đã điền. Ô First name ghi tên gọi."
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "f",
+      "en": "F",
+      "vi": "/ɛf/",
+      "audio": "l_f"
+    },
+    {
+      "id": "l",
+      "en": "L",
+      "vi": "/ɛl/",
+      "audio": "l_l"
+    },
+    {
+      "id": "m",
+      "en": "M",
+      "vi": "/ɛm/",
+      "audio": "l_m"
+    },
+    {
+      "id": "n",
+      "en": "N",
+      "vi": "/ɛn/",
+      "audio": "l_n"
+    },
+    {
+      "id": "s",
+      "en": "S",
+      "vi": "/ɛs/",
+      "audio": "l_s"
+    },
+    {
+      "id": "x",
+      "en": "X",
+      "vi": "/ɛks/",
+      "audio": "l_x"
+    },
+    {
+      "id": "i",
+      "en": "I",
+      "vi": "/aɪ/",
+      "audio": "l_i"
+    },
+    {
+      "id": "y",
+      "en": "Y",
+      "vi": "/waɪ/",
+      "audio": "l_y"
+    },
+    {
+      "id": "o",
+      "en": "O",
+      "vi": "/oʊ/",
+      "audio": "l_o"
+    },
+    {
+      "id": "q",
+      "en": "Q",
+      "vi": "/kjuː/",
+      "audio": "l_q"
+    },
+    {
+      "id": "u",
+      "en": "U",
+      "vi": "/juː/",
+      "audio": "l_u"
+    },
+    {
+      "id": "w",
+      "en": "W",
+      "vi": "/ˈdʌbəl juː/",
+      "audio": "l_w"
+    },
+    {
+      "id": "r",
+      "en": "R",
+      "vi": "/ɑːr/",
+      "audio": "l_r"
+    },
+    {
+      "id": "double",
+      "en": "double",
+      "vi": "hai chữ giống nhau liền nhau (khi đánh vần)",
+      "audio": "double"
+    },
+    {
+      "id": "first-name",
+      "en": "first name",
+      "vi": "tên gọi",
+      "audio": "first_name"
+    },
+    {
+      "id": "last-name",
+      "en": "last name",
+      "vi": "họ",
+      "audio": "last_name"
+    },
+    {
+      "id": "middle-name",
+      "en": "middle name",
+      "vi": "tên đệm",
+      "audio": "middle_name"
+    },
+    {
+      "id": "whats-your-name",
+      "en": "What's your name?",
+      "vi": "Bạn tên gì?",
+      "audio": "whats_your_name"
+    },
+    {
+      "id": "is-that",
+      "en": "Is that…?",
+      "vi": "Có phải… không?",
+      "audio": "is_that"
+    },
+    {
+      "id": "thats-right",
+      "en": "Yes, that's right.",
+      "vi": "Vâng, đúng rồi.",
+      "audio": "thats_right"
+    }
+  ],
+  "canDo": [
+    "Đọc đúng tên cả 26 chữ cái.",
+    "Đánh vần họ và tên của mình.",
+    "Biết ô nào trên mẫu đơn ghi họ, ô nào ghi tên.",
+    "Xác nhận khi người khác đọc lại tên mình."
+  ],
+  "realTask": "Hôm nay, bạn đánh vần to họ và tên của mình ba lần mà không nhìn giấy. Nếu có ai cần ghi tên bạn, ở quầy, ở phòng khám hay qua điện thoại, bạn tự đánh vần bằng tiếng Anh."
+}

@@ -1,0 +1,896 @@
+{
+  "id": "w1-l2",
+  "title": "Bảng chữ cái, phần đầu",
+  "goal": "Hết bài này, bạn đọc đúng tên của 13 chữ cái và nghe ra chúng khi người khác đánh vần.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "minh": {
+      "name": "Minh",
+      "voice": "am_michael"
+    }
+  },
+  "listenNote": "Hai nhóm chữ cái, mỗi nhóm nghe hai lượt",
+  "audio": {
+    "l_a": {
+      "text": "A",
+      "voice": "af_heart",
+      "ipa": "ˈeɪ.",
+      "speed": 0.9
+    },
+    "l_h": {
+      "text": "H",
+      "voice": "af_heart",
+      "ipa": "ˈeɪtʃ.",
+      "speed": 0.9
+    },
+    "l_j": {
+      "text": "J",
+      "voice": "af_heart",
+      "ipa": "dʒˈeɪ.",
+      "speed": 0.9
+    },
+    "l_k": {
+      "text": "K",
+      "voice": "af_heart",
+      "ipa": "kˈeɪ.",
+      "speed": 0.9
+    },
+    "l_b": {
+      "text": "B",
+      "voice": "af_heart",
+      "ipa": "bˈiː.",
+      "speed": 0.9
+    },
+    "l_c": {
+      "text": "C",
+      "voice": "af_heart",
+      "ipa": "sˈiː.",
+      "speed": 0.9
+    },
+    "l_d": {
+      "text": "D",
+      "voice": "af_heart",
+      "ipa": "dˈiː.",
+      "speed": 0.9
+    },
+    "l_e": {
+      "text": "E",
+      "voice": "af_heart",
+      "ipa": "ˈiː.",
+      "speed": 0.9
+    },
+    "l_g": {
+      "text": "G",
+      "voice": "af_heart",
+      "ipa": "dʒˈiː.",
+      "speed": 0.9
+    },
+    "l_p": {
+      "text": "P",
+      "voice": "af_heart",
+      "ipa": "pˈiː.",
+      "speed": 0.9
+    },
+    "l_t": {
+      "text": "T",
+      "voice": "af_heart",
+      "ipa": "tˈiː.",
+      "speed": 0.9
+    },
+    "l_v": {
+      "text": "V",
+      "voice": "af_heart",
+      "ipa": "vˈiː.",
+      "speed": 0.9
+    },
+    "l_z": {
+      "text": "Z",
+      "voice": "af_heart",
+      "ipa": "zˈiː.",
+      "speed": 0.9
+    },
+    "g1": {
+      "text": "A, H, J, K.",
+      "voice": "af_heart",
+      "spell": [
+        "ˈeɪ.",
+        "ˈeɪtʃ.",
+        "dʒˈeɪ.",
+        "kˈeɪ."
+      ],
+      "gap": 0.45
+    },
+    "g2": {
+      "text": "B, C, D, E, G, P, T, V, Z.",
+      "voice": "af_heart",
+      "spell": [
+        "bˈiː.",
+        "sˈiː.",
+        "dˈiː.",
+        "ˈiː.",
+        "dʒˈiː.",
+        "pˈiː.",
+        "tˈiː.",
+        "vˈiː.",
+        "zˈiː."
+      ],
+      "gap": 0.45
+    },
+    "tv": {
+      "text": "T, V.",
+      "voice": "af_heart",
+      "spell": [
+        "tˈiː.",
+        "vˈiː."
+      ],
+      "gap": 0.35
+    },
+    "abc": {
+      "text": "A, B, C.",
+      "voice": "af_heart",
+      "spell": [
+        "ˈeɪ.",
+        "bˈiː.",
+        "sˈiː."
+      ],
+      "gap": 0.35
+    },
+    "bed": {
+      "text": "B, E, D.",
+      "voice": "am_michael",
+      "spell": [
+        "bˈiː.",
+        "ˈiː.",
+        "dˈiː."
+      ],
+      "gap": 0.5
+    },
+    "jeg": {
+      "text": "J, E, G.",
+      "voice": "am_michael",
+      "spell": [
+        "dʒˈeɪ.",
+        "ˈiː.",
+        "dʒˈiː."
+      ],
+      "gap": 0.5
+    },
+    "spell_it": {
+      "text": "How do you spell it?",
+      "voice": "af_heart"
+    },
+    "spell_that": {
+      "text": "Can you spell that?",
+      "voice": "af_heart"
+    },
+    "spell": {
+      "text": "spell",
+      "voice": "af_heart"
+    },
+    "w_spell_it": {
+      "text": "How do you spell it?",
+      "voice": "am_michael",
+      "speed": 0.9
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Hai nhóm chữ",
+          "body": [
+            "Bài này học tên của 13 chữ cái, chia làm hai nhóm. Những chữ trong một nhóm có tên cùng vần, nên học cùng nhau thì dễ nhớ hơn học theo thứ tự A, B, C.",
+            "Mỗi nhóm nghe hai lượt. Lượt đầu, mỗi chữ hiện kèm ký hiệu ghi âm của nó; lượt sau chỉ còn tiếng."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Nhóm 1, lượt 1: chữ và âm",
+          "layout": "grid",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "l_a",
+              "chunks": [
+                {
+                  "en": "A",
+                  "vi": "/eɪ/",
+                  "audio": "l_a"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_h",
+              "chunks": [
+                {
+                  "en": "H",
+                  "vi": "/eɪtʃ/",
+                  "audio": "l_h"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_j",
+              "chunks": [
+                {
+                  "en": "J",
+                  "vi": "/dʒeɪ/",
+                  "audio": "l_j"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_k",
+              "chunks": [
+                {
+                  "en": "K",
+                  "vi": "/keɪ/",
+                  "audio": "l_k"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Nhóm 1, lượt 2: chỉ nghe",
+          "layout": "grid",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "l_a"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_h"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_j"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_k"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Nhóm 2, lượt 1: chữ và âm",
+          "layout": "grid",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "l_b",
+              "chunks": [
+                {
+                  "en": "B",
+                  "vi": "/biː/",
+                  "audio": "l_b"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_c",
+              "chunks": [
+                {
+                  "en": "C",
+                  "vi": "/siː/",
+                  "audio": "l_c"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_d",
+              "chunks": [
+                {
+                  "en": "D",
+                  "vi": "/diː/",
+                  "audio": "l_d"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_e",
+              "chunks": [
+                {
+                  "en": "E",
+                  "vi": "/iː/",
+                  "audio": "l_e"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_g",
+              "chunks": [
+                {
+                  "en": "G",
+                  "vi": "/dʒiː/",
+                  "audio": "l_g"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_p",
+              "chunks": [
+                {
+                  "en": "P",
+                  "vi": "/piː/",
+                  "audio": "l_p"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_t",
+              "chunks": [
+                {
+                  "en": "T",
+                  "vi": "/tiː/",
+                  "audio": "l_t"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_v",
+              "chunks": [
+                {
+                  "en": "V",
+                  "vi": "/viː/",
+                  "audio": "l_v"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_z",
+              "chunks": [
+                {
+                  "en": "Z",
+                  "vi": "/ziː/",
+                  "audio": "l_z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Nhóm 2, lượt 2: chỉ nghe",
+          "layout": "grid",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "l_b"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_c"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_d"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_e"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_g"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_p"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_t"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_v"
+            },
+            {
+              "speaker": "doc",
+              "audio": "l_z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Tên của chữ cái",
+          "body": [
+            "Mỗi chữ cái tiếng Anh có một cái tên dùng khi đánh vần, và tên này khác tên chữ trong tiếng Việt: chữ A tên là {{l_a|/eɪ/}}, chữ E tên là {{l_e|/iː/}}.",
+            "Ở Mỹ, bạn sẽ phải đánh vần tên mình rất thường xuyên: ở phòng khám, ở ngân hàng, khi gọi điện cho một văn phòng. Vì vậy bài này học tên chữ trước tiên."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Ký hiệu ghi âm",
+          "body": [
+            "Ký hiệu nằm giữa hai gạch chéo, như /eɪ/, ghi lại âm thanh của chữ. Người ta gọi chúng là ký hiệu phiên âm quốc tế, viết tắt là IPA, và từ điển tiếng Anh nào cũng dùng.",
+            "Bài dùng các ký hiệu này để bạn nhìn kèm khi nghe. Bạn chưa cần học thuộc, và luôn bấm nghe trước khi đọc theo."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nhóm 1: vần /eɪ/",
+          "body": [
+            "Nhóm 1 gồm những chữ có tên cùng vần /eɪ/: {{l_a}}, {{l_h}}, {{l_j}}, {{l_k}}.",
+            "Chữ H đọc là {{l_h|/eɪtʃ/}}, có âm /tʃ/ ở cuối. Bạn đọc đủ âm cuối ấy, đừng bỏ đi thành /eɪ/."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nhóm 2: vần /iː/",
+          "body": [
+            "Nhóm 2 gồm những chữ có tên cùng vần /iː/: {{l_b}}, {{l_c}}, {{l_d}}, {{l_e}}, {{l_g}}, {{l_p}}, {{l_t}}, {{l_v}}, {{l_z}}.",
+            "Âm /iː/ đọc dài, hai khóe miệng kéo sang ngang như khi cười. Ở Mỹ, chữ Z đọc là {{l_z|/ziː/}}."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "G và J",
+          "body": [
+            "Người Việt hay lẫn {{l_g}} với {{l_j}}, vì hai chữ bắt đầu bằng cùng một âm /dʒ/.",
+            "Muốn phân biệt, bạn nghe vần ở cuối: chữ G đọc là /dʒiː/, cùng vần với nhóm 2; chữ J đọc là /dʒeɪ/, cùng vần với nhóm 1."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "P và B",
+          "body": [
+            "Chữ {{l_p}} đọc bật hơi, chữ {{l_b}} thì không.",
+            "Bạn đặt bàn tay trước miệng rồi đọc thử: với P, bạn thấy hơi phả vào tay; với B, gần như không có hơi."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nhờ người khác đánh vần",
+          "body": [
+            "Khi nghe một từ hay một cái tên mà không biết viết thế nào, bạn hỏi {{spell_it|Từ đó viết thế nào?}} hoặc {{spell_that|Bạn đánh vần giúp được không?}}",
+            "Chữ {{spell|đánh vần}} nghĩa là đọc lần lượt từng chữ cái của một từ."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_h",
+          "layout": "row",
+          "options": [
+            {
+              "text": "A"
+            },
+            {
+              "text": "H",
+              "correct": true
+            },
+            {
+              "text": "J"
+            },
+            {
+              "text": "K"
+            }
+          ],
+          "review": [
+            "w1-l2/h"
+          ],
+          "explain": "Chữ H có âm /tʃ/ ở cuối: /eɪtʃ/."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_e",
+          "layout": "row",
+          "options": [
+            {
+              "text": "B"
+            },
+            {
+              "text": "E",
+              "correct": true
+            },
+            {
+              "text": "G"
+            },
+            {
+              "text": "V"
+            }
+          ],
+          "review": [
+            "w1-l2/e"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_k",
+          "layout": "row",
+          "options": [
+            {
+              "text": "A"
+            },
+            {
+              "text": "H"
+            },
+            {
+              "text": "J"
+            },
+            {
+              "text": "K",
+              "correct": true
+            }
+          ],
+          "review": [
+            "w1-l2/k"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_z",
+          "layout": "row",
+          "options": [
+            {
+              "text": "C"
+            },
+            {
+              "text": "E"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": "Z",
+              "correct": true
+            }
+          ],
+          "review": [
+            "w1-l2/z"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_g",
+          "layout": "row",
+          "options": [
+            {
+              "text": "G",
+              "correct": true
+            },
+            {
+              "text": "J"
+            }
+          ],
+          "review": [
+            "w1-l2/g"
+          ],
+          "explain": "G đọc là /dʒiː/, cùng vần với nhóm 2."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_j",
+          "layout": "row",
+          "options": [
+            {
+              "text": "G"
+            },
+            {
+              "text": "J",
+              "correct": true
+            }
+          ],
+          "review": [
+            "w1-l2/j"
+          ],
+          "explain": "J đọc là /dʒeɪ/, cùng vần với nhóm 1."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_p",
+          "layout": "row",
+          "options": [
+            {
+              "text": "B"
+            },
+            {
+              "text": "P",
+              "correct": true
+            }
+          ],
+          "review": [
+            "w1-l2/p"
+          ],
+          "explain": "P đọc bật hơi, B thì không."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_b",
+          "layout": "row",
+          "options": [
+            {
+              "text": "B",
+              "correct": true
+            },
+            {
+              "text": "P"
+            }
+          ],
+          "review": [
+            "w1-l2/b"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_t",
+          "layout": "row",
+          "options": [
+            {
+              "text": "D"
+            },
+            {
+              "text": "T",
+              "correct": true
+            }
+          ],
+          "review": [
+            "w1-l2/t"
+          ],
+          "explain": "T đọc bật hơi, D thì không."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe tên một chữ rồi chọn chữ bạn vừa nghe.",
+          "audio": "l_d",
+          "layout": "row",
+          "options": [
+            {
+              "text": "D",
+              "correct": true
+            },
+            {
+              "text": "T"
+            }
+          ],
+          "review": [
+            "w1-l2/d"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn nghe mẫu, thu âm giọng mình đọc theo, rồi nghe lại hai bản để so. Bạn đọc rõ từng chữ và nghỉ một chút giữa hai chữ."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "g1",
+          "prompt": "Đọc các chữ của nhóm 1.",
+          "model": "g1",
+          "say": "A, H, J, K",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "g2",
+          "prompt": "Đọc các chữ của nhóm 2.",
+          "model": "g2",
+          "say": "B, C, D, E, G, P, T, V, Z",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "tv",
+          "prompt": "Đánh vần chữ TV (ti vi).",
+          "model": "tv",
+          "say": "T, V",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "abc",
+          "prompt": "Đánh vần ABC.",
+          "model": "abc",
+          "say": "A, B, C",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "spell",
+          "prompt": "Nhờ người khác đánh vần.",
+          "model": "spell_it",
+          "say": "How do you spell it?"
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe Minh đánh vần ba chữ rồi gõ lại ba chữ ấy.",
+          "audio": "bed",
+          "answer": "B, E, D",
+          "note": "Bạn gõ liền hay cách nhau đều được, như BED hay B E D.",
+          "review": [
+            "w1-l2/b",
+            "w1-l2/e",
+            "w1-l2/d"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "letters",
+          "prompt": "Nghe Minh đánh vần ba chữ rồi gõ lại ba chữ ấy.",
+          "audio": "jeg",
+          "answer": "J, E, G",
+          "review": [
+            "w1-l2/j",
+            "w1-l2/e",
+            "w1-l2/g"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w_spell_it",
+          "answer": "How do you spell it?"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "a",
+      "en": "A",
+      "vi": "/eɪ/",
+      "audio": "l_a"
+    },
+    {
+      "id": "h",
+      "en": "H",
+      "vi": "/eɪtʃ/",
+      "audio": "l_h"
+    },
+    {
+      "id": "j",
+      "en": "J",
+      "vi": "/dʒeɪ/",
+      "audio": "l_j"
+    },
+    {
+      "id": "k",
+      "en": "K",
+      "vi": "/keɪ/",
+      "audio": "l_k"
+    },
+    {
+      "id": "b",
+      "en": "B",
+      "vi": "/biː/",
+      "audio": "l_b"
+    },
+    {
+      "id": "c",
+      "en": "C",
+      "vi": "/siː/",
+      "audio": "l_c"
+    },
+    {
+      "id": "d",
+      "en": "D",
+      "vi": "/diː/",
+      "audio": "l_d"
+    },
+    {
+      "id": "e",
+      "en": "E",
+      "vi": "/iː/",
+      "audio": "l_e"
+    },
+    {
+      "id": "g",
+      "en": "G",
+      "vi": "/dʒiː/",
+      "audio": "l_g"
+    },
+    {
+      "id": "p",
+      "en": "P",
+      "vi": "/piː/",
+      "audio": "l_p"
+    },
+    {
+      "id": "t",
+      "en": "T",
+      "vi": "/tiː/",
+      "audio": "l_t"
+    },
+    {
+      "id": "v",
+      "en": "V",
+      "vi": "/viː/",
+      "audio": "l_v"
+    },
+    {
+      "id": "z",
+      "en": "Z",
+      "vi": "/ziː/",
+      "audio": "l_z"
+    },
+    {
+      "id": "spell",
+      "en": "spell",
+      "vi": "đánh vần",
+      "audio": "spell"
+    },
+    {
+      "id": "spell-it",
+      "en": "How do you spell it?",
+      "vi": "Từ đó viết thế nào?",
+      "audio": "spell_it"
+    },
+    {
+      "id": "spell-that",
+      "en": "Can you spell that?",
+      "vi": "Bạn đánh vần giúp được không?",
+      "audio": "spell_that"
+    }
+  ],
+  "canDo": [
+    "Đọc đúng tên 13 chữ cái: A, H, J, K và B, C, D, E, G, P, T, V, Z.",
+    "Nghe ra G với J, B với P, D với T khi người khác đánh vần.",
+    "Nhờ người khác đánh vần một từ."
+  ],
+  "realTask": "Hôm nay, mỗi lần thấy một biển số xe hay một chữ viết tắt trên đường, bạn đọc thầm tên các chữ cái trên đó bằng tiếng Anh. Chữ nào chưa học thì bạn bỏ qua."
+}

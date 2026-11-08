@@ -1,0 +1,732 @@
+{
+  "id": "w1-l4",
+  "title": "Nguyên âm dài và ngắn",
+  "goal": "Hết bài này, bạn nghe ra và đọc được sự khác nhau giữa /iː/ và /ɪ/, giữa /uː/ và /ʊ/.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "minh": {
+      "name": "Minh",
+      "voice": "am_michael"
+    }
+  },
+  "listenNote": "Năm cặp từ chỉ khác nhau ở nguyên âm, và hai câu ngắn",
+  "audio": {
+    "eat": {
+      "text": "eat",
+      "voice": "af_heart",
+      "ipa": "ˈiːt.",
+      "speed": 0.9
+    },
+    "it": {
+      "text": "it",
+      "voice": "af_heart",
+      "ipa": "ˈɪt.",
+      "speed": 0.9
+    },
+    "seat": {
+      "text": "seat",
+      "voice": "af_heart",
+      "ipa": "sˈiːt.",
+      "speed": 0.9
+    },
+    "sit": {
+      "text": "sit",
+      "voice": "af_heart",
+      "ipa": "sˈɪt.",
+      "speed": 0.9
+    },
+    "feel": {
+      "text": "feel",
+      "voice": "af_heart",
+      "ipa": "fˈiːl.",
+      "speed": 0.9
+    },
+    "fill": {
+      "text": "fill",
+      "voice": "af_heart",
+      "ipa": "fˈɪl.",
+      "speed": 0.9
+    },
+    "leave": {
+      "text": "leave",
+      "voice": "af_heart",
+      "ipa": "lˈiːv.",
+      "speed": 0.9
+    },
+    "live": {
+      "text": "live",
+      "voice": "af_heart",
+      "ipa": "lˈɪv.",
+      "speed": 0.9
+    },
+    "pool": {
+      "text": "pool",
+      "voice": "af_heart",
+      "ipa": "pˈuːl.",
+      "speed": 0.9
+    },
+    "pull": {
+      "text": "pull",
+      "voice": "af_heart",
+      "ipa": "pˈʊl.",
+      "speed": 0.9
+    },
+    "food": {
+      "text": "food",
+      "voice": "af_heart",
+      "ipa": "fˈuːd.",
+      "speed": 0.9
+    },
+    "good": {
+      "text": "good",
+      "voice": "af_heart",
+      "ipa": "ɡˈʊd.",
+      "speed": 0.9
+    },
+    "p_eat": {
+      "text": "eat, it, eat, it.",
+      "voice": "af_heart",
+      "spell": [
+        "ˈiːt.",
+        "ˈɪt.",
+        "ˈiːt.",
+        "ˈɪt."
+      ],
+      "gap": 0.55
+    },
+    "p_seat": {
+      "text": "seat, sit, seat, sit.",
+      "voice": "af_heart",
+      "spell": [
+        "sˈiːt.",
+        "sˈɪt.",
+        "sˈiːt.",
+        "sˈɪt."
+      ],
+      "gap": 0.55
+    },
+    "p_feel": {
+      "text": "feel, fill, feel, fill.",
+      "voice": "af_heart",
+      "spell": [
+        "fˈiːl.",
+        "fˈɪl.",
+        "fˈiːl.",
+        "fˈɪl."
+      ],
+      "gap": 0.55
+    },
+    "p_leave": {
+      "text": "leave, live, leave, live.",
+      "voice": "af_heart",
+      "spell": [
+        "lˈiːv.",
+        "lˈɪv.",
+        "lˈiːv.",
+        "lˈɪv."
+      ],
+      "gap": 0.55
+    },
+    "p_pool": {
+      "text": "pool, pull, pool, pull.",
+      "voice": "af_heart",
+      "spell": [
+        "pˈuːl.",
+        "pˈʊl.",
+        "pˈuːl.",
+        "pˈʊl."
+      ],
+      "gap": 0.55
+    },
+    "please_sit": {
+      "text": "Please sit.",
+      "voice": "am_michael",
+      "ipa": "plˈiːz sˈɪt."
+    },
+    "live_houston": {
+      "text": "I live in Houston.",
+      "voice": "af_heart",
+      "ipa": "aɪ lˈɪv ɪn hjˈuːstən."
+    },
+    "i_live_in": {
+      "text": "I live in…",
+      "voice": "af_heart",
+      "ipa": "aɪ lˈɪv ɪn"
+    },
+    "m_live": {
+      "text": "I live in Houston.",
+      "voice": "af_heart",
+      "ipa": "aɪ lˈɪv ɪn hjˈuːstən.",
+      "speed": 0.9
+    },
+    "w_live": {
+      "text": "I live in Houston.",
+      "voice": "am_michael",
+      "ipa": "aɪ lˈɪv ɪn hjˈuːstən.",
+      "speed": 0.9
+    },
+    "ee_sound": {
+      "text": "/iː/",
+      "voice": "af_heart",
+      "ipa": "ˈiː.",
+      "speed": 0.9
+    },
+    "ih_sound": {
+      "text": "/ɪ/",
+      "voice": "af_heart",
+      "ipa": "ˈɪ.",
+      "speed": 0.9
+    },
+    "m_seat": {
+      "text": "seat, sit, seat, sit.",
+      "voice": "af_heart",
+      "spell": [
+        "sˈiːt.",
+        "sˈɪt.",
+        "sˈiːt.",
+        "sˈɪt."
+      ],
+      "gap": 0.5
+    },
+    "m_leave": {
+      "text": "leave, live, leave, live.",
+      "voice": "af_heart",
+      "spell": [
+        "lˈiːv.",
+        "lˈɪv.",
+        "lˈiːv.",
+        "lˈɪv."
+      ],
+      "gap": 0.5
+    },
+    "m_pool": {
+      "text": "pool, pull, pool, pull.",
+      "voice": "af_heart",
+      "spell": [
+        "pˈuːl.",
+        "pˈʊl.",
+        "pˈuːl.",
+        "pˈʊl."
+      ],
+      "gap": 0.5
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Năm cặp từ",
+          "body": [
+            "Tiếng Anh có những cặp từ chỉ khác nhau ở một nguyên âm mà nghĩa khác hẳn. Tiếng Việt không phân biệt nguyên âm theo kiểu này, nên người Việt hay đọc hai âm thành một, và người nghe dễ hiểu nhầm từ.",
+            "Bạn bấm Nghe cả đoạn để nghe năm cặp từ, mỗi cặp đọc theo thứ tự A, B, A, B. Bạn cũng bấm được vào từng từ để nghe riêng từ đó."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Năm cặp từ",
+          "layout": "pairs",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "p_eat",
+              "chunks": [
+                {
+                  "en": "eat",
+                  "vi": "/iːt/ ăn",
+                  "audio": "eat"
+                },
+                {
+                  "en": "it",
+                  "vi": "/ɪt/ nó",
+                  "audio": "it"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "p_seat",
+              "chunks": [
+                {
+                  "en": "seat",
+                  "vi": "/siːt/ chỗ ngồi",
+                  "audio": "seat"
+                },
+                {
+                  "en": "sit",
+                  "vi": "/sɪt/ ngồi",
+                  "audio": "sit"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "p_feel",
+              "chunks": [
+                {
+                  "en": "feel",
+                  "vi": "/fiːl/ cảm thấy",
+                  "audio": "feel"
+                },
+                {
+                  "en": "fill",
+                  "vi": "/fɪl/ đổ đầy",
+                  "audio": "fill"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "p_leave",
+              "chunks": [
+                {
+                  "en": "leave",
+                  "vi": "/liːv/ rời đi",
+                  "audio": "leave"
+                },
+                {
+                  "en": "live",
+                  "vi": "/lɪv/ sống",
+                  "audio": "live"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "p_pool",
+              "chunks": [
+                {
+                  "en": "pool",
+                  "vi": "/puːl/ hồ bơi",
+                  "audio": "pool"
+                },
+                {
+                  "en": "pull",
+                  "vi": "/pʊl/ kéo",
+                  "audio": "pull"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Hai câu ngắn",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "please_sit",
+              "vi": "Mời ngồi."
+            },
+            {
+              "speaker": "lan",
+              "audio": "live_houston",
+              "vi": "Tôi sống ở Houston."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Hai từ, hai nghĩa",
+          "body": [
+            "{{leave|rời đi}} và {{live|sống}} chỉ khác nhau ở nguyên âm. Nếu bạn đọc live thành leave, câu \"Tôi sống ở Houston\" sẽ thành \"Tôi rời Houston\"."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Âm /iː/: dài",
+          "body": [
+            "Để đọc âm {{ee_sound|/iː/}} trong {{eat}}, {{seat}}, {{leave}}, bạn kéo hai khóe miệng sang ngang như khi cười và giữ âm lâu hơn một chút.",
+            "Dấu hai chấm sau chữ i trong /iː/ cho biết âm này đọc dài."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Âm /ɪ/: ngắn",
+          "body": [
+            "Để đọc âm {{ih_sound|/ɪ/}} trong {{it}}, {{sit}}, {{live}}, bạn thả lỏng miệng và đọc ngắn, gọn. Âm này nằm giữa \"i\" và \"ê\" của tiếng Việt."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/uː/ và /ʊ/",
+          "body": [
+            "Cặp thứ hai cũng theo cách ấy. Âm /uː/ trong {{pool}}, {{food}} đọc với môi tròn và giữ lâu. Âm /ʊ/ trong {{pull}}, {{good}} đọc với môi tròn ít hơn và ngắn hơn."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Cách luyện",
+          "body": [
+            "Bạn đọc liền từng cặp, như {{m_seat}}, thu âm lại, rồi nghe xem hai từ có khác nhau thật không. Phần Nói của bài này làm đúng việc ấy."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Hai câu dùng nhiều",
+          "body": [
+            "{{please_sit|Mời ngồi.}} là câu bạn sẽ nghe ở phòng khám, ở văn phòng, khi có người mời bạn ngồi.",
+            "{{i_live_in|Tôi sống ở…}} dùng để nói nơi bạn sống. Bạn thêm tên thành phố của mình vào sau, như {{live_houston}}"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "sit",
+          "layout": "row",
+          "options": [
+            {
+              "text": "seat"
+            },
+            {
+              "text": "sit",
+              "correct": true
+            }
+          ],
+          "explain": "sit có âm /ɪ/ ngắn.",
+          "review": [
+            "w1-l4/seat",
+            "w1-l4/sit"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "leave",
+          "layout": "row",
+          "options": [
+            {
+              "text": "leave",
+              "correct": true
+            },
+            {
+              "text": "live"
+            }
+          ],
+          "explain": "leave có âm /iː/ dài.",
+          "review": [
+            "w1-l4/leave",
+            "w1-l4/live"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "fill",
+          "layout": "row",
+          "options": [
+            {
+              "text": "feel"
+            },
+            {
+              "text": "fill",
+              "correct": true
+            }
+          ],
+          "explain": "fill có âm /ɪ/ ngắn.",
+          "review": [
+            "w1-l4/feel"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "pool",
+          "layout": "row",
+          "options": [
+            {
+              "text": "pool",
+              "correct": true
+            },
+            {
+              "text": "pull"
+            }
+          ],
+          "explain": "pool có âm /uː/ dài.",
+          "review": [
+            "w1-l4/food"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "eat",
+          "layout": "row",
+          "options": [
+            {
+              "text": "eat",
+              "correct": true
+            },
+            {
+              "text": "it"
+            }
+          ],
+          "explain": "eat có âm /iː/ dài.",
+          "review": [
+            "w1-l4/eat",
+            "w1-l4/it"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai từ. Hai từ giống nhau hay khác nhau?",
+          "audio": [
+            "seat",
+            "sit"
+          ],
+          "layout": "row",
+          "options": [
+            {
+              "text": "Giống"
+            },
+            {
+              "text": "Khác",
+              "correct": true
+            }
+          ],
+          "explain": "seat có âm dài /iː/, sit có âm ngắn /ɪ/."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai từ. Hai từ giống nhau hay khác nhau?",
+          "audio": [
+            "live",
+            "live"
+          ],
+          "layout": "row",
+          "options": [
+            {
+              "text": "Giống",
+              "correct": true
+            },
+            {
+              "text": "Khác"
+            }
+          ],
+          "explain": "Cả hai lần đều là live."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai từ. Hai từ giống nhau hay khác nhau?",
+          "audio": [
+            "pull",
+            "pool"
+          ],
+          "layout": "row",
+          "options": [
+            {
+              "text": "Giống"
+            },
+            {
+              "text": "Khác",
+              "correct": true
+            }
+          ],
+          "explain": "pull có âm ngắn /ʊ/, pool có âm dài /uː/."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe câu dưới đây. Lan nói live hay leave?",
+          "audio": "live_houston",
+          "layout": "row",
+          "options": [
+            {
+              "text": "live",
+              "correct": true
+            },
+            {
+              "text": "leave"
+            }
+          ],
+          "explain": "Lan nói I live in Houston, nghĩa là \"Tôi sống ở Houston\".",
+          "review": [
+            "w1-l4/live",
+            "w1-l4/i-live-in"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Ở phần này, bạn đọc từng cặp từ theo mẫu, thu âm lại, rồi nghe xem hai từ trong bản của bạn có khác nhau không. Từ có âm dài thì giữ lâu hơn, từ có âm ngắn thì đọc gọn."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "seat",
+          "prompt": "Đọc cặp seat và sit.",
+          "model": "m_seat",
+          "say": "seat, sit, seat, sit",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "leave",
+          "prompt": "Đọc cặp leave và live.",
+          "model": "m_leave",
+          "say": "leave, live, leave, live",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "pool",
+          "prompt": "Đọc cặp pool và pull.",
+          "model": "m_pool",
+          "say": "pool, pull, pool, pull",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "live",
+          "prompt": "Nói nơi bạn sống, thay Houston bằng tên thành phố của bạn.",
+          "model": "m_live",
+          "say": "I live in [thành phố của bạn]."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "sit",
+          "answer": "sit",
+          "review": [
+            "w1-l4/sit"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "leave",
+          "answer": "leave",
+          "review": [
+            "w1-l4/leave"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w_live",
+          "answer": "I live in Houston."
+        },
+        {
+          "type": "write",
+          "mode": "intro",
+          "prompt": "Gõ câu nói nơi bạn sống, với tên thành phố của bạn.",
+          "example": "I live in Houston.",
+          "pattern": "\\bi live in [a-z]",
+          "patternOk": "Đúng rồi. Câu của bạn đúng mẫu.",
+          "patternHelp": "Câu này cần bắt đầu bằng I live in, rồi đến tên thành phố. Ví dụ:"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "eat",
+      "en": "eat",
+      "vi": "ăn /iːt/",
+      "audio": "eat"
+    },
+    {
+      "id": "it",
+      "en": "it",
+      "vi": "nó /ɪt/",
+      "audio": "it"
+    },
+    {
+      "id": "seat",
+      "en": "seat",
+      "vi": "chỗ ngồi /siːt/",
+      "audio": "seat"
+    },
+    {
+      "id": "sit",
+      "en": "sit",
+      "vi": "ngồi /sɪt/",
+      "audio": "sit"
+    },
+    {
+      "id": "feel",
+      "en": "feel",
+      "vi": "cảm thấy /fiːl/",
+      "audio": "feel"
+    },
+    {
+      "id": "leave",
+      "en": "leave",
+      "vi": "rời đi /liːv/",
+      "audio": "leave"
+    },
+    {
+      "id": "live",
+      "en": "live",
+      "vi": "sống /lɪv/",
+      "audio": "live"
+    },
+    {
+      "id": "food",
+      "en": "food",
+      "vi": "thức ăn /fuːd/",
+      "audio": "food"
+    },
+    {
+      "id": "good",
+      "en": "good",
+      "vi": "tốt /ɡʊd/",
+      "audio": "good"
+    },
+    {
+      "id": "please-sit",
+      "en": "Please sit.",
+      "vi": "Mời ngồi.",
+      "audio": "please_sit"
+    },
+    {
+      "id": "i-live-in",
+      "en": "I live in…",
+      "vi": "Tôi sống ở…",
+      "audio": "i_live_in"
+    }
+  ],
+  "canDo": [
+    "Nghe ra sự khác nhau giữa /iː/ và /ɪ/, như leave và live.",
+    "Đọc dài, đọc ngắn đúng chỗ trong năm cặp từ.",
+    "Nói được nơi mình sống: I live in…"
+  ],
+  "realTask": "Hôm nay, bạn nói câu I live in… với tên thành phố của bạn cho một người nói tiếng Anh nghe, như một đồng nghiệp hay hàng xóm, rồi để ý xem họ có hiểu ngay không."
+}

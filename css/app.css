@@ -253,6 +253,11 @@ a { color: var(--action); }
 
 /* Luyện */
 .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+.options.is-row { flex-direction: row; flex-wrap: wrap; }
+.options.is-row .option { flex: 1 1 64px; text-align: center; font-size: 1.375rem; }
+.form-field { display: block; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px 12px; background: var(--sheet); margin-bottom: 12px; }
+.form-label { display: block; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.02em; color: var(--ink-2); font-family: var(--font-en); margin-bottom: 6px; }
+.form-field .write-input { margin: 0; }
 .option {
   min-height: 56px; padding: 12px 16px; text-align: left;
   border: 2px solid var(--line); border-radius: var(--radius); background: var(--sheet); color: var(--ink);
@@ -461,3 +466,24 @@ textarea:focus { border-color: var(--action); outline: none; }
 .toggle { display: flex; align-items: center; gap: 10px; min-height: 48px; font-size: 1rem; }
 .toggle input { width: 22px; height: 22px; accent-color: var(--action); }
 @media (prefers-reduced-motion: reduce) { .pop { animation: none; } }
+
+/* Danh sách chữ cái, số: xếp lưới cho gọn thay cho từng dòng hội thoại. */
+.dialogue.is-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.dialogue.is-grid .line { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 10px; margin: 0; background: var(--sheet); }
+.dialogue.is-pairs .chunks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+/* Điền chỗ trống */
+.cloze-levels { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.cloze { margin: 12px 0; }
+.cloze-line { line-height: 2.4; margin: 0 0 6px; }
+.cloze-line .who { display: block; line-height: 1.4; margin-top: 6px; }
+.cloze-input { font: inherit; font-family: var(--font-en); padding: 2px 6px; border: 0; border-bottom: 2px solid var(--action); background: var(--action-soft); border-radius: 4px 4px 0 0; color: var(--ink); max-width: 9em; }
+.cloze-input.is-right { border-color: var(--right); background: var(--right-soft); }
+.cloze-input.is-wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+/* Tự đánh giá */
+.check-list { list-style: none; padding: 0; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
+.check-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--sheet); }
+.check-item input { width: 22px; height: 22px; margin-top: 2px; accent-color: var(--right); flex: none; }
+.check-item label { flex: 1; }
+.goal-before { border-left: 4px solid var(--marker); background: var(--sheet); padding: 8px 12px; margin-bottom: 16px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.goal-before p { margin: 4px 0; }
