@@ -186,7 +186,7 @@ async function renderReview() {
       h(
         "section",
         { class: "flashcard" },
-        h("p", { class: "hint" }, "Nghe, nói to theo, rồi nghĩ xem nghĩa là gì."),
+        h("p", { class: "hint" }, "Nghe từ, đọc to theo, rồi nhớ lại nghĩa trước khi bấm Xem nghĩa."),
         sayChip(item.card.en, speak, "say-big"),
         meaning,
         reveal,
