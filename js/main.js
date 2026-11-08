@@ -7,6 +7,7 @@ import { play, audioUrl } from "./audio.js";
 import { renderLesson } from "./lesson.js";
 import { stopStep, exportData } from "./timing.js";
 import { renderMap } from "./map.js";
+import { chime, markActive, streak, soundOn, setSoundOn, hasStamp, addStamp, stampCount } from "./fun.js";
 
 const root = document.getElementById("app");
 let course = null;
@@ -50,6 +51,13 @@ function weekState(n) {
   return "future";
 }
 
+// Tuần nào có ít nhất một con dấu Thử ngoài đời.
+function stampedWeeks() {
+  const set = new Set();
+  for (const w of course.weeks) if (w.lessons.some((l) => hasStamp(l.id))) set.add(w.number);
+  return set;
+}
+
 function renderMapPage() {
   document.title = "Lộ trình · Enforfa";
   const { number } = progressPosition();
@@ -59,7 +67,7 @@ function renderMapPage() {
       { class: "lesson-head" },
       h("div", { class: "lesson-head-row" }, h("a", { class: "btn-back", href: "#/", "aria-label": "Về trang chính" }, icon("back")), h("p", { class: "lesson-title" }, "Lộ trình"))
     ),
-    h("main", { class: "map-page", id: "main" }, renderMap(course, number, weekState))
+    h("main", { class: "map-page", id: "main" }, renderMap(course, number, weekState, stampedWeeks()))
   );
   const here = root.querySelector(".map-week.is-current");
   if (here) here.scrollIntoView({ block: "center" });
@@ -77,7 +85,7 @@ function renderWelcome() {
   const screens = [
     () => [
       h("h1", {}, "Chào bạn đến với Enforfa"),
-      h("p", {}, "Enforfa giúp bạn học tiếng Anh từ con số không, mỗi ngày một bài khoảng 30 phút, giảng bằng tiếng Việt."),
+      h("p", {}, "Enforfa giúp bạn học tiếng Anh từ con số không."),
       h("p", {}, `Chương trình dài ${course.totalWeeks} tuần, đưa bạn tới trình độ đủ để giao tiếp và làm việc với người nói tiếng Anh. App miễn phí và không cần tài khoản.`),
     ],
     () => [
@@ -207,6 +215,7 @@ function renderHome() {
 
   // Thẻ lộ trình: tuần đang học, chặng đang ở, và lối vào bản đồ.
   const { number: weekNo, stage } = progressPosition();
+  const stamps = stampCount(lessons.map((l) => l.id));
   const roadmap =
     course.stages &&
     h(
@@ -215,15 +224,38 @@ function renderHome() {
       h("span", { class: "roadmap-label" }, "Lộ trình"),
       h("span", { class: "roadmap-main" }, `Tuần ${weekNo} trên ${course.totalWeeks} · Chặng ${stage.id}: ${stage.title}`),
       h("span", { class: "meter" }, h("span", { style: `width:${Math.round(((weekNo - 1) / course.totalWeeks) * 100)}%` })),
+      stamps > 0 && h("span", { class: "roadmap-stamps" }, `${stamps} con dấu Thử ngoài đời`),
       h("span", { class: "roadmap-cta" }, "Xem bản đồ lộ trình")
     );
+
+  // Nhắc thử ngoài đời: bài đã học xong mà chưa nhận con dấu.
+  const pendingStamp = lessons.filter((l) => l.file && lessonState(l) === "done" && !hasStamp(l.id)).at(-1);
+  const tryBlock =
+    pendingStamp &&
+    (() => {
+      const text = h("p", { class: "real-task" }, "…");
+      const btn = h("button", { class: "btn btn-outline", type: "button" }, "Tôi đã thử rồi");
+      const box = h("section", { class: "try-card" }, h("p", { class: "today-label" }, `Thử ngoài đời · ${pendingStamp.title}`), text, btn);
+      getLesson(pendingStamp).then((l) => {
+        if (l.realTask) text.textContent = l.realTask;
+        else box.remove();
+      }).catch(() => box.remove());
+      btn.addEventListener("click", () => {
+        addStamp(pendingStamp.id);
+        chime();
+        renderHome();
+      });
+      return box;
+    })();
+  const days = streak();
 
   root.replaceChildren(
     h(
       "header",
       { class: "home-head" },
       h("p", { class: "brand" }, "Enforfa"),
-      h("p", { class: "tagline" }, "Mỗi ngày học một bài tiếng Anh.")
+      h("p", { class: "tagline" }, "Mỗi ngày học một bài tiếng Anh."),
+      days > 1 && h("p", { class: "streak" }, h("span", { class: "streak-num" }, String(days)), " ngày học liên tiếp")
     ),
     h(
       "main",
@@ -232,6 +264,7 @@ function renderHome() {
         h("p", { class: "warn" }, "Trình duyệt này đang không cho lưu dữ liệu, nên tiến độ sẽ mất khi đóng trang. Bạn mở app bằng cửa sổ thường, không dùng chế độ ẩn danh."),
       todayBlock,
       reviewBlock,
+      tryBlock,
       roadmap,
       ...weeks
     ),
@@ -299,11 +332,14 @@ async function renderReview() {
       { class: "card-grade", hidden: true },
       h("button", { class: "btn btn-secondary", type: "button", onclick: () => {
         grade(item.id, false);
+        markActive();
         items.push(item); // Gặp lại ở cuối lượt.
         nextCard();
       } }, "Chưa nhớ"),
       h("button", { class: "btn btn-primary", type: "button", onclick: () => {
         grade(item.id, true);
+        markActive();
+        chime();
         done += 1;
         nextCard();
       } }, "Nhớ rồi")
@@ -344,6 +380,8 @@ function renderAbout() {
       { class: "about", id: "main" },
       h("h1", {}, "Enforfa là gì"),
       h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Chương trình giúp bạn nghe, nói, đọc, viết đủ để giao tiếp và làm việc với người nói tiếng Anh: từ chào hỏi, đánh vần tên, tới đi khám, làm giấy tờ và đi làm."),
+      h("h2", {}, "Cài đặt"),
+      soundToggle(),
       h("h2", {}, "Dữ liệu của bạn"),
       h("p", {}, "Tiến độ, thẻ từ và ghi chú được lưu ngay trên điện thoại hay máy tính bạn đang dùng. App chưa có tài khoản, nên đổi máy hoặc xóa dữ liệu trình duyệt thì những thứ này sẽ mất."),
       h("p", {}, "Bản thu giọng của bạn chỉ nằm trên máy này. App không gửi bản thu đi đâu."),
@@ -365,6 +403,15 @@ function renderAbout() {
       h("p", {}, h("a", { href: "https://github.com/CamTg/Enforfa" }, "Mã nguồn của Enforfa trên GitHub"))
     )
   );
+}
+
+function soundToggle() {
+  const input = h("input", { type: "checkbox", id: "sound", checked: soundOn() });
+  input.addEventListener("change", () => {
+    setSoundOn(input.checked);
+    if (input.checked) chime();
+  });
+  return h("label", { class: "toggle", for: "sound" }, input, h("span", {}, "Âm báo ngắn khi làm đúng"));
 }
 
 function exportBlock() {

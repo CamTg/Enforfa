@@ -6,6 +6,7 @@ import { store } from "./store.js";
 import { addCards } from "./srs.js";
 import { canRecord, startRecording, saveClip, getClip } from "./recorder.js";
 import { startStep, stopStep, markWrong } from "./timing.js";
+import { chime, pop, celebrate, markActive, streak, hasStamp, addStamp } from "./fun.js";
 import { canMachineListen, listenMode, hasConsent, saveConsent, listenOnce } from "./machine-listen.js";
 
 export function renderLesson(root, lesson, { onExit: exitLesson }) {
@@ -130,6 +131,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
 
   function show() {
     const { step } = steps[index];
+    markActive();
     prefetch(step);
     store.put("progress", lesson.id, { step: index, total: steps.length, done: saved?.done || false });
     drawParts();
@@ -186,18 +188,45 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
       timer = setTimeout(() => store.put("notes", lesson.id, { text: area.value }), 400);
     });
 
+    const days = streak();
+    function stampBox() {
+      const box = h("div", { class: "stamp-box" });
+      const draw = () => {
+        if (hasStamp(lesson.id)) {
+          box.replaceChildren(
+            h("span", { class: "stamp", "aria-hidden": "true" }, "✓"),
+            h("p", {}, "Bạn đã thử ngoài đời và nhận một con dấu. Con dấu hiện trên bản đồ lộ trình.")
+          );
+        } else {
+          const btn = h("button", { class: "btn btn-outline", type: "button" }, "Tôi đã thử rồi");
+          btn.addEventListener("click", () => {
+            addStamp(lesson.id);
+            chime();
+            draw();
+            pop(box.querySelector(".stamp"));
+          });
+          box.replaceChildren(h("p", { class: "hint" }, "Thử xong thì bấm nút này để nhận con dấu. Nếu bạn rời bài trước, trang chính sẽ nhắc lại."), btn);
+        }
+      };
+      draw();
+      return box;
+    }
+
     main.replaceChildren(
       h(
         "section",
         { class: "finish" },
         h("div", { class: "finish-mark" }, icon("check")),
         h("h1", {}, "Bạn đã học xong bài này"),
-        h("p", {}, `${(lesson.cards || []).length} thẻ từ của bài này đã được thêm vào phần ôn. Từ ngày mai, khi có thẻ đến hạn, trang chính sẽ hiện nút Ôn từ.`),
+        days > 1 && h("p", { class: "streak-line" }, `Bạn đã học ${days} ngày liên tiếp.`),
+        h("p", {}, `${(lesson.cards || []).length} thẻ từ của bài này đã được thêm vào phần ôn. Bạn ôn ngay bây giờ được, và app sẽ nhắc ôn lại vào những ngày sau.`),
+        lesson.cards?.length && h("a", { class: "btn btn-secondary btn-wide", href: "#/on-tu" }, "Ôn ngay các thẻ vừa học"),
         lesson.cards?.length && h("h2", {}, "Những gì bạn vừa học"),
         lesson.cards?.length &&
           h("div", { class: "learned" }, ...lesson.cards.map((c) => sayChip(c.en, sound(c.audio), "", c.vi))),
-        lesson.realTask && h("h2", {}, "Việc làm thật hôm nay"),
+        lesson.realTask && h("h2", {}, "Thử ngoài đời hôm nay"),
         lesson.realTask && h("p", { class: "real-task" }, lesson.realTask),
+        lesson.realTask && stampBox(),
         h("label", { for: "note", class: "field-label" }, "Ghi chú của bạn cho bài này"),
         area,
         h("p", { class: "hint" }, "Ghi chú tự lưu trên máy này.")
@@ -205,6 +234,8 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     );
     main.focus({ preventScroll: true });
     window.scrollTo(0, 0);
+    chime();
+    celebrate(document.body);
   }
 
   // ---- Các kiểu bước ----
@@ -283,6 +314,8 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
           if (opt.correct) {
             optionEls.forEach((el) => (el.disabled = true));
             chooseEl.classList.add("is-right");
+            chime();
+            pop(chooseEl.closest(".option") || chooseEl);
             feedback.className = "feedback is-right";
             feedback.textContent = `Đúng rồi. ${step.explain || ""}`.trim();
             setReady(true);
@@ -346,6 +379,8 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
           if (ok) {
             tiles.forEach((t) => (t.disabled = true));
             answerLine.classList.add("is-right");
+            chime();
+            pop(answerLine);
             feedback.className = "feedback is-right";
             feedback.textContent = step.audio ? "Đúng rồi. Bấm vào câu dưới đây để nghe lại." : "Đúng rồi.";
             if (step.audio) {
@@ -508,6 +543,8 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
           if (ok) {
             feedback.className = "feedback is-right";
             feedback.replaceChildren(h("p", {}, "Đúng rồi. Câu của bạn đúng mẫu giới thiệu."));
+            chime();
+            pop(input);
           } else {
             markWrong();
             feedback.className = "feedback is-wrong";
@@ -524,6 +561,8 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         if (missed.size === 0 && got.length === expected.length) {
           feedback.className = "feedback is-right";
           feedback.replaceChildren(h("p", {}, "Đúng rồi."));
+          chime();
+          pop(input);
           return;
         }
         markWrong();
