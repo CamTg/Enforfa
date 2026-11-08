@@ -6,6 +6,7 @@ import { store } from "./store.js";
 import { addCards } from "./srs.js";
 import { canRecord, startRecording, saveClip, getClip } from "./recorder.js";
 import { startStep, stopStep, markWrong } from "./timing.js";
+import { canMachineListen, listenMode, hasConsent, saveConsent, listenOnce } from "./machine-listen.js";
 
 export function renderLesson(root, lesson, { onExit: exitLesson }) {
   const onExit = () => {
@@ -403,6 +404,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
       marks.append(h("p", {}, "Bản của bạn nghe có giống câu mẫu không?"), markBtn("same", "Giống"), markBtn("not-yet", "Chưa giống"));
 
       if (canRecord()) loadExisting();
+      const machine = step.check === false || !canMachineListen() ? null : machineCheck(step);
 
       return h(
         "section",
@@ -417,6 +419,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
           canRecord() ? mine : null
         ),
         canRecord() ? status : h("p", { class: "hint" }, "Trình duyệt này chưa cho thu âm. Bạn nói to theo câu mẫu vài lần rồi bấm Tiếp tục."),
+        machine,
         marks
       );
     },
@@ -521,6 +524,89 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
   };
 
   show();
+}
+
+// ---- Cho máy nghe thử ----
+
+const LISTEN_ERRORS = {
+  "no-speech": "Máy không nghe thấy gì. Bạn bấm Cho máy nghe thử rồi nói câu mẫu ngay.",
+  "not-allowed": "Máy chưa được phép dùng micro. Bạn cho phép app dùng micro trong cài đặt trình duyệt rồi thử lại.",
+  "service-not-allowed": "Trình duyệt này không cho dùng nhận dạng giọng nói.",
+  network: "Không kết nối được dịch vụ nhận dạng giọng nói. Bạn kiểm tra mạng rồi thử lại.",
+  "language-not-supported": "Điện thoại này chưa nhận dạng được tiếng Anh.",
+};
+
+const LIMIT_NOTE =
+  "Máy đôi khi nghe sai cả người bản ngữ, nhất là khi phòng ồn hay câu quá ngắn. Từ máy không nghe ra có thể do bạn đọc chưa rõ, cũng có thể do máy nghe sai; bạn nghe lại câu mẫu rồi thử lần nữa.";
+
+function machineCheck(step) {
+  // Tách câu mẫu thành từng chữ; phần trong ngoặc vuông như [tên bạn] không đem so.
+  const tokens = step.say.match(/\[[^\]]*\][.,!?]?|\S+/g) || [];
+  const targets = tokens.map((t, i) => ({ text: t, i, skip: t.startsWith("["), norm: normalize(t) })).filter((t) => t.norm || t.skip);
+  const compared = targets.filter((t) => !t.skip);
+
+  const box = h("div", { class: "machine" });
+  const button = h("button", { class: "btn btn-outline btn-wide", type: "button" }, icon("mic"), "Cho máy nghe thử");
+  const panel = h("div", { class: "machine-panel", role: "status" });
+  box.append(button, panel);
+
+  function bestMatch(alternatives) {
+    let best = null;
+    for (const alt of alternatives) {
+      const missed = missedWords(compared.map((t) => t.norm), words(alt));
+      if (!best || missed.size < best.missed.size) best = { alt, missed };
+    }
+    return best;
+  }
+
+  async function run(mode) {
+    button.disabled = true;
+    button.replaceChildren(icon("mic"), "Máy đang nghe, bạn nói câu mẫu");
+    panel.replaceChildren();
+    try {
+      const alts = await listenOnce(mode);
+      if (!alts.length) throw "no-speech";
+      const { alt, missed } = bestMatch(alts);
+      const heardIdx = new Set(compared.filter((_, k) => !missed.has(k)).map((t) => t.i));
+      const line = tokens.map((t, i) =>
+        h("span", { class: t.startsWith("[") ? "machine-skip" : heardIdx.has(i) ? "machine-heard" : null }, t)
+      );
+      panel.replaceChildren(
+        h("p", { class: "machine-label" }, "Máy nghe ra:"),
+        h("p", { class: "machine-transcript", lang: "en" }, alt || "(không rõ)"),
+        h("p", { class: "machine-label" }, "Những từ trong câu mẫu được tô màu là những từ máy nghe ra:"),
+        h("p", { class: "machine-target", lang: "en" }, ...line.flatMap((el, i) => (i ? [" ", el] : [el]))),
+        missed.size ? h("p", { class: "hint" }, LIMIT_NOTE) : null
+      );
+    } catch (err) {
+      panel.replaceChildren(h("p", { class: "hint" }, LISTEN_ERRORS[err] || "Máy chưa nghe được lần này. Bạn thử lại."));
+    } finally {
+      button.disabled = false;
+      button.replaceChildren(icon("mic"), "Cho máy nghe thử lần nữa");
+    }
+  }
+
+  button.addEventListener("click", async () => {
+    const mode = await listenMode();
+    if (hasConsent(mode)) return run(mode);
+    const agree = h("button", { class: "btn btn-primary", type: "button" }, mode === "local" ? "Bắt đầu" : "Đồng ý");
+    const cancel = h("button", { class: "btn btn-quiet", type: "button" }, "Thôi");
+    agree.addEventListener("click", () => {
+      saveConsent(mode);
+      run(mode);
+    });
+    cancel.addEventListener("click", () => panel.replaceChildren());
+    panel.replaceChildren(
+      h("p", {}, "Máy sẽ nghe câu bạn nói, đổi thành chữ, rồi tô những từ khớp với câu mẫu. Đây chỉ là gợi ý, không phải điểm, và không được lưu lại."),
+      h("p", {}, LIMIT_NOTE),
+      mode === "cloud"
+        ? h("p", {}, "Để đổi câu bạn nói thành chữ, app gửi câu ấy tới dịch vụ nhận dạng giọng nói của trình duyệt, của Google hoặc Apple. Nếu bạn đồng ý, bấm Đồng ý; nếu không, bạn vẫn học bình thường bằng cách so với câu mẫu.")
+        : h("p", {}, "Điện thoại này nhận dạng được giọng nói ngay trên máy, nên câu bạn nói không bị gửi đi đâu."),
+      h("div", { class: "machine-actions" }, agree, cancel)
+    );
+  });
+
+  return box;
 }
 
 // ---- So câu gõ với câu đúng ----

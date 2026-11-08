@@ -217,6 +217,7 @@ function renderAbout() {
       h("h2", {}, "Dữ liệu của bạn"),
       h("p", {}, "Tiến độ, thẻ từ và ghi chú được lưu ngay trên điện thoại hay máy tính bạn đang dùng. App chưa có tài khoản, nên đổi máy hoặc xóa dữ liệu trình duyệt thì những thứ này sẽ mất."),
       h("p", {}, "Bản thu giọng của bạn chỉ nằm trên máy này. App không gửi bản thu đi đâu."),
+      h("p", {}, "Ở phần Nói, nút Cho máy nghe thử dùng bộ nhận dạng giọng nói của trình duyệt để đổi câu bạn nói thành chữ. Để làm việc này, câu bạn nói được gửi tới dịch vụ nhận dạng của Google hoặc Apple, nên app hỏi ý bạn trước lần dùng đầu tiên. Nút này không bắt buộc, và app không lưu câu ấy."),
       h("h2", {}, "Số liệu học thử"),
       h("p", {}, "Trong giai đoạn thử, app ghi lại bạn ở mỗi bước bao lâu, chọn sai bao nhiêu lần và tự đánh giá phần Nói ra sao, để người soạn bài biết chỗ nào cần sửa. Số liệu này cũng chỉ nằm trên máy, không gồm ghi chú hay bản thu của bạn, và chỉ được gửi đi khi bạn bấm nút dưới đây."),
       exportBlock(),

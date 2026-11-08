@@ -343,3 +343,16 @@ textarea:focus { border-color: var(--action); outline: none; }
   padding: 10px 14px; background: var(--sheet); border-left: 6px solid var(--marker); border-radius: var(--radius-sm);
 }
 .diff-miss { text-decoration: underline 3px var(--wrong); text-underline-offset: 4px; }
+
+/* Cho máy nghe thử */
+.btn-outline { background: transparent; color: var(--action); border-color: var(--action); }
+.machine { margin: 4px 0 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.machine-panel { margin-top: 12px; }
+.machine-panel p { font-size: 1rem; }
+.machine-label { margin: 0 0 4px; color: var(--ink-2); font-size: 0.9375rem; }
+.machine-transcript { font-size: 1.125rem; font-weight: 700; margin-bottom: 12px; }
+.machine-target { font-size: 1.25rem; font-weight: 700; line-height: 1.7; }
+.machine-heard { background: var(--marker); color: var(--marker-ink); border-radius: 4px; padding: 0 3px; }
+.machine-skip { color: var(--ink-2); font-weight: 400; }
+.machine-actions { display: flex; gap: 8px; }
+.machine-actions .btn-primary { flex: 1; }
