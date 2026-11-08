@@ -13,14 +13,14 @@
     },
     "staff": {
       "name": "Nhân viên",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     }
   },
   "listenNote": "Một đoạn hội thoại ở thư viện, nghe ba lượt, và một bài kiểm tra nhỏ mười câu",
   "audio": {
     "r1": {
       "text": "Hi. Can I have your last name, please?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "r2": {
       "text": "Sorry?",
@@ -29,7 +29,7 @@
     },
     "r3": {
       "text": "Your last name, please.",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "r4": {
       "text": "Nguyen. N, G, U, Y, E, N.",
@@ -47,7 +47,7 @@
     },
     "r5": {
       "text": "And your first name?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "r6": {
       "text": "Lan. L, A, N.",
@@ -62,7 +62,7 @@
     },
     "r7": {
       "text": "What's your phone number?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "r8": {
       "text": "Seven one three, five five five, oh one four two.",
@@ -76,7 +76,7 @@
     },
     "r9": {
       "text": "Thank you, Lan.",
-      "voice": "af_bella",
+      "voice": "af_jessica",
       "ipa": "θˈæŋk juː, lˈɑːn."
     },
     "can_i_have": {
@@ -117,13 +117,15 @@
       "text": "leave",
       "voice": "af_heart",
       "ipa": "lˈiːv.",
-      "speed": 0.9
+      "speed": 0.9,
+      "cut": true
     },
     "q_three": {
       "text": "three",
       "voice": "af_heart",
       "ipa": "θɹˈiː.",
-      "speed": 0.9
+      "speed": 0.9,
+      "cut": true
     },
     "q_i": {
       "text": "I",
@@ -157,15 +159,15 @@
     },
     "ask_last": {
       "text": "Can I have your last name, please?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "ask_first": {
       "text": "And your first name?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "ask_phone": {
       "text": "What's your phone number?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "m_last": {
       "text": "Nguyen. N, G, U, Y, E, N.",

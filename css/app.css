@@ -531,3 +531,4 @@ body.has-tabs { padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); }
 .il-vi { color: var(--ink-2); }
 /* Lượt chỉ nghe của danh sách: nút gọn, đánh số, vừa ô lưới */
 .dialogue.is-grid .btn-listen, .dialogue.is-pairs .btn-listen { width: 100%; justify-content: flex-start; padding-right: 10px; min-width: 0; }
+.link-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
