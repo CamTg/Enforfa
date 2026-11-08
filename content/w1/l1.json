@@ -26,19 +26,6 @@
       "text": "Nice to meet you, too.",
       "voice": "af_heart"
     },
-    "c_hi": {
-      "text": "Hi.",
-      "voice": "af_heart"
-    },
-    "c_im_lan": {
-      "text": "I'm Lan.",
-      "voice": "af_heart",
-      "ipa": "aɪm lˈɑːn."
-    },
-    "c_hello": {
-      "text": "Hello.",
-      "voice": "am_michael"
-    },
     "c_myname_minh": {
       "text": "My name is Minh.",
       "voice": "am_michael"
@@ -139,23 +126,9 @@
       "text": "Bye.",
       "voice": "am_michael"
     },
-    "c_hi_lan": {
-      "text": "Hi, Lan.",
-      "voice": "am_michael",
-      "ipa": "hˈaɪ, lˈɑːn."
-    },
     "c_how": {
       "text": "How are you?",
       "voice": "am_michael"
-    },
-    "c_good_thanks": {
-      "text": "Good, thanks.",
-      "voice": "af_heart"
-    },
-    "c_and_you": {
-      "text": "And you?",
-      "voice": "af_heart",
-      "ipa": "ænd jˈuː?"
     },
     "how_are_you": {
       "text": "How are you?",
@@ -223,13 +196,15 @@
               "chunks": [
                 {
                   "en": "Hi.",
-                  "vi": "Chào bạn.",
-                  "audio": "c_hi"
+                  "vi": "chào bạn."
                 },
                 {
-                  "en": "I'm Lan.",
-                  "vi": "Tôi là Lan.",
-                  "audio": "c_im_lan"
+                  "en": "I'm",
+                  "vi": "tôi là"
+                },
+                {
+                  "en": "Lan.",
+                  "vi": "Lan."
                 }
               ]
             },
@@ -239,18 +214,31 @@
               "chunks": [
                 {
                   "en": "Hello.",
-                  "vi": "Xin chào.",
-                  "audio": "c_hello"
+                  "vi": "xin chào."
                 },
                 {
-                  "en": "My name is Minh.",
-                  "vi": "Tên tôi là Minh.",
-                  "audio": "c_myname_minh"
+                  "en": "My name",
+                  "vi": "tên tôi"
                 },
                 {
-                  "en": "Nice to meet you.",
-                  "vi": "Rất vui được gặp bạn.",
-                  "audio": "c_nice"
+                  "en": "is",
+                  "vi": "là"
+                },
+                {
+                  "en": "Minh.",
+                  "vi": "Minh."
+                },
+                {
+                  "en": "Nice",
+                  "vi": "vui"
+                },
+                {
+                  "en": "to meet",
+                  "vi": "được gặp"
+                },
+                {
+                  "en": "you.",
+                  "vi": "bạn."
                 }
               ]
             },
@@ -259,9 +247,20 @@
               "audio": "d3",
               "chunks": [
                 {
-                  "en": "Nice to meet you, too.",
-                  "vi": "Tôi cũng rất vui được gặp bạn.",
-                  "audio": "d3"
+                  "en": "Nice",
+                  "vi": "vui"
+                },
+                {
+                  "en": "to meet",
+                  "vi": "được gặp"
+                },
+                {
+                  "en": "you,",
+                  "vi": "bạn,"
+                },
+                {
+                  "en": "too.",
+                  "vi": "cũng vậy."
                 }
               ]
             }
@@ -318,14 +317,20 @@
               "audio": "e1",
               "chunks": [
                 {
-                  "en": "Hi, Lan.",
-                  "vi": "Chào Lan.",
-                  "audio": "c_hi_lan"
+                  "en": "Hi,",
+                  "vi": "chào"
                 },
                 {
-                  "en": "How are you?",
-                  "vi": "Bạn khỏe không?",
-                  "audio": "c_how"
+                  "en": "Lan.",
+                  "vi": "Lan."
+                },
+                {
+                  "en": "How",
+                  "vi": "thế nào"
+                },
+                {
+                  "en": "are you?",
+                  "vi": "bạn?"
                 }
               ]
             },
@@ -334,14 +339,20 @@
               "audio": "e2",
               "chunks": [
                 {
-                  "en": "Good, thanks.",
-                  "vi": "Khỏe, cảm ơn.",
-                  "audio": "c_good_thanks"
+                  "en": "Good,",
+                  "vi": "khỏe,"
                 },
                 {
-                  "en": "And you?",
-                  "vi": "Còn bạn?",
-                  "audio": "c_and_you"
+                  "en": "thanks.",
+                  "vi": "cảm ơn."
+                },
+                {
+                  "en": "And",
+                  "vi": "còn"
+                },
+                {
+                  "en": "you?",
+                  "vi": "bạn?"
                 }
               ]
             },
@@ -350,9 +361,12 @@
               "audio": "e3",
               "chunks": [
                 {
-                  "en": "I'm good.",
-                  "vi": "Tôi khỏe.",
-                  "audio": "e3"
+                  "en": "I'm",
+                  "vi": "tôi"
+                },
+                {
+                  "en": "good.",
+                  "vi": "khỏe."
                 }
               ]
             },
@@ -361,9 +375,16 @@
               "audio": "e4",
               "chunks": [
                 {
-                  "en": "See you tomorrow.",
-                  "vi": "Mai gặp lại nhé.",
-                  "audio": "e4"
+                  "en": "See",
+                  "vi": "gặp"
+                },
+                {
+                  "en": "you",
+                  "vi": "bạn"
+                },
+                {
+                  "en": "tomorrow.",
+                  "vi": "ngày mai."
                 }
               ]
             },
@@ -373,8 +394,7 @@
               "chunks": [
                 {
                   "en": "Bye.",
-                  "vi": "Chào nhé.",
-                  "audio": "e5"
+                  "vi": "chào nhé."
                 }
               ]
             }
@@ -450,7 +470,7 @@
           "title": "Cách học với app",
           "body": [
             "Bạn dừng được ở bất cứ bước nào, và lần sau mở app, bài sẽ tiếp tục từ chỗ đó.",
-            "Chữ tiếng Anh nhiều khi không đọc theo mặt chữ như chữ tiếng Việt, nên với chữ nào bạn cũng nghe trước rồi mới đọc theo. Bạn đừng ghi cách đọc bằng chữ Việt, như \"hê-lô\" cho hello: quen ghi như vậy thì dần dần bạn sẽ đọc tiếng Anh theo âm tiếng Việt, và người nói tiếng Anh khó nghe ra."
+            "Nhiều từ tiếng Anh không đọc theo mặt chữ như tiếng Việt, nên nhìn chữ viết bạn chưa chắc đoán được cách đọc. Gặp từ nào, bạn cũng bấm nghe trước rồi mới đọc theo. Bạn đừng ghi cách đọc bằng chữ Việt, như \"hê-lô\" cho hello: quen ghi như vậy thì dần dần bạn sẽ đọc tiếng Anh theo âm tiếng Việt, và người nói tiếng Anh khó nghe ra."
           ]
         },
         {

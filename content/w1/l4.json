@@ -172,18 +172,6 @@
       "ipa": "aɪ lˈɪv ɪn hjˈuːstən.",
       "speed": 0.9
     },
-    "ee_sound": {
-      "text": "/iː/",
-      "voice": "af_heart",
-      "ipa": "ˈiː.",
-      "speed": 0.9
-    },
-    "ih_sound": {
-      "text": "/ɪ/",
-      "voice": "af_heart",
-      "ipa": "ˈɪ.",
-      "speed": 0.9
-    },
     "m_seat": {
       "text": "seat, sit, seat, sit.",
       "voice": "af_heart",
@@ -353,7 +341,7 @@
           "type": "text",
           "title": "Âm /iː/: dài",
           "body": [
-            "Để đọc âm {{ee_sound|/iː/}} trong {{eat}}, {{seat}}, {{leave}}, bạn kéo hai khóe miệng sang ngang như khi cười và giữ âm lâu hơn một chút.",
+            "Để đọc âm /iː/ trong {{eat}}, {{seat}}, {{leave}}, bạn kéo hai khóe miệng sang ngang như khi cười và giữ âm lâu hơn một chút.",
             "Dấu hai chấm sau chữ i trong /iː/ cho biết âm này đọc dài."
           ]
         },
@@ -361,7 +349,7 @@
           "type": "text",
           "title": "Âm /ɪ/: ngắn",
           "body": [
-            "Để đọc âm {{ih_sound|/ɪ/}} trong {{it}}, {{sit}}, {{live}}, bạn thả lỏng miệng và đọc ngắn, gọn. Âm này nằm giữa \"i\" và \"ê\" của tiếng Việt."
+            "Để đọc âm /ɪ/ trong {{it}}, {{sit}}, {{live}}, bạn thả lỏng miệng và đọc ngắn, gọn. Âm này nằm giữa \"i\" và \"ê\" của tiếng Việt."
           ]
         },
         {

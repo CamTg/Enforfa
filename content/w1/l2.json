@@ -190,7 +190,7 @@
           "title": "Hai nhóm chữ",
           "body": [
             "Bài này học tên của 13 chữ cái, chia làm hai nhóm. Những chữ trong một nhóm có tên cùng vần, nên học cùng nhau thì dễ nhớ hơn học theo thứ tự A, B, C.",
-            "Mỗi nhóm nghe hai lượt. Lượt đầu, mỗi chữ hiện kèm ký hiệu ghi âm của nó; lượt sau chỉ còn tiếng."
+            "Mỗi nhóm nghe hai lượt. Ở lượt đầu, dưới mỗi chữ có một ký hiệu nằm giữa hai gạch chéo, như /eɪ/. Đó là ký hiệu phiên âm quốc tế (IPA), ghi lại âm của chữ, và từ điển tiếng Anh nào cũng dùng. Bạn chưa cần đọc hay nhớ các ký hiệu này; cứ bấm nghe, nhìn chữ và đọc theo. Phần Học sẽ nói thêm về chúng."
           ]
         },
         {
@@ -438,8 +438,8 @@
           "type": "text",
           "title": "Ký hiệu ghi âm",
           "body": [
-            "Ký hiệu nằm giữa hai gạch chéo, như /eɪ/, ghi lại âm thanh của chữ. Người ta gọi chúng là ký hiệu phiên âm quốc tế, viết tắt là IPA, và từ điển tiếng Anh nào cũng dùng.",
-            "Bài dùng các ký hiệu này để bạn nhìn kèm khi nghe. Bạn chưa cần học thuộc, và luôn bấm nghe trước khi đọc theo."
+            "Ký hiệu như /eɪ/ ghi lại âm thanh của chữ. Mỗi ký hiệu ứng với một âm, nên khi đã quen, nhìn ký hiệu là bạn biết từ đọc thế nào, kể cả những từ không đọc theo mặt chữ.",
+            "Tuần này bạn chỉ cần nhìn kèm khi nghe. Các bài sau sẽ giới thiệu dần từng ký hiệu, mỗi lần một vài cái, gắn với âm đang học."
           ]
         },
         {

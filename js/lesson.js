@@ -93,8 +93,16 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     h("footer", { class: "lesson-foot" }, prevBtn, nextBtn)
   );
 
+  // Ở bước gõ và bước điền chỗ trống, nút Tiếp tục không bị khóa: bấm khi chưa
+  // kiểm tra thì app kiểm tra câu trả lời trước, và người học bấm lần nữa để đi tiếp.
+  let checkFirst = null;
   function setReady(ready) {
     nextBtn.disabled = !ready;
+    if (ready) checkFirst = null;
+  }
+  function needCheck(fn) {
+    nextBtn.disabled = false;
+    checkFirst = fn;
   }
 
   // Mỗi phần có một thanh chạy theo số bước đã đi trong phần đó.
@@ -158,6 +166,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     prevBtn.hidden = index === 0;
     nextBtn.textContent = index === steps.length - 1 ? "Xong bài" : "Tiếp tục";
     setReady(true);
+    checkFirst = null;
     const view = STEP_VIEWS[step.type](step);
     main.replaceChildren(view);
     main.focus({ preventScroll: true });
@@ -165,6 +174,10 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
   }
 
   function next() {
+    if (checkFirst) {
+      checkFirst();
+      return;
+    }
     if (onIntro) {
       onIntro = false;
       show();
@@ -288,15 +301,38 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         playingAll = false;
         button.classList.remove("is-playing");
       };
-      const lines = step.lines.map((line) => {
+      const lines = step.lines.map((line, k) => {
         const who = lesson.speakers[line.speaker]?.name ?? line.speaker;
         let content;
-        if (step.pass === 1) {
+        if (step.pass === 1 && step.layout) {
+          // Danh sách chữ cái, số, cặp từ: mỗi mục một nút nghe, nghĩa hay ký hiệu ở dưới.
           content = h(
             "div",
             { class: "chunks" },
             ...line.chunks.map((c) =>
-              h("div", { class: "chunk" }, sayChip(c.en, sound(c.audio)), h("span", { class: "gloss" }, c.vi))
+              h("div", { class: "chunk" }, sayChip(c.en, sound(c.audio || line.audio)), h("span", { class: "gloss" }, c.vi))
+            )
+          );
+        } else if (step.pass === 1) {
+          // Hội thoại: tiếng Anh và tiếng Việt đan xen theo từng cụm nhỏ, như cách học
+          // của Latinum. Nút nghe đọc cả câu.
+          content = h(
+            "div",
+            { class: "interlinear" },
+            h(
+              "button",
+              { class: "btn-line", type: "button", onclick: (e) => sound(line.audio)(e.currentTarget), "aria-label": `Nghe câu của ${who || "người đọc"}` },
+              icon("play")
+            ),
+            h(
+              "p",
+              { class: "interlinear-text" },
+              ...line.chunks.flatMap((c) => [
+                h("span", { class: "il-en", lang: "en" }, c.en),
+                " ",
+                h("span", { class: "il-vi" }, c.vi),
+                " ",
+              ])
             )
           );
         } else if (step.pass === 2) {
@@ -304,9 +340,9 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         } else {
           content = h(
             "button",
-            { class: "btn-listen", type: "button", onclick: (e) => sound(line.audio)(e.currentTarget), "aria-label": `Nghe câu của ${who}` },
+            { class: "btn-listen", type: "button", onclick: (e) => sound(line.audio)(e.currentTarget), "aria-label": who ? `Nghe câu của ${who}` : `Nghe mục ${k + 1}` },
             icon("play"),
-            h("span", {}, "Nghe")
+            h("span", {}, step.layout ? String(k + 1) : "Nghe")
           );
         }
         return h("li", { class: `line line-${line.speaker}` }, who && h("span", { class: "who" }, who), content);
@@ -521,7 +557,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     },
 
     write(step) {
-      setReady(false);
+      needCheck(() => check.click());
       const input = h("input", {
         class: "write-input",
         type: "text",
@@ -654,7 +690,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     // Nghe lại một đoạn rồi điền chữ còn trống. Chỗ trống ghi trong lời thoại là
     // [[1:chữ]] (có ở cả hai mức) hoặc [[2:chữ]] (chỉ có ở mức 2).
     cloze(step) {
-      setReady(false);
+      needCheck(() => check.click());
       const key = `${lesson.id}/${step.id || "cloze"}`;
       let level = store.get("settings", "cloze-level")?.level || 1;
       const body = h("div", { class: "cloze" });
@@ -673,7 +709,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         inputs = [];
         feedback.className = "feedback";
         feedback.replaceChildren();
-        setReady(false);
+        needCheck(() => check.click());
         body.replaceChildren(
           ...step.lines.map((line) => {
             const who = lesson.speakers[line.speaker]?.name ?? "";
