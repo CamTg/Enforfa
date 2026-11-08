@@ -41,7 +41,6 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
   const nextBtn = h("button", { class: "btn btn-primary", type: "button", onclick: next }, "Tiếp tục");
   const prevBtn = h("button", { class: "btn btn-quiet", type: "button", onclick: prev }, "Quay lại");
   const partNav = h("ol", { class: "parts", "aria-label": "Các phần của bài" });
-  const stepsLeft = h("p", { class: "steps-left" });
   const slowToggle = h(
     "button",
     {
@@ -64,7 +63,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         "div",
         { class: "lesson-head-row" },
         h("button", { class: "btn-back", type: "button", onclick: onExit, "aria-label": "Về trang chính" }, icon("back")),
-        h("div", { class: "lesson-title-block" }, h("p", { class: "lesson-title" }, lesson.title), stepsLeft),
+        h("p", { class: "lesson-title" }, lesson.title),
         slowToggle
       ),
       partNav
@@ -77,15 +76,27 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     nextBtn.disabled = !ready;
   }
 
+  // Mỗi phần có một thanh chạy theo số bước đã đi trong phần đó.
   function drawParts() {
+    const here = finished ? null : steps[index];
     partNav.replaceChildren(
       ...lesson.parts.map((part, i) => {
-        const current = !finished && steps[index].partIndex === i;
-        const done = finished || steps[index].partIndex > i;
+        const total = part.steps.length;
+        let filled;
+        if (finished || (here && here.partIndex > i)) filled = total;
+        else if (here && here.partIndex === i) filled = steps.slice(0, index + 1).filter((s) => s.partIndex === i).length;
+        else filled = 0;
+        const current = here?.partIndex === i;
+        const pct = Math.round((filled / total) * 100);
         return h(
           "li",
-          { class: `part${current ? " is-current" : ""}${done ? " is-done" : ""}`, "aria-current": current ? "step" : false },
-          part.title
+          {
+            class: `part${current ? " is-current" : ""}${filled === total ? " is-done" : ""}`,
+            "aria-current": current ? "step" : false,
+          },
+          h("span", { class: "part-name" }, part.title),
+          h("span", { class: "part-track", "aria-hidden": "true" }, h("span", { class: "part-fill", style: `width:${pct}%` })),
+          h("span", { class: "visually-hidden" }, `, đã đi ${filled} trên ${total} bước`)
         );
       })
     );
@@ -95,8 +106,6 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     const { step } = steps[index];
     store.put("progress", lesson.id, { step: index, total: steps.length, done: saved?.done || false });
     drawParts();
-    const left = steps.length - index - 1;
-    stepsLeft.textContent = left === 0 ? "Bước cuối" : `Còn ${left} bước nữa`;
     startStep(lesson.id, index, step.type);
     prevBtn.hidden = index === 0;
     nextBtn.textContent = index === steps.length - 1 ? "Xong bài" : "Tiếp tục";
@@ -126,7 +135,6 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
   function finish() {
     finished = true;
     stopStep();
-    stepsLeft.textContent = "Đã xong";
     addCards(lesson.id, lesson.cards || []);
     store.put("progress", lesson.id, { step: steps.length, total: steps.length, done: true, doneAt: Date.now() });
     drawParts();
