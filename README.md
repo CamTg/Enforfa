@@ -1,6 +1,6 @@
 # Enforfa
 
-Enforfa là app tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt mới sang Mỹ. Mỗi ngày một bài, giảng bằng tiếng Việt, xoay quanh những việc người học sẽ gặp ngay ở Mỹ, và luyện có chủ đích những chỗ người Việt hay vướng: âm cuối, trọng âm, nguyên âm dài và ngắn, các âm tiếng Việt không có.
+Enforfa là app tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Mỗi ngày một bài, giảng bằng tiếng Việt, xoay quanh những việc người học sẽ gặp trong thực tế, và luyện có chủ đích những chỗ người Việt hay vướng: âm cuối, trọng âm, nguyên âm dài và ngắn, các âm tiếng Việt không có.
 
 ## Mỗi bài gồm gì
 
