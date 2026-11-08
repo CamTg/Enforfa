@@ -80,7 +80,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
 
   // Mỗi phần có một thanh chạy theo số bước đã đi trong phần đó.
   function drawParts() {
-    const here = finished ? null : steps[index];
+    const here = finished || onIntro ? null : steps[index];
     partNav.replaceChildren(
       ...lesson.parts.map((part, i) => {
         const total = part.steps.length;
@@ -136,6 +136,11 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
   }
 
   function next() {
+    if (onIntro) {
+      onIntro = false;
+      show();
+      return;
+    }
     if (index < steps.length - 1) {
       index += 1;
       show();
@@ -180,6 +185,11 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         h("div", { class: "finish-mark" }, icon("check")),
         h("h1", {}, "Bạn đã học xong bài này"),
         h("p", {}, `${(lesson.cards || []).length} thẻ từ của bài này đã được thêm vào phần ôn. Từ ngày mai, khi có thẻ đến hạn, trang chính sẽ hiện nút Ôn từ.`),
+        lesson.cards?.length && h("h2", {}, "Những gì bạn vừa học"),
+        lesson.cards?.length &&
+          h("div", { class: "learned" }, ...lesson.cards.map((c) => sayChip(c.en, sound(c.audio), "", c.vi))),
+        lesson.realTask && h("h2", {}, "Việc làm thật hôm nay"),
+        lesson.realTask && h("p", { class: "real-task" }, lesson.realTask),
         h("label", { for: "note", class: "field-label" }, "Ghi chú của bạn cho bài này"),
         area,
         h("p", { class: "hint" }, "Ghi chú tự lưu trên máy này.")
@@ -546,7 +556,38 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     },
   };
 
-  show();
+  // Màn hình giới thiệu, hiện khi người học mở bài từ đầu: sau bài làm được gì,
+  // và bài có những gì.
+  // Hiện khi người học chưa từng mở bài này, hoặc mở lại một bài đã học xong.
+  let onIntro = !saved || Boolean(saved.done);
+  function showIntro() {
+    const dialogues = steps.filter(({ step }) => step.type === "listen" && step.pass === 1).length;
+    const cards = (lesson.cards || []).length;
+    const contents = [
+      dialogues && `${dialogues} đoạn hội thoại ngắn, mỗi đoạn nghe ba lượt`,
+      cards && `${cards} từ và cụm từ, được đưa vào phần ôn sau khi học xong`,
+      `${lesson.parts.length} phần: ${lesson.parts.map((p) => p.title).join(", ")}`,
+    ].filter(Boolean);
+    drawParts();
+    prevBtn.hidden = true;
+    nextBtn.textContent = "Bắt đầu học";
+    setReady(true);
+    main.replaceChildren(
+      h(
+        "section",
+        { class: "step intro" },
+        h("h1", {}, lesson.title),
+        lesson.canDo && h("h2", {}, "Sau bài này, bạn"),
+        lesson.canDo && h("ul", { class: "intro-list" }, ...lesson.canDo.map((c) => h("li", {}, c))),
+        h("h2", {}, "Bài có"),
+        h("ul", { class: "intro-list" }, ...contents.map((c) => h("li", {}, c))),
+        h("p", { class: "hint" }, "Bạn dừng được ở bất cứ bước nào, và lần sau mở app, bài sẽ tiếp tục từ chỗ đó.")
+      )
+    );
+  }
+
+  if (onIntro) showIntro();
+  else show();
 }
 
 // ---- Cho máy nghe thử ----

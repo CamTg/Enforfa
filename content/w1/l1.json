@@ -771,5 +771,12 @@
       "vi": "Chào nhé. (khi chia tay)",
       "audio": "bye"
     }
-  ]
+  ],
+  "canDo": [
+    "Chào người mới gặp và nói tên mình.",
+    "Chào người quen và đáp lại khi được hỏi How are you?",
+    "Nhờ người khác nói lại hoặc nói chậm hơn.",
+    "Cảm ơn, và chào khi chia tay."
+  ],
+  "realTask": "Hôm nay, bạn thử chào một người hàng xóm hay đồng nghiệp bằng câu Hi! How are you? Khi họ hỏi lại bạn, bạn đáp Good, thanks."
 }

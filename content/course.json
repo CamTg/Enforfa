@@ -5,14 +5,60 @@
       "id": "w1",
       "title": "Tuần 1: Âm, chữ và lời chào",
       "lessons": [
-        { "id": "w1-l1", "title": "Chào hỏi và cách học", "file": "content/w1/l1.json" },
-        { "id": "w1-l2", "title": "Bảng chữ cái, phần đầu" },
-        { "id": "w1-l3", "title": "Bảng chữ cái, phần cuối, và đánh vần tên" },
-        { "id": "w1-l4", "title": "Nguyên âm dài và ngắn" },
-        { "id": "w1-l5", "title": "Trọng âm và âm /ə/" },
-        { "id": "w1-l6", "title": "Âm th và số từ 0 đến 10" },
-        { "id": "w1-l7", "title": "Ôn tuần và việc làm thật" }
-      ]
+        {
+          "id": "w1-l1",
+          "title": "Chào hỏi và cách học",
+          "file": "content/w1/l1.json"
+        },
+        {
+          "id": "w1-l2",
+          "title": "Bảng chữ cái, phần đầu"
+        },
+        {
+          "id": "w1-l3",
+          "title": "Bảng chữ cái, phần cuối, và đánh vần tên"
+        },
+        {
+          "id": "w1-l4",
+          "title": "Nguyên âm dài và ngắn"
+        },
+        {
+          "id": "w1-l5",
+          "title": "Trọng âm và âm /ə/"
+        },
+        {
+          "id": "w1-l6",
+          "title": "Âm th và số từ 0 đến 10"
+        },
+        {
+          "id": "w1-l7",
+          "title": "Ôn tuần và việc làm thật"
+        }
+      ],
+      "stage": 1,
+      "number": 1,
+      "goal": "Hết tuần 1, bạn chào được người mới gặp lẫn người quen, đánh vần được họ tên và đọc được số điện thoại của mình."
+    }
+  ],
+  "totalWeeks": 50,
+  "stages": [
+    {
+      "id": 1,
+      "title": "Âm, chữ và tiếng Anh sống còn",
+      "weeks": "Tuần 1–12",
+      "goal": "Đánh vần được tên mình, đọc được số điện thoại và địa chỉ, hỏi giá, nhờ người khác nói chậm lại, và gọi được 911."
+    },
+    {
+      "id": 2,
+      "title": "Đời sống ở Mỹ",
+      "weeks": "Tuần 13–25",
+      "goal": "Tự đi khám bệnh, làm việc với ngân hàng và chủ nhà, đọc thông báo của trường con, và điền các mẫu đơn thường gặp."
+    },
+    {
+      "id": 3,
+      "title": "Làm việc và tự lập",
+      "weeks": "Tuần 26–50",
+      "goal": "Tự xin việc, hiểu chỉ dẫn và nói chuyện với đồng nghiệp, và tự giải quyết một khiếu nại."
     }
   ]
 }
