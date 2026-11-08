@@ -9,7 +9,7 @@ import { startStep, stopStep, markWrong } from "./timing.js";
 import { chime, pop, celebrate, markActive, streak, hasStamp, addStamp } from "./fun.js";
 import { canMachineListen, listenMode, hasConsent, saveConsent, listenOnce } from "./machine-listen.js";
 
-export function renderLesson(root, lesson, { onExit: exitLesson }) {
+export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesson = null }) {
   const onExit = () => {
     stopStep();
     exitLesson();
@@ -271,6 +271,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         days > 1 && h("p", { class: "streak-line" }, `Bạn đã học ${days} ngày liên tiếp.`),
         h("p", {}, `${(lesson.cards || []).length} thẻ từ của bài này đã được thêm vào phần ôn. Bạn ôn ngay bây giờ được, và app sẽ nhắc ôn lại vào những ngày sau.`),
         lesson.cards?.length && h("a", { class: "btn btn-secondary btn-wide", href: "#/on-tu" }, "Ôn ngay các thẻ vừa học"),
+        nextLesson && h("a", { class: "btn btn-primary btn-wide finish-next", href: `#/bai/${nextLesson.id}` }, `Học bài tiếp theo: ${nextLesson.title}`),
         lesson.cards?.length && h("h2", {}, "Những gì bạn vừa học"),
         lesson.cards?.length &&
           h("div", { class: "learned" }, ...lesson.cards.map((c) => sayChip(c.en, sound(c.audio), "", c.vi))),

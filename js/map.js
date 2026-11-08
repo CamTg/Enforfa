@@ -40,7 +40,6 @@ function stageSvg(stage, weekState, currentWeek, stamped) {
     if (state === "current") svg += `<circle cx="${p.x}" cy="${p.y}" r="${R + 7}" class="map-halo"/>`;
     svg += `<circle cx="${p.x}" cy="${p.y}" r="${R}" class="map-dot"/>`;
     svg += `<text x="${p.x}" y="${p.y + 5}" text-anchor="middle" class="map-num">${p.w}</text>`;
-    if (stamped.has(p.w)) svg += `<circle cx="${p.x + 14}" cy="${p.y - 14}" r="8" class="map-stamp"/><path d="M${p.x + 10} ${p.y - 14} l3 3 l5 -6" class="map-stamp-tick"/>`;
     svg += "</g>";
   }
   svg += "</svg>";
@@ -118,8 +117,7 @@ export function renderMap(course, currentWeek, weekState, stamped = new Set(), r
       { class: "map-legend" },
       h("li", {}, h("span", { class: "legend-dot is-done" }), "Đã học xong"),
       h("li", {}, h("span", { class: "legend-dot is-current" }), "Tuần đang học"),
-      h("li", {}, h("span", { class: "legend-dot is-future" }), "Sắp tới"),
-      h("li", {}, h("span", { class: "legend-stamp" }, "✓"), "Có con dấu Thử ngoài đời")
+      h("li", {}, h("span", { class: "legend-dot is-future" }), "Sắp tới")
     ),
     ...stages
   );
