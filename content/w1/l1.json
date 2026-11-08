@@ -89,11 +89,13 @@
     },
     "sorry_q": {
       "text": "Sorry?",
-      "voice": "af_heart"
+      "voice": "af_heart",
+      "contour": "rise"
     },
     "sorry_down": {
       "text": "Sorry.",
-      "voice": "af_heart"
+      "voice": "af_heart",
+      "contour": "fall"
     },
     "speak_slowly": {
       "text": "Please speak slowly.",
@@ -589,7 +591,8 @@
             "is",
             "Minh"
           ],
-          "audio": "c_myname_minh"
+          "audio": "c_myname_minh",
+          "gloss": "Tên tôi là Minh."
         },
         {
           "type": "choose",

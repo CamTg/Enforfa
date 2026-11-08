@@ -7,6 +7,7 @@ Thư mục model cần hai tệp: kokoro-v1.0.onnx và voices-v1.0.bin, tải t�
 https://github.com/thewh1teagle/kokoro-onnx/releases (bản model-files-v1.0).
 
 Mỗi bài học (content/**/*.json) có mục "audio": { id: {text, voice, speed?, ipa?} }.
+- "contour": "rise" hoặc "fall" vẽ lại đường cao độ, cho câu dạy lên giọng, xuống giọng.
 - "speed" nhỏ hơn 1 (ví dụ 0.85) làm câu chậm lại sau khi tạo, không đổi cao độ.
 - Có "ipa" thì công cụ đọc đúng theo phiên âm ấy. Mọi từ dùng để dạy phát âm
   nên có "ipa", vì bộ đoán phiên âm tự động có lúc đọc sai (ví dụ "live" thành /laɪv/).
@@ -31,10 +32,46 @@ PIPELINE = 2
 
 def fingerprint(spec):
     key = json.dumps(
-        {"pipeline": PIPELINE, **{k: spec.get(k) for k in ("text", "voice", "speed", "ipa")}},
+        {"pipeline": PIPELINE, **{k: spec.get(k) for k in ("text", "voice", "speed", "ipa", "contour")}},
         sort_keys=True,
     )
     return hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
+
+
+def apply_contour(samples, sr, contour):
+    """Vẽ lại đường cao độ cho câu dạy ngữ điệu.
+
+    Kokoro đọc "Sorry?" và "Sorry." gần như cùng một giọng, nên câu nào cần
+    lên hay xuống giọng rõ thì ghi "contour": "rise" hoặc "fall" trong bài.
+    Công cụ dùng Praat (qua parselmouth) để đặt lại cao độ theo PSOLA, giữ
+    nguyên âm sắc của giọng.
+    """
+    import parselmouth
+    from parselmouth.praat import call
+
+    snd = parselmouth.Sound(samples.astype("float64"), sampling_frequency=sr)
+    pitch = snd.to_pitch(time_step=0.01, pitch_floor=75, pitch_ceiling=500)
+    freqs = pitch.selected_array["frequency"]
+    voiced = [(t, f) for t, f in zip(pitch.xs(), freqs) if f > 0]
+    if len(voiced) < 3:
+        return samples
+    t0, t1 = voiced[0][0], voiced[-1][0]
+    base = float(np.median([f for _, f in voiced]))
+    span = t1 - t0
+    if contour == "rise":
+        points = [(t0, base * 1.05), (t0 + span * 0.55, base * 0.9), (t1, base * 1.6)]
+    elif contour == "fall":
+        points = [(t0, base * 1.15), (t0 + span * 0.4, base * 1.05), (t1, base * 0.7)]
+    else:
+        raise ValueError(f"contour không hợp lệ: {contour}")
+    manip = call(snd, "To Manipulation", 0.01, 75, 500)
+    tier = call(manip, "Extract pitch tier")
+    call(tier, "Remove points between", 0, snd.duration)
+    for t, f in points:
+        call(tier, "Add point", t, f)
+    call([tier, manip], "Replace pitch tier")
+    out = call(manip, "Get resynthesis (overlap-add)")
+    return out.values[0].astype("float32")
 
 
 def trim(audio, sr, threshold=0.008):
@@ -88,6 +125,8 @@ def main():
                 lang="en-us", is_phonemes=bool(spec.get("ipa")),
             )
             samples = trim(samples, sr)
+            if spec.get("contour"):
+                samples = apply_contour(samples, sr, spec["contour"])
             tempo = spec.get("speed", 1.0)
             filters = []
             if tempo < 1.0:

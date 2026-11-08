@@ -361,3 +361,5 @@ textarea:focus { border-color: var(--action); outline: none; }
 .say.has-gloss { align-items: center; padding-top: 4px; padding-bottom: 4px; }
 .say-stack { display: inline-flex; flex-direction: column; align-items: flex-start; }
 .say-gloss { font-family: var(--font-vi); font-weight: 400; font-size: 0.8125em; line-height: 1.3; opacity: 0.8; }
+
+.order-replay { margin-top: 4px; }
