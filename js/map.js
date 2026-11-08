@@ -29,12 +29,14 @@ function stageSvg(stage, weekState, currentWeek, stamped) {
 
   const line = (list) => list.map((p, i) => `${i ? "L" : "M"}${p.x} ${p.y}`).join(" ");
   const reached = pts.filter((p) => p.w <= currentWeek);
-  let svg = `<svg viewBox="0 0 ${width} ${height}" class="map-svg" aria-hidden="true">`;
+  let svg = `<svg viewBox="0 0 ${width} ${height}" class="map-svg" role="group" aria-label="Các tuần của chặng ${stage.id}">`;
   svg += `<path d="${line(pts)}" class="map-road"/>`;
   if (reached.length > 1) svg += `<path d="${line(reached)}" class="map-road is-done"/>`;
   for (const p of pts) {
     const state = weekState(p.w);
-    svg += `<g class="map-week is-${state}">`;
+    const label = { done: "đã học xong", current: "đang học", future: "sắp tới" }[state];
+    svg += `<g class="map-week is-${state}" data-week="${p.w}" role="button" tabindex="0" aria-label="Tuần ${p.w}, ${label}. Xem các bài của tuần.">`;
+    svg += `<circle cx="${p.x}" cy="${p.y}" r="${R + 10}" class="map-hit"/>`;
     if (state === "current") svg += `<circle cx="${p.x}" cy="${p.y}" r="${R + 7}" class="map-halo"/>`;
     svg += `<circle cx="${p.x}" cy="${p.y}" r="${R}" class="map-dot"/>`;
     svg += `<text x="${p.x}" y="${p.y + 5}" text-anchor="middle" class="map-num">${p.w}</text>`;
@@ -50,8 +52,36 @@ function stageSvg(stage, weekState, currentWeek, stamped) {
 /**
  * weekState(n) trả về "done", "current" hoặc "future".
  */
-export function renderMap(course, currentWeek, weekState, stamped = new Set()) {
+export function renderMap(course, currentWeek, weekState, stamped = new Set(), renderWeek = null) {
+  const panels = [];
+  function pick(week, focusPanel) {
+    if (!renderWeek) return;
+    document.querySelectorAll(".map-week.is-picked").forEach((g) => g.classList.remove("is-picked"));
+    document.querySelector(`.map-week[data-week="${week}"]`)?.classList.add("is-picked");
+    for (const { stage, panel } of panels) {
+      if (week >= stage.from && week <= stage.to) {
+        panel.replaceChildren(renderWeek(week));
+        panel.hidden = false;
+        if (focusPanel) panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      } else {
+        panel.hidden = true;
+        panel.replaceChildren();
+      }
+    }
+  }
   const stages = course.stages.map((st) => {
+    const panel = h("div", { class: "map-panel", hidden: true, "aria-live": "polite" });
+    panels.push({ stage: st, panel });
+    const svgBox = stageSvg(st, weekState, currentWeek, stamped);
+    const onPick = (e) => {
+      const g = e.target.closest?.("[data-week]");
+      if (!g) return;
+      if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      pick(Number(g.dataset.week), true);
+    };
+    svgBox.addEventListener("click", onPick);
+    svgBox.addEventListener("keydown", onPick);
     const isCurrent = currentWeek >= st.from && currentWeek <= st.to;
     const doneWeeks = Math.max(0, Math.min(st.to, currentWeek - 1) - st.from + 1);
     return h(
@@ -60,7 +90,8 @@ export function renderMap(course, currentWeek, weekState, stamped = new Set()) {
       h("p", { class: "map-stage-meta" }, `${st.weeks} · Trình độ ${st.level}`),
       h("h2", {}, `Chặng ${st.id}: ${st.title}`),
       h("p", { class: "map-stage-goal" }, `Hết chặng này, bạn ${st.goal.charAt(0).toLowerCase()}${st.goal.slice(1)}`),
-      stageSvg(st, weekState, currentWeek, stamped),
+      svgBox,
+      panel,
       h(
         "p",
         { class: "visually-hidden" },
@@ -72,13 +103,15 @@ export function renderMap(course, currentWeek, weekState, stamped = new Set()) {
       )
     );
   });
+  // Mở sẵn tuần đang học, sau khi bản đồ đã nằm trong trang.
+  setTimeout(() => pick(currentWeek, false), 0);
   return h(
     "div",
     { class: "map" },
     h(
       "p",
       { class: "map-intro" },
-      `Chương trình có ${course.totalWeeks} tuần, mỗi tuần bảy bài, đi từ trình độ A1 (mới bắt đầu) tới B1 (trung cấp) theo khung trình độ ngoại ngữ châu Âu (CEFR).`
+      `Chương trình có ${course.totalWeeks} tuần, mỗi tuần bảy bài, đi từ trình độ A1 (mới bắt đầu) tới B1 (trung cấp) theo khung trình độ ngoại ngữ châu Âu (CEFR). Bấm vào một tuần để xem các bài của tuần ấy.`
     ),
     h(
       "ul",

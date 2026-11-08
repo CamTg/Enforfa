@@ -211,7 +211,11 @@ a { color: var(--action); }
 .review-count { margin: 0; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 
 .parts { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; list-style: none; margin: 4px 0 0; padding: 0; }
-.part { display: flex; flex-direction: column; gap: 6px; padding: 4px 0 10px; text-align: center; font-size: 0.875rem; color: var(--ink-2); }
+.part { font-size: 0.875rem; color: var(--ink-2); }
+.part-btn { all: unset; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 6px; padding: 4px 0 10px; text-align: center; cursor: pointer; border-radius: var(--radius-sm); }
+.part-btn:focus-visible { outline: 2px solid var(--action); outline-offset: 2px; }
+.part-btn:disabled { cursor: default; }
+.part-btn:not(:disabled):hover .part-name { color: var(--action); }
 .part.is-current { color: var(--ink); font-weight: 700; }
 .part-track { display: block; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
 .part-fill { display: block; height: 100%; border-radius: 3px; background: var(--marker); transition: width 240ms ease-out; }
@@ -532,3 +536,11 @@ body.has-tabs { padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); }
 /* Lượt chỉ nghe của danh sách: nút gọn, đánh số, vừa ô lưới */
 .dialogue.is-grid .btn-listen, .dialogue.is-pairs .btn-listen { width: 100%; justify-content: flex-start; padding-right: 10px; min-width: 0; }
 .link-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+
+/* Bấm vào một tuần trên bản đồ */
+.map-week { cursor: pointer; outline: none; }
+.map-hit { fill: transparent; }
+.map-week:focus-visible .map-dot, .map-week.is-picked .map-dot { stroke: var(--ink); stroke-width: 4; }
+.map-panel { margin: 4px 0 24px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--sheet); }
+.map-panel .week { margin: 0; }
+.map-panel h2 { margin-top: 0; }

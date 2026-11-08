@@ -22,6 +22,9 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
   const saved = store.get("progress", lesson.id);
   let index = saved && !saved.done ? Math.min(saved.step || 0, steps.length - 1) : 0;
   let finished = false;
+  // Những bước người học đã mở, để thanh tiến độ của từng phần đúng cả khi
+  // người học nhảy qua lại giữa các phần.
+  const seen = new Set(saved?.seen || (saved && !saved.done ? steps.map((_, k) => k).filter((k) => k <= (saved.step || 0)) : []));
 
   const sound = (audioId) => (button) => play(audioUrl(lesson.id, audioId), button);
   const text = (audioId) => lesson.audio[audioId]?.text ?? audioId;
@@ -83,7 +86,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
       h(
         "div",
         { class: "lesson-head-row" },
-        h("button", { class: "btn-back", type: "button", onclick: onExit, "aria-label": "Về trang chính" }, icon("back")),
+        h("button", { class: "btn-back btn-home", type: "button", onclick: onExit, "aria-label": "Về trang chính", title: "Về trang chính" }, icon("home")),
         h("p", { class: "lesson-title" }, lesson.title),
         slowToggle
       ),
@@ -105,30 +108,44 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     checkFirst = fn;
   }
 
-  // Mỗi phần có một thanh chạy theo số bước đã đi trong phần đó.
+  // Mỗi phần có một thanh chạy theo số bước người học đã mở trong phần đó.
+  // Bấm vào tên phần thì nhảy tới bước đầu của phần ấy.
   function drawParts() {
     const here = finished || onIntro ? null : steps[index];
     partNav.replaceChildren(
       ...lesson.parts.map((part, i) => {
         const total = part.steps.length;
-        let filled;
-        if (finished || (here && here.partIndex > i)) filled = total;
-        else if (here && here.partIndex === i) filled = steps.slice(0, index + 1).filter((s) => s.partIndex === i).length;
-        else filled = 0;
+        const filled = finished ? total : steps.filter((st, k) => st.partIndex === i && seen.has(k)).length;
         const current = here?.partIndex === i;
         const pct = Math.round((filled / total) * 100);
         return h(
           "li",
-          {
-            class: `part${current ? " is-current" : ""}${filled === total ? " is-done" : ""}`,
-            "aria-current": current ? "step" : false,
-          },
-          h("span", { class: "part-name" }, part.title),
-          h("span", { class: "part-track", "aria-hidden": "true" }, h("span", { class: "part-fill", style: `width:${pct}%` })),
-          h("span", { class: "visually-hidden" }, `, đã đi ${filled} trên ${total} bước`)
+          { class: `part${current ? " is-current" : ""}${filled === total ? " is-done" : ""}` },
+          h(
+            "button",
+            {
+              class: "part-btn",
+              type: "button",
+              disabled: finished,
+              "aria-current": current ? "step" : null,
+              onclick: () => goToPart(i),
+            },
+            h("span", { class: "part-name" }, part.title),
+            h("span", { class: "part-track", "aria-hidden": "true" }, h("span", { class: "part-fill", style: `width:${pct}%` })),
+            h("span", { class: "visually-hidden" }, `, đã mở ${filled} trên ${total} bước`)
+          )
         );
       })
     );
+  }
+
+  function goToPart(i) {
+    const first = steps.findIndex((st) => st.partIndex === i);
+    if (first < 0 || finished) return;
+    stop();
+    onIntro = false;
+    index = first;
+    show();
   }
 
   // Tải sẵn toàn bộ âm thanh của bài một lần, sau âm thanh của bước đang mở,
@@ -160,7 +177,8 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     const { step } = steps[index];
     markActive();
     prefetch(step);
-    store.put("progress", lesson.id, { step: index, total: steps.length, done: saved?.done || false });
+    seen.add(index);
+    store.put("progress", lesson.id, { step: index, total: steps.length, done: saved?.done || false, seen: [...seen] });
     drawParts();
     startStep(lesson.id, index, step.type);
     prevBtn.hidden = index === 0;

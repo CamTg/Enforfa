@@ -67,10 +67,44 @@ function renderMapPage() {
       { class: "lesson-head" },
       h("div", { class: "lesson-head-row" }, h("a", { class: "btn-back", href: "#/", "aria-label": "Về trang chính" }, icon("back")), h("p", { class: "lesson-title" }, "Lộ trình"))
     ),
-    h("main", { class: "map-page", id: "main" }, renderMap(course, number, weekState, stampedWeeks()))
+    h("main", { class: "map-page", id: "main" }, renderMap(course, number, weekState, stampedWeeks(), weekSection))
   );
   const here = root.querySelector(".map-week.is-current");
   if (here) here.scrollIntoView({ block: "center" });
+}
+
+// Danh sách bài của một tuần, hiện dưới bản đồ khi người học bấm vào tuần ấy.
+function weekSection(n) {
+  const week = course.weeks.find((w) => w.number === n);
+  if (!week) {
+    return h(
+      "section",
+      { class: "week" },
+      h("h2", {}, `Tuần ${n}`),
+      h("p", { class: "hint" }, "Các bài của tuần này đang được soạn.")
+    );
+  }
+  const ready = week.lessons.filter((l) => l.file).length;
+  return h(
+    "section",
+    { class: "week" },
+    h("h2", {}, week.title),
+    week.goal && h("p", { class: "week-goal" }, week.goal),
+    h(
+      "ol",
+      { class: "lesson-list" },
+      ...week.lessons.map((l, i) => {
+        const state = lessonState(l);
+        const num = h("span", { class: "lesson-num" }, String(i + 1));
+        const name = h("span", { class: "lesson-name" }, l.title);
+        if (!l.file) return h("li", {}, h("div", { class: "lesson-item is-coming" }, num, name));
+        const label = { done: "Đã học", started: "Đang học", new: "Chưa học" }[state];
+        return h("li", {}, h("a", { class: `lesson-item is-${state}`, href: `#/bai/${l.id}` }, num, name, h("span", { class: `badge badge-${state}` }, label)));
+      })
+    ),
+    ready < week.lessons.length &&
+      h("p", { class: "hint week-note" }, `Đã có ${ready} trên ${week.lessons.length} bài của tuần. Các bài còn lại đang được soạn.`)
+  );
 }
 
 // ---- Chào người mới ----
@@ -189,30 +223,6 @@ function renderHome() {
       : h("p", { class: "hint" }, "Hôm nay chưa có thẻ từ nào đến hạn ôn.")
   );
 
-  const weeks = course.weeks.map((week) => {
-    const ready = week.lessons.filter((l) => l.file).length;
-    return h(
-      "section",
-      { class: "week" },
-      h("h2", {}, week.title),
-      week.goal && h("p", { class: "week-goal" }, week.goal),
-      h(
-        "ol",
-        { class: "lesson-list" },
-        ...week.lessons.map((l, i) => {
-          const state = lessonState(l);
-          const num = h("span", { class: "lesson-num" }, String(i + 1));
-          const name = h("span", { class: "lesson-name" }, l.title);
-          if (!l.file) return h("li", {}, h("div", { class: "lesson-item is-coming" }, num, name));
-          const label = { done: "Đã học", started: "Đang học", new: "Chưa học" }[state];
-          return h("li", {}, h("a", { class: `lesson-item is-${state}`, href: `#/bai/${l.id}` }, num, name, h("span", { class: `badge badge-${state}` }, label)));
-        })
-      ),
-      ready < week.lessons.length &&
-        h("p", { class: "hint week-note" }, `Đã có ${ready} trên ${week.lessons.length} bài của tuần. Các bài còn lại đang được soạn.`)
-    );
-  });
-
   // Thẻ lộ trình: tuần đang học, chặng đang ở, và lối vào bản đồ.
   const { number: weekNo, stage } = progressPosition();
   const stamps = stampCount(lessons.map((l) => l.id));
@@ -265,8 +275,7 @@ function renderHome() {
       todayBlock,
       reviewBlock,
       tryBlock,
-      roadmap,
-      ...weeks
+      roadmap
     ),
     h("footer", { class: "home-foot" }, h("a", { href: "#/gioi-thieu" }, "Về Enforfa và quyền riêng tư"))
   );
