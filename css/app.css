@@ -433,3 +433,31 @@ textarea:focus { border-color: var(--action); outline: none; }
 
 .credits { padding-left: 1.25rem; }
 .credits li { margin-bottom: 8px; }
+
+/* Trò chơi nhẹ: hiệu ứng, chuỗi ngày, con dấu */
+.pop { animation: pop 380ms ease-out; }
+@keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.04); } 100% { transform: scale(1); } }
+.confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 20; }
+.confetti span {
+  position: absolute; top: -12px; width: 9px; height: 14px; border-radius: 2px;
+  animation: fall 1.8s cubic-bezier(.2,.6,.4,1) forwards;
+}
+@keyframes fall { to { transform: translate(var(--drift, 0), 105vh) rotate(540deg); opacity: 0.2; } }
+.streak { display: inline-flex; align-items: baseline; gap: 6px; margin: 10px 0 0; padding: 4px 12px; border-radius: 999px; background: var(--sheet); border: 1px solid var(--line); font-size: 0.9375rem; }
+.streak-num { font-weight: 700; font-size: 1.125rem; color: var(--action); }
+.streak-line { font-weight: 600; color: var(--action); }
+.stamp-box { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.stamp-box p { margin: 0; flex: 1 1 200px; }
+.stamp {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  border: 3px solid var(--right); color: var(--right); font-weight: 700; font-size: 1.25rem; transform: rotate(-12deg);
+}
+.try-card { margin-bottom: 20px; padding: 16px 18px; background: var(--sheet); border: 1px solid var(--line); border-radius: var(--radius); }
+.try-card .real-task { margin-bottom: 12px; }
+.roadmap-stamps { font-size: 0.9375rem; color: var(--right); font-weight: 600; }
+.map-stamp { fill: var(--right); }
+.map-stamp-tick { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.legend-stamp { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: var(--right); color: #fff; font-size: 11px; font-weight: 700; }
+.toggle { display: flex; align-items: center; gap: 10px; min-height: 48px; font-size: 1rem; }
+.toggle input { width: 22px; height: 22px; accent-color: var(--action); }
+@media (prefers-reduced-motion: reduce) { .pop { animation: none; } }

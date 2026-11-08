@@ -19,7 +19,7 @@ function place(i) {
   return { x: PAD_X + col * GAP_X, y: PAD_Y + row * GAP_Y };
 }
 
-function stageSvg(stage, weekState, currentWeek) {
+function stageSvg(stage, weekState, currentWeek, stamped) {
   const weeks = [];
   for (let w = stage.from; w <= stage.to; w++) weeks.push(w);
   const pts = weeks.map((w, i) => ({ w, ...place(i) }));
@@ -37,7 +37,9 @@ function stageSvg(stage, weekState, currentWeek) {
     svg += `<g class="map-week is-${state}">`;
     if (state === "current") svg += `<circle cx="${p.x}" cy="${p.y}" r="${R + 7}" class="map-halo"/>`;
     svg += `<circle cx="${p.x}" cy="${p.y}" r="${R}" class="map-dot"/>`;
-    svg += `<text x="${p.x}" y="${p.y + 5}" text-anchor="middle" class="map-num">${p.w}</text></g>`;
+    svg += `<text x="${p.x}" y="${p.y + 5}" text-anchor="middle" class="map-num">${p.w}</text>`;
+    if (stamped.has(p.w)) svg += `<circle cx="${p.x + 14}" cy="${p.y - 14}" r="8" class="map-stamp"/><path d="M${p.x + 10} ${p.y - 14} l3 3 l5 -6" class="map-stamp-tick"/>`;
+    svg += "</g>";
   }
   svg += "</svg>";
   const holder = h("div", { class: "map-stage-svg" });
@@ -48,7 +50,7 @@ function stageSvg(stage, weekState, currentWeek) {
 /**
  * weekState(n) trả về "done", "current" hoặc "future".
  */
-export function renderMap(course, currentWeek, weekState) {
+export function renderMap(course, currentWeek, weekState, stamped = new Set()) {
   const stages = course.stages.map((st) => {
     const isCurrent = currentWeek >= st.from && currentWeek <= st.to;
     const doneWeeks = Math.max(0, Math.min(st.to, currentWeek - 1) - st.from + 1);
@@ -58,7 +60,7 @@ export function renderMap(course, currentWeek, weekState) {
       h("p", { class: "map-stage-meta" }, `${st.weeks} · Trình độ ${st.level}`),
       h("h2", {}, `Chặng ${st.id}: ${st.title}`),
       h("p", { class: "map-stage-goal" }, `Hết chặng này, bạn ${st.goal.charAt(0).toLowerCase()}${st.goal.slice(1)}`),
-      stageSvg(st, weekState, currentWeek),
+      stageSvg(st, weekState, currentWeek, stamped),
       h(
         "p",
         { class: "visually-hidden" },
@@ -83,7 +85,8 @@ export function renderMap(course, currentWeek, weekState) {
       { class: "map-legend" },
       h("li", {}, h("span", { class: "legend-dot is-done" }), "Đã học xong"),
       h("li", {}, h("span", { class: "legend-dot is-current" }), "Tuần đang học"),
-      h("li", {}, h("span", { class: "legend-dot is-future" }), "Sắp tới")
+      h("li", {}, h("span", { class: "legend-dot is-future" }), "Sắp tới"),
+      h("li", {}, h("span", { class: "legend-stamp" }, "✓"), "Có con dấu Thử ngoài đời")
     ),
     ...stages
   );

@@ -14,7 +14,7 @@ Một bài chia năm phần, người học dừng được sau bất kỳ bư�
 | Nói | Thu âm giọng mình, nghe lại cạnh câu mẫu, tự đánh giá |
 | Viết | Nghe một câu rồi gõ lại, tự gõ câu của mình; app chỉ ra chữ nào sai |
 
-Học xong một bài, thẻ từ của bài vào kho ôn theo lịch cách quãng.
+Học xong một bài, thẻ từ của bài vào kho ôn: ôn được ngay, rồi gặp lại theo lịch cách quãng. Cuối bài có một việc nhỏ để thử ngoài đời; người học làm rồi thì đóng một con dấu, hiện trên bản đồ lộ trình.
 
 ## Chạy thử trên máy
 
@@ -35,6 +35,8 @@ js/main.js          trang chính, ôn từ, chuyển trang
 js/lesson.js        trình chạy một bài học
 js/store.js         dữ liệu của người học: lưu trên máy trước, đồng bộ sau
 js/srs.js           lịch ôn thẻ từ
+js/fun.js           tiếng báo, giấy màu, chuỗi ngày học, con dấu
+js/map.js           bản đồ lộ trình
 js/recorder.js      thu âm, lưu bản thu ngay trên máy
 js/audio.js         phát âm thanh mẫu
 content/course.json danh sách tuần và bài

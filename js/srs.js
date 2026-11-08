@@ -12,8 +12,8 @@ export function addCards(lessonId, cards) {
   for (const card of cards) {
     const id = `${lessonId}/${card.id}`;
     if (!store.get("cards", id)) {
-      // Thẻ mới đến hạn từ ngày mai, vì hôm nay người học vừa gặp chúng.
-      store.put("cards", id, { lessonId, cardId: card.id, box: 0, due: startOfDay(Date.now() + DAY) });
+      // Thẻ mới ôn được ngay sau khi học xong bài. Nhớ rồi thì lần sau là ngày mai.
+      store.put("cards", id, { lessonId, cardId: card.id, box: 0, due: Date.now() });
     }
   }
 }

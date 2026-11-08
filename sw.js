@@ -7,7 +7,7 @@
 // Mỗi lần đổi danh sách tệp dưới đây, tăng số phiên bản để máy người học
 // xóa bộ nhớ cũ.
 
-const VERSION = "enforfa-v1";
+const VERSION = "enforfa-v2";
 const SHELL = [
   "./",
   "index.html",
@@ -18,6 +18,7 @@ const SHELL = [
   "icons/icon-192.png",
   "icons/apple-touch-icon.png",
   "js/audio.js",
+  "js/fun.js",
   "js/lesson.js",
   "js/machine-listen.js",
   "js/main.js",
