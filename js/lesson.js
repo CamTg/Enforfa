@@ -26,12 +26,13 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
   const text = (audioId) => lesson.audio[audioId]?.text ?? audioId;
 
   // Đổi chuỗi có {{mã}} thành câu có cụm tiếng Anh bấm nghe được.
+  // {{mã|nghĩa}} thêm một dòng nghĩa tiếng Việt nhỏ ngay dưới cụm ấy.
   function richText(str) {
     const out = [];
     let last = 0;
-    for (const m of str.matchAll(/\{\{(\w+)\}\}/g)) {
+    for (const m of str.matchAll(/\{\{(\w+)(?:\|([^}]+))?\}\}/g)) {
       out.push(str.slice(last, m.index));
-      out.push(sayChip(text(m[1]), sound(m[1])));
+      out.push(sayChip(text(m[1]), sound(m[1]), "", m[2] || ""));
       last = m.index + m[0].length;
     }
     out.push(str.slice(last));
