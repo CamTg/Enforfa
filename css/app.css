@@ -328,3 +328,18 @@ textarea:focus { border-color: var(--action); outline: none; }
 /* Xuất số liệu học thử */
 .export { margin-top: 8px; }
 .export .hint { margin-top: 10px; }
+
+/* Viết */
+.write-input {
+  display: block; width: 100%; min-height: 56px; margin-bottom: 12px; padding: 12px 14px;
+  border: 2px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--sheet); color: var(--ink); font-family: var(--font-en); font-size: 1.25rem;
+}
+.write-input:focus { border-color: var(--action); outline: none; }
+.step-write .feedback { margin-top: 14px; font-weight: 400; }
+.step-write .feedback.is-right p:first-child, .step-write .feedback.is-wrong p:first-child { font-weight: 600; }
+.write-answer {
+  font-size: 1.25rem; font-weight: 700; color: var(--ink);
+  padding: 10px 14px; background: var(--sheet); border-left: 6px solid var(--marker); border-radius: var(--radius-sm);
+}
+.diff-miss { text-decoration: underline 3px var(--wrong); text-underline-offset: 4px; }

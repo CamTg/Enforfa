@@ -420,7 +420,141 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
         marks
       );
     },
+
+    write(step) {
+      setReady(false);
+      const input = h("input", {
+        class: "write-input",
+        type: "text",
+        lang: "en",
+        autocomplete: "off",
+        autocorrect: "off",
+        autocapitalize: "sentences",
+        spellcheck: "false",
+        enterkeyhint: "done",
+        "aria-label": "Câu bạn gõ",
+      });
+      const feedback = h("div", { class: "feedback", role: "status" });
+      const check = h("button", { class: "btn btn-secondary btn-wide", type: "button" }, "Kiểm tra");
+
+      function run() {
+        const typed = input.value.trim();
+        if (!typed) {
+          feedback.className = "feedback";
+          feedback.replaceChildren(h("p", {}, "Bạn gõ câu vào ô trên rồi bấm Kiểm tra."));
+          return;
+        }
+        if (VIETNAMESE_MARKS.test(typed)) {
+          markWrong();
+          feedback.className = "feedback is-wrong";
+          feedback.replaceChildren(
+            h(
+              "p",
+              {},
+              step.mode === "intro"
+                ? "Câu bạn gõ có dấu tiếng Việt. Khi viết bằng tiếng Anh, tên của bạn cũng viết không dấu, như Nguyễn viết là Nguyen. Nếu bàn phím tự thêm dấu, bạn đổi sang bàn phím tiếng Anh rồi gõ lại."
+                : "Câu bạn gõ có dấu tiếng Việt, có lẽ bàn phím đang ở chế độ tiếng Việt. Bạn đổi sang bàn phím tiếng Anh rồi gõ lại."
+            )
+          );
+          return;
+        }
+        setReady(true);
+        if (step.mode === "intro") {
+          const ok = /\b(my name is|i'?m|i am)\s+[a-z]/.test(normalize(typed));
+          if (ok) {
+            feedback.className = "feedback is-right";
+            feedback.replaceChildren(h("p", {}, "Đúng rồi. Câu của bạn đúng mẫu giới thiệu."));
+          } else {
+            markWrong();
+            feedback.className = "feedback is-wrong";
+            feedback.replaceChildren(
+              h("p", {}, "Câu giới thiệu cần có My name is hoặc I'm, rồi đến tên bạn. Ví dụ:"),
+              h("p", { class: "write-answer", lang: "en" }, step.example)
+            );
+          }
+          return;
+        }
+        const expected = words(step.answer);
+        const got = words(typed);
+        const missed = missedWords(expected, got);
+        if (missed.size === 0 && got.length === expected.length) {
+          feedback.className = "feedback is-right";
+          feedback.replaceChildren(h("p", {}, "Đúng rồi."));
+          return;
+        }
+        markWrong();
+        feedback.className = "feedback is-wrong";
+        const shown = step.answer.split(/\s+/).map((w, i) =>
+          h("span", { class: missed.has(i) ? "diff-miss" : null }, w)
+        );
+        feedback.replaceChildren(
+          h("p", {}, "Chưa đúng hết. Câu đúng ở dưới, những chữ bạn gõ sai hoặc thiếu được gạch chân. Bạn nghe lại rồi gõ thêm lần nữa nếu muốn."),
+          h("p", { class: "write-answer", lang: "en" }, ...shown.flatMap((el, i) => (i ? [" ", el] : [el])))
+        );
+      }
+
+      check.addEventListener("click", run);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          run();
+        }
+      });
+
+      return h(
+        "section",
+        { class: "step step-write" },
+        h("h1", {}, step.prompt),
+        step.audio &&
+          h(
+            "button",
+            { class: "btn-listen btn-listen-big", type: "button", onclick: (e) => sound(step.audio)(e.currentTarget) },
+            icon("play"),
+            h("span", {}, "Nghe")
+          ),
+        step.mode === "intro" && h("p", { class: "hint" }, "Ví dụ: ", h("span", { lang: "en" }, step.example)),
+        input,
+        check,
+        feedback
+      );
+    },
   };
 
   show();
+}
+
+// ---- So câu gõ với câu đúng ----
+
+const VIETNAMESE_MARKS = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i;
+
+// Bỏ qua chữ hoa, dấu câu và khoảng trắng thừa.
+function normalize(text) {
+  return text
+    .toLowerCase()
+    .replace(/[‘’ʼ]/g, "'")
+    .replace(/[^a-z0-9'\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function words(text) {
+  return normalize(text).split(" ").filter(Boolean);
+}
+
+// Vị trí những chữ của câu đúng không có trong câu gõ, theo dãy con chung dài nhất,
+// để một chữ thiếu không làm cả phần sau bị tính sai.
+function missedWords(expected, got) {
+  const n = expected.length, m = got.length;
+  const L = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = n - 1; i >= 0; i--)
+    for (let j = m - 1; j >= 0; j--)
+      L[i][j] = expected[i] === got[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const missed = new Set();
+  let i = 0, j = 0;
+  while (i < n) {
+    if (j < m && expected[i] === got[j]) { i++; j++; }
+    else if (j < m && L[i][j + 1] >= L[i + 1][j]) j++;
+    else { missed.add(i); i++; }
+  }
+  return missed;
 }
