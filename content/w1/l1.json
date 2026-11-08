@@ -467,33 +467,34 @@
         {
           "type": "text",
           "body": [
-            "Khi gặp ai lần đầu, người ta nói {{nice}}, nghĩa là \"Rất vui được gặp bạn\". Người kia đáp {{nice_too}}."
+            "Khi gặp ai lần đầu, người ta nói {{nice}}, nghĩa là \"Rất vui được gặp bạn\". Người kia đáp {{nice_too|Tôi cũng rất vui được gặp bạn.}}."
           ]
         },
         {
           "type": "text",
           "body": [
-            "Người nói tiếng Anh dùng {{how_are_you}} như một lời chào, khi gặp lại người quen, đồng nghiệp hay cả nhân viên cửa hàng. Người hỏi chờ một câu đáp ngắn, nên bạn đáp {{good_thanks}} rồi hỏi lại {{and_you}}, không cần kể chuyện sức khỏe hay công việc.",
-            "Khi người kia hỏi lại bạn, họ cũng đáp ngắn như vậy, chẳng hạn {{im_good}}"
+            "{{how_are_you|Bạn khỏe không? (dùng như lời chào)}} là một lời chào. Người nói tiếng Anh hỏi câu này khi gặp lại người quen, đồng nghiệp, kể cả nhân viên cửa hàng, và họ chỉ chờ một câu đáp ngắn.",
+            "Bạn đáp {{good_thanks|Khỏe, cảm ơn.}} Sau đó bạn hỏi lại {{and_you|Còn bạn?}}",
+            "Người kia cũng đáp ngắn, chẳng hạn {{im_good|Tôi khỏe.}}"
           ]
         },
         {
           "type": "text",
           "body": [
             "Câu {{nice}} chỉ dùng khi gặp ai lần đầu. Từ lần gặp thứ hai trở đi, bạn chào {{hi}} và hỏi {{how_are_you}}.",
-            "Khi chia tay, bạn nói {{see_you_tomorrow}} nếu mai còn gặp lại, hoặc chỉ cần {{bye}}"
+            "Khi chia tay, nếu mai còn gặp lại, bạn nói {{see_you_tomorrow|Mai gặp lại nhé.}} Nếu không, bạn chỉ cần nói {{bye|Chào nhé.}}"
           ]
         },
         {
           "type": "text",
           "body": [
-            "Khi không nghe kịp, bạn nói {{sorry_q}} và lên giọng ở cuối. Người đối diện sẽ hiểu là bạn muốn họ nói lại."
+            "Khi không nghe kịp, bạn nói {{sorry_q|Bạn nói gì cơ?}} và lên giọng ở cuối. Người đối diện sẽ hiểu là bạn muốn họ nói lại."
           ]
         },
         {
           "type": "text",
           "body": [
-            "{{speak_slowly}} là lời nhờ người khác nói chậm lại, còn {{thank_you}} là lời cảm ơn."
+            "Muốn người khác nói chậm lại, bạn nói {{speak_slowly|Làm ơn nói chậm thôi.}} Khi cảm ơn, bạn nói {{thank_you|Cảm ơn.}}"
           ]
         }
       ]

@@ -31,11 +31,13 @@ export function icon(name) {
 }
 
 /** Một cụm tiếng Anh bấm được để nghe: phần nhận diện của app. */
-export function sayChip(text, onPlay, extraClass = "") {
+export function sayChip(text, onPlay, extraClass = "", gloss = "") {
   return h(
     "button",
-    { class: `say ${extraClass}`.trim(), type: "button", lang: "en", onclick: (e) => onPlay(e.currentTarget) },
+    { class: `say ${gloss ? "has-gloss " : ""}${extraClass}`.trim(), type: "button", lang: "en", onclick: (e) => onPlay(e.currentTarget) },
     icon("play"),
-    h("span", { class: "say-text" }, text)
+    gloss
+      ? h("span", { class: "say-stack" }, h("span", { class: "say-text" }, text), h("span", { class: "say-gloss", lang: "vi" }, gloss))
+      : h("span", { class: "say-text" }, text)
   );
 }
