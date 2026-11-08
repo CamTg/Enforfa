@@ -104,7 +104,7 @@ function renderHome() {
       "section",
       { class: "roadmap" },
       h("h2", {}, "Lộ trình"),
-      h("p", { class: "hint" }, `Chương trình có ${course.totalWeeks} tuần, chia ba chặng. Bạn đang ở tuần ${currentWeek?.number || 1}.`),
+      h("p", { class: "hint" }, `Chương trình có ${course.totalWeeks} tuần, chia ba chặng, đi từ trình độ A1 (mới bắt đầu) tới B1 (trung cấp) theo khung trình độ ngoại ngữ châu Âu (CEFR). Bạn đang ở tuần ${currentWeek?.number || 1}.`),
       h(
         "ol",
         { class: "stages" },
@@ -112,7 +112,7 @@ function renderHome() {
           h(
             "li",
             { class: `stage${st.id === currentStage ? " is-current" : ""}`, "aria-current": st.id === currentStage ? "step" : false },
-            h("p", { class: "stage-weeks" }, st.id === currentStage ? `${st.weeks} · Bạn đang ở đây` : st.weeks),
+            h("p", { class: "stage-weeks" }, `${st.weeks} · Trình độ ${st.level}${st.id === currentStage ? " · Bạn đang ở đây" : ""}`),
             h("p", { class: "stage-title" }, `Chặng ${st.id}: ${st.title}`),
             h("p", { class: "stage-goal" }, `Hết chặng này, bạn ${st.goal.charAt(0).toLowerCase()}${st.goal.slice(1)}`)
           )
@@ -245,7 +245,7 @@ function renderAbout() {
       "main",
       { class: "about", id: "main" },
       h("h1", {}, "Enforfa là gì"),
-      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt mới sang Mỹ. Mỗi ngày một bài, giảng bằng tiếng Việt, xoay quanh những việc bạn sẽ gặp ngay: chào hỏi, đánh vần tên, đi khám, làm giấy tờ, đi làm."),
+      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Mỗi ngày một bài, giảng bằng tiếng Việt, giúp bạn nghe, nói, đọc, viết đủ để giao tiếp và làm việc với người nói tiếng Anh: từ chào hỏi, đánh vần tên, tới đi khám, làm giấy tờ và đi làm."),
       h("h2", {}, "Dữ liệu của bạn"),
       h("p", {}, "Tiến độ, thẻ từ và ghi chú được lưu ngay trên điện thoại hay máy tính bạn đang dùng. App chưa có tài khoản, nên đổi máy hoặc xóa dữ liệu trình duyệt thì những thứ này sẽ mất."),
       h("p", {}, "Bản thu giọng của bạn chỉ nằm trên máy này. App không gửi bản thu đi đâu."),
