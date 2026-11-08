@@ -1,0 +1,455 @@
+{
+  "id": "w1-l1",
+  "title": "Chào hỏi và cách học",
+  "goal": "Hết bài này, bạn chào được, nói được tên mình, cảm ơn, và nhờ người khác nói lại hoặc nói chậm hơn.",
+  "minutes": 40,
+  "speakers": {
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "minh": {
+      "name": "Minh",
+      "voice": "am_michael"
+    }
+  },
+  "audio": {
+    "d1": {
+      "text": "Hi. I'm Lan.",
+      "voice": "af_heart",
+      "ipa": "hˈaɪ. aɪm lˈɑːn."
+    },
+    "d2": {
+      "text": "Hello. My name is Minh. Nice to meet you.",
+      "voice": "am_michael"
+    },
+    "d3": {
+      "text": "Nice to meet you, too.",
+      "voice": "af_heart"
+    },
+    "c_hi": {
+      "text": "Hi.",
+      "voice": "af_heart"
+    },
+    "c_im_lan": {
+      "text": "I'm Lan.",
+      "voice": "af_heart",
+      "ipa": "aɪm lˈɑːn."
+    },
+    "c_hello": {
+      "text": "Hello.",
+      "voice": "am_michael"
+    },
+    "c_myname_minh": {
+      "text": "My name is Minh.",
+      "voice": "am_michael"
+    },
+    "c_nice": {
+      "text": "Nice to meet you.",
+      "voice": "am_michael"
+    },
+    "hi": {
+      "text": "Hi",
+      "voice": "af_heart"
+    },
+    "hello": {
+      "text": "Hello",
+      "voice": "af_heart"
+    },
+    "you": {
+      "text": "you",
+      "voice": "af_heart"
+    },
+    "my_name_is": {
+      "text": "My name is",
+      "voice": "af_heart"
+    },
+    "my_name_is_minh": {
+      "text": "My name is Minh",
+      "voice": "am_michael"
+    },
+    "im": {
+      "text": "I'm",
+      "voice": "af_heart"
+    },
+    "im_minh": {
+      "text": "I'm Minh",
+      "voice": "am_michael"
+    },
+    "nice": {
+      "text": "Nice to meet you",
+      "voice": "af_heart"
+    },
+    "too": {
+      "text": "too",
+      "voice": "af_heart"
+    },
+    "nice_too": {
+      "text": "Nice to meet you, too",
+      "voice": "am_michael"
+    },
+    "sorry_q": {
+      "text": "Sorry?",
+      "voice": "af_heart"
+    },
+    "sorry_down": {
+      "text": "Sorry.",
+      "voice": "af_heart"
+    },
+    "speak_slowly": {
+      "text": "Please speak slowly.",
+      "voice": "af_heart",
+      "speed": 0.9
+    },
+    "thank_you": {
+      "text": "Thank you.",
+      "voice": "af_heart"
+    },
+    "s1": {
+      "text": "Hi. My name is Lan. Nice to meet you.",
+      "voice": "af_heart",
+      "speed": 0.9,
+      "ipa": "hˈaɪ. maɪ nˈeɪm ɪz lˈɑːn. nˈaɪs tə mˈiːt juː."
+    },
+    "s2": {
+      "text": "Sorry? Please speak slowly.",
+      "voice": "af_heart",
+      "speed": 0.9
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Hai người gặp nhau lần đầu",
+          "body": [
+            "Bạn sẽ nghe một đoạn hội thoại ngắn ba lượt. Lượt đầu có nghĩa tiếng Việt cho từng cụm, lượt hai có bản dịch cả câu, lượt ba chỉ còn tiếng.",
+            "Bạn chưa cần hiểu hết ngay. Bấm vào câu nào cũng nghe lại được."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "lan",
+              "audio": "d1",
+              "chunks": [
+                {
+                  "en": "Hi.",
+                  "vi": "Chào bạn.",
+                  "audio": "c_hi"
+                },
+                {
+                  "en": "I'm Lan.",
+                  "vi": "Tôi là Lan.",
+                  "audio": "c_im_lan"
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "d2",
+              "chunks": [
+                {
+                  "en": "Hello.",
+                  "vi": "Xin chào.",
+                  "audio": "c_hello"
+                },
+                {
+                  "en": "My name is Minh.",
+                  "vi": "Tên tôi là Minh.",
+                  "audio": "c_myname_minh"
+                },
+                {
+                  "en": "Nice to meet you.",
+                  "vi": "Rất vui được gặp bạn.",
+                  "audio": "c_nice"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d3",
+              "chunks": [
+                {
+                  "en": "Nice to meet you, too.",
+                  "vi": "Tôi cũng rất vui được gặp bạn.",
+                  "audio": "d3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "lan",
+              "audio": "d1",
+              "vi": "Chào bạn. Tôi là Lan."
+            },
+            {
+              "speaker": "minh",
+              "audio": "d2",
+              "vi": "Xin chào. Tên tôi là Minh. Rất vui được gặp bạn."
+            },
+            {
+              "speaker": "lan",
+              "audio": "d3",
+              "vi": "Tôi cũng rất vui được gặp bạn."
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "lan",
+              "audio": "d1"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d2"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Mỗi ngày bạn học một bài, khoảng 40 phút. Bận thì học từng phần, hôm sau học tiếp từ chỗ dừng. Bỏ một ngày cũng không sao."
+          ]
+        },
+        {
+          "type": "text",
+          "body": [
+            "Chữ tiếng Anh thường không đọc theo mặt chữ như chữ tiếng Việt. Vì vậy, gặp chữ nào bạn cũng bấm nghe trước, rồi mới đọc theo."
+          ]
+        },
+        {
+          "type": "text",
+          "body": [
+            "Đừng ghi cách đọc bằng chữ Việt, kiểu \"hê-lô\". Ghi như vậy, lâu dần bạn sẽ đọc tiếng Anh thành tiếng Việt, và người Mỹ khó hiểu."
+          ]
+        },
+        {
+          "type": "text",
+          "body": [
+            "{{hi}} và {{hello}} đều là lời chào, dùng được với mọi người.",
+            "Tiếng Anh không có \"anh, chị, cô, chú\": ai cũng là {{you}}, và người ta thường gọi nhau bằng tên."
+          ]
+        },
+        {
+          "type": "text",
+          "body": [
+            "{{my_name_is_minh}} nghĩa là \"Tên tôi là Minh\".",
+            "Nói gọn hơn: {{im_minh}}."
+          ]
+        },
+        {
+          "type": "text",
+          "body": [
+            "{{nice}} là câu nói khi gặp ai lần đầu, như \"Rất vui được gặp bạn\".",
+            "Người kia đáp: {{nice_too}}."
+          ]
+        },
+        {
+          "type": "text",
+          "body": [
+            "{{sorry_q}} nói lên giọng ở cuối nghĩa là \"Bạn nói gì cơ?\".",
+            "Những tháng đầu ở Mỹ, đây là câu bạn sẽ dùng nhiều nhất, nên đừng ngại dùng nó."
+          ]
+        },
+        {
+          "type": "text",
+          "body": [
+            "{{speak_slowly}} nghĩa là \"Làm ơn nói chậm thôi\".",
+            "{{thank_you}} nghĩa là \"Cảm ơn\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Nghe câu này. Bạn đáp thế nào?",
+          "audio": "c_nice",
+          "options": [
+            {
+              "text": "Nice to meet you, too.",
+              "correct": true
+            },
+            {
+              "text": "My name is Minh."
+            },
+            {
+              "text": "Please speak slowly."
+            }
+          ],
+          "explain": "Khi ai nói \"Nice to meet you\", bạn đáp \"Nice to meet you, too\"."
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe câu này. Bạn đáp thế nào?",
+          "audio": "d1",
+          "options": [
+            {
+              "text": "Hi. I'm Minh.",
+              "correct": true
+            },
+            {
+              "text": "Thank you."
+            },
+            {
+              "text": "Nice to meet you, too."
+            }
+          ],
+          "explain": "Lan chào và nói tên. Bạn chào lại và nói tên mình."
+        },
+        {
+          "type": "order",
+          "prompt": "Bấm các chữ theo đúng thứ tự để thành câu \"Tên tôi là Minh\".",
+          "words": [
+            "name",
+            "My",
+            "Minh",
+            "is"
+          ],
+          "answer": [
+            "My",
+            "name",
+            "is",
+            "Minh"
+          ],
+          "audio": "c_myname_minh"
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai cách nói. Cách nào nghĩa là \"Bạn nói gì cơ?\"",
+          "options": [
+            {
+              "label": "Cách 1",
+              "audio": "sorry_down"
+            },
+            {
+              "label": "Cách 2",
+              "audio": "sorry_q",
+              "correct": true
+            }
+          ],
+          "explain": "Lên giọng ở cuối là đang hỏi lại. Xuống giọng ở cuối là lời xin lỗi."
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bây giờ bạn tự nói. Nghe câu mẫu, thu âm giọng mình, rồi nghe lại hai bản cạnh nhau.",
+            "Bản thu chỉ lưu trên điện thoại của bạn, không gửi đi đâu."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "intro",
+          "prompt": "Nói tên của bạn thay cho Lan.",
+          "model": "s1",
+          "say": "Hi. My name is [tên bạn]. Nice to meet you."
+        },
+        {
+          "type": "speak",
+          "id": "sorry",
+          "prompt": "Nhờ người khác nói lại, nói chậm hơn.",
+          "model": "s2",
+          "say": "Sorry? Please speak slowly."
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "hi",
+      "en": "Hi",
+      "vi": "Chào (thân mật)",
+      "audio": "hi"
+    },
+    {
+      "id": "hello",
+      "en": "Hello",
+      "vi": "Xin chào",
+      "audio": "hello"
+    },
+    {
+      "id": "you",
+      "en": "you",
+      "vi": "bạn, anh, chị, ông, bà… (mọi người)",
+      "audio": "you"
+    },
+    {
+      "id": "my-name-is",
+      "en": "My name is…",
+      "vi": "Tên tôi là…",
+      "audio": "my_name_is"
+    },
+    {
+      "id": "im",
+      "en": "I'm…",
+      "vi": "Tôi là…",
+      "audio": "im"
+    },
+    {
+      "id": "nice-to-meet-you",
+      "en": "Nice to meet you",
+      "vi": "Rất vui được gặp bạn",
+      "audio": "nice"
+    },
+    {
+      "id": "too",
+      "en": "too",
+      "vi": "cũng (đặt cuối câu)",
+      "audio": "too"
+    },
+    {
+      "id": "sorry-q",
+      "en": "Sorry?",
+      "vi": "Bạn nói gì cơ? (lên giọng)",
+      "audio": "sorry_q"
+    },
+    {
+      "id": "speak-slowly",
+      "en": "Please speak slowly.",
+      "vi": "Làm ơn nói chậm thôi.",
+      "audio": "speak_slowly"
+    },
+    {
+      "id": "thank-you",
+      "en": "Thank you.",
+      "vi": "Cảm ơn.",
+      "audio": "thank_you"
+    }
+  ]
+}
