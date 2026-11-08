@@ -13,7 +13,7 @@
     },
     "kate": {
       "name": "Kate",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     }
   },
   "listenNote": "Mười từ thường gặp, và một đoạn hội thoại ngắn nghe ba lượt",
@@ -135,7 +135,7 @@
     },
     "k1": {
       "text": "Hi, I'm Kate. Where are you from?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "k2": {
       "text": "I'm from Vietnam.",
@@ -144,7 +144,7 @@
     },
     "k3": {
       "text": "Welcome to Houston!",
-      "voice": "af_bella",
+      "voice": "af_jessica",
       "ipa": "wˈɛlkʌm tə hjˈuːstən!"
     },
     "k4": {
@@ -208,7 +208,7 @@
     },
     "ask_from": {
       "text": "Where are you from?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "w_from": {
       "text": "I'm from Vietnam.",

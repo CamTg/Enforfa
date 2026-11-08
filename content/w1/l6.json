@@ -13,11 +13,11 @@
     },
     "staff": {
       "name": "Nhân viên",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "man": {
       "name": "Người nghe máy",
-      "voice": "am_fenrir"
+      "voice": "am_adam"
     }
   },
   "listenNote": "Hai đoạn hội thoại về số điện thoại, mỗi đoạn nghe ba lượt, và các số từ 0 đến 10",
@@ -138,7 +138,7 @@
     },
     "a1": {
       "text": "What's your phone number?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "a2": {
       "text": "It's 713-555-0142.",
@@ -153,11 +153,11 @@
     },
     "a3": {
       "text": "Thank you.",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "b1": {
       "text": "Hello?",
-      "voice": "am_fenrir"
+      "voice": "am_adam"
     },
     "b2": {
       "text": "Hi. Is this Minh?",
@@ -166,7 +166,7 @@
     },
     "b3": {
       "text": "Sorry, you have the wrong number.",
-      "voice": "am_fenrir"
+      "voice": "am_adam"
     },
     "b4": {
       "text": "Is this 713-555-0186?",
@@ -181,7 +181,7 @@
     },
     "b5": {
       "text": "No, this is 713-555-0168.",
-      "voice": "am_fenrir",
+      "voice": "am_adam",
       "spell": [
         "nˈoʊ, ðɪs ɪz",
         "sˈɛvən wˈʌn θɹˈiː,",
@@ -196,7 +196,7 @@
     },
     "b7": {
       "text": "That's OK. Bye.",
-      "voice": "am_fenrir"
+      "voice": "am_adam"
     },
     "count": {
       "text": "zero, one, two, three, four, five, six, seven, eight, nine, ten.",
@@ -254,7 +254,7 @@
     },
     "ask_phone": {
       "text": "What's your phone number?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "m_phone": {
       "text": "It's 713-555-0142.",
