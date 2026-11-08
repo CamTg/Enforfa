@@ -1,0 +1,90 @@
+// Bản đồ lộ trình: 50 tuần vẽ thành một con đường uốn khúc, chia ba chặng.
+// Tuần đã học xong tô xanh, tuần đang học có vòng vàng, tuần sau để trống.
+
+import { h } from "./ui.js";
+
+const COLS = 5;
+const GAP_X = 64;
+const GAP_Y = 68;
+const PAD_X = 34;
+const PAD_Y = 30;
+const R = 18;
+
+// Vị trí của tuần thứ i (tính từ 0) trong một chặng: đi trái sang phải,
+// xuống hàng rồi đi phải sang trái, như con rắn.
+function place(i) {
+  const row = Math.floor(i / COLS);
+  const k = i % COLS;
+  const col = row % 2 === 0 ? k : COLS - 1 - k;
+  return { x: PAD_X + col * GAP_X, y: PAD_Y + row * GAP_Y };
+}
+
+function stageSvg(stage, weekState, currentWeek) {
+  const weeks = [];
+  for (let w = stage.from; w <= stage.to; w++) weeks.push(w);
+  const pts = weeks.map((w, i) => ({ w, ...place(i) }));
+  const rows = Math.ceil(weeks.length / COLS);
+  const width = PAD_X * 2 + (COLS - 1) * GAP_X;
+  const height = PAD_Y * 2 + (rows - 1) * GAP_Y;
+
+  const line = (list) => list.map((p, i) => `${i ? "L" : "M"}${p.x} ${p.y}`).join(" ");
+  const reached = pts.filter((p) => p.w <= currentWeek);
+  let svg = `<svg viewBox="0 0 ${width} ${height}" class="map-svg" aria-hidden="true">`;
+  svg += `<path d="${line(pts)}" class="map-road"/>`;
+  if (reached.length > 1) svg += `<path d="${line(reached)}" class="map-road is-done"/>`;
+  for (const p of pts) {
+    const state = weekState(p.w);
+    svg += `<g class="map-week is-${state}">`;
+    if (state === "current") svg += `<circle cx="${p.x}" cy="${p.y}" r="${R + 7}" class="map-halo"/>`;
+    svg += `<circle cx="${p.x}" cy="${p.y}" r="${R}" class="map-dot"/>`;
+    svg += `<text x="${p.x}" y="${p.y + 5}" text-anchor="middle" class="map-num">${p.w}</text></g>`;
+  }
+  svg += "</svg>";
+  const holder = h("div", { class: "map-stage-svg" });
+  holder.innerHTML = svg;
+  return holder;
+}
+
+/**
+ * weekState(n) trả về "done", "current" hoặc "future".
+ */
+export function renderMap(course, currentWeek, weekState) {
+  const stages = course.stages.map((st) => {
+    const isCurrent = currentWeek >= st.from && currentWeek <= st.to;
+    const doneWeeks = Math.max(0, Math.min(st.to, currentWeek - 1) - st.from + 1);
+    return h(
+      "section",
+      { class: `map-stage${isCurrent ? " is-current" : ""}` },
+      h("p", { class: "map-stage-meta" }, `${st.weeks} · Trình độ ${st.level}`),
+      h("h2", {}, `Chặng ${st.id}: ${st.title}`),
+      h("p", { class: "map-stage-goal" }, `Hết chặng này, bạn ${st.goal.charAt(0).toLowerCase()}${st.goal.slice(1)}`),
+      stageSvg(st, weekState, currentWeek),
+      h(
+        "p",
+        { class: "visually-hidden" },
+        isCurrent
+          ? `Bạn đang ở tuần ${currentWeek}, đã học xong ${doneWeeks} trên ${st.to - st.from + 1} tuần của chặng này.`
+          : currentWeek > st.to
+            ? "Bạn đã học xong chặng này."
+            : "Bạn chưa tới chặng này."
+      )
+    );
+  });
+  return h(
+    "div",
+    { class: "map" },
+    h(
+      "p",
+      { class: "map-intro" },
+      `Chương trình có ${course.totalWeeks} tuần, mỗi tuần bảy bài, đi từ trình độ A1 (mới bắt đầu) tới B1 (trung cấp) theo khung trình độ ngoại ngữ châu Âu (CEFR).`
+    ),
+    h(
+      "ul",
+      { class: "map-legend" },
+      h("li", {}, h("span", { class: "legend-dot is-done" }), "Đã học xong"),
+      h("li", {}, h("span", { class: "legend-dot is-current" }), "Tuần đang học"),
+      h("li", {}, h("span", { class: "legend-dot is-future" }), "Sắp tới")
+    ),
+    ...stages
+  );
+}

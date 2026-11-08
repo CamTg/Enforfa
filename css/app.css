@@ -389,3 +389,44 @@ textarea:focus { border-color: var(--action); outline: none; }
 .stage-title { font-weight: 700; margin: 2px 0 4px !important; }
 .stage-goal { font-size: 0.9375rem; color: var(--ink-2); }
 .stage.is-current .stage-goal { color: var(--ink); }
+
+/* Thẻ lộ trình trên trang chính */
+.roadmap-card {
+  display: grid; gap: 6px; margin-bottom: 28px; padding: 16px 18px;
+  background: var(--sheet); border: 1px solid var(--line); border-radius: var(--radius);
+  color: var(--ink); text-decoration: none;
+}
+.roadmap-card .meter { margin: 4px 0; }
+.roadmap-label { font-size: 0.875rem; color: var(--ink-2); }
+.roadmap-main { font-weight: 700; }
+.roadmap-cta { color: var(--action); font-weight: 600; }
+
+/* Bản đồ lộ trình */
+.map-page { padding: 20px 16px 48px; }
+.map-intro { color: var(--ink-2); }
+.map-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; list-style: none; padding: 0; margin: 0 0 8px; font-size: 0.875rem; color: var(--ink-2); }
+.map-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.legend-dot { width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--line); background: var(--paper); }
+.legend-dot.is-done { background: var(--action); border-color: var(--action); }
+.legend-dot.is-current { background: var(--marker); border-color: var(--marker); }
+.map-stage { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.map-stage-meta { margin: 0; font-size: 0.875rem; color: var(--ink-2); }
+.map-stage.is-current .map-stage-meta { color: var(--ink); font-weight: 600; }
+.map-stage h2 { margin: 2px 0 6px; }
+.map-stage-goal { color: var(--ink-2); font-size: 0.9375rem; }
+.map-stage.is-current .map-stage-goal { color: var(--ink); }
+.map-svg { display: block; width: 100%; max-width: 360px; height: auto; margin: 8px auto 0; }
+.map-road { fill: none; stroke: var(--line); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+.map-road.is-done { stroke: var(--action); }
+.map-dot { fill: var(--sheet); stroke: var(--line); stroke-width: 3; }
+.map-num { font-family: var(--font-vi); font-size: 13px; font-weight: 600; fill: var(--ink-2); }
+.map-week.is-done .map-dot { fill: var(--action); stroke: var(--action); }
+.map-week.is-done .map-num { fill: var(--action-ink); }
+.map-week.is-current .map-dot { fill: var(--marker); stroke: var(--marker); }
+.map-week.is-current .map-num { fill: var(--marker-ink); font-weight: 700; }
+.map-halo { fill: none; stroke: var(--marker); stroke-width: 3; opacity: 0.5; }
+
+/* Chào người mới */
+.welcome { flex: 1; padding: 8px 16px 120px; outline: none; }
+.welcome .say-big { margin: 4px 0 16px; }
+.welcome-dots { margin-top: 24px; color: var(--ink-2); letter-spacing: 4px; }

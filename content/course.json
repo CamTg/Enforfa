@@ -47,21 +47,27 @@
       "title": "Những câu giao tiếp đầu tiên",
       "weeks": "Tuần 1–12",
       "level": "A1",
-      "goal": "Nghe và nói được tên, số, địa chỉ; tự giới thiệu, hỏi giá, hỏi đường, và nhờ người khác nói lại hay nói chậm hơn."
+      "goal": "Nghe và nói được tên, số, địa chỉ; tự giới thiệu, hỏi giá, hỏi đường, và nhờ người khác nói lại hay nói chậm hơn.",
+      "from": 1,
+      "to": 12
     },
     {
       "id": 2,
       "title": "Giao tiếp hằng ngày",
       "weeks": "Tuần 13–25",
       "level": "A2",
-      "goal": "Hỏi và trả lời về những việc quen thuộc như mua sắm, sức khỏe, nhà ở và giấy tờ; gọi điện đặt hẹn; đọc tin nhắn và thông báo ngắn."
+      "goal": "Hỏi và trả lời về những việc quen thuộc như mua sắm, sức khỏe, nhà ở và giấy tờ; gọi điện đặt hẹn; đọc tin nhắn và thông báo ngắn.",
+      "from": 13,
+      "to": 25
     },
     {
       "id": 3,
       "title": "Làm việc và trò chuyện",
       "weeks": "Tuần 26–50",
       "level": "B1",
-      "goal": "Đi phỏng vấn xin việc, hiểu chỉ dẫn và trao đổi với đồng nghiệp, kể lại một chuyện, nêu ý kiến của mình, và viết email ngắn."
+      "goal": "Đi phỏng vấn xin việc, hiểu chỉ dẫn và trao đổi với đồng nghiệp, kể lại một chuyện, nêu ý kiến của mình, và viết email ngắn.",
+      "from": 26,
+      "to": 50
     }
   ]
 }

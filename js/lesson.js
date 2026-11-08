@@ -104,6 +104,14 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     );
   }
 
+  // Tải sẵn toàn bộ âm thanh của bài một lần, sau âm thanh của bước đang mở,
+  // để bài vẫn học được nếu mạng chập chờn hay mất hẳn giữa chừng.
+  let prefetchedAll = false;
+  function prefetchAll() {
+    prefetchedAll = true;
+    setTimeout(() => Object.keys(lesson.audio || {}).forEach((id) => fetch(audioUrl(lesson.id, id)).catch(() => {})), 1500);
+  }
+
   // Tải sẵn âm thanh của bước, để khi người học bấm nghe (hay app tự phát)
   // thì tiếng ra ngay, không phải chờ tải qua mạng.
   function prefetch(step) {
@@ -586,6 +594,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson }) {
     );
   }
 
+  prefetchAll();
   if (onIntro) showIntro();
   else show();
 }
