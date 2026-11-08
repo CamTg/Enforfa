@@ -430,3 +430,6 @@ textarea:focus { border-color: var(--action); outline: none; }
 .welcome { flex: 1; padding: 8px 16px 120px; outline: none; }
 .welcome .say-big { margin: 4px 0 16px; }
 .welcome-dots { margin-top: 24px; color: var(--ink-2); letter-spacing: 4px; }
+
+.credits { padding-left: 1.25rem; }
+.credits li { margin-bottom: 8px; }

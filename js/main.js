@@ -120,7 +120,9 @@ function renderWelcome() {
   };
   skip.addEventListener("click", () => {
     store.put("settings", "onboarded", { at: Date.now() });
-    route();
+    // Khi mở lại từ trang giới thiệu, địa chỉ đang là #/chao-mung; đổi về trang chính.
+    if (location.hash === "#/" || location.hash === "") route();
+    else location.hash = "#/";
   });
   nextBtn.addEventListener("click", () => {
     if (i < order.length - 1) {
@@ -341,7 +343,7 @@ function renderAbout() {
       "main",
       { class: "about", id: "main" },
       h("h1", {}, "Enforfa là gì"),
-      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Mỗi ngày một bài, giảng bằng tiếng Việt, giúp bạn nghe, nói, đọc, viết đủ để giao tiếp và làm việc với người nói tiếng Anh: từ chào hỏi, đánh vần tên, tới đi khám, làm giấy tờ và đi làm."),
+      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Chương trình giúp bạn nghe, nói, đọc, viết đủ để giao tiếp và làm việc với người nói tiếng Anh: từ chào hỏi, đánh vần tên, tới đi khám, làm giấy tờ và đi làm."),
       h("h2", {}, "Dữ liệu của bạn"),
       h("p", {}, "Tiến độ, thẻ từ và ghi chú được lưu ngay trên điện thoại hay máy tính bạn đang dùng. App chưa có tài khoản, nên đổi máy hoặc xóa dữ liệu trình duyệt thì những thứ này sẽ mất."),
       h("p", {}, "Bản thu giọng của bạn chỉ nằm trên máy này. App không gửi bản thu đi đâu."),
@@ -349,8 +351,16 @@ function renderAbout() {
       h("h2", {}, "Số liệu học thử"),
       h("p", {}, "Trong giai đoạn thử, app ghi lại bạn ở mỗi bước bao lâu, chọn sai bao nhiêu lần và tự đánh giá phần Nói ra sao, để người soạn bài biết chỗ nào cần sửa. Số liệu này cũng chỉ nằm trên máy, không gồm ghi chú hay bản thu của bạn, và chỉ được gửi đi khi bạn bấm nút dưới đây."),
       exportBlock(),
-      h("h2", {}, "Giọng đọc và nguồn"),
+      h("h2", {}, "Nguồn và ghi công"),
       h("p", {}, "Giọng đọc mẫu được tạo bằng Kokoro, một công cụ chuyển văn bản thành giọng nói mã nguồn mở. Nội dung bài học phát hành theo giấy phép CC BY 4.0, mã nguồn theo giấy phép MIT."),
+      h("p", {}, "Một số hội thoại và ý tưởng bài học được phỏng theo các tài liệu sau:"),
+      h(
+        "ul",
+        { class: "credits" },
+        h("li", {}, "Let's Learn English, Level 1, của Voice of America (VOA) Learning English. Nội dung do VOA sản xuất thuộc phạm vi công cộng."),
+        h("li", {}, "English Language Proficiency Standards for Adult Education (2016), của Bộ Giáo dục Hoa Kỳ."),
+        h("li", {}, "Teaching English as a Foreign Language to Large, Multilevel Classes (1992), của Peace Corps.")
+      ),
       h("p", {}, h("a", { href: "#/chao-mung" }, "Xem lại hướng dẫn cách học")),
       h("p", {}, h("a", { href: "https://github.com/CamTg/Enforfa" }, "Mã nguồn của Enforfa trên GitHub"))
     )
