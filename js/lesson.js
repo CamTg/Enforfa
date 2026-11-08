@@ -5,8 +5,14 @@ import { play, stop, audioUrl, isSlow, setSlow } from "./audio.js";
 import { store } from "./store.js";
 import { addCards } from "./srs.js";
 import { canRecord, startRecording, saveClip, getClip } from "./recorder.js";
+import { startStep, stopStep, markWrong } from "./timing.js";
+import { canMachineListen, listenMode, hasConsent, saveConsent, listenOnce } from "./machine-listen.js";
 
-export function renderLesson(root, lesson, { onExit }) {
+export function renderLesson(root, lesson, { onExit: exitLesson }) {
+  const onExit = () => {
+    stopStep();
+    exitLesson();
+  };
   const steps = [];
   lesson.parts.forEach((part, partIndex) => {
     part.steps.forEach((step) => steps.push({ part, partIndex, step }));
@@ -71,15 +77,27 @@ export function renderLesson(root, lesson, { onExit }) {
     nextBtn.disabled = !ready;
   }
 
+  // Mỗi phần có một thanh chạy theo số bước đã đi trong phần đó.
   function drawParts() {
+    const here = finished ? null : steps[index];
     partNav.replaceChildren(
       ...lesson.parts.map((part, i) => {
-        const current = !finished && steps[index].partIndex === i;
-        const done = finished || steps[index].partIndex > i;
+        const total = part.steps.length;
+        let filled;
+        if (finished || (here && here.partIndex > i)) filled = total;
+        else if (here && here.partIndex === i) filled = steps.slice(0, index + 1).filter((s) => s.partIndex === i).length;
+        else filled = 0;
+        const current = here?.partIndex === i;
+        const pct = Math.round((filled / total) * 100);
         return h(
           "li",
-          { class: `part${current ? " is-current" : ""}${done ? " is-done" : ""}`, "aria-current": current ? "step" : false },
-          part.title
+          {
+            class: `part${current ? " is-current" : ""}${filled === total ? " is-done" : ""}`,
+            "aria-current": current ? "step" : false,
+          },
+          h("span", { class: "part-name" }, part.title),
+          h("span", { class: "part-track", "aria-hidden": "true" }, h("span", { class: "part-fill", style: `width:${pct}%` })),
+          h("span", { class: "visually-hidden" }, `, đã đi ${filled} trên ${total} bước`)
         );
       })
     );
@@ -89,6 +107,7 @@ export function renderLesson(root, lesson, { onExit }) {
     const { step } = steps[index];
     store.put("progress", lesson.id, { step: index, total: steps.length, done: saved?.done || false });
     drawParts();
+    startStep(lesson.id, index, step.type);
     prevBtn.hidden = index === 0;
     nextBtn.textContent = index === steps.length - 1 ? "Xong bài" : "Tiếp tục";
     setReady(true);
@@ -116,6 +135,7 @@ export function renderLesson(root, lesson, { onExit }) {
 
   function finish() {
     finished = true;
+    stopStep();
     addCards(lesson.id, lesson.cards || []);
     store.put("progress", lesson.id, { step: steps.length, total: steps.length, done: true, doneAt: Date.now() });
     drawParts();
@@ -231,6 +251,7 @@ export function renderLesson(root, lesson, { onExit }) {
             feedback.textContent = `Đúng rồi. ${step.explain || ""}`.trim();
             setReady(true);
           } else {
+            markWrong();
             chooseEl.classList.add("is-wrong");
             chooseEl.disabled = true;
             feedback.className = "feedback is-wrong";
@@ -293,6 +314,7 @@ export function renderLesson(root, lesson, { onExit }) {
             if (step.audio) sound(step.audio)();
             setReady(true);
           } else {
+            markWrong();
             feedback.className = "feedback is-wrong";
             feedback.textContent = "Chưa đúng. Bấm vào một chữ trong câu để đưa nó về chỗ cũ, rồi xếp lại.";
           }
@@ -382,6 +404,7 @@ export function renderLesson(root, lesson, { onExit }) {
       marks.append(h("p", {}, "Bản của bạn nghe có giống câu mẫu không?"), markBtn("same", "Giống"), markBtn("not-yet", "Chưa giống"));
 
       if (canRecord()) loadExisting();
+      const machine = step.check === false || !canMachineListen() ? null : machineCheck(step);
 
       return h(
         "section",
@@ -396,10 +419,228 @@ export function renderLesson(root, lesson, { onExit }) {
           canRecord() ? mine : null
         ),
         canRecord() ? status : h("p", { class: "hint" }, "Trình duyệt này chưa cho thu âm. Bạn nói to theo câu mẫu vài lần rồi bấm Tiếp tục."),
+        machine,
         marks
+      );
+    },
+
+    write(step) {
+      setReady(false);
+      const input = h("input", {
+        class: "write-input",
+        type: "text",
+        lang: "en",
+        autocomplete: "off",
+        autocorrect: "off",
+        autocapitalize: "sentences",
+        spellcheck: "false",
+        enterkeyhint: "done",
+        "aria-label": "Câu bạn gõ",
+      });
+      const feedback = h("div", { class: "feedback", role: "status" });
+      const check = h("button", { class: "btn btn-secondary btn-wide", type: "button" }, "Kiểm tra");
+
+      function run() {
+        const typed = input.value.trim();
+        if (!typed) {
+          feedback.className = "feedback";
+          feedback.replaceChildren(h("p", {}, "Bạn gõ câu vào ô trên rồi bấm Kiểm tra."));
+          return;
+        }
+        if (VIETNAMESE_MARKS.test(typed)) {
+          markWrong();
+          feedback.className = "feedback is-wrong";
+          feedback.replaceChildren(
+            h(
+              "p",
+              {},
+              step.mode === "intro"
+                ? "Câu bạn gõ có dấu tiếng Việt. Khi viết bằng tiếng Anh, tên của bạn cũng viết không dấu, như Nguyễn viết là Nguyen. Nếu bàn phím tự thêm dấu, bạn đổi sang bàn phím tiếng Anh rồi gõ lại."
+                : "Câu bạn gõ có dấu tiếng Việt, có lẽ bàn phím đang ở chế độ tiếng Việt. Bạn đổi sang bàn phím tiếng Anh rồi gõ lại."
+            )
+          );
+          return;
+        }
+        setReady(true);
+        if (step.mode === "intro") {
+          const ok = /\b(my name is|i'?m|i am)\s+[a-z]/.test(normalize(typed));
+          if (ok) {
+            feedback.className = "feedback is-right";
+            feedback.replaceChildren(h("p", {}, "Đúng rồi. Câu của bạn đúng mẫu giới thiệu."));
+          } else {
+            markWrong();
+            feedback.className = "feedback is-wrong";
+            feedback.replaceChildren(
+              h("p", {}, "Câu giới thiệu cần có My name is hoặc I'm, rồi đến tên bạn. Ví dụ:"),
+              h("p", { class: "write-answer", lang: "en" }, step.example)
+            );
+          }
+          return;
+        }
+        const expected = words(step.answer);
+        const got = words(typed);
+        const missed = missedWords(expected, got);
+        if (missed.size === 0 && got.length === expected.length) {
+          feedback.className = "feedback is-right";
+          feedback.replaceChildren(h("p", {}, "Đúng rồi."));
+          return;
+        }
+        markWrong();
+        feedback.className = "feedback is-wrong";
+        const shown = step.answer.split(/\s+/).map((w, i) =>
+          h("span", { class: missed.has(i) ? "diff-miss" : null }, w)
+        );
+        feedback.replaceChildren(
+          h("p", {}, "Chưa đúng hết. Câu đúng ở dưới, những chữ bạn gõ sai hoặc thiếu được gạch chân. Bạn nghe lại rồi gõ thêm lần nữa nếu muốn."),
+          h("p", { class: "write-answer", lang: "en" }, ...shown.flatMap((el, i) => (i ? [" ", el] : [el])))
+        );
+      }
+
+      check.addEventListener("click", run);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          run();
+        }
+      });
+
+      return h(
+        "section",
+        { class: "step step-write" },
+        h("h1", {}, step.prompt),
+        step.audio &&
+          h(
+            "button",
+            { class: "btn-listen btn-listen-big", type: "button", onclick: (e) => sound(step.audio)(e.currentTarget) },
+            icon("play"),
+            h("span", {}, "Nghe")
+          ),
+        step.mode === "intro" && h("p", { class: "hint" }, "Ví dụ: ", h("span", { lang: "en" }, step.example)),
+        input,
+        check,
+        feedback
       );
     },
   };
 
   show();
+}
+
+// ---- Cho máy nghe thử ----
+
+const LISTEN_ERRORS = {
+  "no-speech": "Máy không nghe thấy gì. Bạn bấm Cho máy nghe thử rồi nói câu mẫu ngay.",
+  "not-allowed": "Máy chưa được phép dùng micro. Bạn cho phép app dùng micro trong cài đặt trình duyệt rồi thử lại.",
+  "service-not-allowed": "Trình duyệt này không cho dùng nhận dạng giọng nói.",
+  network: "Không kết nối được dịch vụ nhận dạng giọng nói. Bạn kiểm tra mạng rồi thử lại.",
+  "language-not-supported": "Điện thoại này chưa nhận dạng được tiếng Anh.",
+};
+
+const LIMIT_NOTE =
+  "Máy đôi khi nghe sai cả người bản ngữ, nhất là khi phòng ồn hay câu quá ngắn. Từ máy không nghe ra có thể do bạn đọc chưa rõ, cũng có thể do máy nghe sai; bạn nghe lại câu mẫu rồi thử lần nữa.";
+
+function machineCheck(step) {
+  // Tách câu mẫu thành từng chữ; phần trong ngoặc vuông như [tên bạn] không đem so.
+  const tokens = step.say.match(/\[[^\]]*\][.,!?]?|\S+/g) || [];
+  const targets = tokens.map((t, i) => ({ text: t, i, skip: t.startsWith("["), norm: normalize(t) })).filter((t) => t.norm || t.skip);
+  const compared = targets.filter((t) => !t.skip);
+
+  const box = h("div", { class: "machine" });
+  const button = h("button", { class: "btn btn-outline btn-wide", type: "button" }, icon("mic"), "Cho máy nghe thử");
+  const panel = h("div", { class: "machine-panel", role: "status" });
+  box.append(button, panel);
+
+  function bestMatch(alternatives) {
+    let best = null;
+    for (const alt of alternatives) {
+      const missed = missedWords(compared.map((t) => t.norm), words(alt));
+      if (!best || missed.size < best.missed.size) best = { alt, missed };
+    }
+    return best;
+  }
+
+  async function run(mode) {
+    button.disabled = true;
+    button.replaceChildren(icon("mic"), "Máy đang nghe, bạn nói câu mẫu");
+    panel.replaceChildren();
+    try {
+      const alts = await listenOnce(mode);
+      if (!alts.length) throw "no-speech";
+      const { alt, missed } = bestMatch(alts);
+      const heardIdx = new Set(compared.filter((_, k) => !missed.has(k)).map((t) => t.i));
+      const line = tokens.map((t, i) =>
+        h("span", { class: t.startsWith("[") ? "machine-skip" : heardIdx.has(i) ? "machine-heard" : null }, t)
+      );
+      panel.replaceChildren(
+        h("p", { class: "machine-label" }, "Máy nghe ra:"),
+        h("p", { class: "machine-transcript", lang: "en" }, alt || "(không rõ)"),
+        h("p", { class: "machine-label" }, "Những từ trong câu mẫu được tô màu là những từ máy nghe ra:"),
+        h("p", { class: "machine-target", lang: "en" }, ...line.flatMap((el, i) => (i ? [" ", el] : [el]))),
+        missed.size ? h("p", { class: "hint" }, LIMIT_NOTE) : null
+      );
+    } catch (err) {
+      panel.replaceChildren(h("p", { class: "hint" }, LISTEN_ERRORS[err] || "Máy chưa nghe được lần này. Bạn thử lại."));
+    } finally {
+      button.disabled = false;
+      button.replaceChildren(icon("mic"), "Cho máy nghe thử lần nữa");
+    }
+  }
+
+  button.addEventListener("click", async () => {
+    const mode = await listenMode();
+    if (hasConsent(mode)) return run(mode);
+    const agree = h("button", { class: "btn btn-primary", type: "button" }, mode === "local" ? "Bắt đầu" : "Đồng ý");
+    const cancel = h("button", { class: "btn btn-quiet", type: "button" }, "Thôi");
+    agree.addEventListener("click", () => {
+      saveConsent(mode);
+      run(mode);
+    });
+    cancel.addEventListener("click", () => panel.replaceChildren());
+    panel.replaceChildren(
+      h("p", {}, "Máy sẽ nghe câu bạn nói, đổi thành chữ, rồi tô những từ khớp với câu mẫu. Đây chỉ là gợi ý, không phải điểm, và không được lưu lại."),
+      h("p", {}, LIMIT_NOTE),
+      mode === "cloud"
+        ? h("p", {}, "Để đổi câu bạn nói thành chữ, app gửi câu ấy tới dịch vụ nhận dạng giọng nói của trình duyệt, của Google hoặc Apple. Nếu bạn đồng ý, bấm Đồng ý; nếu không, bạn vẫn học bình thường bằng cách so với câu mẫu.")
+        : h("p", {}, "Điện thoại này nhận dạng được giọng nói ngay trên máy, nên câu bạn nói không bị gửi đi đâu."),
+      h("div", { class: "machine-actions" }, agree, cancel)
+    );
+  });
+
+  return box;
+}
+
+// ---- So câu gõ với câu đúng ----
+
+const VIETNAMESE_MARKS = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i;
+
+// Bỏ qua chữ hoa, dấu câu và khoảng trắng thừa.
+function normalize(text) {
+  return text
+    .toLowerCase()
+    .replace(/[‘’ʼ]/g, "'")
+    .replace(/[^a-z0-9'\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function words(text) {
+  return normalize(text).split(" ").filter(Boolean);
+}
+
+// Vị trí những chữ của câu đúng không có trong câu gõ, theo dãy con chung dài nhất,
+// để một chữ thiếu không làm cả phần sau bị tính sai.
+function missedWords(expected, got) {
+  const n = expected.length, m = got.length;
+  const L = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = n - 1; i >= 0; i--)
+    for (let j = m - 1; j >= 0; j--)
+      L[i][j] = expected[i] === got[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const missed = new Set();
+  let i = 0, j = 0;
+  while (i < n) {
+    if (j < m && expected[i] === got[j]) { i++; j++; }
+    else if (j < m && L[i][j + 1] >= L[i + 1][j]) j++;
+    else { missed.add(i); i++; }
+  }
+  return missed;
 }

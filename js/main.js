@@ -5,6 +5,7 @@ import { store } from "./store.js";
 import { dueCards, grade } from "./srs.js";
 import { play, audioUrl } from "./audio.js";
 import { renderLesson } from "./lesson.js";
+import { stopStep, exportData } from "./timing.js";
 
 const root = document.getElementById("app");
 let course = null;
@@ -212,10 +213,14 @@ function renderAbout() {
       "main",
       { class: "about", id: "main" },
       h("h1", {}, "Enforfa là gì"),
-      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt mới sang Mỹ. Mỗi ngày một bài khoảng 40 phút, giảng bằng tiếng Việt, xoay quanh những việc bạn sẽ gặp ngay: chào hỏi, đánh vần tên, đi khám, làm giấy tờ, đi làm."),
+      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt mới sang Mỹ. Mỗi ngày một bài, giảng bằng tiếng Việt, xoay quanh những việc bạn sẽ gặp ngay: chào hỏi, đánh vần tên, đi khám, làm giấy tờ, đi làm."),
       h("h2", {}, "Dữ liệu của bạn"),
       h("p", {}, "Tiến độ, thẻ từ và ghi chú được lưu ngay trên điện thoại hay máy tính bạn đang dùng. App chưa có tài khoản, nên đổi máy hoặc xóa dữ liệu trình duyệt thì những thứ này sẽ mất."),
       h("p", {}, "Bản thu giọng của bạn chỉ nằm trên máy này. App không gửi bản thu đi đâu."),
+      h("p", {}, "Ở phần Nói, nút Cho máy nghe thử dùng bộ nhận dạng giọng nói của trình duyệt để đổi câu bạn nói thành chữ. Để làm việc này, câu bạn nói được gửi tới dịch vụ nhận dạng của Google hoặc Apple, nên app hỏi ý bạn trước lần dùng đầu tiên. Nút này không bắt buộc, và app không lưu câu ấy."),
+      h("h2", {}, "Số liệu học thử"),
+      h("p", {}, "Trong giai đoạn thử, app ghi lại bạn ở mỗi bước bao lâu, chọn sai bao nhiêu lần và tự đánh giá phần Nói ra sao, để người soạn bài biết chỗ nào cần sửa. Số liệu này cũng chỉ nằm trên máy, không gồm ghi chú hay bản thu của bạn, và chỉ được gửi đi khi bạn bấm nút dưới đây."),
+      exportBlock(),
       h("h2", {}, "Giọng đọc và nguồn"),
       h("p", {}, "Giọng đọc mẫu được tạo bằng Kokoro, một công cụ chuyển văn bản thành giọng nói mã nguồn mở. Nội dung bài học phát hành theo giấy phép CC BY 4.0, mã nguồn theo giấy phép MIT."),
       h("p", {}, h("a", { href: "https://github.com/CamTg/Enforfa" }, "Mã nguồn của Enforfa trên GitHub"))
@@ -223,9 +228,39 @@ function renderAbout() {
   );
 }
 
+function exportBlock() {
+  const status = h("p", { class: "hint", role: "status" });
+  const button = h("button", { class: "btn btn-secondary btn-wide", type: "button" }, "Xuất số liệu học thử");
+  button.addEventListener("click", async () => {
+    const date = new Date().toISOString().slice(0, 10);
+    const name = `enforfa-so-lieu-${date}.json`;
+    const file = new File([JSON.stringify(exportData(), null, 2)], name, { type: "application/json" });
+    // Trên điện thoại, mở bảng chia sẻ để gửi thẳng qua tin nhắn hay email.
+    if (navigator.canShare?.({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: "Số liệu học thử Enforfa" });
+        status.textContent = "Đã mở bảng chia sẻ. Bạn chọn cách gửi tệp cho người phụ trách đợt thử.";
+        return;
+      } catch (err) {
+        if (err?.name === "AbortError") return;
+      }
+    }
+    const url = URL.createObjectURL(file);
+    const a = h("a", { href: url, download: name });
+    document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    status.textContent = `Đã tải tệp ${name} về máy. Bạn gửi tệp này cho người phụ trách đợt thử.`;
+  });
+  return h("div", { class: "export" }, button, status);
+}
+
 // ---- Chuyển trang ----
 
 async function route() {
+  // Rời bài bằng nút quay lại của trình duyệt cũng phải dừng tính giờ.
+  stopStep();
   const hash = location.hash || "#/";
   try {
     if (hash.startsWith("#/bai/")) {

@@ -1,10 +1,10 @@
 # Enforfa
 
-Enforfa là app tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt mới sang Mỹ. Mỗi ngày một bài khoảng 40 phút, giảng bằng tiếng Việt, xoay quanh những việc người học sẽ gặp ngay ở Mỹ, và luyện có chủ đích những chỗ người Việt hay vướng: âm cuối, trọng âm, nguyên âm dài và ngắn, các âm tiếng Việt không có.
+Enforfa là app tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt mới sang Mỹ. Mỗi ngày một bài, giảng bằng tiếng Việt, xoay quanh những việc người học sẽ gặp ngay ở Mỹ, và luyện có chủ đích những chỗ người Việt hay vướng: âm cuối, trọng âm, nguyên âm dài và ngắn, các âm tiếng Việt không có.
 
 ## Mỗi bài gồm gì
 
-Một bài chia bốn phần, người học dừng được sau bất kỳ bước nào và hôm sau học tiếp.
+Một bài chia năm phần, người học dừng được sau bất kỳ bước nào và hôm sau học tiếp.
 
 | Phần | Người học làm gì |
 | --- | --- |
@@ -12,6 +12,7 @@ Một bài chia bốn phần, người học dừng được sau bất kỳ bư�
 | Học | Đọc lời giảng bằng tiếng Việt; mọi cụm tiếng Anh đều bấm vào nghe được |
 | Luyện | Nghe rồi chọn câu đáp, xếp chữ thành câu, phân biệt hai cách nói |
 | Nói | Thu âm giọng mình, nghe lại cạnh câu mẫu, tự đánh giá |
+| Viết | Nghe một câu rồi gõ lại, tự gõ câu của mình; app chỉ ra chữ nào sai |
 
 Học xong một bài, thẻ từ của bài vào kho ôn theo lịch cách quãng.
 
