@@ -2,7 +2,6 @@
   "id": "w1-l1",
   "title": "Chào hỏi và cách học",
   "goal": "Hết bài này, bạn chào được, nói được tên mình, cảm ơn, và nhờ người khác nói lại hoặc nói chậm hơn.",
-  "minutes": 40,
   "speakers": {
     "lan": {
       "name": "Lan",
@@ -235,7 +234,7 @@
           "type": "text",
           "title": "Cách học với app",
           "body": [
-            "Mỗi bài mất khoảng 40 phút. Bạn dừng được ở bất cứ bước nào, và lần sau mở app, bài sẽ tiếp tục từ chỗ đó.",
+            "Bạn dừng được ở bất cứ bước nào, và lần sau mở app, bài sẽ tiếp tục từ chỗ đó.",
             "Chữ tiếng Anh nhiều khi không đọc theo mặt chữ như chữ tiếng Việt, nên với chữ nào bạn cũng nghe trước rồi mới đọc theo. Bạn đừng ghi cách đọc bằng chữ Việt, như \"hê-lô\" cho hello: quen ghi như vậy thì dần dần bạn sẽ đọc tiếng Anh theo âm tiếng Việt, và người Mỹ khó nghe ra."
           ]
         },

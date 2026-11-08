@@ -5,8 +5,13 @@ import { play, stop, audioUrl, isSlow, setSlow } from "./audio.js";
 import { store } from "./store.js";
 import { addCards } from "./srs.js";
 import { canRecord, startRecording, saveClip, getClip } from "./recorder.js";
+import { startStep, stopStep, markWrong } from "./timing.js";
 
-export function renderLesson(root, lesson, { onExit }) {
+export function renderLesson(root, lesson, { onExit: exitLesson }) {
+  const onExit = () => {
+    stopStep();
+    exitLesson();
+  };
   const steps = [];
   lesson.parts.forEach((part, partIndex) => {
     part.steps.forEach((step) => steps.push({ part, partIndex, step }));
@@ -36,6 +41,7 @@ export function renderLesson(root, lesson, { onExit }) {
   const nextBtn = h("button", { class: "btn btn-primary", type: "button", onclick: next }, "Tiếp tục");
   const prevBtn = h("button", { class: "btn btn-quiet", type: "button", onclick: prev }, "Quay lại");
   const partNav = h("ol", { class: "parts", "aria-label": "Các phần của bài" });
+  const stepsLeft = h("p", { class: "steps-left" });
   const slowToggle = h(
     "button",
     {
@@ -58,7 +64,7 @@ export function renderLesson(root, lesson, { onExit }) {
         "div",
         { class: "lesson-head-row" },
         h("button", { class: "btn-back", type: "button", onclick: onExit, "aria-label": "Về trang chính" }, icon("back")),
-        h("p", { class: "lesson-title" }, lesson.title),
+        h("div", { class: "lesson-title-block" }, h("p", { class: "lesson-title" }, lesson.title), stepsLeft),
         slowToggle
       ),
       partNav
@@ -89,6 +95,9 @@ export function renderLesson(root, lesson, { onExit }) {
     const { step } = steps[index];
     store.put("progress", lesson.id, { step: index, total: steps.length, done: saved?.done || false });
     drawParts();
+    const left = steps.length - index - 1;
+    stepsLeft.textContent = left === 0 ? "Bước cuối" : `Còn ${left} bước nữa`;
+    startStep(lesson.id, index, step.type);
     prevBtn.hidden = index === 0;
     nextBtn.textContent = index === steps.length - 1 ? "Xong bài" : "Tiếp tục";
     setReady(true);
@@ -116,6 +125,8 @@ export function renderLesson(root, lesson, { onExit }) {
 
   function finish() {
     finished = true;
+    stopStep();
+    stepsLeft.textContent = "Đã xong";
     addCards(lesson.id, lesson.cards || []);
     store.put("progress", lesson.id, { step: steps.length, total: steps.length, done: true, doneAt: Date.now() });
     drawParts();
@@ -231,6 +242,7 @@ export function renderLesson(root, lesson, { onExit }) {
             feedback.textContent = `Đúng rồi. ${step.explain || ""}`.trim();
             setReady(true);
           } else {
+            markWrong();
             chooseEl.classList.add("is-wrong");
             chooseEl.disabled = true;
             feedback.className = "feedback is-wrong";
@@ -293,6 +305,7 @@ export function renderLesson(root, lesson, { onExit }) {
             if (step.audio) sound(step.audio)();
             setReady(true);
           } else {
+            markWrong();
             feedback.className = "feedback is-wrong";
             feedback.textContent = "Chưa đúng. Bấm vào một chữ trong câu để đưa nó về chỗ cũ, rồi xếp lại.";
           }

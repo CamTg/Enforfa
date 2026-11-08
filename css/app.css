@@ -200,7 +200,9 @@ a { color: var(--action); }
   display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
   margin-left: -10px; border: 0; background: none; color: var(--ink); border-radius: 50%; cursor: pointer;
 }
-.lesson-title { flex: 1; margin: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lesson-title { margin: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lesson-title-block, .lesson-head-row > .lesson-title { flex: 1; min-width: 0; }
+.steps-left { margin: 0; font-size: 0.8125rem; color: var(--ink-2); line-height: 1.3; }
 .btn-slow {
   display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 12px;
   border: 1px solid var(--line); border-radius: 999px; background: var(--sheet); color: var(--ink-2);
@@ -322,3 +324,7 @@ textarea:focus { border-color: var(--action); outline: none; }
 /* Giới thiệu */
 .about { padding: 24px 16px 48px; }
 .about h2 { margin-top: 24px; }
+
+/* Xuất số liệu học thử */
+.export { margin-top: 8px; }
+.export .hint { margin-top: 10px; }
