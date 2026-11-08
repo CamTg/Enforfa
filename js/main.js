@@ -93,7 +93,7 @@ function renderHome() {
       "header",
       { class: "home-head" },
       h("p", { class: "brand" }, "Enforfa"),
-      h("p", { class: "tagline" }, "Mỗi ngày học một bài tiếng Anh, để tự lo được việc của mình ở Mỹ.")
+      h("p", { class: "tagline" }, "Mỗi ngày học một bài tiếng Anh.")
     ),
     h(
       "main",
