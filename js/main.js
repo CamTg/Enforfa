@@ -383,7 +383,7 @@ function learnerStats() {
   );
 }
 
-function renderAbout() {
+function renderLearner() {
   document.title = "Của bạn · Enforfa";
   root.replaceChildren(
     h(
@@ -396,17 +396,36 @@ function renderAbout() {
       { class: "about", id: "main" },
       h("h1", {}, "Việc học của bạn"),
       learnerStats(),
-      h("h2", {}, "Enforfa là gì"),
-      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Chương trình giúp bạn nghe, nói, đọc, viết đủ để giao tiếp và làm việc với người nói tiếng Anh: từ chào hỏi, đánh vần tên, tới đi khám, làm giấy tờ và đi làm."),
       h("h2", {}, "Cài đặt"),
       soundToggle(),
-      h("h2", {}, "Dữ liệu của bạn"),
+      h("h2", {}, "Số liệu học thử"),
+      h("p", {}, "Trong giai đoạn thử, app ghi lại bạn ở mỗi bước bao lâu, chọn sai bao nhiêu lần và tự đánh giá phần Nói ra sao, để người soạn bài biết chỗ nào cần sửa. Số liệu này chỉ nằm trên máy, không gồm ghi chú hay bản thu của bạn, và chỉ được gửi đi khi bạn bấm nút dưới đây."),
+      exportBlock(),
+      h("ul", { class: "link-list" },
+        h("li", {}, h("a", { href: "#/chao-mung" }, "Xem lại hướng dẫn cách học")),
+        h("li", {}, h("a", { href: "#/gioi-thieu" }, "Về Enforfa và quyền riêng tư")))
+    )
+  );
+}
+
+function renderAbout() {
+  document.title = "Về Enforfa · Enforfa";
+  root.replaceChildren(
+    h(
+      "header",
+      { class: "lesson-head" },
+      h("div", { class: "lesson-head-row" }, h("a", { class: "btn-back", href: "#/cua-ban", "aria-label": "Về trang Của bạn" }, icon("back")), h("p", { class: "lesson-title" }, "Về Enforfa"))
+    ),
+    h(
+      "main",
+      { class: "about", id: "main" },
+      h("h1", {}, "Enforfa là gì"),
+      h("p", {}, "Enforfa là chương trình tự học tiếng Anh miễn phí, phi lợi nhuận, dành cho người lớn nói tiếng Việt. Chương trình giúp bạn nghe, nói, đọc, viết đủ để giao tiếp và làm việc với người nói tiếng Anh: từ chào hỏi, đánh vần tên, tới đi khám, làm giấy tờ và đi làm."),
+      h("h2", {}, "Dữ liệu và quyền riêng tư"),
       h("p", {}, "Tiến độ, thẻ từ và ghi chú được lưu ngay trên điện thoại hay máy tính bạn đang dùng. App chưa có tài khoản, nên đổi máy hoặc xóa dữ liệu trình duyệt thì những thứ này sẽ mất."),
       h("p", {}, "Bản thu giọng của bạn chỉ nằm trên máy này. App không gửi bản thu đi đâu."),
       h("p", {}, "Ở phần Nói, nút Cho máy nghe thử dùng bộ nhận dạng giọng nói của trình duyệt để đổi câu bạn nói thành chữ. Để làm việc này, câu bạn nói được gửi tới dịch vụ nhận dạng của Google hoặc Apple, nên app hỏi ý bạn trước lần dùng đầu tiên. Nút này không bắt buộc, và app không lưu câu ấy."),
-      h("h2", {}, "Số liệu học thử"),
-      h("p", {}, "Trong giai đoạn thử, app ghi lại bạn ở mỗi bước bao lâu, chọn sai bao nhiêu lần và tự đánh giá phần Nói ra sao, để người soạn bài biết chỗ nào cần sửa. Số liệu này cũng chỉ nằm trên máy, không gồm ghi chú hay bản thu của bạn, và chỉ được gửi đi khi bạn bấm nút dưới đây."),
-      exportBlock(),
+      h("p", {}, "Số liệu học thử (thời gian ở mỗi bước, số lần chọn sai) cũng chỉ nằm trên máy, và chỉ được gửi đi khi bạn tự bấm nút Xuất số liệu học thử ở trang Của bạn."),
       h("h2", {}, "Nguồn và ghi công"),
       h("p", {}, "Giọng đọc mẫu được tạo bằng Kokoro, một công cụ chuyển văn bản thành giọng nói mã nguồn mở. Nội dung bài học phát hành theo giấy phép CC BY 4.0, mã nguồn theo giấy phép MIT."),
       h("p", {}, "Một số hội thoại và ý tưởng bài học được phỏng theo các tài liệu sau:"),
@@ -418,7 +437,6 @@ function renderAbout() {
         h("li", {}, "English Language Proficiency Standards for Adult Education (2016), của Bộ Giáo dục Hoa Kỳ."),
         h("li", {}, "Teaching English as a Foreign Language to Large, Multilevel Classes (1992), của Peace Corps.")
       ),
-      h("p", {}, h("a", { href: "#/chao-mung" }, "Xem lại hướng dẫn cách học")),
       h("p", {}, h("a", { href: "https://github.com/CamTg/Enforfa" }, "Mã nguồn của Enforfa trên GitHub"))
     )
   );
@@ -483,6 +501,8 @@ async function route() {
       renderWelcome();
     } else if (hash === "#/lo-trinh") {
       renderMapPage();
+    } else if (hash === "#/cua-ban") {
+      renderLearner();
     } else if (hash === "#/gioi-thieu") {
       renderAbout();
     } else if (!store.get("settings", "onboarded") && store.list("progress").length === 0) {
@@ -509,7 +529,7 @@ function tabBar(hash) {
   const tab = (href, iconName, label, extra) =>
     h(
       "a",
-      { class: `tab${hash === href ? " is-on" : ""}`, href, "aria-current": hash === href ? "page" : null },
+      { class: `tab${hash === href || (href === "#/cua-ban" && hash === "#/gioi-thieu") ? " is-on" : ""}`, href, "aria-current": hash === href ? "page" : null },
       icon(iconName),
       h("span", {}, label),
       extra || null
@@ -520,7 +540,7 @@ function tabBar(hash) {
     tab("#/", "home", "Trang chính"),
     tab("#/on-tu", "cards", "Ôn từ", due ? h("span", { class: "tab-badge", "aria-label": `${due} thẻ đến hạn` }, String(due > 99 ? "99+" : due)) : null),
     tab("#/lo-trinh", "map", "Lộ trình"),
-    tab("#/gioi-thieu", "person", "Của bạn")
+    tab("#/cua-ban", "person", "Của bạn")
   );
 }
 

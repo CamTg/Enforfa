@@ -11,6 +11,9 @@ Mỗi bài học (content/**/*.json) có mục "audio": { id: {text, voice, spee
 - "spell": danh sách phiên âm của từng chữ cái (hay từng nhóm số). Mỗi phần được
   đọc riêng rồi nối lại, cách nhau "gap" giây (mặc định 0.35), như khi người ta
   đánh vần chậm và rõ cho người khác ghi. Đọc liền cả chuỗi thì Kokoro nói quá nhanh.
+- Từ đứng riêng có "ipa" (một chữ cái, một từ) được đọc không dấu câu, không kéo
+  chậm và cắt sát đuôi; ghi thêm "cut": true để cắt từ khỏi câu "<từ>, please."
+  (cần pocketsphinx). Xem word_mode.
 - "speed" nhỏ hơn 1 (ví dụ 0.85) làm câu chậm lại sau khi tạo, không đổi cao độ.
 - Có "ipa" thì công cụ đọc đúng theo phiên âm ấy. Mọi từ dùng để dạy phát âm
   nên có "ipa", vì bộ đoán phiên âm tự động có lúc đọc sai (ví dụ "live" thành /laɪv/).
@@ -40,6 +43,10 @@ def fingerprint(spec):
             **{k: spec.get(k) for k in ("text", "voice", "speed", "ipa", "contour")},
             # Khóa mới chỉ đưa vào khi có, để dấu của các câu cũ không đổi.
             **{k: spec[k] for k in ("spell", "gap") if k in spec},
+            # Cách xử lý từ đứng riêng (xem word_mode). Câu thường không có khóa này,
+            # nên dấu của chúng không đổi.
+            **({"mode": word_mode(spec)} if word_mode(spec) else {}),
+            **({"pieces": 2} if any(is_single(x) for x in spec.get("spell", [])) else {}),
         },
         sort_keys=True,
     )
@@ -80,6 +87,81 @@ def apply_contour(samples, sr, contour):
     call([tier, manip], "Replace pitch tier")
     out = call(manip, "Get resynthesis (overlap-add)")
     return out.values[0].astype("float32")
+
+
+PUNCT = ".,!?"
+
+
+def word_mode(spec):
+    """"cut", "word", hay None.
+
+    Kokoro đọc một từ đứng riêng như một câu trọn: nó kéo dài và hạ giọng âm
+    cuối, đôi khi thêm một hơi hay một âm "ơ" sau phụ âm cuối (think thành
+    "thinker"). Với từ đứng riêng có phiên âm, công cụ bỏ dấu câu cuối, không
+    kéo chậm, và cắt sát đuôi ("word"). Từ nào vẫn chưa rõ thì ghi "cut": true:
+    máy đọc "<từ>, please." rồi cắt lấy từ đứng đầu, nhờ bộ nhận dạng giọng nói
+    PocketSphinx tìm chỗ từ kết thúc.
+    """
+    if spec.get("cut"):
+        return "cut"
+    if spec.get("ipa") and not spec.get("spell") and " " not in spec["text"].strip():
+        return "word"
+    return None
+
+
+def is_single(ipa):
+    return " " not in ipa.strip().rstrip(PUNCT)
+
+
+def tight(audio, sr, rel=0.06, pre=0.02, post=0.04):
+    """Cắt sát hai đầu theo độ to tương đối, rồi giảm dần âm lượng ở cuối."""
+    f = int(sr * 0.01)
+    n = len(audio) // f
+    if n < 3:
+        return audio
+    rms = np.array([np.sqrt(np.mean(audio[i * f:(i + 1) * f] ** 2)) for i in range(n)])
+    idx = np.where(rms > rms.max() * rel)[0]
+    start = max(idx[0] * f - int(sr * pre), 0)
+    end = min((idx[-1] + 1) * f + int(sr * post), len(audio))
+    out = audio[start:end].copy()
+    fade = int(sr * 0.03)
+    out[-fade:] *= np.linspace(1, 0, fade)
+    return out
+
+
+def say_word(kokoro, ipa, voice):
+    samples, sr = kokoro.create(ipa.strip().rstrip(PUNCT), voice=voice, speed=1.0, lang="en-us", is_phonemes=True)
+    return tight(trim(samples, sr), sr), sr
+
+
+def cut_from_carrier(kokoro, ipa, word, voice):
+    import os
+    from pocketsphinx import Decoder, get_model_path
+
+    samples, sr = kokoro.create(f"{ipa.strip().rstrip(PUNCT)}, plˈiːz.", voice=voice, speed=1.0, lang="en-us", is_phonemes=True)
+    pcm = subprocess.run(
+        ["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-", "-ar", "16000", "-f", "s16le", "-"],
+        input=samples.astype("float32").tobytes(), capture_output=True, check=True,
+    ).stdout
+    model = get_model_path()
+    with tempfile.NamedTemporaryFile("w", suffix=".gram", delete=False) as g:
+        g.write(f"#JSGF V1.0; grammar a; public <s> = {word} please ;")
+    dec = Decoder(hmm=os.path.join(model, "en-us/en-us"), dict=os.path.join(model, "en-us/cmudict-en-us.dict"), jsgf=g.name, loglevel="FATAL")
+    dec.start_utt(); dec.process_raw(pcm, full_utt=True); dec.end_utt()
+    os.unlink(g.name)
+    ends = [seg.end_frame for seg in dec.seg() if seg.word.split("(")[0] == word]
+    if not ends:
+        raise RuntimeError(f"Không tìm được từ {word} trong câu mẫu")
+    hop = int(sr * 0.005)
+    rms = np.array([np.sqrt(np.mean(samples[i * hop:(i + 1) * hop] ** 2)) for i in range(len(samples) // hop)])
+    j = int((ends[0] + 1) / 100 * sr / hop)
+    limit = j + 50
+    while j < min(limit, len(rms) - 1) and rms[j] > rms.max() * 0.02:
+        j += 1
+    out = trim(samples[: j * hop], sr).copy()
+    fade = int(sr * 0.03)
+    out[-fade:] *= np.linspace(1, 0, fade)
+    return out, sr
 
 
 def trim(audio, sr, threshold=0.008):
@@ -127,11 +209,22 @@ def main():
             # âm hữu thanh trước phụ âm đầu ("seat" thành "a-seat"), nhất là ở từ
             # đứng một mình. Câu nào cần chậm thì kéo chậm sau bằng rubberband,
             # cách này giữ nguyên cao độ và độ sắc của phụ âm.
-            if spec.get("spell"):
+            mode = word_mode(spec)
+            if mode == "cut":
+                word = spec["text"].strip().rstrip(PUNCT).lower()
+                samples, sr = cut_from_carrier(kokoro, spec["ipa"], word, spec["voice"])
+            elif mode == "word":
+                samples, sr = say_word(kokoro, spec["ipa"], spec["voice"])
+            elif spec.get("spell"):
                 pieces = []
                 for ipa in spec["spell"]:
-                    part, sr = kokoro.create(ipa, voice=spec["voice"], speed=1.0, lang="en-us", is_phonemes=True)
-                    pieces.append(trim(part, sr))
+                    if is_single(ipa) and not ipa.strip().endswith(("?", ",", "!")):
+                        # Một chữ cái, một từ: đọc như từ đứng riêng ở trên.
+                        part, sr = say_word(kokoro, ipa, spec["voice"])
+                    else:
+                        part, sr = kokoro.create(ipa, voice=spec["voice"], speed=1.0, lang="en-us", is_phonemes=True)
+                        part = trim(part, sr)
+                    pieces.append(part)
                 gap = np.zeros(int(sr * spec.get("gap", 0.35)), dtype="float32")
                 samples = np.concatenate([x for p in pieces for x in (p, gap)][:-1])
             else:
@@ -143,7 +236,8 @@ def main():
                 samples = trim(samples, sr)
             if spec.get("contour"):
                 samples = apply_contour(samples, sr, spec["contour"])
-            tempo = spec.get("speed", 1.0)
+            # Từ đứng riêng không kéo chậm: rubberband làm nhòe phụ âm của từ ngắn.
+            tempo = 1.0 if mode else spec.get("speed", 1.0)
             filters = []
             if tempo < 1.0:
                 filters = ["-af", f"rubberband=tempo={tempo}:transients=crisp:"

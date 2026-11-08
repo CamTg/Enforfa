@@ -13,7 +13,7 @@
     },
     "staff": {
       "name": "Nhân viên",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     }
   },
   "audio": {
@@ -115,7 +115,7 @@
     },
     "d1": {
       "text": "What's your last name?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "d2": {
       "text": "Nguyen.",
@@ -124,7 +124,7 @@
     },
     "d3": {
       "text": "Can you spell that?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "d4": {
       "text": "N, G, U, Y, E, N.",
@@ -141,7 +141,7 @@
     },
     "d5": {
       "text": "Is that N-G-U-Y-E-N?",
-      "voice": "af_bella",
+      "voice": "af_jessica",
       "spell": [
         "ˈɪz ðˌæt",
         "ˈɛn",
@@ -159,7 +159,7 @@
     },
     "d7": {
       "text": "And your first name?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "d8": {
       "text": "Lan. L, A, N.",
@@ -221,11 +221,11 @@
     },
     "ask_last": {
       "text": "What's your last name?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "ask_first": {
       "text": "What's your first name?",
-      "voice": "af_bella"
+      "voice": "af_jessica"
     },
     "m_last": {
       "text": "Nguyen. N, G, U, Y, E, N.",

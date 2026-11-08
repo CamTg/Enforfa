@@ -58,13 +58,15 @@
       "text": "leave",
       "voice": "af_heart",
       "ipa": "lˈiːv.",
-      "speed": 0.9
+      "speed": 0.9,
+      "cut": true
     },
     "live": {
       "text": "live",
       "voice": "af_heart",
       "ipa": "lˈɪv.",
-      "speed": 0.9
+      "speed": 0.9,
+      "cut": true
     },
     "pool": {
       "text": "pool",
