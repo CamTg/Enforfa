@@ -7,12 +7,13 @@
 // Mỗi lần đổi danh sách tệp dưới đây, tăng số phiên bản để máy người học
 // xóa bộ nhớ cũ.
 
-const VERSION = "enforfa-v9";
+const VERSION = "enforfa-v10";
 const SHELL = [
   "./",
   "index.html",
   "css/app.css",
   "content/course.json",
+  "content/ipa/ipa.json",
   "manifest.webmanifest",
   "icon.svg",
   "icons/icon-192.png",

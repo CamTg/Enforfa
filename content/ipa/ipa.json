@@ -1,0 +1,919 @@
+{
+  "id": "ipa",
+  "title": "Bảng IPA",
+  "groups": [
+    {
+      "title": "Nguyên âm",
+      "items": [
+        {
+          "symbol": "iː",
+          "examples": [
+            {
+              "word": "eat",
+              "audio": "w_eat"
+            },
+            {
+              "word": "see",
+              "audio": "w_see"
+            }
+          ],
+          "note": "Dài, hai khóe miệng kéo sang ngang.",
+          "lesson": "w1-l4"
+        },
+        {
+          "symbol": "ɪ",
+          "examples": [
+            {
+              "word": "it",
+              "audio": "w_it"
+            },
+            {
+              "word": "sit",
+              "audio": "w_sit"
+            }
+          ],
+          "note": "Ngắn, gọn, miệng thả lỏng; nằm giữa \"i\" và \"ê\".",
+          "lesson": "w1-l4"
+        },
+        {
+          "symbol": "eɪ",
+          "examples": [
+            {
+              "word": "name",
+              "audio": "w_name"
+            },
+            {
+              "word": "day",
+              "audio": "w_day"
+            }
+          ],
+          "note": "Đi từ \"ê\" sang \"i\".",
+          "lesson": "w1-l2"
+        },
+        {
+          "symbol": "ɛ",
+          "examples": [
+            {
+              "word": "bed",
+              "audio": "w_bed"
+            },
+            {
+              "word": "yes",
+              "audio": "w_yes"
+            }
+          ],
+          "note": "Gần giống \"e\" tiếng Việt.",
+          "lesson": "w1-l3"
+        },
+        {
+          "symbol": "æ",
+          "examples": [
+            {
+              "word": "cat",
+              "audio": "w_cat"
+            },
+            {
+              "word": "apple",
+              "audio": "w_apple"
+            }
+          ],
+          "note": "Miệng mở rộng, giữa \"e\" và \"a\"."
+        },
+        {
+          "symbol": "ɑː",
+          "examples": [
+            {
+              "word": "hot",
+              "audio": "w_hot"
+            },
+            {
+              "word": "father",
+              "audio": "w_father"
+            }
+          ],
+          "note": "Miệng mở to, như \"a\" kéo dài."
+        },
+        {
+          "symbol": "ʌ",
+          "examples": [
+            {
+              "word": "cup",
+              "audio": "w_cup"
+            },
+            {
+              "word": "bus",
+              "audio": "w_bus"
+            }
+          ],
+          "note": "Ngắn, gần giống \"ă\" hay \"â\"."
+        },
+        {
+          "symbol": "ə",
+          "examples": [
+            {
+              "word": "about",
+              "audio": "w_about"
+            },
+            {
+              "word": "banana",
+              "audio": "w_banana"
+            }
+          ],
+          "note": "Rất nhẹ, chỉ có ở âm tiết không được nhấn.",
+          "lesson": "w1-l5"
+        },
+        {
+          "symbol": "ɔː",
+          "examples": [
+            {
+              "word": "call",
+              "audio": "w_call"
+            },
+            {
+              "word": "walk",
+              "audio": "w_walk"
+            }
+          ],
+          "note": "Tròn môi, gần \"o\" kéo dài."
+        },
+        {
+          "symbol": "oʊ",
+          "examples": [
+            {
+              "word": "go",
+              "audio": "w_go"
+            },
+            {
+              "word": "phone",
+              "audio": "w_phone"
+            }
+          ],
+          "note": "Đi từ \"ô\" sang \"u\".",
+          "lesson": "w1-l3"
+        },
+        {
+          "symbol": "ʊ",
+          "examples": [
+            {
+              "word": "good",
+              "audio": "w_good"
+            },
+            {
+              "word": "book",
+              "audio": "w_book"
+            }
+          ],
+          "note": "Ngắn, môi tròn ít.",
+          "lesson": "w1-l4"
+        },
+        {
+          "symbol": "uː",
+          "examples": [
+            {
+              "word": "food",
+              "audio": "w_food"
+            },
+            {
+              "word": "school",
+              "audio": "w_school"
+            }
+          ],
+          "note": "Dài, môi tròn.",
+          "lesson": "w1-l4"
+        },
+        {
+          "symbol": "aɪ",
+          "examples": [
+            {
+              "word": "my",
+              "audio": "w_my"
+            },
+            {
+              "word": "five",
+              "audio": "w_five"
+            }
+          ],
+          "note": "Đi từ \"a\" sang \"i\".",
+          "lesson": "w1-l3"
+        },
+        {
+          "symbol": "aʊ",
+          "examples": [
+            {
+              "word": "now",
+              "audio": "w_now"
+            },
+            {
+              "word": "house",
+              "audio": "w_house"
+            }
+          ],
+          "note": "Đi từ \"a\" sang \"u\"."
+        },
+        {
+          "symbol": "ɔɪ",
+          "examples": [
+            {
+              "word": "boy",
+              "audio": "w_boy"
+            },
+            {
+              "word": "oil",
+              "audio": "w_oil"
+            }
+          ],
+          "note": "Đi từ \"o\" sang \"i\"."
+        },
+        {
+          "symbol": "ɝ",
+          "examples": [
+            {
+              "word": "bird",
+              "audio": "w_bird"
+            },
+            {
+              "word": "work",
+              "audio": "w_work"
+            }
+          ],
+          "note": "Lưỡi cong lên, như \"ơ\" kèm âm r."
+        },
+        {
+          "symbol": "ɚ",
+          "examples": [
+            {
+              "word": "doctor",
+              "audio": "w_doctor"
+            },
+            {
+              "word": "mother",
+              "audio": "w_mother"
+            }
+          ],
+          "note": "Như ɝ nhưng nhẹ, ở âm tiết không được nhấn."
+        }
+      ]
+    },
+    {
+      "title": "Phụ âm",
+      "items": [
+        {
+          "symbol": "p",
+          "examples": [
+            {
+              "word": "pen",
+              "audio": "w_pen"
+            },
+            {
+              "word": "stop",
+              "audio": "w_stop"
+            }
+          ],
+          "note": "Bật hơi ở đầu từ.",
+          "lesson": "w1-l2"
+        },
+        {
+          "symbol": "b",
+          "examples": [
+            {
+              "word": "bus",
+              "audio": "w_bus"
+            },
+            {
+              "word": "job",
+              "audio": "w_job"
+            }
+          ],
+          "lesson": "w1-l2"
+        },
+        {
+          "symbol": "t",
+          "examples": [
+            {
+              "word": "ten",
+              "audio": "w_ten"
+            },
+            {
+              "word": "eat",
+              "audio": "w_eat"
+            }
+          ],
+          "note": "Bật hơi ở đầu từ; ở cuối từ vẫn phải đọc.",
+          "lesson": "w1-l2"
+        },
+        {
+          "symbol": "d",
+          "examples": [
+            {
+              "word": "day",
+              "audio": "w_day"
+            },
+            {
+              "word": "bed",
+              "audio": "w_bed"
+            }
+          ],
+          "lesson": "w1-l2"
+        },
+        {
+          "symbol": "k",
+          "examples": [
+            {
+              "word": "key",
+              "audio": "w_key"
+            },
+            {
+              "word": "book",
+              "audio": "w_book"
+            }
+          ]
+        },
+        {
+          "symbol": "ɡ",
+          "examples": [
+            {
+              "word": "go",
+              "audio": "w_go"
+            },
+            {
+              "word": "bag",
+              "audio": "w_bag"
+            }
+          ]
+        },
+        {
+          "symbol": "f",
+          "examples": [
+            {
+              "word": "fish",
+              "audio": "w_fish"
+            },
+            {
+              "word": "five",
+              "audio": "w_five"
+            }
+          ]
+        },
+        {
+          "symbol": "v",
+          "examples": [
+            {
+              "word": "very",
+              "audio": "w_very"
+            },
+            {
+              "word": "live",
+              "audio": "w_live"
+            }
+          ],
+          "note": "Răng trên chạm môi dưới, có rung; đọc rõ ở cuối từ.",
+          "lesson": "w1-l6"
+        },
+        {
+          "symbol": "θ",
+          "examples": [
+            {
+              "word": "think",
+              "audio": "w_think"
+            },
+            {
+              "word": "three",
+              "audio": "w_three"
+            }
+          ],
+          "note": "Đầu lưỡi giữa hai hàm răng, chỉ có hơi.",
+          "lesson": "w1-l6"
+        },
+        {
+          "symbol": "ð",
+          "examples": [
+            {
+              "word": "this",
+              "audio": "w_this"
+            },
+            {
+              "word": "mother",
+              "audio": "w_mother"
+            }
+          ],
+          "note": "Đầu lưỡi giữa hai hàm răng, có rung.",
+          "lesson": "w1-l6"
+        },
+        {
+          "symbol": "s",
+          "examples": [
+            {
+              "word": "see",
+              "audio": "w_see"
+            },
+            {
+              "word": "bus",
+              "audio": "w_bus"
+            }
+          ],
+          "note": "Đọc rõ ở cuối từ."
+        },
+        {
+          "symbol": "z",
+          "examples": [
+            {
+              "word": "zoo",
+              "audio": "w_zoo"
+            },
+            {
+              "word": "is",
+              "audio": "w_is"
+            }
+          ],
+          "note": "Như s nhưng có rung."
+        },
+        {
+          "symbol": "ʃ",
+          "examples": [
+            {
+              "word": "she",
+              "audio": "w_she"
+            },
+            {
+              "word": "fish",
+              "audio": "w_fish"
+            }
+          ]
+        },
+        {
+          "symbol": "ʒ",
+          "examples": [
+            {
+              "word": "usually",
+              "audio": "w_usually"
+            },
+            {
+              "word": "television",
+              "audio": "w_television"
+            }
+          ]
+        },
+        {
+          "symbol": "tʃ",
+          "examples": [
+            {
+              "word": "chair",
+              "audio": "w_chair"
+            },
+            {
+              "word": "watch",
+              "audio": "w_watch"
+            }
+          ],
+          "lesson": "w1-l2"
+        },
+        {
+          "symbol": "dʒ",
+          "examples": [
+            {
+              "word": "job",
+              "audio": "w_job"
+            },
+            {
+              "word": "June",
+              "audio": "w_june"
+            }
+          ],
+          "lesson": "w1-l2"
+        },
+        {
+          "symbol": "h",
+          "examples": [
+            {
+              "word": "hat",
+              "audio": "w_hat"
+            },
+            {
+              "word": "house",
+              "audio": "w_house"
+            }
+          ]
+        },
+        {
+          "symbol": "m",
+          "examples": [
+            {
+              "word": "map",
+              "audio": "w_map"
+            },
+            {
+              "word": "name",
+              "audio": "w_name"
+            }
+          ],
+          "note": "Ở cuối từ, hai môi khép lại."
+        },
+        {
+          "symbol": "n",
+          "examples": [
+            {
+              "word": "no",
+              "audio": "w_no"
+            },
+            {
+              "word": "ten",
+              "audio": "w_ten"
+            }
+          ]
+        },
+        {
+          "symbol": "ŋ",
+          "examples": [
+            {
+              "word": "sing",
+              "audio": "w_sing"
+            },
+            {
+              "word": "ring",
+              "audio": "w_ring"
+            }
+          ],
+          "note": "Như \"ng\" cuối từ tiếng Việt."
+        },
+        {
+          "symbol": "l",
+          "examples": [
+            {
+              "word": "live",
+              "audio": "w_live"
+            },
+            {
+              "word": "call",
+              "audio": "w_call"
+            }
+          ],
+          "note": "Ở cuối từ, đầu lưỡi chạm lợi trên."
+        },
+        {
+          "symbol": "r",
+          "examples": [
+            {
+              "word": "red",
+              "audio": "w_red"
+            },
+            {
+              "word": "car",
+              "audio": "w_car"
+            }
+          ],
+          "note": "Lưỡi cong, không chạm vào đâu; khác \"r\" tiếng Việt.",
+          "lesson": "w1-l3"
+        },
+        {
+          "symbol": "w",
+          "examples": [
+            {
+              "word": "we",
+              "audio": "w_we"
+            },
+            {
+              "word": "walk",
+              "audio": "w_walk"
+            }
+          ],
+          "note": "Môi tròn rồi mở ra, như \"u\" lướt nhanh."
+        },
+        {
+          "symbol": "j",
+          "examples": [
+            {
+              "word": "yes",
+              "audio": "w_yes"
+            },
+            {
+              "word": "you",
+              "audio": "w_you"
+            }
+          ],
+          "note": "Như \"i\" lướt nhanh; ký hiệu là j, không phải y."
+        }
+      ]
+    }
+  ],
+  "audio": {
+    "w_eat": {
+      "text": "eat",
+      "voice": "af_heart",
+      "ipa": "ˈiːt"
+    },
+    "w_see": {
+      "text": "see",
+      "voice": "af_heart",
+      "ipa": "sˈiː"
+    },
+    "w_it": {
+      "text": "it",
+      "voice": "af_heart",
+      "ipa": "ˈɪt"
+    },
+    "w_sit": {
+      "text": "sit",
+      "voice": "af_heart",
+      "ipa": "sˈɪt"
+    },
+    "w_name": {
+      "text": "name",
+      "voice": "af_heart",
+      "ipa": "nˈeɪm"
+    },
+    "w_day": {
+      "text": "day",
+      "voice": "af_heart",
+      "ipa": "dˈeɪ"
+    },
+    "w_bed": {
+      "text": "bed",
+      "voice": "af_heart",
+      "ipa": "bˈɛd"
+    },
+    "w_yes": {
+      "text": "yes",
+      "voice": "af_heart",
+      "ipa": "jˈɛs"
+    },
+    "w_cat": {
+      "text": "cat",
+      "voice": "af_heart",
+      "ipa": "kˈæt"
+    },
+    "w_apple": {
+      "text": "apple",
+      "voice": "af_heart",
+      "ipa": "ˈæpəl"
+    },
+    "w_hot": {
+      "text": "hot",
+      "voice": "af_heart",
+      "ipa": "hˈɑːt"
+    },
+    "w_father": {
+      "text": "father",
+      "voice": "af_heart",
+      "ipa": "fˈɑːðɚ"
+    },
+    "w_cup": {
+      "text": "cup",
+      "voice": "af_heart",
+      "ipa": "kˈʌp"
+    },
+    "w_bus": {
+      "text": "bus",
+      "voice": "af_heart",
+      "ipa": "bˈʌs"
+    },
+    "w_about": {
+      "text": "about",
+      "voice": "af_heart",
+      "ipa": "əbˈaʊt"
+    },
+    "w_banana": {
+      "text": "banana",
+      "voice": "af_heart",
+      "ipa": "bənˈænə"
+    },
+    "w_call": {
+      "text": "call",
+      "voice": "af_heart",
+      "ipa": "kˈɔːl"
+    },
+    "w_walk": {
+      "text": "walk",
+      "voice": "af_heart",
+      "ipa": "wˈɔːk"
+    },
+    "w_go": {
+      "text": "go",
+      "voice": "af_heart",
+      "ipa": "ɡˈoʊ"
+    },
+    "w_phone": {
+      "text": "phone",
+      "voice": "af_heart",
+      "ipa": "fˈoʊn"
+    },
+    "w_good": {
+      "text": "good",
+      "voice": "af_heart",
+      "ipa": "ɡˈʊd"
+    },
+    "w_book": {
+      "text": "book",
+      "voice": "af_heart",
+      "ipa": "bˈʊk"
+    },
+    "w_food": {
+      "text": "food",
+      "voice": "af_heart",
+      "ipa": "fˈuːd"
+    },
+    "w_school": {
+      "text": "school",
+      "voice": "af_heart",
+      "ipa": "skˈuːl"
+    },
+    "w_my": {
+      "text": "my",
+      "voice": "af_heart",
+      "ipa": "mˈaɪ"
+    },
+    "w_five": {
+      "text": "five",
+      "voice": "af_heart",
+      "ipa": "fˈaɪv",
+      "cut": true
+    },
+    "w_now": {
+      "text": "now",
+      "voice": "af_heart",
+      "ipa": "nˈaʊ"
+    },
+    "w_house": {
+      "text": "house",
+      "voice": "af_heart",
+      "ipa": "hˈaʊs"
+    },
+    "w_boy": {
+      "text": "boy",
+      "voice": "af_heart",
+      "ipa": "bˈɔɪ"
+    },
+    "w_oil": {
+      "text": "oil",
+      "voice": "af_heart",
+      "ipa": "ˈɔɪl"
+    },
+    "w_bird": {
+      "text": "bird",
+      "voice": "af_heart",
+      "ipa": "bˈɜːɹd"
+    },
+    "w_work": {
+      "text": "work",
+      "voice": "af_heart",
+      "ipa": "wˈɜːɹk"
+    },
+    "w_doctor": {
+      "text": "doctor",
+      "voice": "af_heart",
+      "ipa": "dˈɑːktɚ"
+    },
+    "w_mother": {
+      "text": "mother",
+      "voice": "af_heart",
+      "ipa": "mˈʌðɚ"
+    },
+    "w_pen": {
+      "text": "pen",
+      "voice": "af_heart",
+      "ipa": "pˈɛn"
+    },
+    "w_stop": {
+      "text": "stop",
+      "voice": "af_heart",
+      "ipa": "stˈɑːp"
+    },
+    "w_job": {
+      "text": "job",
+      "voice": "af_heart",
+      "ipa": "dʒˈɑːb"
+    },
+    "w_ten": {
+      "text": "ten",
+      "voice": "af_heart",
+      "ipa": "tˈɛn"
+    },
+    "w_key": {
+      "text": "key",
+      "voice": "af_heart",
+      "ipa": "kˈiː"
+    },
+    "w_bag": {
+      "text": "bag",
+      "voice": "af_heart",
+      "ipa": "bˈæɡ"
+    },
+    "w_fish": {
+      "text": "fish",
+      "voice": "af_heart",
+      "ipa": "fˈɪʃ"
+    },
+    "w_very": {
+      "text": "very",
+      "voice": "af_heart",
+      "ipa": "vˈɛɹi"
+    },
+    "w_live": {
+      "text": "live",
+      "voice": "af_heart",
+      "ipa": "lˈɪv",
+      "cut": true
+    },
+    "w_think": {
+      "text": "think",
+      "voice": "af_heart",
+      "ipa": "θˈɪŋk",
+      "cut": true
+    },
+    "w_three": {
+      "text": "three",
+      "voice": "af_heart",
+      "ipa": "θɹˈiː",
+      "cut": true
+    },
+    "w_this": {
+      "text": "this",
+      "voice": "af_heart",
+      "ipa": "ðˈɪs"
+    },
+    "w_zoo": {
+      "text": "zoo",
+      "voice": "af_heart",
+      "ipa": "zˈuː"
+    },
+    "w_is": {
+      "text": "is",
+      "voice": "af_heart",
+      "ipa": "ˈɪz"
+    },
+    "w_she": {
+      "text": "she",
+      "voice": "af_heart",
+      "ipa": "ʃˈiː"
+    },
+    "w_usually": {
+      "text": "usually",
+      "voice": "af_heart",
+      "ipa": "jˈuːʒuːəli"
+    },
+    "w_television": {
+      "text": "television",
+      "voice": "af_heart",
+      "ipa": "tˈɛləvˌɪʒən"
+    },
+    "w_chair": {
+      "text": "chair",
+      "voice": "af_heart",
+      "ipa": "tʃˈɛɹ"
+    },
+    "w_watch": {
+      "text": "watch",
+      "voice": "af_heart",
+      "ipa": "wˈɑːtʃ"
+    },
+    "w_june": {
+      "text": "June",
+      "voice": "af_heart",
+      "ipa": "dʒˈuːn"
+    },
+    "w_hat": {
+      "text": "hat",
+      "voice": "af_heart",
+      "ipa": "hˈæt"
+    },
+    "w_map": {
+      "text": "map",
+      "voice": "af_heart",
+      "ipa": "mˈæp"
+    },
+    "w_no": {
+      "text": "no",
+      "voice": "af_heart",
+      "ipa": "nˈoʊ"
+    },
+    "w_sing": {
+      "text": "sing",
+      "voice": "af_heart",
+      "ipa": "sˈɪŋ"
+    },
+    "w_ring": {
+      "text": "ring",
+      "voice": "af_heart",
+      "ipa": "ɹˈɪŋ"
+    },
+    "w_red": {
+      "text": "red",
+      "voice": "af_heart",
+      "ipa": "ɹˈɛd"
+    },
+    "w_car": {
+      "text": "car",
+      "voice": "af_heart",
+      "ipa": "kˈɑːɹ"
+    },
+    "w_we": {
+      "text": "we",
+      "voice": "af_heart",
+      "ipa": "wˈiː"
+    },
+    "w_you": {
+      "text": "you",
+      "voice": "af_heart",
+      "ipa": "jˈuː"
+    }
+  }
+}
