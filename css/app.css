@@ -561,3 +561,17 @@ body.has-tabs { padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); }
 .archive-list li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
 .archive-due { font-size: 0.8125rem; color: var(--ink-2); white-space: nowrap; }
 .archive-list .say { min-width: 0; text-align: left; }
+
+/* Bảng IPA */
+.tabbar { grid-template-columns: repeat(5, 1fr); }
+.tab span:not(.icon):not(.tab-badge) { white-space: nowrap; }
+.ipa-group h2 { font-size: 1.0625rem; margin: 24px 0 10px; }
+.ipa-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.ipa-card { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--sheet); min-width: 0; }
+.ipa-card.has-lesson { border-color: var(--action); }
+.ipa-symbol { font-family: var(--font-en); font-size: 1.5rem; font-weight: 700; color: var(--ink); }
+.ipa-examples { display: flex; flex-wrap: wrap; gap: 6px; }
+.say.say-small { font-size: 1rem; }
+.ipa-note { font-size: 0.875rem; color: var(--ink-2); line-height: 1.45; }
+.ipa-where { font-size: 0.75rem; font-weight: 600; color: var(--action); }
+.ipa-where.is-done { color: var(--right); }

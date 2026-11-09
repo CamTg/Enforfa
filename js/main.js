@@ -416,6 +416,60 @@ function learnerStats() {
   );
 }
 
+// Bảng IPA: mỗi ký hiệu của tiếng Anh Mỹ kèm hai từ ví dụ bấm nghe được.
+// Không phát âm từng âm đứng riêng, vì giọng máy đọc âm đứng riêng không rõ.
+let ipaData = null;
+async function renderIpa() {
+  document.title = "Bảng IPA · Enforfa";
+  ipaData = ipaData || (await (await fetch("content/ipa/ipa.json", { cache: "no-cache" })).json());
+  const lessonsById = new Map(allLessons().map((l) => [l.id, l]));
+  const where = (id) => {
+    const meta = lessonsById.get(id);
+    if (!meta) return null;
+    const [w, l] = id.match(/\d+/g);
+    const done = lessonState(meta) === "done";
+    return h("span", { class: `ipa-where${done ? " is-done" : ""}` }, done ? `Đã học · tuần ${w}, bài ${l}` : `Tuần ${w}, bài ${l}`);
+  };
+  root.replaceChildren(
+    h(
+      "header",
+      { class: "lesson-head" },
+      h("div", { class: "lesson-head-row" }, h("a", { class: "btn-back", href: "#/", "aria-label": "Về trang chính" }, icon("back")), h("p", { class: "lesson-title" }, "Bảng IPA"))
+    ),
+    h(
+      "main",
+      { class: "archive ipa", id: "main" },
+      h("p", {}, "IPA là bảng ký hiệu phiên âm quốc tế. Mỗi ký hiệu ứng với một âm, nên khi đã quen, nhìn ký hiệu trong từ điển là bạn biết từ đọc thế nào. Bảng này là các âm của tiếng Anh Mỹ."),
+      h("p", { class: "hint" }, "Bấm vào từ ví dụ để nghe âm ấy trong từ. Dấu hai chấm (ː) sau một ký hiệu nghĩa là âm đọc dài. Ký hiệu nào đã có trong bài ghi số tuần và bài; học xong bài ấy thì ghi \"Đã học\"."),
+      ...ipaData.groups.map((group) =>
+        h(
+          "section",
+          { class: "ipa-group" },
+          h("h2", {}, group.title),
+          h(
+            "ul",
+            { class: "ipa-grid" },
+            ...group.items.map((item) =>
+              h(
+                "li",
+                { class: `ipa-card${item.lesson ? " has-lesson" : ""}` },
+                h("span", { class: "ipa-symbol", lang: "en" }, `/${item.symbol}/`),
+                h(
+                  "span",
+                  { class: "ipa-examples" },
+                  ...item.examples.map((ex) => sayChip(ex.word, (btn) => play(audioUrl("ipa", ex.audio), btn), "say-small"))
+                ),
+                item.note && h("span", { class: "ipa-note" }, item.note),
+                item.lesson && where(item.lesson)
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
 // Kho thẻ từ: mọi thẻ người học đã có, xếp theo bài, kèm ngày ôn lại.
 async function renderCardArchive() {
   document.title = "Kho thẻ từ · Enforfa";
@@ -591,6 +645,8 @@ async function route() {
       renderWelcome();
     } else if (hash === "#/lo-trinh") {
       renderMapPage();
+    } else if (hash === "#/ipa") {
+      await renderIpa();
     } else if (hash === "#/the-tu") {
       await renderCardArchive();
     } else if (hash === "#/cua-ban") {
@@ -632,6 +688,7 @@ function tabBar(hash) {
     tab("#/", "home", "Trang chính"),
     tab("#/on-tu", "cards", "Ôn từ", due ? h("span", { class: "tab-badge", "aria-label": `${due} thẻ đến hạn` }, String(due > 99 ? "99+" : due)) : null),
     tab("#/lo-trinh", "map", "Lộ trình"),
+    tab("#/ipa", "ipa", "Bảng IPA"),
     tab("#/cua-ban", "person", "Của bạn")
   );
 }
