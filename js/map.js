@@ -110,7 +110,7 @@ export function renderMap(course, currentWeek, weekState, stamped = new Set(), r
     h(
       "p",
       { class: "map-intro" },
-      `Chương trình có ${course.totalWeeks} tuần, mỗi tuần bảy bài, đi từ trình độ A1 (mới bắt đầu) tới B1 (trung cấp) theo khung trình độ ngoại ngữ châu Âu (CEFR). Bấm vào một tuần để xem các bài của tuần ấy.`
+      `Phần 1 của chương trình có ${course.totalWeeks} tuần, mỗi tuần bảy bài, đi từ con số không tới trình độ A2 (sơ cấp) theo khung trình độ ngoại ngữ châu Âu (CEFR). Bấm vào một tuần để xem các bài của tuần ấy.`
     ),
     h(
       "ul",
@@ -119,6 +119,7 @@ export function renderMap(course, currentWeek, weekState, stamped = new Set(), r
       h("li", {}, h("span", { class: "legend-dot is-current" }), "Tuần đang học"),
       h("li", {}, h("span", { class: "legend-dot is-future" }), "Sắp tới")
     ),
-    ...stages
+    ...stages,
+    course.next && h("p", { class: "map-next" }, course.next)
   );
 }
