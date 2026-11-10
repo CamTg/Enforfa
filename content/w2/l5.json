@@ -1,0 +1,616 @@
+{
+  "id": "w2-l5",
+  "title": "Bạn đang ở đâu?",
+  "goal": "Hết bài này, bạn hỏi được Where are you?, nói được mình đang ở phòng nào trong nhà hay ở nơi nào, đáp được Yes, I am hoặc No, I'm not, và biết câu hỏi nào lên giọng, câu hỏi nào xuống giọng.",
+  "speakers": {
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "minh": {
+      "name": "Minh",
+      "voice": "am_michael"
+    }
+  },
+  "audio": {
+    "d1": {
+      "text": "Hi, Lan. Where are you?",
+      "voice": "am_michael",
+      "ipa": "hˈaɪ, lˈɑːn. wˈɛɹ ɑːɹ juː?"
+    },
+    "d2": {
+      "text": "I'm at the store. Are you at home?",
+      "voice": "af_heart"
+    },
+    "d3": {
+      "text": "Yes, I am. I'm in the kitchen.",
+      "voice": "am_michael"
+    },
+    "d4": {
+      "text": "OK. See you at home!",
+      "voice": "af_heart"
+    },
+    "where_are_you": {
+      "text": "Where are you?",
+      "voice": "am_michael",
+      "contour": "fall"
+    },
+    "are_you_at_home": {
+      "text": "Are you at home?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "are_you_at_work": {
+      "text": "Are you at work?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "youre_at_home_q": {
+      "text": "You're at home?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "youre_at_home_s": {
+      "text": "You're at home.",
+      "voice": "af_heart",
+      "contour": "fall"
+    },
+    "im_in_the_kitchen": {
+      "text": "I'm in the kitchen.",
+      "voice": "af_heart"
+    },
+    "im_at_work": {
+      "text": "I'm at work.",
+      "voice": "af_heart"
+    },
+    "in_the_kitchen": {
+      "text": "in the kitchen",
+      "voice": "af_heart"
+    },
+    "in_the_living_room": {
+      "text": "in the living room",
+      "voice": "af_heart"
+    },
+    "in_the_bedroom": {
+      "text": "in the bedroom",
+      "voice": "af_heart"
+    },
+    "in_the_bathroom": {
+      "text": "in the bathroom",
+      "voice": "af_heart"
+    },
+    "at_work": {
+      "text": "at work",
+      "voice": "af_heart"
+    },
+    "at_the_store": {
+      "text": "at the store",
+      "voice": "af_heart"
+    },
+    "at_home": {
+      "text": "at home",
+      "voice": "af_heart"
+    },
+    "yes_i_am": {
+      "text": "Yes, I am.",
+      "voice": "af_heart"
+    },
+    "no_im_not": {
+      "text": "No, I'm not.",
+      "voice": "af_heart"
+    },
+    "m_where": {
+      "text": "I'm in the kitchen.",
+      "voice": "af_heart"
+    },
+    "m_are": {
+      "text": "Are you at home?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "w1": {
+      "text": "Where are you?",
+      "voice": "am_michael",
+      "contour": "fall"
+    },
+    "w2": {
+      "text": "I'm in the kitchen.",
+      "voice": "af_heart"
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Minh gọi cho Lan",
+          "body": [
+            "Minh gọi điện cho Lan để hỏi Lan đang ở đâu. Bạn nghe đoạn hội thoại ba lượt."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Cuộc gọi, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1",
+              "chunks": [
+                {
+                  "en": "Hi, Lan.",
+                  "vi": "chào Lan."
+                },
+                {
+                  "en": "Where",
+                  "vi": "ở đâu"
+                },
+                {
+                  "en": "are you?",
+                  "vi": "bạn đang?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "chunks": [
+                {
+                  "en": "I'm",
+                  "vi": "tôi đang"
+                },
+                {
+                  "en": "at the store.",
+                  "vi": "ở cửa hàng."
+                },
+                {
+                  "en": "Are you",
+                  "vi": "bạn có đang"
+                },
+                {
+                  "en": "at home?",
+                  "vi": "ở nhà không?"
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3",
+              "chunks": [
+                {
+                  "en": "Yes,",
+                  "vi": "có,"
+                },
+                {
+                  "en": "I am.",
+                  "vi": "tôi có."
+                },
+                {
+                  "en": "I'm",
+                  "vi": "tôi đang"
+                },
+                {
+                  "en": "in the kitchen.",
+                  "vi": "ở trong bếp."
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "chunks": [
+                {
+                  "en": "OK.",
+                  "vi": "được rồi."
+                },
+                {
+                  "en": "See you",
+                  "vi": "hẹn gặp bạn"
+                },
+                {
+                  "en": "at home!",
+                  "vi": "ở nhà!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Cuộc gọi, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1",
+              "vi": "Chào Lan. Bạn đang ở đâu?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "vi": "Tôi đang ở cửa hàng. Bạn có ở nhà không?"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3",
+              "vi": "Có. Tôi đang ở trong bếp."
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "vi": "Được rồi. Hẹn gặp bạn ở nhà!"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Cuộc gọi, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Where are you?",
+          "body": [
+            "{{where_are_you|Bạn đang ở đâu?}} Bạn đáp I'm in… hoặc I'm at… rồi nói nơi mình đang ở, như {{im_in_the_kitchen|Tôi đang ở trong bếp.}} hay {{im_at_work|Tôi đang ở chỗ làm.}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "in: bên trong một phòng",
+          "body": [
+            "In dùng khi bạn ở bên trong một phòng: {{in_the_kitchen|trong bếp}}, {{in_the_living_room|ở phòng khách}}, {{in_the_bedroom|ở phòng ngủ}}, {{in_the_bathroom|ở phòng tắm}}."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "at: nơi bạn đến để làm một việc",
+          "body": [
+            "At đi với nơi bạn đến để làm một việc: {{at_work|ở chỗ làm}}, {{at_the_store|ở cửa hàng}}. {{at_home|ở nhà}} là một cụm cố định.",
+            "Home và work không có the đi kèm. Tuần này bạn học thuộc ba cụm ấy; các tuần sau sẽ nói kỹ hơn về in và at."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Chữ the",
+          "body": [
+            "Chữ the trong the kitchen, the store cho biết cả hai người đều biết đang nói tới cái bếp nào, cửa hàng nào. Tuần này bạn học nguyên cả cụm, chưa cần phân tích."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Hỏi ai có đang ở một nơi không",
+          "body": [
+            "Muốn hỏi ai có đang ở một nơi không, bạn đảo you và are: {{are_you_at_home|Bạn có ở nhà không?}}",
+            "Người kia đáp {{yes_i_am|Có.}} hoặc {{no_im_not|Không.}}",
+            "Cũng như Yes, it is ở bài 1, câu đáp ngắn không dùng dạng gọn ở cuối: bạn nói Yes, I am, không nói Yes, I'm. Dạng gọn chỉ dùng khi sau nó còn chữ khác, như No, I'm not."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Lên giọng và xuống giọng",
+          "body": [
+            "Câu hỏi có hoặc không thường lên giọng ở cuối: {{are_you_at_home}}",
+            "Câu hỏi bắt đầu bằng Where thường xuống giọng ở cuối: {{where_are_you}} Khi gọi tìm một người, như Minh gọi Lan, người ta cũng hay lên giọng ở câu này.",
+            "Người ta cũng biến một câu kể thành câu hỏi chỉ bằng cách lên giọng: {{youre_at_home_q|Bạn ở nhà à?}}"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Chọn in hay at: ___ the kitchen.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "in",
+              "correct": true
+            },
+            {
+              "text": "at"
+            }
+          ],
+          "explain": "Ở bên trong một phòng thì dùng in. in the kitchen.",
+          "review": [
+            "w2-l5/kitchen"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn in hay at: ___ work.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "in"
+            },
+            {
+              "text": "at",
+              "correct": true
+            }
+          ],
+          "explain": "at work là cụm học thuộc: ở chỗ làm.",
+          "review": [
+            "w2-l5/at-work"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn in hay at: ___ the bedroom.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "in",
+              "correct": true
+            },
+            {
+              "text": "at"
+            }
+          ],
+          "explain": "Ở bên trong một phòng thì dùng in. in the bedroom.",
+          "review": [
+            "w2-l5/bedroom"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn in hay at: ___ home.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "in"
+            },
+            {
+              "text": "at",
+              "correct": true
+            }
+          ],
+          "explain": "at home là cụm cố định: ở nhà.",
+          "review": [
+            "w2-l5/at-home"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Minh hỏi bạn. Bạn đang ở phòng khách. Nghe câu hỏi rồi chọn câu đáp đúng.",
+          "audio": "where_are_you",
+          "options": [
+            {
+              "text": "I'm in the living room.",
+              "correct": true
+            },
+            {
+              "text": "I'm at the living room."
+            },
+            {
+              "text": "Yes, I am."
+            }
+          ],
+          "explain": "Phòng khách là một phòng, nên dùng in. Câu hỏi với Where không đáp bằng Yes.",
+          "review": [
+            "w2-l5/where-are-you",
+            "w2-l5/living-room"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Bạn đang ở nhà. Nghe câu hỏi rồi chọn câu đáp đúng.",
+          "audio": "are_you_at_work",
+          "options": [
+            {
+              "text": "No, I'm not. I'm at home.",
+              "correct": true
+            },
+            {
+              "text": "Yes, I'm."
+            },
+            {
+              "text": "No, I don't."
+            }
+          ],
+          "explain": "Câu hỏi mở bằng Are you, nên câu đáp là No, I'm not.",
+          "review": [
+            "w2-l5/no-im-not",
+            "w2-l5/are-you"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai cách nói câu You're at home. Cách nào là câu hỏi?",
+          "options": [
+            {
+              "label": "Cách 1",
+              "audio": "youre_at_home_s"
+            },
+            {
+              "label": "Cách 2",
+              "audio": "youre_at_home_q",
+              "correct": true
+            }
+          ],
+          "explain": "Cách 2 lên giọng ở cuối, nên là câu hỏi."
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Minh gọi cho bạn. Bạn nghe câu hỏi, thu âm câu trả lời với nơi bạn đang ở thật, rồi hỏi lại Minh."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "where",
+          "prompt": "Minh hỏi bạn đang ở đâu. Bạn trả lời với nơi bạn đang ở.",
+          "ask": "where_are_you",
+          "model": "m_where",
+          "say": "I'm in [nơi bạn đang ở].",
+          "focus": "Nghe xem bạn có đọc I'm thành một tiếng, có âm /m/ ở cuối không.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "are",
+          "prompt": "Hỏi Minh có đang ở nhà không.",
+          "model": "m_are",
+          "say": "Are you at home?",
+          "focus": "Nghe xem giọng bạn có lên ở cuối câu không."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w1",
+          "answer": "Where are you?",
+          "review": [
+            "w2-l5/where-are-you"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w2",
+          "answer": "I'm in the kitchen.",
+          "review": [
+            "w2-l5/kitchen"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "intro",
+          "prompt": "Gõ câu nói bạn đang ở đâu, theo mẫu I'm in… hoặc I'm at…",
+          "example": "I'm at home.",
+          "pattern": "\\bi'?m (in|at) [a-z]",
+          "patternOk": "Đúng rồi. Câu của bạn đúng mẫu. App không kiểm tên nơi chốn.",
+          "patternHelp": "Câu này cần bắt đầu bằng I'm in hoặc I'm at, rồi đến nơi bạn đang ở. Ví dụ:"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "where-are-you",
+      "en": "Where are you?",
+      "vi": "Bạn đang ở đâu?",
+      "audio": "where_are_you"
+    },
+    {
+      "id": "im-in",
+      "en": "I'm in the kitchen.",
+      "vi": "Tôi đang ở trong bếp.",
+      "audio": "im_in_the_kitchen"
+    },
+    {
+      "id": "im-at",
+      "en": "I'm at work.",
+      "vi": "Tôi đang ở chỗ làm.",
+      "audio": "im_at_work"
+    },
+    {
+      "id": "kitchen",
+      "en": "in the kitchen",
+      "vi": "trong bếp",
+      "audio": "in_the_kitchen"
+    },
+    {
+      "id": "living-room",
+      "en": "in the living room",
+      "vi": "ở phòng khách",
+      "audio": "in_the_living_room"
+    },
+    {
+      "id": "bedroom",
+      "en": "in the bedroom",
+      "vi": "ở phòng ngủ",
+      "audio": "in_the_bedroom"
+    },
+    {
+      "id": "bathroom",
+      "en": "in the bathroom",
+      "vi": "ở phòng tắm",
+      "audio": "in_the_bathroom"
+    },
+    {
+      "id": "at-home",
+      "en": "at home",
+      "vi": "ở nhà",
+      "audio": "at_home"
+    },
+    {
+      "id": "at-work",
+      "en": "at work",
+      "vi": "ở chỗ làm",
+      "audio": "at_work"
+    },
+    {
+      "id": "at-the-store",
+      "en": "at the store",
+      "vi": "ở cửa hàng",
+      "audio": "at_the_store"
+    },
+    {
+      "id": "are-you",
+      "en": "Are you at home?",
+      "vi": "Bạn có ở nhà không?",
+      "audio": "are_you_at_home"
+    },
+    {
+      "id": "yes-i-am",
+      "en": "Yes, I am.",
+      "vi": "Có.",
+      "audio": "yes_i_am"
+    },
+    {
+      "id": "no-im-not",
+      "en": "No, I'm not.",
+      "vi": "Không.",
+      "audio": "no_im_not"
+    }
+  ],
+  "canDo": [
+    "Hỏi Where are you? và nói mình đang ở đâu.",
+    "Dùng in với phòng trong nhà, at với home, work, the store.",
+    "Đáp Yes, I am hoặc No, I'm not.",
+    "Lên giọng ở câu hỏi có hoặc không."
+  ],
+  "realTask": "Hôm nay, mỗi lần bước vào một phòng trong nhà, bạn nói thầm I'm in the… với tên phòng. Nếu có người nói tiếng Anh gọi cho bạn, bạn thử trả lời họ rằng bạn đang ở đâu."
+}

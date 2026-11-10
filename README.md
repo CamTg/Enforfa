@@ -40,9 +40,10 @@ js/map.js           bản đồ lộ trình
 js/recorder.js      thu âm, lưu bản thu ngay trên máy
 js/audio.js         phát âm thanh mẫu
 content/course.json danh sách tuần và bài
-content/w1/l1.json  nội dung một bài (tuần 1 có đủ bảy bài, l1 đến l7)
+content/w1/l1.json  nội dung một bài (mỗi tuần có bảy bài, l1 đến l7)
 audio/<id bài>/     âm thanh mẫu đã tạo sẵn
 tools/build_audio.py tạo âm thanh từ nội dung bài
+tools/check_audio.py cho máy nhận dạng nghe lại các tệp âm thanh
 ```
 
 ## Thêm hoặc sửa một bài
@@ -58,7 +59,16 @@ tools/build_audio.py tạo âm thanh từ nội dung bài
 
    Thư mục model cần `kokoro-v1.0.onnx` và `voices-v1.0.bin`, tải từ [kokoro-onnx releases](https://github.com/thewh1teagle/kokoro-onnx/releases). Công cụ cũng cần `ffmpeg` có bộ lọc `rubberband` (bản ffmpeg đầy đủ trên hầu hết hệ điều hành đều có).
 
-Các kiểu bước dùng được trong một bài: `text`, `listen` (lượt 1, 2, 3; `layout` là `grid` hay `pairs`), `choose` (`audio` có thể là danh sách để nghe nối nhau; `layout: "row"` cho lựa chọn ngắn), `order`, `speak` (`ask` là câu hỏi phát trước câu mẫu), `write` (`mode` là `dictation`, `intro`, `letters` hay `field`), `cloze`, `checklist`, `goal`, `compare`. Bước nào có `review` (danh sách mã thẻ) thì khi người học làm sai, các thẻ ấy lên đầu lịch ôn.
+4. Kiểm âm thanh. Giọng máy có lúc đọc sai từ đứng riêng, nên sau khi tạo, cho máy nhận dạng nghe lại:
+
+   ```sh
+   pip install sherpa-onnx
+   python tools/check_audio.py --model /đường/dẫn/sherpa-onnx-whisper-small.en content/w2/l2.json
+   ```
+
+   Dòng mở bằng `!!` là tệp máy nghe ra khác câu trong bài. Đó là danh sách tệp cần người nghe lại; với tệp hỏng thật, đổi `voice` của từ ấy (giọng `af_bella` đọc từ đứng riêng rõ nhất) hoặc thêm `"cut": true`.
+
+Các kiểu bước dùng được trong một bài: `text`, `listen` (lượt 1, 2, 3; `layout` là `grid` hay `pairs`), `choose` (`audio` có thể là danh sách để nghe nối nhau; `layout: "row"` cho lựa chọn ngắn), `order`, `speak` (`ask` là câu hỏi phát trước câu mẫu), `write` (`mode` là `dictation`, `intro`, `letters` hay `field`), `cloze`, `checklist`, `goal`, `compare`. Bước `choose` hay `write` có `"vary": true` thì mỗi lần mở, app phát ngẫu nhiên một trong các bản đọc của cùng một từ (mã `bed`, `bed__2`, `bed__3`… trong phần `audio`), để người học quen nhiều giọng. Bước `speak` có `focus` thì app hiện điều cần chú ý khi nghe lại bản thu; nút Cho máy nghe thử chỉ hiện ở câu từ ba chữ trở lên. Bước nào có `review` (danh sách mã thẻ) thì khi người học làm sai, các thẻ ấy lên đầu lịch ôn.
 
 Với từ dùng để dạy phát âm, luôn ghi thêm trường `ipa` trong phần `audio`. Chuỗi đánh vần hay số điện thoại dùng trường `spell` (danh sách phiên âm từng phần) để mỗi phần được đọc riêng, cách nhau rõ ràng. Bộ đoán phiên âm tự động có lúc đọc sai, ví dụ đọc "live" thành /laɪv/.
 

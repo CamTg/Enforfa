@@ -1,0 +1,655 @@
+{
+  "id": "w2-l3",
+  "title": "Bạn có… không?",
+  "goal": "Hết bài này, bạn trả lời được những câu hỏi Do you have…? ở quầy tiếp tân phòng khám, nói được mình có gì bằng I have…, và biết nói Here you go khi đưa giấy tờ.",
+  "speakers": {
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "staff": {
+      "name": "Nhân viên",
+      "voice": "af_jessica"
+    }
+  },
+  "audio": {
+    "d1": {
+      "text": "Hi. Do you have an appointment?",
+      "voice": "af_jessica"
+    },
+    "d2": {
+      "text": "Yes, I do. My name is Lan Nguyen.",
+      "voice": "af_heart",
+      "ipa": "jˈɛs, aɪ dˈuː. maɪ nˈeɪm ɪz lˈɑːn ŋwˈɪn."
+    },
+    "d3": {
+      "text": "Do you have your insurance card?",
+      "voice": "af_jessica"
+    },
+    "d4": {
+      "text": "Yes, I do. Here you go.",
+      "voice": "af_heart"
+    },
+    "d5": {
+      "text": "Thank you. Do you have a driver's license?",
+      "voice": "af_jessica"
+    },
+    "d6": {
+      "text": "No, I don't. Sorry. I have a passport.",
+      "voice": "af_heart"
+    },
+    "do_you_have_appt": {
+      "text": "Do you have an appointment?",
+      "voice": "af_jessica",
+      "contour": "rise"
+    },
+    "do_you_have_card": {
+      "text": "Do you have your insurance card?",
+      "voice": "af_jessica",
+      "contour": "rise"
+    },
+    "do_you_have_license": {
+      "text": "Do you have a driver's license?",
+      "voice": "af_jessica",
+      "contour": "rise"
+    },
+    "do_you_have_key": {
+      "text": "Do you have a key?",
+      "voice": "af_jessica",
+      "contour": "rise"
+    },
+    "is_it_a_key": {
+      "text": "Is it a key?",
+      "voice": "af_jessica",
+      "contour": "rise"
+    },
+    "yes_i_do": {
+      "text": "Yes, I do.",
+      "voice": "af_heart"
+    },
+    "no_i_dont": {
+      "text": "No, I don't.",
+      "voice": "af_heart"
+    },
+    "i_have_a_passport": {
+      "text": "I have a passport.",
+      "voice": "af_heart"
+    },
+    "an_appointment": {
+      "text": "an appointment",
+      "voice": "af_heart"
+    },
+    "an_insurance_card": {
+      "text": "an insurance card",
+      "voice": "af_heart"
+    },
+    "a_passport": {
+      "text": "a passport",
+      "voice": "af_heart"
+    },
+    "a_drivers_license": {
+      "text": "a driver's license",
+      "voice": "af_heart"
+    },
+    "here_you_go": {
+      "text": "Here you go.",
+      "voice": "af_heart"
+    },
+    "yes_here": {
+      "text": "Yes, I do. Here you go.",
+      "voice": "af_heart"
+    },
+    "no_passport": {
+      "text": "No, I don't. I have a passport.",
+      "voice": "af_heart"
+    },
+    "your": {
+      "text": "your",
+      "voice": "af_bella",
+      "ipa": "jˈʊɹ."
+    },
+    "w1": {
+      "text": "Do you have an appointment?",
+      "voice": "af_jessica",
+      "contour": "rise"
+    },
+    "w2": {
+      "text": "Yes, I do. Here you go.",
+      "voice": "af_heart"
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Ở quầy tiếp tân",
+          "body": [
+            "Lan đến phòng khám. Nhân viên quầy tiếp tân hỏi Lan có hẹn trước không và hỏi vài loại giấy tờ. Bạn nghe đoạn hội thoại ba lượt."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Ở phòng khám, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "d1",
+              "chunks": [
+                {
+                  "en": "Hi.",
+                  "vi": "chào chị."
+                },
+                {
+                  "en": "Do you have",
+                  "vi": "chị có"
+                },
+                {
+                  "en": "an appointment?",
+                  "vi": "hẹn trước không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "chunks": [
+                {
+                  "en": "Yes,",
+                  "vi": "có,"
+                },
+                {
+                  "en": "I do.",
+                  "vi": "tôi có."
+                },
+                {
+                  "en": "My name is",
+                  "vi": "tên tôi là"
+                },
+                {
+                  "en": "Lan Nguyen.",
+                  "vi": "Lan Nguyễn."
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "d3",
+              "chunks": [
+                {
+                  "en": "Do you have",
+                  "vi": "chị có mang"
+                },
+                {
+                  "en": "your",
+                  "vi": "của chị"
+                },
+                {
+                  "en": "insurance card?",
+                  "vi": "thẻ bảo hiểm không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "chunks": [
+                {
+                  "en": "Yes,",
+                  "vi": "có,"
+                },
+                {
+                  "en": "I do.",
+                  "vi": "tôi có."
+                },
+                {
+                  "en": "Here you go.",
+                  "vi": "đây ạ."
+                }
+              ]
+            },
+            {
+              "speaker": "staff",
+              "audio": "d5",
+              "chunks": [
+                {
+                  "en": "Thank you.",
+                  "vi": "cảm ơn chị."
+                },
+                {
+                  "en": "Do you have",
+                  "vi": "chị có"
+                },
+                {
+                  "en": "a driver's license?",
+                  "vi": "bằng lái xe không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6",
+              "chunks": [
+                {
+                  "en": "No,",
+                  "vi": "không,"
+                },
+                {
+                  "en": "I don't.",
+                  "vi": "tôi không có."
+                },
+                {
+                  "en": "Sorry.",
+                  "vi": "xin lỗi."
+                },
+                {
+                  "en": "I have",
+                  "vi": "tôi có"
+                },
+                {
+                  "en": "a passport.",
+                  "vi": "hộ chiếu."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Ở phòng khám, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "d1",
+              "vi": "Chào chị. Chị có hẹn trước không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "vi": "Có. Tên tôi là Lan Nguyễn."
+            },
+            {
+              "speaker": "staff",
+              "audio": "d3",
+              "vi": "Chị có mang thẻ bảo hiểm không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "vi": "Có. Đây ạ."
+            },
+            {
+              "speaker": "staff",
+              "audio": "d5",
+              "vi": "Cảm ơn chị. Chị có bằng lái xe không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6",
+              "vi": "Không. Xin lỗi chị. Tôi có hộ chiếu."
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Ở phòng khám, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "staff",
+              "audio": "d1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2"
+            },
+            {
+              "speaker": "staff",
+              "audio": "d3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4"
+            },
+            {
+              "speaker": "staff",
+              "audio": "d5"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Do you have…?",
+          "body": [
+            "{{do_you_have_appt|Bạn có hẹn trước không?}} hỏi người kia có một vật hay một giấy tờ không.",
+            "Ở câu này, Do chỉ báo cho người nghe biết đây là câu hỏi, nên không dịch ra tiếng Việt."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Đáp ngắn",
+          "body": [
+            "Bạn đáp ngắn {{yes_i_do|Có.}} hoặc {{no_i_dont|Không.}}",
+            "Câu hỏi mở bằng Do thì câu đáp ngắn cũng dùng do. Câu hỏi mở bằng Is như ở bài 1 thì câu đáp dùng is: Is it a phone? Yes, it is."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "I have a…",
+          "body": [
+            "Muốn nói mình có gì, bạn nói I have a… (Tôi có một…), như {{i_have_a_passport|Tôi có hộ chiếu.}}",
+            "Giống bài 1, tiếng Anh cần a hay an trước tên vật."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Giấy tờ ở phòng khám",
+          "body": [
+            "Mấy từ hay gặp ở phòng khám: {{an_appointment|cuộc hẹn}}, {{an_insurance_card|thẻ bảo hiểm}}, {{a_passport|hộ chiếu}}, {{a_drivers_license|bằng lái xe}}.",
+            "{{your}} nghĩa là \"của bạn\": your insurance card là thẻ bảo hiểm của bạn."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Here you go",
+          "body": [
+            "Khi đưa một vật cho ai, bạn nói {{here_you_go|Đây ạ.}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Lên giọng khi hỏi",
+          "body": [
+            "Câu hỏi có hoặc không, như Do you have…? hay Is it…?, thường lên giọng ở cuối, giống Sorry? ở tuần 1.",
+            "Bạn nghe lại và để ý chỗ lên giọng: {{do_you_have_appt}}"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Nghe câu hỏi của nhân viên rồi chọn câu đáp đúng.",
+          "audio": "do_you_have_appt",
+          "options": [
+            {
+              "text": "Yes, I do.",
+              "correct": true
+            },
+            {
+              "text": "Yes, it is."
+            },
+            {
+              "text": "Yes, I have."
+            }
+          ],
+          "explain": "Câu hỏi mở bằng Do, nên câu đáp ngắn là Yes, I do.",
+          "review": [
+            "w2-l3/yes-i-do",
+            "w2-l3/do-you-have"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe câu hỏi rồi chọn câu đáp hợp với câu ấy.",
+          "audio": "is_it_a_key",
+          "layout": "row",
+          "options": [
+            {
+              "text": "Yes, it is.",
+              "correct": true
+            },
+            {
+              "text": "Yes, I do."
+            }
+          ],
+          "explain": "Câu hỏi mở bằng Is, nên câu đáp dùng is: Yes, it is.",
+          "review": [
+            "w2-l1/yes-it-is"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe câu hỏi rồi chọn câu đáp hợp với câu ấy.",
+          "audio": "do_you_have_key",
+          "layout": "row",
+          "options": [
+            {
+              "text": "Yes, it is."
+            },
+            {
+              "text": "Yes, I do.",
+              "correct": true
+            }
+          ],
+          "explain": "Câu hỏi mở bằng Do, nên câu đáp dùng do: Yes, I do.",
+          "review": [
+            "w2-l3/yes-i-do"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước từ appointment.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a"
+            },
+            {
+              "text": "an",
+              "correct": true
+            }
+          ],
+          "explain": "appointment bắt đầu bằng một nguyên âm: an appointment.",
+          "review": [
+            "w2-l3/appointment"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước từ passport.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a",
+              "correct": true
+            },
+            {
+              "text": "an"
+            }
+          ],
+          "explain": "passport bắt đầu bằng phụ âm /p/: a passport.",
+          "review": [
+            "w2-l3/passport"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước cụm insurance card.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a"
+            },
+            {
+              "text": "an",
+              "correct": true
+            }
+          ],
+          "explain": "insurance bắt đầu bằng một nguyên âm: an insurance card.",
+          "review": [
+            "w2-l3/insurance-card"
+          ]
+        },
+        {
+          "type": "order",
+          "prompt": "Bấm lần lượt các chữ để xếp thành câu hỏi \"Bạn có bằng lái xe không?\".",
+          "words": [
+            "have",
+            "Do",
+            "a",
+            "you",
+            "driver's license"
+          ],
+          "answer": [
+            "Do",
+            "you",
+            "have",
+            "a",
+            "driver's license"
+          ],
+          "audio": "do_you_have_license",
+          "gloss": "Bạn có bằng lái xe không?",
+          "review": [
+            "w2-l3/drivers-license"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn đóng vai Lan ở quầy tiếp tân. Với mỗi câu, bạn nghe câu hỏi của nhân viên, thu âm câu trả lời, rồi so với câu trả lời mẫu."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "appt",
+          "prompt": "Nhân viên hỏi bạn có hẹn trước không. Bạn đáp có.",
+          "ask": "do_you_have_appt",
+          "model": "yes_i_do",
+          "say": "Yes, I do.",
+          "focus": "Nghe xem bạn có đọc đủ âm /s/ ở cuối Yes không."
+        },
+        {
+          "type": "speak",
+          "id": "card",
+          "prompt": "Nhân viên hỏi thẻ bảo hiểm. Bạn đáp có và đưa thẻ.",
+          "ask": "do_you_have_card",
+          "model": "yes_here",
+          "say": "Yes, I do. Here you go.",
+          "focus": "Nghe xem Here you go có liền một hơi không."
+        },
+        {
+          "type": "speak",
+          "id": "license",
+          "prompt": "Nhân viên hỏi bằng lái xe. Bạn đáp không, và nói mình có hộ chiếu.",
+          "ask": "do_you_have_license",
+          "model": "no_passport",
+          "say": "No, I don't. I have a passport.",
+          "focus": "Nghe xem bạn có đọc âm /v/ ở cuối have không."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w1",
+          "answer": "Do you have an appointment?",
+          "review": [
+            "w2-l3/do-you-have",
+            "w2-l3/appointment"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w2",
+          "answer": "Yes, I do. Here you go.",
+          "review": [
+            "w2-l3/here-you-go"
+          ]
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "do-you-have",
+      "en": "Do you have an appointment?",
+      "vi": "Bạn có hẹn trước không?",
+      "audio": "do_you_have_appt"
+    },
+    {
+      "id": "yes-i-do",
+      "en": "Yes, I do.",
+      "vi": "Có.",
+      "audio": "yes_i_do"
+    },
+    {
+      "id": "no-i-dont",
+      "en": "No, I don't.",
+      "vi": "Không.",
+      "audio": "no_i_dont"
+    },
+    {
+      "id": "i-have-a",
+      "en": "I have a passport.",
+      "vi": "Tôi có hộ chiếu.",
+      "audio": "i_have_a_passport"
+    },
+    {
+      "id": "here-you-go",
+      "en": "Here you go.",
+      "vi": "Đây ạ. (khi đưa một vật)",
+      "audio": "here_you_go"
+    },
+    {
+      "id": "appointment",
+      "en": "an appointment",
+      "vi": "cuộc hẹn",
+      "audio": "an_appointment"
+    },
+    {
+      "id": "insurance-card",
+      "en": "an insurance card",
+      "vi": "thẻ bảo hiểm",
+      "audio": "an_insurance_card"
+    },
+    {
+      "id": "passport",
+      "en": "a passport",
+      "vi": "hộ chiếu",
+      "audio": "a_passport"
+    },
+    {
+      "id": "drivers-license",
+      "en": "a driver's license",
+      "vi": "bằng lái xe",
+      "audio": "a_drivers_license"
+    }
+  ],
+  "canDo": [
+    "Trả lời câu hỏi Do you have…? bằng Yes, I do hoặc No, I don't.",
+    "Nói mình có gì bằng I have a…",
+    "Nói Here you go khi đưa một vật cho người khác."
+  ],
+  "realTask": "Hôm nay, khi đưa một vật cho ai, bạn nói Here you go. Nếu cần mượn bút, bạn hỏi một đồng nghiệp Do you have a pen?"
+}

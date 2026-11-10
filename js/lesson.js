@@ -26,6 +26,15 @@ export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesso
   // người học nhảy qua lại giữa các phần.
   const seen = new Set(saved?.seen || (saved && !saved.done ? steps.map((_, k) => k).filter((k) => k <= (saved.step || 0)) : []));
 
+  // Câu luyện nghe có "vary": mỗi lần mở bước, app chọn ngẫu nhiên một giọng đọc
+  // trong các bản của cùng một từ (mã "bed", "bed__2", "bed__3"…), để tai người
+  // học quen với nhiều giọng. Trong một bước, mọi lần bấm nghe đều ra cùng một giọng.
+  const variants = (audioId) => [audioId, ...Object.keys(lesson.audio).filter((k) => k.startsWith(`${audioId}__`))];
+  let voicePick = 0;
+  const varied = (audioId) => {
+    const list = variants(audioId);
+    return list[voicePick % list.length];
+  };
   const sound = (audioId) => (button) => play(audioUrl(lesson.id, audioId), button);
   const text = (audioId) => lesson.audio[audioId]?.text ?? audioId;
   // Phát một hay nhiều câu nối nhau, như hai từ cần so "giống hay khác".
@@ -161,7 +170,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesso
   function prefetch(step) {
     const ids = new Set();
     const add = (id) => id && lesson.audio[id] && ids.add(id);
-    [].concat(step.audio || []).forEach(add);
+    [].concat(step.audio || []).forEach((id) => (step.vary ? variants(id) : [id]).forEach(add));
     add(step.model);
     add(step.ask);
     (step.options || []).forEach((o) => add(o.audio));
@@ -176,6 +185,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesso
   function show() {
     const { step } = steps[index];
     markActive();
+    voicePick = Math.floor(Math.random() * 12);
     prefetch(step);
     seen.add(index);
     store.put("progress", lesson.id, { step: index, total: steps.length, done: saved?.done || false, seen: [...seen] });
@@ -425,7 +435,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesso
         step.audio &&
           h(
             "button",
-            { class: "btn-listen btn-listen-big", type: "button", onclick: (e) => soundAll(step.audio)(e.currentTarget) },
+            { class: "btn-listen btn-listen-big", type: "button", onclick: (e) => soundAll(step.vary ? [].concat(step.audio).map(varied) : step.audio)(e.currentTarget) },
             icon("play"),
             h("span", {}, "Nghe")
           ),
@@ -554,13 +564,17 @@ export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesso
       marks.append(h("p", {}, "Bản của bạn nghe có giống câu mẫu không?"), markBtn("same", "Giống"), markBtn("not-yet", "Chưa giống"));
 
       if (canRecord()) loadExisting();
-      const machine = step.check === false || !canMachineListen() ? null : machineCheck(step);
+      // Máy nhận dạng đoán từ theo ngữ cảnh, nên với một từ đứng riêng hay một cụm
+      // rất ngắn nó hay báo sai. Nút "Cho máy nghe thử" chỉ hiện ở câu từ ba chữ trở lên.
+      const longEnough = words(step.say.replace(/\[[^\]]*\]/g, "")).length >= 3;
+      const machine = step.check === false || !longEnough || !canMachineListen() ? null : machineCheck(step);
 
       return h(
         "section",
         { class: "step step-speak" },
         h("h1", {}, step.prompt),
         h("p", { class: "say-target", lang: "en" }, step.say),
+        step.focus && h("p", { class: "say-focus" }, h("strong", {}, "Khi nghe lại bản thu: "), step.focus),
         h(
           "div",
           { class: "speak-actions" },
@@ -694,7 +708,7 @@ export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesso
         step.audio &&
           h(
             "button",
-            { class: "btn-listen btn-listen-big", type: "button", onclick: (e) => sound(step.audio)(e.currentTarget) },
+            { class: "btn-listen btn-listen-big", type: "button", onclick: (e) => sound(step.vary ? varied(step.audio) : step.audio)(e.currentTarget) },
             icon("play"),
             h("span", {}, "Nghe")
           ),

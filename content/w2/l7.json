@@ -1,0 +1,735 @@
+{
+  "id": "w2-l7",
+  "title": "Ôn tuần và thử ngoài đời",
+  "goal": "Bài này chỉ thêm một cụm mới, It's in my bag. Bạn ôn các khuôn câu của tuần qua một cuộc gọi điện, làm một bài kiểm tra nhỏ, rồi tự đánh giá và đặt mục tiêu cho tuần sau.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "minh": {
+      "name": "Minh",
+      "voice": "am_michael"
+    },
+    "staff": {
+      "name": "Nhân viên",
+      "voice": "af_jessica"
+    }
+  },
+  "listenNote": "Một cuộc gọi điện nghe ba lượt, và một bài kiểm tra nhỏ mười câu",
+  "audio": {
+    "r1": {
+      "text": "Hi, Lan. Where are you?",
+      "voice": "am_michael",
+      "contour": "fall",
+      "ipa": "hˈaɪ, lˈɑːn. wˈɛɹ ɑːɹ juː?"
+    },
+    "r2": {
+      "text": "I'm at work.",
+      "voice": "af_heart"
+    },
+    "r3": {
+      "text": "Do you have an umbrella?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "r4": {
+      "text": "Sorry? Can you say that again?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "r5": {
+      "text": "Do you have an umbrella?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "r6": {
+      "text": "Yes, I do. It's in my bag.",
+      "voice": "af_heart"
+    },
+    "r7": {
+      "text": "Good. See you at home!",
+      "voice": "am_michael"
+    },
+    "in_my_bag": {
+      "text": "It's in my bag.",
+      "voice": "af_heart"
+    },
+    "my": {
+      "text": "my",
+      "voice": "af_bella",
+      "ipa": "mˈaɪ."
+    },
+    "see_you": {
+      "text": "See you at home!",
+      "voice": "am_michael"
+    },
+    "q_is_it": {
+      "text": "Is it a phone?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "q_passport": {
+      "text": "Do you have a passport?",
+      "voice": "af_jessica",
+      "contour": "rise"
+    },
+    "q_home": {
+      "text": "Are you at home?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "q_where": {
+      "text": "Where are you?",
+      "voice": "am_michael",
+      "contour": "fall"
+    },
+    "bed": {
+      "text": "bed",
+      "voice": "af_sarah",
+      "ipa": "bˈɛd."
+    },
+    "bed__2": {
+      "text": "bed",
+      "voice": "am_michael",
+      "ipa": "bˈɛd."
+    },
+    "bed__3": {
+      "text": "bed",
+      "voice": "am_adam",
+      "ipa": "bˈɛd."
+    },
+    "ship": {
+      "text": "ship",
+      "voice": "af_bella",
+      "ipa": "ʃˈɪp."
+    },
+    "ship__2": {
+      "text": "ship",
+      "voice": "af_sarah",
+      "ipa": "ʃˈɪp."
+    },
+    "ship__3": {
+      "text": "ship",
+      "voice": "am_adam",
+      "ipa": "ʃˈɪp."
+    },
+    "ship__4": {
+      "text": "ship",
+      "voice": "af_heart",
+      "ipa": "ʃˈɪp."
+    },
+    "she": {
+      "text": "she",
+      "voice": "af_bella",
+      "ipa": "ʃˈiː."
+    },
+    "she__2": {
+      "text": "she",
+      "voice": "am_michael",
+      "ipa": "ʃˈiː."
+    },
+    "she__3": {
+      "text": "she",
+      "voice": "af_sarah",
+      "ipa": "ʃˈiː."
+    },
+    "she__4": {
+      "text": "she",
+      "voice": "am_fenrir",
+      "ipa": "ʃˈiː."
+    },
+    "m_where": {
+      "text": "I'm at work.",
+      "voice": "af_heart"
+    },
+    "m_umbrella": {
+      "text": "Yes, I do. It's in my bag.",
+      "voice": "af_heart"
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Một cuộc gọi",
+          "body": [
+            "Bài này ôn lại cả tuần qua một cuộc gọi điện: trời sắp mưa, Minh gọi cho Lan. Bạn nghe đoạn hội thoại ba lượt như mọi bài."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Trời sắp mưa, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "r1",
+              "chunks": [
+                {
+                  "en": "Hi, Lan.",
+                  "vi": "chào Lan."
+                },
+                {
+                  "en": "Where",
+                  "vi": "ở đâu"
+                },
+                {
+                  "en": "are you?",
+                  "vi": "bạn đang?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "r2",
+              "chunks": [
+                {
+                  "en": "I'm",
+                  "vi": "tôi đang"
+                },
+                {
+                  "en": "at work.",
+                  "vi": "ở chỗ làm."
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "r3",
+              "chunks": [
+                {
+                  "en": "Do you have",
+                  "vi": "bạn có"
+                },
+                {
+                  "en": "an umbrella?",
+                  "vi": "ô không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "r4",
+              "chunks": [
+                {
+                  "en": "Sorry?",
+                  "vi": "bạn nói gì cơ?"
+                },
+                {
+                  "en": "Can you",
+                  "vi": "bạn có thể"
+                },
+                {
+                  "en": "say that",
+                  "vi": "nói câu đó"
+                },
+                {
+                  "en": "again?",
+                  "vi": "lần nữa không?"
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "r5",
+              "chunks": [
+                {
+                  "en": "Do you have",
+                  "vi": "bạn có"
+                },
+                {
+                  "en": "an umbrella?",
+                  "vi": "ô không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "r6",
+              "chunks": [
+                {
+                  "en": "Yes,",
+                  "vi": "có,"
+                },
+                {
+                  "en": "I do.",
+                  "vi": "tôi có."
+                },
+                {
+                  "en": "It's",
+                  "vi": "nó ở"
+                },
+                {
+                  "en": "in my bag.",
+                  "vi": "trong túi tôi."
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "r7",
+              "chunks": [
+                {
+                  "en": "Good.",
+                  "vi": "tốt rồi."
+                },
+                {
+                  "en": "See you",
+                  "vi": "hẹn gặp bạn"
+                },
+                {
+                  "en": "at home!",
+                  "vi": "ở nhà!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Trời sắp mưa, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "r1",
+              "vi": "Chào Lan. Bạn đang ở đâu?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r2",
+              "vi": "Tôi đang ở chỗ làm."
+            },
+            {
+              "speaker": "minh",
+              "audio": "r3",
+              "vi": "Bạn có ô không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r4",
+              "vi": "Bạn nói gì cơ? Bạn nói lại được không?"
+            },
+            {
+              "speaker": "minh",
+              "audio": "r5",
+              "vi": "Bạn có ô không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r6",
+              "vi": "Có. Nó ở trong túi tôi."
+            },
+            {
+              "speaker": "minh",
+              "audio": "r7",
+              "vi": "Tốt rồi. Hẹn gặp bạn ở nhà!"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Trời sắp mưa, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "r1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r2"
+            },
+            {
+              "speaker": "minh",
+              "audio": "r3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r4"
+            },
+            {
+              "speaker": "minh",
+              "audio": "r5"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r6"
+            },
+            {
+              "speaker": "minh",
+              "audio": "r7"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Một cụm mới",
+          "body": [
+            "Lan nói {{in_my_bag|Nó ở trong túi tôi.}} {{my}} nghĩa là \"của tôi\", đi cùng cặp với your (của bạn) đã học ở bài 2.",
+            "Cuối cuộc gọi, Minh chào {{see_you|Hẹn gặp bạn ở nhà!}}"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onlai",
+      "title": "Ôn lại",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Kiểm tra nhỏ",
+          "body": [
+            "Phần này có mười câu, ôn lại bài 1 đến bài 6. App không chấm điểm. Câu nào bạn chọn sai, thẻ từ liên quan được đưa lên đầu lịch ôn để bạn gặp lại sớm."
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước từ umbrella.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a"
+            },
+            {
+              "text": "an",
+              "correct": true
+            }
+          ],
+          "explain": "umbrella bắt đầu bằng một nguyên âm: an umbrella.",
+          "review": [
+            "w2-l1/umbrella"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe câu hỏi rồi chọn câu đáp hợp với câu ấy.",
+          "audio": "q_is_it",
+          "layout": "row",
+          "options": [
+            {
+              "text": "Yes, it is.",
+              "correct": true
+            },
+            {
+              "text": "Yes, I do."
+            }
+          ],
+          "explain": "Câu hỏi mở bằng Is, nên câu đáp dùng is.",
+          "review": [
+            "w2-l1/yes-it-is",
+            "w2-l1/is-it-a"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe câu hỏi rồi chọn câu đáp hợp với câu ấy.",
+          "audio": "q_passport",
+          "layout": "row",
+          "options": [
+            {
+              "text": "No, I don't.",
+              "correct": true
+            },
+            {
+              "text": "No, it isn't."
+            }
+          ],
+          "explain": "Câu hỏi mở bằng Do, nên câu đáp dùng do.",
+          "review": [
+            "w2-l3/no-i-dont",
+            "w2-l3/do-you-have"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe câu hỏi rồi chọn câu đáp đúng.",
+          "audio": "q_home",
+          "layout": "row",
+          "options": [
+            {
+              "text": "Yes, I am.",
+              "correct": true
+            },
+            {
+              "text": "Yes, I'm."
+            }
+          ],
+          "explain": "Câu đáp ngắn không dùng dạng gọn ở cuối: Yes, I am.",
+          "review": [
+            "w2-l5/yes-i-am",
+            "w2-l5/are-you"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "bed",
+          "layout": "row",
+          "options": [
+            {
+              "text": "bed",
+              "correct": true
+            },
+            {
+              "text": "bet"
+            }
+          ],
+          "explain": "bed có nguyên âm dài hơn, vì đứng trước /d/.",
+          "review": [
+            "w2-l2/bed"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "ship",
+          "layout": "row",
+          "options": [
+            {
+              "text": "ship",
+              "correct": true
+            },
+            {
+              "text": "chip"
+            }
+          ],
+          "explain": "ship bắt đầu bằng /ʃ/, không có cú chặn ở đầu.",
+          "review": [
+            "w2-l4/she"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "she",
+          "layout": "row",
+          "options": [
+            {
+              "text": "see"
+            },
+            {
+              "text": "she",
+              "correct": true
+            }
+          ],
+          "explain": "she bắt đầu bằng /ʃ/.",
+          "review": [
+            "w2-l4/she"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn in hay at: ___ the kitchen.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "in",
+              "correct": true
+            },
+            {
+              "text": "at"
+            }
+          ],
+          "explain": "Ở bên trong một phòng thì dùng in.",
+          "review": [
+            "w2-l5/kitchen"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Đồng nghiệp nói \"box\" mà bạn không biết nghĩa. Bạn hỏi câu nào?",
+          "options": [
+            {
+              "text": "What does box mean?",
+              "correct": true
+            },
+            {
+              "text": "How do you say this in English?"
+            },
+            {
+              "text": "Can you say that again?"
+            }
+          ],
+          "explain": "What does … mean? hỏi nghĩa của một từ bạn vừa nghe.",
+          "review": [
+            "w2-l6/what-does-mean"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "q_where",
+          "answer": "Where are you?",
+          "review": [
+            "w2-l5/where-are-you"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn đóng vai Lan trong cuộc gọi. Bạn nói nơi bạn đang ở thật, và vật bạn có trong túi."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "where",
+          "prompt": "Minh hỏi bạn đang ở đâu. Bạn trả lời với nơi bạn đang ở.",
+          "ask": "r1",
+          "model": "m_where",
+          "say": "I'm [in hoặc at] [nơi bạn đang ở].",
+          "focus": "Nghe xem bạn chọn in hay at có đúng với nơi ấy không.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "umbrella",
+          "prompt": "Minh hỏi bạn có ô không. Bạn đáp có, và nói nó ở trong túi.",
+          "ask": "r3",
+          "model": "m_umbrella",
+          "say": "Yes, I do. It's in my bag.",
+          "focus": "Nghe xem bạn có đọc đủ âm /ɡ/ ở cuối bag không."
+        },
+        {
+          "type": "compare",
+          "prompt": "So với đầu tuần",
+          "first": "w2-l1/key",
+          "latest": "w2-l7/umbrella",
+          "firstLabel": "Bản thu ở bài 1: It's a key.",
+          "latestLabel": "Bản thu hôm nay",
+          "body": [
+            "Bạn nghe bản thu câu It's a key ở bài 1, rồi nghe bản vừa thu. Để ý xem âm cuối của các từ trong bản hôm nay có rõ hơn không."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "cloze",
+          "id": "call",
+          "prompt": "Nghe lại cuộc gọi rồi gõ những chữ còn trống.",
+          "review": [
+            "w2-l5/where-are-you",
+            "w2-l3/do-you-have"
+          ],
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "r1",
+              "text": "Hi, Lan. [[1:Where]] are you?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r2",
+              "text": "I'm [[2:at]] [[1:work]]."
+            },
+            {
+              "speaker": "minh",
+              "audio": "r3",
+              "text": "Do you [[1:have]] an umbrella?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r4",
+              "text": "Sorry? Can you [[2:say]] that [[2:again]]?"
+            },
+            {
+              "speaker": "minh",
+              "audio": "r5",
+              "text": "[[2:Do]] you have [[2:an]] umbrella?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "r6",
+              "text": "Yes, I [[1:do]]. It's in my [[1:bag]]."
+            },
+            {
+              "speaker": "minh",
+              "audio": "r7",
+              "text": "Good. See you at [[2:home]]!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tongket",
+      "title": "Tổng kết",
+      "steps": [
+        {
+          "type": "checklist",
+          "id": "week2",
+          "prompt": "Bạn đánh dấu những việc đã làm được",
+          "note": "Không ai chấm phần này. Việc nào chưa đánh dấu được, bạn ôn lại bài có việc ấy.",
+          "items": [
+            "Tôi nói được tên một vật với It's a… hay It's an…",
+            "Tôi trả lời được câu hỏi Do you have…? bằng Yes, I do hay No, I don't.",
+            "Tôi nói được mình đang ở đâu.",
+            "Tôi hỏi lại được khi chưa hiểu.",
+            "Tôi đọc đủ âm cuối của những từ như bus, five, call."
+          ]
+        },
+        {
+          "type": "goal",
+          "key": "w2",
+          "week": 2,
+          "showGoal": "w1",
+          "prompt": "Mục tiêu tuần sau",
+          "body": [
+            "Bạn chọn một việc muốn làm được bằng tiếng Anh trong tuần tới, rồi gõ vào ô dưới đây.",
+            "Bạn cũng chọn một chỗ học và một giờ học cố định mỗi ngày, như sau bữa tối ở bàn ăn hay trên xe buýt đi làm, và ghi luôn vào ô. Học cùng một giờ mỗi ngày thì dễ giữ đều hơn."
+          ],
+          "label": "Mục tiêu và giờ học của bạn cho tuần sau",
+          "placeholder": "Ví dụ: hỏi giá một món đồ bằng tiếng Anh; học lúc 8 giờ tối ở bàn ăn"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "my",
+      "en": "my",
+      "vi": "của tôi",
+      "audio": "my"
+    },
+    {
+      "id": "in-my-bag",
+      "en": "It's in my bag.",
+      "vi": "Nó ở trong túi tôi.",
+      "audio": "in_my_bag"
+    },
+    {
+      "id": "see-you",
+      "en": "See you at home!",
+      "vi": "Hẹn gặp bạn ở nhà!",
+      "audio": "see_you"
+    }
+  ],
+  "canDo": [
+    "Trả lời một cuộc gọi ngắn: nói mình đang ở đâu và mình có gì.",
+    "Biết những phần nào của tuần 2 còn cần ôn.",
+    "Chọn một giờ học cố định cho tuần sau."
+  ],
+  "realTask": "Tuần này, bạn chọn một trong hai việc. Một là hỏi tên tiếng Anh của ba vật ở chỗ làm bằng How do you say this in English?, rồi nói lại từng từ. Hai là khi có người nói tiếng Anh gọi cho bạn, bạn trả lời họ rằng bạn đang ở đâu, và nói Can you say that again? khi chưa nghe kịp."
+}

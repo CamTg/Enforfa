@@ -44,6 +44,50 @@
       "stage": 1,
       "number": 1,
       "goal": "Hết tuần 1, bạn chào được người mới gặp lẫn người quen, đánh vần được họ tên và đọc được số điện thoại của mình."
+    },
+    {
+      "id": "w2",
+      "title": "Tuần 2: Đồ vật, nơi chốn và hỏi khi chưa hiểu",
+      "lessons": [
+        {
+          "id": "w2-l1",
+          "title": "Cái này là gì?",
+          "file": "content/w2/l1.json"
+        },
+        {
+          "id": "w2-l2",
+          "title": "Âm cuối của từ",
+          "file": "content/w2/l2.json"
+        },
+        {
+          "id": "w2-l3",
+          "title": "Bạn có… không?",
+          "file": "content/w2/l3.json"
+        },
+        {
+          "id": "w2-l4",
+          "title": "Ba âm /ʃ/, /tʃ/, /dʒ/",
+          "file": "content/w2/l4.json"
+        },
+        {
+          "id": "w2-l5",
+          "title": "Bạn đang ở đâu?",
+          "file": "content/w2/l5.json"
+        },
+        {
+          "id": "w2-l6",
+          "title": "Hỏi khi chưa hiểu",
+          "file": "content/w2/l6.json"
+        },
+        {
+          "id": "w2-l7",
+          "title": "Ôn tuần và thử ngoài đời",
+          "file": "content/w2/l7.json"
+        }
+      ],
+      "stage": 1,
+      "number": 2,
+      "goal": "Hết tuần 2, bạn nói được một vật là gì và mình có nó hay không, nói được mình đang ở đâu, hỏi lại được khi chưa hiểu một từ, và đọc đủ âm cuối của từ."
     }
   ],
   "totalWeeks": 50,

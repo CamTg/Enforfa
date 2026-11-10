@@ -1,0 +1,1052 @@
+{
+  "id": "w2-l2",
+  "title": "Âm cuối của từ",
+  "goal": "Hết bài này, bạn đọc đủ những âm cuối tiếng Việt không có, như /s/, /z/, /l/, /v/, /d/, /ɡ/, và nghe ra bed với bet, bag với back.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "minh": {
+      "name": "Minh",
+      "voice": "am_michael"
+    }
+  },
+  "listenNote": "Một đoạn hội thoại ngắn nghe ba lượt, và mười tám từ xếp theo âm cuối",
+  "audio": {
+    "d1": {
+      "text": "Is this your bag?",
+      "voice": "am_michael"
+    },
+    "d2": {
+      "text": "Yes, it is. Thanks!",
+      "voice": "af_heart"
+    },
+    "d3": {
+      "text": "And this card?",
+      "voice": "am_michael"
+    },
+    "d4": {
+      "text": "Yes. Thank you!",
+      "voice": "af_heart"
+    },
+    "bus": {
+      "text": "bus",
+      "voice": "af_bella",
+      "ipa": "bˈʌs."
+    },
+    "yes": {
+      "text": "yes",
+      "voice": "af_bella",
+      "ipa": "jˈɛs."
+    },
+    "nice": {
+      "text": "nice",
+      "voice": "af_bella",
+      "ipa": "nˈaɪs."
+    },
+    "this": {
+      "text": "this",
+      "voice": "af_bella",
+      "ipa": "ðˈɪs."
+    },
+    "is": {
+      "text": "is",
+      "voice": "af_bella",
+      "ipa": "ˈɪz."
+    },
+    "please": {
+      "text": "please",
+      "voice": "af_bella",
+      "ipa": "plˈiːz."
+    },
+    "keys": {
+      "text": "keys",
+      "voice": "af_bella",
+      "ipa": "kˈiːz."
+    },
+    "call": {
+      "text": "call",
+      "voice": "af_bella",
+      "ipa": "kˈɔːl."
+    },
+    "school": {
+      "text": "school",
+      "voice": "af_bella",
+      "ipa": "skˈuːl."
+    },
+    "feel": {
+      "text": "feel",
+      "voice": "af_bella",
+      "ipa": "fˈiːl."
+    },
+    "five": {
+      "text": "five",
+      "voice": "af_heart",
+      "ipa": "fˈaɪv.",
+      "cut": true
+    },
+    "live": {
+      "text": "live",
+      "voice": "af_heart",
+      "ipa": "lˈɪv.",
+      "cut": true
+    },
+    "give": {
+      "text": "give",
+      "voice": "af_bella",
+      "ipa": "ɡˈɪv."
+    },
+    "bed": {
+      "text": "bed",
+      "voice": "af_sarah",
+      "ipa": "bˈɛd."
+    },
+    "bed__2": {
+      "text": "bed",
+      "voice": "am_michael",
+      "ipa": "bˈɛd."
+    },
+    "bed__3": {
+      "text": "bed",
+      "voice": "am_adam",
+      "ipa": "bˈɛd."
+    },
+    "card": {
+      "text": "card",
+      "voice": "af_sarah",
+      "ipa": "kˈɑːɹd."
+    },
+    "card__2": {
+      "text": "card",
+      "voice": "am_michael",
+      "ipa": "kˈɑːɹd."
+    },
+    "card__3": {
+      "text": "card",
+      "voice": "am_adam",
+      "ipa": "kˈɑːɹd."
+    },
+    "card__4": {
+      "text": "card",
+      "voice": "af_heart",
+      "ipa": "kˈɑːɹd."
+    },
+    "good": {
+      "text": "good",
+      "voice": "af_bella",
+      "ipa": "ɡˈʊd."
+    },
+    "bag": {
+      "text": "bag",
+      "voice": "af_bella",
+      "ipa": "bˈæɡ."
+    },
+    "bag__2": {
+      "text": "bag",
+      "voice": "am_michael",
+      "ipa": "bˈæɡ."
+    },
+    "bag__3": {
+      "text": "bag",
+      "voice": "af_sarah",
+      "ipa": "bˈæɡ."
+    },
+    "bag__4": {
+      "text": "bag",
+      "voice": "am_adam",
+      "ipa": "bˈæɡ."
+    },
+    "big": {
+      "text": "big",
+      "voice": "af_bella",
+      "ipa": "bˈɪɡ."
+    },
+    "bet": {
+      "text": "bet",
+      "voice": "af_sarah",
+      "ipa": "bˈɛt."
+    },
+    "bet__2": {
+      "text": "bet",
+      "voice": "am_michael",
+      "ipa": "bˈɛt."
+    },
+    "p_bed": {
+      "text": "bed, bet, bed, bet.",
+      "voice": "af_sarah",
+      "spell": [
+        "bˈɛd.",
+        "bˈɛt.",
+        "bˈɛd.",
+        "bˈɛt."
+      ],
+      "gap": 0.45
+    },
+    "back": {
+      "text": "back",
+      "voice": "af_bella",
+      "ipa": "bˈæk."
+    },
+    "back__2": {
+      "text": "back",
+      "voice": "am_michael",
+      "ipa": "bˈæk."
+    },
+    "back__3": {
+      "text": "back",
+      "voice": "af_sarah",
+      "ipa": "bˈæk."
+    },
+    "back__4": {
+      "text": "back",
+      "voice": "am_adam",
+      "ipa": "bˈæk."
+    },
+    "p_bag": {
+      "text": "bag, back, bag, back.",
+      "voice": "af_bella",
+      "spell": [
+        "bˈæɡ.",
+        "bˈæk.",
+        "bˈæɡ.",
+        "bˈæk."
+      ],
+      "gap": 0.45
+    },
+    "p_card": {
+      "text": "card, cart, card, cart.",
+      "voice": "af_sarah",
+      "spell": [
+        "kˈɑːɹd.",
+        "kˈɑːɹt.",
+        "kˈɑːɹd.",
+        "kˈɑːɹt."
+      ],
+      "gap": 0.45
+    },
+    "is_it_a_bag": {
+      "text": "Is it a bag?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "is_this_your_bag": {
+      "text": "Is this your bag?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "is_this_your": {
+      "text": "Is this your card?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "your": {
+      "text": "your",
+      "voice": "af_bella",
+      "ipa": "jˈʊɹ."
+    },
+    "its_a_bag": {
+      "text": "It's a bag.",
+      "voice": "af_heart"
+    },
+    "its_a_bag__2": {
+      "text": "It's a bag.",
+      "voice": "am_michael"
+    },
+    "its_a_bag__3": {
+      "text": "It's a bag.",
+      "voice": "af_jessica"
+    },
+    "m_s": {
+      "text": "bus, yes, nice, this.",
+      "voice": "af_heart"
+    },
+    "m_z": {
+      "text": "is, please, keys.",
+      "voice": "af_heart"
+    },
+    "m_l": {
+      "text": "call, school, feel.",
+      "voice": "af_heart"
+    },
+    "m_v": {
+      "text": "five, live, give.",
+      "voice": "af_heart"
+    },
+    "m_dg": {
+      "text": "bed, card, good, bag, big.",
+      "voice": "af_heart"
+    },
+    "m_q": {
+      "text": "Is this your bag?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "m_a": {
+      "text": "Yes, it is. Thanks!",
+      "voice": "af_heart"
+    },
+    "w3": {
+      "text": "Is this your bag?",
+      "voice": "am_michael",
+      "contour": "rise"
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Âm cuối",
+          "body": [
+            "Bạn nghe một đoạn hội thoại ngắn giữa Minh và Lan ba lượt, rồi nghe các từ của bài xếp theo âm cuối. Khi nghe, bạn để ý âm đứng cuối mỗi từ."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Của ai đây, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1",
+              "chunks": [
+                {
+                  "en": "Is this",
+                  "vi": "đây có phải là"
+                },
+                {
+                  "en": "your bag?",
+                  "vi": "túi của bạn không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "chunks": [
+                {
+                  "en": "Yes,",
+                  "vi": "phải,"
+                },
+                {
+                  "en": "it is.",
+                  "vi": "đúng vậy."
+                },
+                {
+                  "en": "Thanks!",
+                  "vi": "cảm ơn!"
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3",
+              "chunks": [
+                {
+                  "en": "And",
+                  "vi": "còn"
+                },
+                {
+                  "en": "this card?",
+                  "vi": "cái thẻ này?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "chunks": [
+                {
+                  "en": "Yes.",
+                  "vi": "phải."
+                },
+                {
+                  "en": "Thank you!",
+                  "vi": "cảm ơn bạn!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Của ai đây, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1",
+              "vi": "Đây có phải túi của bạn không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "vi": "Phải rồi. Cảm ơn!"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3",
+              "vi": "Còn cái thẻ này?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "vi": "Phải. Cảm ơn bạn!"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Của ai đây, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Âm cuối /s/, /z/ và /l/",
+          "layout": "list",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "bus",
+              "chunks": [
+                {
+                  "en": "bus",
+                  "vi": "/bʌs/ · xe buýt",
+                  "audio": "bus"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "yes",
+              "chunks": [
+                {
+                  "en": "yes",
+                  "vi": "/jɛs/ · vâng, có",
+                  "audio": "yes"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "nice",
+              "chunks": [
+                {
+                  "en": "nice",
+                  "vi": "/naɪs/ · tốt, đẹp",
+                  "audio": "nice"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "this",
+              "chunks": [
+                {
+                  "en": "this",
+                  "vi": "/ðɪs/ · cái này",
+                  "audio": "this"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "is",
+              "chunks": [
+                {
+                  "en": "is",
+                  "vi": "/ɪz/ · là",
+                  "audio": "is"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "please",
+              "chunks": [
+                {
+                  "en": "please",
+                  "vi": "/pliːz/ · làm ơn",
+                  "audio": "please"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "keys",
+              "chunks": [
+                {
+                  "en": "keys",
+                  "vi": "/kiːz/ · những chiếc chìa khóa",
+                  "audio": "keys"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "call",
+              "chunks": [
+                {
+                  "en": "call",
+                  "vi": "/kɔːl/ · gọi điện",
+                  "audio": "call"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "school",
+              "chunks": [
+                {
+                  "en": "school",
+                  "vi": "/skuːl/ · trường học",
+                  "audio": "school"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "feel",
+              "chunks": [
+                {
+                  "en": "feel",
+                  "vi": "/fiːl/ · cảm thấy",
+                  "audio": "feel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Âm cuối /v/, /d/ và /ɡ/",
+          "layout": "list",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "five",
+              "chunks": [
+                {
+                  "en": "five",
+                  "vi": "/faɪv/ · số năm",
+                  "audio": "five"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "live",
+              "chunks": [
+                {
+                  "en": "live",
+                  "vi": "/lɪv/ · sống",
+                  "audio": "live"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "give",
+              "chunks": [
+                {
+                  "en": "give",
+                  "vi": "/ɡɪv/ · đưa, cho",
+                  "audio": "give"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "bed",
+              "chunks": [
+                {
+                  "en": "bed",
+                  "vi": "/bɛd/ · giường",
+                  "audio": "bed"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "card",
+              "chunks": [
+                {
+                  "en": "card",
+                  "vi": "/kɑːrd/ · thẻ",
+                  "audio": "card"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "good",
+              "chunks": [
+                {
+                  "en": "good",
+                  "vi": "/ɡʊd/ · tốt",
+                  "audio": "good"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "bag",
+              "chunks": [
+                {
+                  "en": "bag",
+                  "vi": "/bæɡ/ · túi",
+                  "audio": "bag"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "big",
+              "chunks": [
+                {
+                  "en": "big",
+                  "vi": "/bɪɡ/ · to",
+                  "audio": "big"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Vì sao người Việt hay bỏ âm cuối",
+          "body": [
+            "Âm tiết tiếng Việt chỉ kết thúc bằng một số ít âm, như m, n, ng, p, t, c, hay i, o, u. Tiếng Anh có nhiều âm cuối hơn, nên người Việt hay bỏ mất âm cuối hoặc đọc nó thành âm gần nhất trong tiếng Việt.",
+            "Người nói tiếng Anh dựa vào âm cuối để nhận ra từ. Thiếu âm cuối thì họ dễ nghe nhầm sang từ khác."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/s/ và /z/",
+          "body": [
+            "Với /s/, bạn giữ tiếng xì ở cuối từ cho đến khi nghe rõ: {{bus}}, {{yes}}, {{nice}}.",
+            "/z/ giống /s/ nhưng có rung ở cổ họng: {{please}}, {{is}}, {{keys}}. Bạn đặt tay lên cổ khi đọc để thấy chỗ rung."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/l/",
+          "body": [
+            "Với /l/ cuối từ, đầu lưỡi chạm lợi trên và giữ ở đó một chút: {{call}}, {{school}}, {{feel}}.",
+            "Tiếng Việt không có âm l ở cuối, nên người Việt hay đọc call gần như \"co\". Bạn nhớ đưa lưỡi lên."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/v/",
+          "body": [
+            "Với /v/, răng trên chạm môi dưới, và bạn giữ cho âm rung: {{five}}, {{live}}, {{give}}. Bạn đã gặp âm này ở số five trong tuần 1."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/d/ và /ɡ/",
+          "body": [
+            "Người Mỹ thường không bật mạnh âm cuối, nên bed và bet, bag và back khác nhau chủ yếu ở độ dài của nguyên âm: nguyên âm trước /d/, /ɡ/ đọc dài hơn.",
+            "Bạn nghe liền từng cặp: {{p_bed}} {{p_bag}} {{p_card}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nối âm giúp giữ âm cuối",
+          "body": [
+            "Khi từ sau bắt đầu bằng một nguyên âm, âm cuối nối sang từ ấy và nghe rõ hơn: {{is_it_a_bag|Có phải cái túi không?}}",
+            "Nối âm là cách dễ nhất để khỏi nuốt âm cuối."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Is this your…?",
+          "body": [
+            "{{is_this_your_bag|Đây có phải túi của bạn không?}} hỏi một vật có phải của người kia không. {{your}} nghĩa là \"của bạn\".",
+            "Người kia đáp Yes, it is hoặc No, it isn't như ở bài 1."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Nhiều giọng đọc",
+          "body": [
+            "Ở các câu dưới đây, mỗi lần bạn sẽ nghe một giọng đọc khác nhau, giọng nam hoặc giọng nữ. Ngoài đời bạn cũng nghe nhiều người nói, nên luyện với nhiều giọng giúp tai quen nhanh hơn."
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "bed",
+          "layout": "row",
+          "options": [
+            {
+              "text": "bed",
+              "correct": true
+            },
+            {
+              "text": "bet"
+            }
+          ],
+          "explain": "bed có nguyên âm dài hơn, vì đứng trước /d/.",
+          "review": [
+            "w2-l2/bed"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "back",
+          "layout": "row",
+          "options": [
+            {
+              "text": "bag"
+            },
+            {
+              "text": "back",
+              "correct": true
+            }
+          ],
+          "explain": "back có nguyên âm ngắn hơn và kết thúc bằng /k/.",
+          "review": [
+            "w2-l2/bag"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "card",
+          "layout": "row",
+          "options": [
+            {
+              "text": "card",
+              "correct": true
+            },
+            {
+              "text": "cart"
+            }
+          ],
+          "explain": "card có nguyên âm dài hơn, vì đứng trước /d/.",
+          "review": [
+            "w2-l2/card"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "bet",
+          "layout": "row",
+          "options": [
+            {
+              "text": "bed"
+            },
+            {
+              "text": "bet",
+              "correct": true
+            }
+          ],
+          "explain": "bet có nguyên âm ngắn hơn và kết thúc bằng /t/.",
+          "review": [
+            "w2-l2/bed"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai từ. Hai từ giống nhau hay khác nhau?",
+          "audio": [
+            "bag",
+            "back"
+          ],
+          "layout": "row",
+          "options": [
+            {
+              "text": "Giống"
+            },
+            {
+              "text": "Khác",
+              "correct": true
+            }
+          ],
+          "explain": "Từ đầu là bag, từ sau là back.",
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai từ. Hai từ giống nhau hay khác nhau?",
+          "audio": [
+            "card",
+            "card"
+          ],
+          "layout": "row",
+          "options": [
+            {
+              "text": "Giống",
+              "correct": true
+            },
+            {
+              "text": "Khác"
+            }
+          ],
+          "explain": "Cả hai lần đều là card.",
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai từ. Hai từ giống nhau hay khác nhau?",
+          "audio": [
+            "bet",
+            "bed"
+          ],
+          "layout": "row",
+          "options": [
+            {
+              "text": "Giống"
+            },
+            {
+              "text": "Khác",
+              "correct": true
+            }
+          ],
+          "explain": "Từ đầu là bet, từ sau là bed.",
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe câu dưới đây. Trong câu có từ bag hay back?",
+          "audio": "its_a_bag",
+          "layout": "row",
+          "options": [
+            {
+              "text": "bag",
+              "correct": true
+            },
+            {
+              "text": "back"
+            }
+          ],
+          "explain": "Câu ấy là It's a bag.",
+          "review": [
+            "w2-l2/bag"
+          ],
+          "vary": true
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn đọc từng nhóm từ theo mẫu, thu âm lại, rồi nghe bản thu. Mỗi nhóm có một điểm cần chú ý khi nghe lại."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "s",
+          "prompt": "Đọc nhóm từ có âm cuối /s/.",
+          "model": "m_s",
+          "say": "bus, yes, nice, this",
+          "focus": "Nghe xem cuối mỗi từ có tiếng xì không.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "z",
+          "prompt": "Đọc nhóm từ có âm cuối /z/.",
+          "model": "m_z",
+          "say": "is, please, keys",
+          "focus": "Nghe xem tiếng xì ở cuối có rung không.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "l",
+          "prompt": "Đọc nhóm từ có âm cuối /l/.",
+          "model": "m_l",
+          "say": "call, school, feel",
+          "focus": "Nghe xem cuối mỗi từ có âm l không, hay từ kết thúc bằng nguyên âm.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "v",
+          "prompt": "Đọc nhóm từ có âm cuối /v/.",
+          "model": "m_v",
+          "say": "five, live, give",
+          "focus": "Nghe xem cuối mỗi từ có âm /v/ rung không.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "dg",
+          "prompt": "Đọc nhóm từ có âm cuối /d/ và /ɡ/.",
+          "model": "m_dg",
+          "say": "bed, card, good, bag, big",
+          "focus": "Nghe xem nguyên âm của bed và bag có dài hơn bet và back không.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "q",
+          "prompt": "Hỏi xem cái túi có phải của người kia không.",
+          "model": "m_q",
+          "say": "Is this your bag?",
+          "focus": "Nghe xem âm s của Is và this có rõ không."
+        },
+        {
+          "type": "speak",
+          "id": "a",
+          "prompt": "Đáp rằng đúng, và cảm ơn.",
+          "model": "m_a",
+          "say": "Yes, it is. Thanks!",
+          "focus": "Nghe xem cuối Thanks có tiếng xì không."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "bed",
+          "answer": "bed",
+          "review": [
+            "w2-l2/bed"
+          ],
+          "vary": true
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "back",
+          "answer": "back",
+          "review": [
+            "w2-l2/bag"
+          ],
+          "vary": true
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w3",
+          "answer": "Is this your bag?",
+          "review": [
+            "w2-l2/is-this-your"
+          ]
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "bag",
+      "en": "bag",
+      "vi": "túi /bæɡ/",
+      "audio": "bag"
+    },
+    {
+      "id": "bed",
+      "en": "bed",
+      "vi": "giường /bɛd/",
+      "audio": "bed"
+    },
+    {
+      "id": "card",
+      "en": "card",
+      "vi": "thẻ /kɑːrd/",
+      "audio": "card"
+    },
+    {
+      "id": "call",
+      "en": "call",
+      "vi": "gọi điện /kɔːl/",
+      "audio": "call"
+    },
+    {
+      "id": "school",
+      "en": "school",
+      "vi": "trường học /skuːl/",
+      "audio": "school"
+    },
+    {
+      "id": "please",
+      "en": "please",
+      "vi": "làm ơn /pliːz/",
+      "audio": "please"
+    },
+    {
+      "id": "your",
+      "en": "your",
+      "vi": "của bạn",
+      "audio": "your"
+    },
+    {
+      "id": "is-this-your",
+      "en": "Is this your card?",
+      "vi": "Đây có phải thẻ của bạn không?",
+      "audio": "is_this_your"
+    },
+    {
+      "id": "thanks",
+      "en": "Yes, it is. Thanks!",
+      "vi": "Phải rồi. Cảm ơn!",
+      "audio": "d2"
+    }
+  ],
+  "canDo": [
+    "Đọc đủ âm cuối của những từ như bus, please, call, five.",
+    "Nghe ra bed với bet, bag với back.",
+    "Hỏi một vật có phải của người kia không bằng Is this your…?"
+  ],
+  "realTask": "Hôm nay, mỗi lần nói yes, thanks hay please với ai, bạn để ý đọc đủ âm cuối: tiếng xì của yes và thanks, tiếng xì có rung của please."
+}

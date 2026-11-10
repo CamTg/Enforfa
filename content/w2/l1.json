@@ -1,0 +1,704 @@
+{
+  "id": "w2-l1",
+  "title": "Cái này là gì?",
+  "goal": "Hết bài này, bạn hỏi được một vật là gì, nói được tên vật ấy với a hoặc an, và đáp được có hoặc không khi người khác hỏi Is it a…?",
+  "speakers": {
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "minh": {
+      "name": "Minh",
+      "voice": "am_michael"
+    }
+  },
+  "audio": {
+    "d1": {
+      "text": "What's this?",
+      "voice": "am_michael"
+    },
+    "d2": {
+      "text": "It's a key.",
+      "voice": "af_heart"
+    },
+    "d3": {
+      "text": "And this? Is it a phone?",
+      "voice": "am_michael"
+    },
+    "d4": {
+      "text": "No, it isn't. It's a map.",
+      "voice": "af_heart"
+    },
+    "d5": {
+      "text": "What's that?",
+      "voice": "am_michael"
+    },
+    "d6": {
+      "text": "It's an umbrella.",
+      "voice": "af_heart"
+    },
+    "whats_this": {
+      "text": "What's this?",
+      "voice": "am_michael"
+    },
+    "whats_that": {
+      "text": "What's that?",
+      "voice": "am_michael"
+    },
+    "its_a_key": {
+      "text": "It's a key.",
+      "voice": "af_heart"
+    },
+    "a_key": {
+      "text": "a key",
+      "voice": "af_bella"
+    },
+    "a_phone": {
+      "text": "a phone",
+      "voice": "af_heart"
+    },
+    "a_bag": {
+      "text": "a bag",
+      "voice": "af_heart"
+    },
+    "a_map": {
+      "text": "a map",
+      "voice": "af_heart"
+    },
+    "a_pen": {
+      "text": "a pen",
+      "voice": "af_heart"
+    },
+    "a_wallet": {
+      "text": "a wallet",
+      "voice": "af_heart"
+    },
+    "an_umbrella": {
+      "text": "an umbrella",
+      "voice": "af_heart"
+    },
+    "an_apple": {
+      "text": "an apple",
+      "voice": "af_heart"
+    },
+    "an_id": {
+      "text": "an ID",
+      "voice": "af_bella"
+    },
+    "yes_it_is": {
+      "text": "Yes, it is.",
+      "voice": "af_heart"
+    },
+    "no_it_isnt": {
+      "text": "No, it isn't.",
+      "voice": "af_heart"
+    },
+    "its_not_a_phone": {
+      "text": "It's not a phone.",
+      "voice": "af_heart"
+    },
+    "key_and_phone": {
+      "text": "a key and a phone",
+      "voice": "af_heart"
+    },
+    "its_an_umbrella": {
+      "text": "It's an umbrella.",
+      "voice": "af_heart"
+    },
+    "no_map": {
+      "text": "No, it isn't. It's a map.",
+      "voice": "af_heart"
+    },
+    "is_it_a_phone": {
+      "text": "Is it a phone?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "m_is_it": {
+      "text": "Is it a phone?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "w1": {
+      "text": "It's an umbrella.",
+      "voice": "af_heart"
+    },
+    "w2": {
+      "text": "Is it a phone?",
+      "voice": "am_michael",
+      "contour": "rise"
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Trong túi xách",
+          "body": [
+            "Minh giúp Lan dọn túi xách và hỏi tên từng món. Bạn nghe đoạn hội thoại ba lượt như ở tuần 1: lượt đầu có nghĩa tiếng Việt của từng cụm, lượt hai có bản dịch cả câu, lượt ba chỉ có tiếng."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Dọn túi xách, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1",
+              "chunks": [
+                {
+                  "en": "What's",
+                  "vi": "là gì"
+                },
+                {
+                  "en": "this?",
+                  "vi": "cái này?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "chunks": [
+                {
+                  "en": "It's",
+                  "vi": "đó là"
+                },
+                {
+                  "en": "a key.",
+                  "vi": "một chiếc chìa khóa."
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3",
+              "chunks": [
+                {
+                  "en": "And this?",
+                  "vi": "còn cái này?"
+                },
+                {
+                  "en": "Is it",
+                  "vi": "có phải nó là"
+                },
+                {
+                  "en": "a phone?",
+                  "vi": "một cái điện thoại không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "chunks": [
+                {
+                  "en": "No,",
+                  "vi": "không,"
+                },
+                {
+                  "en": "it isn't.",
+                  "vi": "không phải."
+                },
+                {
+                  "en": "It's",
+                  "vi": "đó là"
+                },
+                {
+                  "en": "a map.",
+                  "vi": "một tấm bản đồ."
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "d5",
+              "chunks": [
+                {
+                  "en": "What's",
+                  "vi": "là gì"
+                },
+                {
+                  "en": "that?",
+                  "vi": "cái kia?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6",
+              "chunks": [
+                {
+                  "en": "It's",
+                  "vi": "đó là"
+                },
+                {
+                  "en": "an umbrella.",
+                  "vi": "một cái ô."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Dọn túi xách, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1",
+              "vi": "Cái này là gì?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "vi": "Đó là chìa khóa."
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3",
+              "vi": "Còn cái này? Có phải điện thoại không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "vi": "Không phải. Đó là bản đồ."
+            },
+            {
+              "speaker": "minh",
+              "audio": "d5",
+              "vi": "Cái kia là gì?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6",
+              "vi": "Đó là cái ô."
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Dọn túi xách, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d5"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Hỏi một vật là gì",
+          "body": [
+            "{{whats_this|Cái này là gì?}} hỏi về vật ở gần, trong tay hay ngay trước mặt. {{whats_that|Cái kia là gì?}} hỏi về vật ở xa hơn.",
+            "Bạn đáp It's a… (Đó là một…) rồi nói tên vật, như {{its_a_key|Đó là chìa khóa.}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "It's nối liền vào a",
+          "body": [
+            "It's là cách nói gọn của It is, giống I'm là cách nói gọn của I am ở tuần 1.",
+            "Khi nói, âm s của It's nối liền vào a, nghe như một chữ: {{its_a_key}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "a đứng trước tên một vật",
+          "body": [
+            "Tiếng Anh đặt a trước tên một vật: {{a_key|chìa khóa}}, {{a_phone|điện thoại}}, {{a_bag|túi}}, {{a_map|bản đồ}}, {{a_pen|bút}}, {{a_wallet|ví}}.",
+            "Tiếng Việt nói \"đó là chìa khóa\" được, còn tiếng Anh không bỏ a được. Bạn nói It's a key, không nói It's key."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Khi nào dùng an",
+          "body": [
+            "Từ nào bắt đầu bằng một nguyên âm thì dùng an: {{an_umbrella|ô, dù}}, {{an_apple|quả táo}}. Âm n của an nối sang từ sau.",
+            "Quy tắc này theo âm, không theo chữ viết. {{an_id|giấy tờ tùy thân}} dùng an vì chữ I đọc là /aɪ/, bắt đầu bằng một nguyên âm."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Hỏi có phải hay không",
+          "body": [
+            "Muốn hỏi có phải một vật nào đó không, bạn đảo It và is: {{is_it_a_phone|Có phải điện thoại không?}}",
+            "Người kia đáp {{yes_it_is|Đúng vậy.}} hoặc {{no_it_isnt|Không phải.}} Câu đáp ngắn không dùng It's ở cuối: bạn nói Yes, it is, không nói Yes, it's."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nói một vật không phải là gì",
+          "body": [
+            "Muốn nói một vật không phải là gì, bạn thêm not: {{its_not_a_phone|Đó không phải điện thoại.}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "and đọc lướt",
+          "body": [
+            "Khi nói nhanh, and đọc lướt rất nhẹ, gần như chỉ còn âm n: {{key_and_phone|một chiếc chìa khóa và một cái điện thoại}}."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Minh cầm một chiếc chìa khóa và hỏi bạn. Nghe câu hỏi rồi chọn câu đáp đúng.",
+          "audio": "whats_this",
+          "options": [
+            {
+              "text": "It's a key.",
+              "correct": true
+            },
+            {
+              "text": "It's key."
+            },
+            {
+              "text": "It's a phone."
+            }
+          ],
+          "explain": "Tên một vật cần có a đứng trước: It's a key.",
+          "review": [
+            "w2-l1/its-a",
+            "w2-l1/key"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước từ phone.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a",
+              "correct": true
+            },
+            {
+              "text": "an"
+            }
+          ],
+          "explain": "phone bắt đầu bằng phụ âm /f/, nên dùng a: a phone.",
+          "review": [
+            "w2-l1/phone"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước từ umbrella.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a"
+            },
+            {
+              "text": "an",
+              "correct": true
+            }
+          ],
+          "explain": "Từ bắt đầu bằng một nguyên âm thì dùng an. an umbrella.",
+          "review": [
+            "w2-l1/umbrella"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước từ map.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a",
+              "correct": true
+            },
+            {
+              "text": "an"
+            }
+          ],
+          "explain": "map bắt đầu bằng phụ âm /m/, nên dùng a: a map.",
+          "review": [
+            "w2-l1/map"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước từ apple.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a"
+            },
+            {
+              "text": "an",
+              "correct": true
+            }
+          ],
+          "explain": "Từ bắt đầu bằng một nguyên âm thì dùng an. an apple."
+        },
+        {
+          "type": "choose",
+          "prompt": "Chọn a hay an trước từ ID.",
+          "layout": "row",
+          "options": [
+            {
+              "text": "a"
+            },
+            {
+              "text": "an",
+              "correct": true
+            }
+          ],
+          "explain": "Chữ I đọc là /aɪ/, bắt đầu bằng một nguyên âm: an ID.",
+          "review": [
+            "w2-l1/id"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Minh chỉ vào tấm bản đồ và hỏi bạn. Nghe câu hỏi rồi chọn câu đáp đúng.",
+          "audio": "is_it_a_phone",
+          "options": [
+            {
+              "text": "No, it isn't. It's a map.",
+              "correct": true
+            },
+            {
+              "text": "Yes, it is."
+            },
+            {
+              "text": "No, it's."
+            }
+          ],
+          "explain": "Vật ấy là bản đồ, nên bạn đáp No, it isn't. Câu đáp ngắn không kết thúc bằng it's.",
+          "review": [
+            "w2-l1/no-it-isnt",
+            "w2-l1/is-it-a"
+          ]
+        },
+        {
+          "type": "order",
+          "prompt": "Bấm lần lượt các chữ để xếp thành câu \"Đó không phải điện thoại\".",
+          "words": [
+            "not",
+            "It's",
+            "phone",
+            "a"
+          ],
+          "answer": [
+            "It's",
+            "not",
+            "a",
+            "phone"
+          ],
+          "audio": "its_not_a_phone",
+          "gloss": "Đó không phải điện thoại."
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Ở phần này, bạn nghe câu mẫu, thu âm câu của mình, rồi nghe lại và so với mẫu. Mỗi câu có một điểm cần chú ý khi nghe lại bản thu."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "key",
+          "prompt": "Nói tên chiếc chìa khóa.",
+          "model": "its_a_key",
+          "say": "It's a key.",
+          "focus": "Nghe xem âm s của It's có nối liền vào a không."
+        },
+        {
+          "type": "speak",
+          "id": "umbrella",
+          "prompt": "Nói tên cái ô.",
+          "model": "its_an_umbrella",
+          "say": "It's an umbrella.",
+          "focus": "Nghe xem âm n của an có nối sang umbrella không."
+        },
+        {
+          "type": "speak",
+          "id": "isit",
+          "prompt": "Hỏi xem đó có phải điện thoại không.",
+          "model": "m_is_it",
+          "say": "Is it a phone?",
+          "focus": "Nghe xem giọng bạn có lên ở cuối câu không."
+        },
+        {
+          "type": "speak",
+          "id": "nomap",
+          "prompt": "Đáp rằng đó là tấm bản đồ.",
+          "model": "no_map",
+          "say": "No, it isn't. It's a map.",
+          "focus": "Nghe xem bạn có đọc đủ âm /p/ ở cuối map không."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w1",
+          "answer": "It's an umbrella.",
+          "review": [
+            "w2-l1/umbrella"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w2",
+          "answer": "Is it a phone?",
+          "review": [
+            "w2-l1/is-it-a"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "intro",
+          "prompt": "Gõ tên một vật bạn đang cầm hay đang ở gần bạn, theo mẫu It's a… hoặc It's an…",
+          "example": "It's a pen.",
+          "pattern": "\\bit'?s an? [a-z]",
+          "patternOk": "Đúng rồi. Câu của bạn đúng mẫu. App không kiểm tên vật.",
+          "patternHelp": "Câu này cần bắt đầu bằng It's a hoặc It's an, rồi đến tên vật. Ví dụ:"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "whats-this",
+      "en": "What's this?",
+      "vi": "Cái này là gì?",
+      "audio": "whats_this"
+    },
+    {
+      "id": "whats-that",
+      "en": "What's that?",
+      "vi": "Cái kia là gì?",
+      "audio": "whats_that"
+    },
+    {
+      "id": "its-a",
+      "en": "It's a key.",
+      "vi": "Đó là chìa khóa.",
+      "audio": "its_a_key"
+    },
+    {
+      "id": "is-it-a",
+      "en": "Is it a phone?",
+      "vi": "Có phải điện thoại không?",
+      "audio": "is_it_a_phone"
+    },
+    {
+      "id": "yes-it-is",
+      "en": "Yes, it is.",
+      "vi": "Đúng vậy.",
+      "audio": "yes_it_is"
+    },
+    {
+      "id": "no-it-isnt",
+      "en": "No, it isn't.",
+      "vi": "Không phải.",
+      "audio": "no_it_isnt"
+    },
+    {
+      "id": "key",
+      "en": "a key",
+      "vi": "chìa khóa",
+      "audio": "a_key"
+    },
+    {
+      "id": "phone",
+      "en": "a phone",
+      "vi": "điện thoại",
+      "audio": "a_phone"
+    },
+    {
+      "id": "bag",
+      "en": "a bag",
+      "vi": "túi",
+      "audio": "a_bag"
+    },
+    {
+      "id": "map",
+      "en": "a map",
+      "vi": "bản đồ",
+      "audio": "a_map"
+    },
+    {
+      "id": "pen",
+      "en": "a pen",
+      "vi": "bút",
+      "audio": "a_pen"
+    },
+    {
+      "id": "wallet",
+      "en": "a wallet",
+      "vi": "ví",
+      "audio": "a_wallet"
+    },
+    {
+      "id": "umbrella",
+      "en": "an umbrella",
+      "vi": "ô, dù",
+      "audio": "an_umbrella"
+    },
+    {
+      "id": "id",
+      "en": "an ID",
+      "vi": "giấy tờ tùy thân",
+      "audio": "an_id"
+    }
+  ],
+  "canDo": [
+    "Hỏi một vật là gì bằng What's this? và What's that?",
+    "Nói tên một vật với It's a… hoặc It's an…",
+    "Đáp Yes, it is hoặc No, it isn't khi được hỏi Is it a…?"
+  ],
+  "realTask": "Hôm nay, bạn cầm lần lượt năm đồ vật trong túi hay trong nhà và nói to tên chúng theo mẫu It's a… Vật nào chưa biết tên tiếng Anh thì bạn để dành, bài 6 sẽ dạy cách hỏi."
+}
