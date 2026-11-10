@@ -60,8 +60,7 @@
     },
     "is_it_a_key": {
       "text": "Is it a key?",
-      "voice": "af_jessica",
-      "contour": "rise"
+      "voice": "af_jessica"
     },
     "yes_i_do": {
       "text": "Yes, I do.",

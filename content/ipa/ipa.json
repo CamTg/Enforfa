@@ -741,7 +741,7 @@
     "w_boy": {
       "text": "boy",
       "voice": "af_bella",
-      "ipa": "bˈɔɪ"
+      "ipa": "bˈY"
     },
     "w_oil": {
       "text": "oil",
@@ -800,9 +800,8 @@
     },
     "w_fish": {
       "text": "fish",
-      "voice": "af_bella",
-      "ipa": "fˈɪʃ",
-      "cut": true
+      "voice": "af_nicole",
+      "ipa": "fˈɪʃ"
     },
     "w_very": {
       "text": "very",
