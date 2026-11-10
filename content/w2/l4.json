@@ -1,0 +1,1096 @@
+{
+  "id": "w2-l4",
+  "title": "Ba âm /ʃ/, /tʃ/, /dʒ/",
+  "goal": "Hết bài này, bạn nghe ra và đọc được ba âm /ʃ/, /tʃ/, /dʒ/ trong những từ thường gặp như she, lunch, job, phân biệt được ship với chip, she với see, và nhận ra âm /ʒ/ khi gặp.",
+  "speakers": {
+    "doc": {
+      "name": "",
+      "voice": "af_heart"
+    },
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "minh": {
+      "name": "Minh",
+      "voice": "am_michael"
+    }
+  },
+  "listenNote": "Một đoạn hội thoại giờ nghỉ trưa nghe ba lượt, và mười hai từ có các âm mới",
+  "audio": {
+    "d1": {
+      "text": "Is it lunchtime?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "d2": {
+      "text": "Yes, it is. Do you have a cheese sandwich?",
+      "voice": "af_heart"
+    },
+    "d3": {
+      "text": "No, I don't. I have orange juice.",
+      "voice": "am_michael"
+    },
+    "d4": {
+      "text": "Nice shoes, Minh!",
+      "voice": "af_heart",
+      "ipa": "nˈaɪs ʃˈuːz, mˈɪn!"
+    },
+    "d5": {
+      "text": "Thanks!",
+      "voice": "am_michael"
+    },
+    "she": {
+      "text": "she",
+      "voice": "af_bella",
+      "ipa": "ʃˈiː."
+    },
+    "she__2": {
+      "text": "she",
+      "voice": "am_michael",
+      "ipa": "ʃˈiː."
+    },
+    "she__3": {
+      "text": "she",
+      "voice": "af_sarah",
+      "ipa": "ʃˈiː."
+    },
+    "she__4": {
+      "text": "she",
+      "voice": "am_fenrir",
+      "ipa": "ʃˈiː."
+    },
+    "shoes": {
+      "text": "shoes",
+      "voice": "af_bella",
+      "ipa": "ʃˈuːz."
+    },
+    "wash": {
+      "text": "wash",
+      "voice": "af_bella",
+      "ipa": "wˈɑːʃ."
+    },
+    "chair": {
+      "text": "chair",
+      "voice": "af_bella",
+      "ipa": "tʃˈɛɹ."
+    },
+    "check": {
+      "text": "check",
+      "voice": "af_bella",
+      "ipa": "tʃˈɛk."
+    },
+    "lunch": {
+      "text": "lunch",
+      "voice": "af_bella",
+      "ipa": "lˈʌntʃ."
+    },
+    "cheese": {
+      "text": "cheese",
+      "voice": "af_bella",
+      "ipa": "tʃˈiːz."
+    },
+    "job": {
+      "text": "job",
+      "voice": "af_bella",
+      "ipa": "dʒˈɑːb."
+    },
+    "june": {
+      "text": "June",
+      "voice": "af_bella",
+      "ipa": "dʒˈuːn."
+    },
+    "juice": {
+      "text": "juice",
+      "voice": "af_bella",
+      "ipa": "dʒˈuːs."
+    },
+    "usually": {
+      "text": "usually",
+      "voice": "af_bella",
+      "ipa": "jˈuːʒuːəli."
+    },
+    "television": {
+      "text": "television",
+      "voice": "af_bella",
+      "ipa": "tˈɛləvˌɪʒən."
+    },
+    "see": {
+      "text": "see",
+      "voice": "af_bella",
+      "ipa": "sˈiː."
+    },
+    "see__2": {
+      "text": "see",
+      "voice": "am_michael",
+      "ipa": "sˈiː."
+    },
+    "see__3": {
+      "text": "see",
+      "voice": "af_sarah",
+      "ipa": "sˈiː."
+    },
+    "see__4": {
+      "text": "see",
+      "voice": "am_adam",
+      "ipa": "sˈiː."
+    },
+    "p_see": {
+      "text": "see, she, see, she.",
+      "voice": "af_bella",
+      "spell": [
+        "sˈiː.",
+        "ʃˈiː.",
+        "sˈiː.",
+        "ʃˈiː."
+      ],
+      "gap": 0.45
+    },
+    "ship": {
+      "text": "ship",
+      "voice": "af_bella",
+      "ipa": "ʃˈɪp."
+    },
+    "ship__2": {
+      "text": "ship",
+      "voice": "af_sarah",
+      "ipa": "ʃˈɪp."
+    },
+    "ship__3": {
+      "text": "ship",
+      "voice": "am_adam",
+      "ipa": "ʃˈɪp."
+    },
+    "ship__4": {
+      "text": "ship",
+      "voice": "af_heart",
+      "ipa": "ʃˈɪp."
+    },
+    "chip": {
+      "text": "chip",
+      "voice": "af_bella",
+      "ipa": "tʃˈɪp.",
+      "cut": true
+    },
+    "chip__2": {
+      "text": "chip",
+      "voice": "am_michael",
+      "ipa": "tʃˈɪp."
+    },
+    "chip__3": {
+      "text": "chip",
+      "voice": "am_adam",
+      "ipa": "tʃˈɪp."
+    },
+    "chip__4": {
+      "text": "chip",
+      "voice": "af_heart",
+      "ipa": "tʃˈɪp.",
+      "cut": true
+    },
+    "p_ship": {
+      "text": "ship, chip, ship, chip.",
+      "voice": "am_adam",
+      "spell": [
+        "ʃˈɪp.",
+        "tʃˈɪp.",
+        "ʃˈɪp.",
+        "tʃˈɪp."
+      ],
+      "gap": 0.45
+    },
+    "shoes__2": {
+      "text": "shoes",
+      "voice": "am_michael",
+      "ipa": "ʃˈuːz."
+    },
+    "shoes__3": {
+      "text": "shoes",
+      "voice": "af_sarah",
+      "ipa": "ʃˈuːz."
+    },
+    "shoes__4": {
+      "text": "shoes",
+      "voice": "am_adam",
+      "ipa": "ʃˈuːz."
+    },
+    "sit": {
+      "text": "sit",
+      "voice": "af_bella",
+      "ipa": "sˈɪt."
+    },
+    "sit__2": {
+      "text": "sit",
+      "voice": "am_michael",
+      "ipa": "sˈɪt."
+    },
+    "sit__3": {
+      "text": "sit",
+      "voice": "af_sarah",
+      "ipa": "sˈɪt."
+    },
+    "sit__4": {
+      "text": "sit",
+      "voice": "am_adam",
+      "ipa": "sˈɪt."
+    },
+    "leave": {
+      "text": "leave",
+      "voice": "af_heart",
+      "ipa": "lˈiːv.",
+      "cut": true
+    },
+    "leave__2": {
+      "text": "leave",
+      "voice": "am_michael",
+      "ipa": "lˈiːv."
+    },
+    "leave__3": {
+      "text": "leave",
+      "voice": "af_sarah",
+      "ipa": "lˈiːv."
+    },
+    "leave__4": {
+      "text": "leave",
+      "voice": "am_adam",
+      "ipa": "lˈiːv."
+    },
+    "bet": {
+      "text": "bet",
+      "voice": "af_sarah",
+      "ipa": "bˈɛt."
+    },
+    "bet__2": {
+      "text": "bet",
+      "voice": "am_michael",
+      "ipa": "bˈɛt."
+    },
+    "bag": {
+      "text": "bag",
+      "voice": "af_bella",
+      "ipa": "bˈæɡ."
+    },
+    "bag__2": {
+      "text": "bag",
+      "voice": "am_michael",
+      "ipa": "bˈæɡ."
+    },
+    "bag__3": {
+      "text": "bag",
+      "voice": "af_sarah",
+      "ipa": "bˈæɡ."
+    },
+    "bag__4": {
+      "text": "bag",
+      "voice": "am_adam",
+      "ipa": "bˈæɡ."
+    },
+    "orange_juice": {
+      "text": "orange juice",
+      "voice": "af_heart"
+    },
+    "m_lunch": {
+      "text": "Is it lunchtime?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "m_juice": {
+      "text": "I have orange juice.",
+      "voice": "af_heart"
+    },
+    "nice_shoes": {
+      "text": "Nice shoes!",
+      "voice": "af_heart"
+    },
+    "w3": {
+      "text": "Is it lunchtime?",
+      "voice": "am_michael",
+      "contour": "rise"
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Giờ nghỉ trưa",
+          "body": [
+            "Giờ nghỉ trưa ở chỗ làm, Minh và Lan nói chuyện về đồ ăn. Bạn nghe đoạn hội thoại ba lượt, rồi nghe các từ có âm mới của bài."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Giờ nghỉ trưa, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1",
+              "chunks": [
+                {
+                  "en": "Is it",
+                  "vi": "đã đến"
+                },
+                {
+                  "en": "lunchtime?",
+                  "vi": "giờ ăn trưa chưa?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "chunks": [
+                {
+                  "en": "Yes,",
+                  "vi": "rồi,"
+                },
+                {
+                  "en": "it is.",
+                  "vi": "đến rồi."
+                },
+                {
+                  "en": "Do you have",
+                  "vi": "bạn có"
+                },
+                {
+                  "en": "a cheese sandwich?",
+                  "vi": "bánh mì kẹp phô mai không?"
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3",
+              "chunks": [
+                {
+                  "en": "No,",
+                  "vi": "không,"
+                },
+                {
+                  "en": "I don't.",
+                  "vi": "tôi không có."
+                },
+                {
+                  "en": "I have",
+                  "vi": "tôi có"
+                },
+                {
+                  "en": "orange juice.",
+                  "vi": "nước cam."
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "chunks": [
+                {
+                  "en": "Nice shoes,",
+                  "vi": "giày đẹp đấy,"
+                },
+                {
+                  "en": "Minh!",
+                  "vi": "Minh!"
+                }
+              ]
+            },
+            {
+              "speaker": "minh",
+              "audio": "d5",
+              "chunks": [
+                {
+                  "en": "Thanks!",
+                  "vi": "cảm ơn!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Giờ nghỉ trưa, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1",
+              "vi": "Đến giờ ăn trưa chưa?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "vi": "Đến rồi. Bạn có bánh mì kẹp phô mai không?"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3",
+              "vi": "Không. Tôi có nước cam."
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "vi": "Giày đẹp đấy, Minh!"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d5",
+              "vi": "Cảm ơn!"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Giờ nghỉ trưa, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "minh",
+              "audio": "d1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4"
+            },
+            {
+              "speaker": "minh",
+              "audio": "d5"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Các từ có /ʃ/ và /tʃ/",
+          "layout": "list",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "she",
+              "chunks": [
+                {
+                  "en": "she",
+                  "vi": "/ʃiː/ · cô ấy",
+                  "audio": "she"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "shoes",
+              "chunks": [
+                {
+                  "en": "shoes",
+                  "vi": "/ʃuːz/ · giày",
+                  "audio": "shoes"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "wash",
+              "chunks": [
+                {
+                  "en": "wash",
+                  "vi": "/wɑːʃ/ · rửa, giặt",
+                  "audio": "wash"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "chair",
+              "chunks": [
+                {
+                  "en": "chair",
+                  "vi": "/tʃɛr/ · ghế",
+                  "audio": "chair"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "check",
+              "chunks": [
+                {
+                  "en": "check",
+                  "vi": "/tʃɛk/ · kiểm tra; tấm séc",
+                  "audio": "check"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "lunch",
+              "chunks": [
+                {
+                  "en": "lunch",
+                  "vi": "/lʌntʃ/ · bữa trưa",
+                  "audio": "lunch"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "cheese",
+              "chunks": [
+                {
+                  "en": "cheese",
+                  "vi": "/tʃiːz/ · phô mai",
+                  "audio": "cheese"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Các từ có /dʒ/ và /ʒ/",
+          "layout": "list",
+          "lines": [
+            {
+              "speaker": "doc",
+              "audio": "job",
+              "chunks": [
+                {
+                  "en": "job",
+                  "vi": "/dʒɑːb/ · việc làm",
+                  "audio": "job"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "june",
+              "chunks": [
+                {
+                  "en": "June",
+                  "vi": "/dʒuːn/ · tháng Sáu",
+                  "audio": "june"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "juice",
+              "chunks": [
+                {
+                  "en": "juice",
+                  "vi": "/dʒuːs/ · nước ép",
+                  "audio": "juice"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "usually",
+              "chunks": [
+                {
+                  "en": "usually",
+                  "vi": "/ˈjuːʒuəli/ · thường",
+                  "audio": "usually"
+                }
+              ]
+            },
+            {
+              "speaker": "doc",
+              "audio": "television",
+              "chunks": [
+                {
+                  "en": "television",
+                  "vi": "/ˈtɛləvɪʒən/ · ti vi",
+                  "audio": "television"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Ba âm cần luyện, một âm cần nhận ra",
+          "body": [
+            "Bài này luyện ba âm hay gặp: /ʃ/ như trong {{she}}, /tʃ/ như trong {{chair}}, và /dʒ/ như trong {{job}}.",
+            "/ʃ/ là một tiếng xì kéo dài được. /tʃ/ và /dʒ/ bắt đầu bằng một cú chặn rồi bật ra thành tiếng xì; /dʒ/ có thêm rung ở cổ họng.",
+            "Âm thứ tư, /ʒ/, ít gặp. Bạn chỉ cần nhận ra nó khi nghe."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/ʃ/",
+          "body": [
+            "Để đọc /ʃ/, bạn tròn môi và đưa môi ra trước, lưỡi lùi về sau hơn khi đọc /s/. Tiếng xì nghe dày hơn: {{she}}, {{shoes}}, {{wash}}.",
+            "Bạn nghe liền cặp này để thấy hai tiếng xì khác nhau: {{p_see}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/tʃ/",
+          "body": [
+            "Để đọc /tʃ/, đầu lưỡi chạm lợi trên như khi đọc t, rồi bật ra thành /ʃ/: {{chair}}, {{check}}, {{lunch}}, {{cheese}}.",
+            "Âm này có tiếng xì đi kèm, nên nghe khác chữ \"ch\" tiếng Việt. Bạn nghe liền cặp: {{p_ship}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/dʒ/",
+          "body": [
+            "/dʒ/ đọc như /tʃ/ nhưng có rung: {{job}}, {{june}}, {{orange_juice|nước cam}}.",
+            "Bạn đã gặp âm này ở đầu tên chữ G và chữ J trong tuần 1."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "/ʒ/: chỉ cần nhận ra",
+          "body": [
+            "/ʒ/ đọc như /ʃ/ nhưng có rung. Âm này thường nằm giữa từ: {{usually|thường}}, {{television|ti vi}}.",
+            "Tiếng Anh có rất ít từ cần âm này để phân biệt nghĩa, nên bạn chưa cần luyện kỹ."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Người Việt hay đọc thế nào",
+          "body": [
+            "Người Việt hay đọc /ʃ/ thành /s/, đọc /tʃ/ thành \"ch\" tiếng Việt, và đọc /dʒ/ thành \"gi\" hay \"d\" theo giọng vùng miền của mình.",
+            "Trang Bảng IPA trong app có hai từ ví dụ cho mỗi âm để bạn nghe lại bất cứ lúc nào."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Ôn tai",
+          "body": [
+            "Trước khi luyện âm mới, bạn nghe lại bốn cặp từ đã học ở tuần 1 và ở bài 2. Mỗi lần bạn sẽ nghe một giọng đọc khác nhau. Câu nào chọn sai, thẻ từ liên quan được đưa lên đầu lịch ôn."
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Ôn tai: nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "sit",
+          "layout": "row",
+          "options": [
+            {
+              "text": "seat"
+            },
+            {
+              "text": "sit",
+              "correct": true
+            }
+          ],
+          "explain": "sit có âm /ɪ/ ngắn.",
+          "review": [
+            "w1-l4/sit",
+            "w1-l4/seat"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Ôn tai: nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "leave",
+          "layout": "row",
+          "options": [
+            {
+              "text": "leave",
+              "correct": true
+            },
+            {
+              "text": "live"
+            }
+          ],
+          "explain": "leave có âm /iː/ dài.",
+          "review": [
+            "w1-l4/leave",
+            "w1-l4/live"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Ôn tai: nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "bet",
+          "layout": "row",
+          "options": [
+            {
+              "text": "bed"
+            },
+            {
+              "text": "bet",
+              "correct": true
+            }
+          ],
+          "explain": "bet có nguyên âm ngắn hơn và kết thúc bằng /t/.",
+          "review": [
+            "w2-l2/bed"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Ôn tai: nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "bag",
+          "layout": "row",
+          "options": [
+            {
+              "text": "bag",
+              "correct": true
+            },
+            {
+              "text": "back"
+            }
+          ],
+          "explain": "bag có nguyên âm dài hơn, vì đứng trước /ɡ/.",
+          "review": [
+            "w2-l2/bag"
+          ],
+          "vary": true
+        },
+        {
+          "type": "text",
+          "title": "Âm mới",
+          "body": [
+            "Bây giờ bạn luyện nghe các âm của bài này."
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "she",
+          "layout": "row",
+          "options": [
+            {
+              "text": "see"
+            },
+            {
+              "text": "she",
+              "correct": true
+            }
+          ],
+          "explain": "she bắt đầu bằng /ʃ/, tiếng xì dày hơn /s/.",
+          "review": [
+            "w2-l4/she"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "chip",
+          "layout": "row",
+          "options": [
+            {
+              "text": "ship"
+            },
+            {
+              "text": "chip",
+              "correct": true
+            }
+          ],
+          "explain": "chip bắt đầu bằng /tʃ/, có một cú chặn trước tiếng xì.",
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "shoes",
+          "layout": "row",
+          "options": [
+            {
+              "text": "shoes",
+              "correct": true
+            },
+            {
+              "text": "choose"
+            }
+          ],
+          "explain": "shoes bắt đầu bằng /ʃ/.",
+          "review": [
+            "w2-l4/shoes"
+          ],
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn từ bạn vừa nghe.",
+          "audio": "see",
+          "layout": "row",
+          "options": [
+            {
+              "text": "see",
+              "correct": true
+            },
+            {
+              "text": "she"
+            }
+          ],
+          "explain": "see bắt đầu bằng /s/.",
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai từ. Hai từ giống nhau hay khác nhau?",
+          "audio": [
+            "ship",
+            "chip"
+          ],
+          "layout": "row",
+          "options": [
+            {
+              "text": "Giống"
+            },
+            {
+              "text": "Khác",
+              "correct": true
+            }
+          ],
+          "explain": "Từ đầu là ship, từ sau là chip.",
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe hai từ. Hai từ giống nhau hay khác nhau?",
+          "audio": [
+            "she",
+            "she"
+          ],
+          "layout": "row",
+          "options": [
+            {
+              "text": "Giống",
+              "correct": true
+            },
+            {
+              "text": "Khác"
+            }
+          ],
+          "explain": "Cả hai lần đều là she.",
+          "vary": true
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn âm đầu của từ ấy.",
+          "audio": "job",
+          "layout": "row",
+          "options": [
+            {
+              "text": "/tʃ/"
+            },
+            {
+              "text": "/dʒ/",
+              "correct": true
+            }
+          ],
+          "explain": "job bắt đầu bằng /dʒ/, có rung.",
+          "review": [
+            "w2-l4/job"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn âm đầu của từ ấy.",
+          "audio": "cheese",
+          "layout": "row",
+          "options": [
+            {
+              "text": "/tʃ/",
+              "correct": true
+            },
+            {
+              "text": "/dʒ/"
+            }
+          ],
+          "explain": "cheese bắt đầu bằng /tʃ/, không rung.",
+          "review": [
+            "w2-l4/cheese"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Nghe một từ rồi chọn âm đầu của từ ấy.",
+          "audio": "june",
+          "layout": "row",
+          "options": [
+            {
+              "text": "/tʃ/"
+            },
+            {
+              "text": "/dʒ/",
+              "correct": true
+            }
+          ],
+          "explain": "June bắt đầu bằng /dʒ/."
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn đọc từng cặp từ theo mẫu, thu âm lại, rồi nghe xem hai từ trong bản của bạn có khác nhau không. Sau đó bạn nói hai câu của đoạn hội thoại."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "see",
+          "prompt": "Đọc cặp see và she.",
+          "model": "p_see",
+          "say": "see, she, see, she",
+          "focus": "Nghe xem hai tiếng xì có khác nhau không: she phải dày hơn see.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "ship",
+          "prompt": "Đọc cặp ship và chip.",
+          "model": "p_ship",
+          "say": "ship, chip, ship, chip",
+          "focus": "Nghe xem chip có cú chặn ở đầu không.",
+          "check": false
+        },
+        {
+          "type": "speak",
+          "id": "lunch",
+          "prompt": "Hỏi xem đã đến giờ ăn trưa chưa.",
+          "model": "m_lunch",
+          "say": "Is it lunchtime?",
+          "focus": "Nghe xem giữa lunchtime có âm /tʃ/ không."
+        },
+        {
+          "type": "speak",
+          "id": "juice",
+          "prompt": "Nói bạn có nước cam.",
+          "model": "m_juice",
+          "say": "I have orange juice.",
+          "focus": "Nghe xem orange và juice có âm /dʒ/ rung không."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "ship",
+          "answer": "ship",
+          "vary": true
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe một từ rồi gõ lại.",
+          "audio": "she",
+          "answer": "she",
+          "review": [
+            "w2-l4/she"
+          ],
+          "vary": true
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w3",
+          "answer": "Is it lunchtime?",
+          "review": [
+            "w2-l4/lunchtime"
+          ]
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "she",
+      "en": "she",
+      "vi": "cô ấy /ʃiː/",
+      "audio": "she"
+    },
+    {
+      "id": "shoes",
+      "en": "shoes",
+      "vi": "giày /ʃuːz/",
+      "audio": "shoes"
+    },
+    {
+      "id": "chair",
+      "en": "chair",
+      "vi": "ghế /tʃɛr/",
+      "audio": "chair"
+    },
+    {
+      "id": "lunch",
+      "en": "lunch",
+      "vi": "bữa trưa /lʌntʃ/",
+      "audio": "lunch"
+    },
+    {
+      "id": "cheese",
+      "en": "cheese",
+      "vi": "phô mai /tʃiːz/",
+      "audio": "cheese"
+    },
+    {
+      "id": "job",
+      "en": "job",
+      "vi": "việc làm /dʒɑːb/",
+      "audio": "job"
+    },
+    {
+      "id": "orange-juice",
+      "en": "orange juice",
+      "vi": "nước cam",
+      "audio": "orange_juice"
+    },
+    {
+      "id": "usually",
+      "en": "usually",
+      "vi": "thường /ˈjuːʒuəli/",
+      "audio": "usually"
+    },
+    {
+      "id": "lunchtime",
+      "en": "Is it lunchtime?",
+      "vi": "Đến giờ ăn trưa chưa?",
+      "audio": "d1"
+    },
+    {
+      "id": "nice-shoes",
+      "en": "Nice shoes!",
+      "vi": "Giày đẹp đấy!",
+      "audio": "nice_shoes"
+    }
+  ],
+  "canDo": [
+    "Nghe ra và đọc được /ʃ/, /tʃ/, /dʒ/ trong she, lunch, job.",
+    "Phân biệt được ship với chip, she với see.",
+    "Nhận ra âm /ʒ/ trong usually."
+  ],
+  "realTask": "Hôm nay, vào giờ nghỉ trưa, bạn hỏi một đồng nghiệp Is it lunchtime? và để ý âm /tʃ/ ở giữa chữ lunchtime."
+}

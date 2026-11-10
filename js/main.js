@@ -120,7 +120,7 @@ function renderWelcome() {
     () => [
       h("h1", {}, "Chào bạn đến với Enforfa"),
       h("p", {}, "Enforfa giúp bạn học tiếng Anh từ con số không."),
-      h("p", {}, `Chương trình dài ${course.totalWeeks} tuần, đưa bạn tới trình độ đủ để giao tiếp và làm việc với người nói tiếng Anh. App miễn phí và không cần tài khoản.`),
+      h("p", {}, `Phần 1 của chương trình dài ${course.totalWeeks} tuần, nhắm đưa bạn tới trình độ tự lo được việc thường ngày bằng tiếng Anh. App miễn phí và không cần tài khoản.`),
     ],
     () => [
       h("h1", {}, "Cách học"),

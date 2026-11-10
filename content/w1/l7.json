@@ -33,14 +33,14 @@
     },
     "r4": {
       "text": "Nguyen. N, G, U, Y, E, N.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "ŋwˈɪn.",
         "ˈɛn.",
         "dʒˈiː.",
         "jˈuː.",
         "wˈaɪ.",
-        "ˈiː.",
+        "iː.",
         "ˈɛn."
       ],
       "gap": 0.4
@@ -51,7 +51,7 @@
     },
     "r6": {
       "text": "Lan. L, A, N.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "lˈɑːn.",
         "ˈɛl.",
@@ -66,7 +66,7 @@
     },
     "r8": {
       "text": "Seven one three, five five five, oh one four two.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "sˈɛvən wˈʌn θɹˈiː,",
         "fˈaɪv fˈaɪv fˈaɪv,",
@@ -109,7 +109,7 @@
     },
     "q_sit": {
       "text": "sit",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "sˈɪt.",
       "speed": 0.9
     },
@@ -129,18 +129,18 @@
     },
     "q_i": {
       "text": "I",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈaɪ.",
       "speed": 0.9
     },
     "q_hotel": {
       "text": "hotel",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "hoʊtˈɛl."
     },
     "q_doctor": {
       "text": "doctor",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dˈɑːktɚ."
     },
     "q_how": {
@@ -171,21 +171,21 @@
     },
     "m_last": {
       "text": "Nguyen. N, G, U, Y, E, N.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "ŋwˈɪn.",
         "ˈɛn.",
         "dʒˈiː.",
         "jˈuː.",
         "wˈaɪ.",
-        "ˈiː.",
+        "iː.",
         "ˈɛn."
       ],
       "gap": 0.4
     },
     "m_first": {
       "text": "Lan. L, A, N.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "lˈɑːn.",
         "ˈɛl.",
@@ -196,7 +196,7 @@
     },
     "m_phone": {
       "text": "Seven one three, five five five, oh one four two.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "sˈɛvən wˈʌn θɹˈiː,",
         "fˈaɪv fˈaɪv fˈaɪv,",

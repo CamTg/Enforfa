@@ -13,10 +13,15 @@ Mỗi bài học (content/**/*.json) có mục "audio": { id: {text, voice, spee
   đánh vần chậm và rõ cho người khác ghi. Đọc liền cả chuỗi thì Kokoro nói quá nhanh.
 - Từ đứng riêng có "ipa" (một chữ cái, một từ) được đọc không dấu câu, không kéo
   chậm và cắt sát đuôi; ghi thêm "cut": true để cắt từ khỏi câu "<từ>, please."
-  (cần pocketsphinx). Xem word_mode.
+  (cần pocketsphinx), hay "cut": "okay" để dùng câu "<từ>, okay." Xem word_mode.
+  Một phần của "spell" cũng có thể là {"ipa": ..., "cut": ...}.
+- Mọi tệp được đưa về cùng một độ to (xem level), để người học không phải chỉnh
+  âm lượng khi đổi giọng đọc.
 - "speed" nhỏ hơn 1 (ví dụ 0.85) làm câu chậm lại sau khi tạo, không đổi cao độ.
 - Có "ipa" thì công cụ đọc đúng theo phiên âm ấy. Mọi từ dùng để dạy phát âm
   nên có "ipa", vì bộ đoán phiên âm tự động có lúc đọc sai (ví dụ "live" thành /laɪv/).
+- Tệp ra là MP3 96 kbps. Ở 64 kbps, máy nhận dạng nghe "she" thành "see" và
+  "pen" thành "ten", tức là phụ âm đầu đã bị nén mất nét.
 - Tệp ra: audio/<id bài>/<id âm>.mp3, kèm manifest.json ghi dấu của từng câu.
   Câu nào không đổi chữ, giọng, tốc độ thì lần sau bỏ qua, trừ khi dùng --force.
 """
@@ -33,7 +38,7 @@ import soundfile as sf
 
 ROOT = Path(__file__).resolve().parent.parent
 # Đổi số này khi đổi cách tạo âm thanh, để mọi tệp được tạo lại.
-PIPELINE = 2
+PIPELINE = 4
 
 
 def fingerprint(spec):
@@ -43,10 +48,11 @@ def fingerprint(spec):
             **{k: spec.get(k) for k in ("text", "voice", "speed", "ipa", "contour")},
             # Khóa mới chỉ đưa vào khi có, để dấu của các câu cũ không đổi.
             **{k: spec[k] for k in ("spell", "gap") if k in spec},
+            **({"carrier": spec["cut"]} if isinstance(spec.get("cut"), str) else {}),
             # Cách xử lý từ đứng riêng (xem word_mode). Câu thường không có khóa này,
             # nên dấu của chúng không đổi.
             **({"mode": word_mode(spec)} if word_mode(spec) else {}),
-            **({"pieces": 2} if any(is_single(x) for x in spec.get("spell", [])) else {}),
+            **({"pieces": 2} if any(isinstance(x, dict) or is_single(x) for x in spec.get("spell", [])) else {}),
         },
         sort_keys=True,
     )
@@ -134,18 +140,42 @@ def say_word(kokoro, ipa, voice):
     return tight(trim(samples, sr), sr), sr
 
 
-def cut_from_carrier(kokoro, ipa, word, voice):
+CARRIERS = {"please": "plˈiːz", "okay": "ˌoʊkˈeɪ"}
+
+
+def level(audio, sr, target_db=-23.0, peak=0.89):
+    """Đưa phần có tiếng của tệp về cùng một độ to, và mở đầu bằng 5 ms tăng dần.
+
+    Các giọng của Kokoro to nhỏ khác nhau tới 6 dB, và từ cắt khỏi câu mẫu to
+    hơn từ đọc riêng. Độ to đo trên những khung 10 ms có tiếng (không tính
+    khoảng lặng giữa các chữ khi đánh vần).
+    """
+    f = int(sr * 0.01)
+    n = len(audio) // f
+    if n < 3:
+        return audio
+    rms = np.sqrt(np.mean(audio[: n * f].reshape(n, f) ** 2, axis=1) + 1e-12)
+    voiced = rms[rms > rms.max() * 0.1]
+    gain = 10 ** (target_db / 20) / float(np.sqrt(np.mean(voiced ** 2)))
+    gain = min(gain, peak / float(np.abs(audio).max()))
+    out = (audio * gain).astype("float32")
+    fade = int(sr * 0.005)
+    out[:fade] *= np.linspace(0, 1, fade)
+    return out
+
+
+def cut_from_carrier(kokoro, ipa, word, voice, carrier="please"):
     import os
     from pocketsphinx import Decoder, get_model_path
 
-    samples, sr = kokoro.create(f"{ipa.strip().rstrip(PUNCT)}, plˈiːz.", voice=voice, speed=1.0, lang="en-us", is_phonemes=True)
+    samples, sr = kokoro.create(f"{ipa.strip().rstrip(PUNCT)}, {CARRIERS[carrier]}.", voice=voice, speed=1.0, lang="en-us", is_phonemes=True)
     pcm = subprocess.run(
         ["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-", "-ar", "16000", "-f", "s16le", "-"],
         input=samples.astype("float32").tobytes(), capture_output=True, check=True,
     ).stdout
     model = get_model_path()
     with tempfile.NamedTemporaryFile("w", suffix=".gram", delete=False) as g:
-        g.write(f"#JSGF V1.0; grammar a; public <s> = {word} please ;")
+        g.write(f"#JSGF V1.0; grammar a; public <s> = {word} {carrier} ;")
     dec = Decoder(hmm=os.path.join(model, "en-us/en-us"), dict=os.path.join(model, "en-us/cmudict-en-us.dict"), jsgf=g.name, loglevel="FATAL")
     dec.start_utt(); dec.process_raw(pcm, full_utt=True); dec.end_utt()
     os.unlink(g.name)
@@ -212,13 +242,17 @@ def main():
             mode = word_mode(spec)
             if mode == "cut":
                 word = spec["text"].strip().rstrip(PUNCT).lower()
-                samples, sr = cut_from_carrier(kokoro, spec["ipa"], word, spec["voice"])
+                carrier = spec["cut"] if isinstance(spec["cut"], str) else "please"
+                samples, sr = cut_from_carrier(kokoro, spec["ipa"], word, spec["voice"], carrier)
             elif mode == "word":
                 samples, sr = say_word(kokoro, spec["ipa"], spec["voice"])
             elif spec.get("spell"):
                 pieces = []
                 for ipa in spec["spell"]:
-                    if is_single(ipa) and not ipa.strip().endswith(("?", ",", "!")):
+                    if isinstance(ipa, dict):
+                        # Một chữ cần cắt khỏi câu mẫu, như chữ E.
+                        part, sr = cut_from_carrier(kokoro, ipa["ipa"], ipa["word"], spec["voice"], ipa.get("cut", "please"))
+                    elif is_single(ipa) and not ipa.strip().endswith(("?", ",", "!")):
                         # Một chữ cái, một từ: đọc như từ đứng riêng ở trên.
                         part, sr = say_word(kokoro, ipa, spec["voice"])
                     else:
@@ -242,11 +276,12 @@ def main():
             if tempo < 1.0:
                 filters = ["-af", f"rubberband=tempo={tempo}:transients=crisp:"
                            "detector=compound:formant=preserved:pitchq=quality"]
+            samples = level(samples, sr)
             with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
                 sf.write(tmp.name, samples, sr)
                 subprocess.run(
                     ["ffmpeg", "-loglevel", "error", "-y", "-i", tmp.name, *filters,
-                     "-ac", "1", "-b:a", "64k", str(target)],
+                     "-ac", "1", "-b:a", "96k", str(target)],
                     check=True,
                 )
             manifest[audio_id] = fp

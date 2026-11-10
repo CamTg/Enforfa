@@ -299,6 +299,7 @@ a { color: var(--action); }
   font-size: 1.375rem; font-weight: 700; line-height: 1.4;
   padding: 14px 16px; background: var(--sheet); border-left: 6px solid var(--marker); border-radius: var(--radius-sm);
 }
+.say-focus { margin: 10px 0 14px; color: var(--ink-soft, var(--ink)); }
 .speak-actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
 .btn-record { background: var(--rec); color: #fff; }
 .btn-record.is-recording { animation: pulse-rec 1.2s ease-in-out infinite; }

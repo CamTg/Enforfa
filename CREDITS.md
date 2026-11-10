@@ -2,7 +2,7 @@
 
 ## Công cụ
 
-- **Kokoro** và **kokoro-onnx**: tạo giọng đọc mẫu. Âm thanh trong `audio/` được tạo bằng các giọng `af_heart` và `am_michael`.
+- **Kokoro** và **kokoro-onnx**: tạo giọng đọc mẫu. Âm thanh trong `audio/` được tạo bằng các giọng `af_heart`, `am_michael`, `af_jessica`, `am_adam`, `af_bella`, `af_sarah` và `am_fenrir`.
   - https://github.com/thewh1teagle/kokoro-onnx
 - **Be Vietnam Pro** (lời giảng tiếng Việt) và **Atkinson Hyperlegible** (chữ tiếng Anh): phông chữ phát hành theo SIL Open Font License, tải qua Google Fonts.
 
@@ -16,6 +16,12 @@ Tuần 1 dùng chúng như sau:
 - Hội thoại bài 3 (đọc lại tên để kiểm), bài 5 (Where are you from?) và đoạn 2 bài 6 (gọi nhầm số) phỏng theo Let's Learn English, Level 1, bài 1 đến 3. Mục tiêu tuần sau ở bài 7 phỏng theo chiến lược Set a goal của bài 1.
 - Phần tự đánh giá ở bài 7 bám theo mô tả cấp 1 của English Language Proficiency Standards for Adult Education.
 - Bài điền chỗ trống hai mức ở bài 7 phỏng theo mục listening cloze dictation trong sách của Peace Corps.
+
+Tuần 2 dùng chúng như sau:
+
+- Hội thoại bài 1 (lấy đồ trong túi ra hỏi tên) và các khuôn câu It's a…, It's not a…, Do you have…? phỏng theo Let's Learn English, Level 1, bài 4. Tên các phòng, khuôn câu I'm in… và hai cách hỏi ở bài 5 phỏng theo bài 5 của bộ ấy; việc chọn chỗ học và giờ học ở bài 7 phỏng theo chiến lược Plan to learn của bài 5.
+- Bài 2 và bài 4 (phát âm) do Enforfa soạn. Cách luyện nghe với nhiều giọng đọc dựa trên các nghiên cứu về luyện nghe nhiều giọng (Uchihara, Karas và Thomson, 2025, Studies in Second Language Acquisition).
+- Phần tự đánh giá và bài điền chỗ trống ở bài 7 làm như tuần 1.
 
 Danh sách tài liệu:
 

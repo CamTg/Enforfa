@@ -110,7 +110,7 @@ export function renderMap(course, currentWeek, weekState, stamped = new Set(), r
     h(
       "p",
       { class: "map-intro" },
-      `Phần 1 của chương trình có ${course.totalWeeks} tuần, mỗi tuần bảy bài, đi từ con số không tới trình độ A2 (sơ cấp) theo khung trình độ ngoại ngữ châu Âu (CEFR). Bấm vào một tuần để xem các bài của tuần ấy.`
+      `Phần 1 của chương trình có ${course.totalWeeks} tuần, mỗi tuần bảy bài, đi từ con số không và nhắm tới trình độ A2 (sơ cấp) theo khung trình độ ngoại ngữ châu Âu (CEFR). Bấm vào một tuần để xem các bài của tuần ấy.`
     ),
     h(
       "ul",

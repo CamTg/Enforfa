@@ -20,111 +20,111 @@
   "audio": {
     "doctor": {
       "text": "doctor",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dˈɑːktɚ."
     },
     "s_doctor": {
       "text": "doctor",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dˈɑːktɚ.",
       "speed": 0.75
     },
     "hospital": {
       "text": "hospital",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "hˈɑːspɪɾəl."
     },
     "s_hospital": {
       "text": "hospital",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "hˈɑːspɪɾəl.",
       "speed": 0.75
     },
     "hotel": {
       "text": "hotel",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "hoʊtˈɛl."
     },
     "s_hotel": {
       "text": "hotel",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "hoʊtˈɛl.",
       "speed": 0.75
     },
     "apartment": {
       "text": "apartment",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "əpˈɑːɹtmənt."
     },
     "s_apartment": {
       "text": "apartment",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "əpˈɑːɹtmənt.",
       "speed": 0.75
     },
     "america": {
       "text": "America",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "əmˈɛɹɪkə."
     },
     "s_america": {
       "text": "America",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "əmˈɛɹɪkə.",
       "speed": 0.75
     },
     "banana": {
       "text": "banana",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "bənˈænə."
     },
     "s_banana": {
       "text": "banana",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "bənˈænə.",
       "speed": 0.75
     },
     "about": {
       "text": "about",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "əbˈaʊt."
     },
     "s_about": {
       "text": "about",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "əbˈaʊt.",
       "speed": 0.75
     },
     "problem": {
       "text": "problem",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "pɹˈɑːbləm."
     },
     "s_problem": {
       "text": "problem",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "pɹˈɑːbləm.",
       "speed": 0.75
     },
     "vietnam": {
       "text": "Vietnam",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "vˌiːɛtnˈɑːm."
     },
     "s_vietnam": {
       "text": "Vietnam",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "vˌiːɛtnˈɑːm.",
       "speed": 0.75
     },
     "vietnamese": {
       "text": "Vietnamese",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "vˌiːɛtnəmˈiːz."
     },
     "s_vietnamese": {
       "text": "Vietnamese",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "vˌiːɛtnəmˈiːz.",
       "speed": 0.75
     },
@@ -184,7 +184,7 @@
     },
     "m_words1": {
       "text": "doctor, hospital, hotel, apartment, America.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "dˈɑːktɚ.",
         "hˈɑːspɪɾəl.",
@@ -196,7 +196,7 @@
     },
     "m_words2": {
       "text": "banana, about, problem, Vietnam, Vietnamese.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "bənˈænə.",
         "əbˈaʊt.",
@@ -224,19 +224,19 @@
     },
     "wd_doctor": {
       "text": "doctor",
-      "voice": "am_michael",
+      "voice": "af_bella",
       "ipa": "dˈɑːktɚ.",
       "speed": 0.9
     },
     "wd_hotel": {
       "text": "hotel",
-      "voice": "am_michael",
+      "voice": "af_bella",
       "ipa": "hoʊtˈɛl.",
       "speed": 0.9
     },
     "wd_apartment": {
       "text": "apartment",
-      "voice": "am_michael",
+      "voice": "af_bella",
       "ipa": "əpˈɑːɹtmənt.",
       "speed": 0.9
     }

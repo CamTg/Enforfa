@@ -1,0 +1,734 @@
+{
+  "id": "w2-l6",
+  "title": "Hỏi khi chưa hiểu",
+  "goal": "Hết bài này, bạn biết nói gì khi không nghe kịp, khi không biết nghĩa một từ, và khi muốn biết tên tiếng Anh của một vật. Bạn cũng đọc được bốn biển tên phòng thường gặp ở chỗ làm.",
+  "speakers": {
+    "lan": {
+      "name": "Lan",
+      "voice": "af_heart"
+    },
+    "boss": {
+      "name": "Quản lý",
+      "voice": "am_adam"
+    }
+  },
+  "audio": {
+    "d1": {
+      "text": "Lan, can you bring the cart, please?",
+      "voice": "am_adam",
+      "contour": "rise",
+      "ipa": "lˈɑːn, kæn juː bɹˈɪŋ ðə kˈɑːɹt, plˈiːz?"
+    },
+    "d2": {
+      "text": "Sorry? Can you say that again?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "d3": {
+      "text": "Can you bring the cart?",
+      "voice": "am_adam",
+      "contour": "rise"
+    },
+    "d4": {
+      "text": "What does cart mean?",
+      "voice": "af_heart"
+    },
+    "d5": {
+      "text": "This is a cart.",
+      "voice": "am_adam"
+    },
+    "d6": {
+      "text": "Oh, OK. How do you say this in English?",
+      "voice": "af_heart"
+    },
+    "d7": {
+      "text": "It's a ladder.",
+      "voice": "am_adam"
+    },
+    "d8": {
+      "text": "Ladder. Thank you!",
+      "voice": "af_heart"
+    },
+    "say_again": {
+      "text": "Can you say that again?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "write_down": {
+      "text": "Can you write it down?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "bring_cart": {
+      "text": "Can you bring the cart, please?",
+      "voice": "am_adam",
+      "contour": "rise"
+    },
+    "dont_understand": {
+      "text": "I don't understand.",
+      "voice": "af_heart"
+    },
+    "what_does_mean": {
+      "text": "What does cart mean?",
+      "voice": "af_heart"
+    },
+    "how_do_you_say": {
+      "text": "How do you say this in English?",
+      "voice": "af_heart"
+    },
+    "a_cart": {
+      "text": "a cart",
+      "voice": "af_heart"
+    },
+    "a_ladder": {
+      "text": "a ladder",
+      "voice": "af_heart"
+    },
+    "break_room": {
+      "text": "Break room",
+      "voice": "af_heart"
+    },
+    "restroom": {
+      "text": "Restroom",
+      "voice": "af_bella",
+      "ipa": "ɹˈɛstɹuːm."
+    },
+    "office": {
+      "text": "Office",
+      "voice": "af_bella",
+      "ipa": "ˈɑːfɪs."
+    },
+    "exit": {
+      "text": "Exit",
+      "voice": "af_bella",
+      "ipa": "ˈɛɡzɪt."
+    },
+    "w1": {
+      "text": "Can you say that again?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
+    "w2": {
+      "text": "How do you say this in English?",
+      "voice": "af_heart"
+    }
+  },
+  "parts": [
+    {
+      "id": "nghe",
+      "title": "Nghe",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Một việc được nhờ",
+          "body": [
+            "Ngày đầu ở chỗ làm mới, người quản lý nhờ Lan một việc. Lan chưa nghe kịp, rồi gặp một từ chưa biết. Hiểu rồi, Lan chỉ vào một cái thang cạnh xe đẩy để hỏi tên. Bạn nghe đoạn hội thoại ba lượt."
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 1,
+          "title": "Ngày đầu đi làm, lượt 1: nghĩa từng cụm",
+          "lines": [
+            {
+              "speaker": "boss",
+              "audio": "d1",
+              "chunks": [
+                {
+                  "en": "Lan,",
+                  "vi": "Lan,"
+                },
+                {
+                  "en": "can you",
+                  "vi": "chị có thể"
+                },
+                {
+                  "en": "bring",
+                  "vi": "mang"
+                },
+                {
+                  "en": "the cart,",
+                  "vi": "cái xe đẩy lại,"
+                },
+                {
+                  "en": "please?",
+                  "vi": "được không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "chunks": [
+                {
+                  "en": "Sorry?",
+                  "vi": "anh nói gì cơ?"
+                },
+                {
+                  "en": "Can you",
+                  "vi": "anh có thể"
+                },
+                {
+                  "en": "say that",
+                  "vi": "nói câu đó"
+                },
+                {
+                  "en": "again?",
+                  "vi": "lần nữa không?"
+                }
+              ]
+            },
+            {
+              "speaker": "boss",
+              "audio": "d3",
+              "chunks": [
+                {
+                  "en": "Can you",
+                  "vi": "chị có thể"
+                },
+                {
+                  "en": "bring",
+                  "vi": "mang"
+                },
+                {
+                  "en": "the cart?",
+                  "vi": "cái xe đẩy lại không?"
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "chunks": [
+                {
+                  "en": "What does",
+                  "vi": "là gì"
+                },
+                {
+                  "en": "cart",
+                  "vi": "\"cart\""
+                },
+                {
+                  "en": "mean?",
+                  "vi": "nghĩa?"
+                }
+              ]
+            },
+            {
+              "speaker": "boss",
+              "audio": "d5",
+              "chunks": [
+                {
+                  "en": "This is",
+                  "vi": "đây là"
+                },
+                {
+                  "en": "a cart.",
+                  "vi": "cái xe đẩy."
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6",
+              "chunks": [
+                {
+                  "en": "Oh, OK.",
+                  "vi": "à, tôi hiểu rồi."
+                },
+                {
+                  "en": "How do you say",
+                  "vi": "nói thế nào"
+                },
+                {
+                  "en": "this",
+                  "vi": "cái này"
+                },
+                {
+                  "en": "in English?",
+                  "vi": "bằng tiếng Anh?"
+                }
+              ]
+            },
+            {
+              "speaker": "boss",
+              "audio": "d7",
+              "chunks": [
+                {
+                  "en": "It's",
+                  "vi": "đó là"
+                },
+                {
+                  "en": "a ladder.",
+                  "vi": "cái thang."
+                }
+              ]
+            },
+            {
+              "speaker": "lan",
+              "audio": "d8",
+              "chunks": [
+                {
+                  "en": "Ladder.",
+                  "vi": "cái thang."
+                },
+                {
+                  "en": "Thank you!",
+                  "vi": "cảm ơn anh!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 2,
+          "title": "Ngày đầu đi làm, lượt 2: cả câu",
+          "lines": [
+            {
+              "speaker": "boss",
+              "audio": "d1",
+              "vi": "Lan, chị mang cái xe đẩy lại giúp tôi được không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2",
+              "vi": "Anh nói gì cơ? Anh nói lại được không?"
+            },
+            {
+              "speaker": "boss",
+              "audio": "d3",
+              "vi": "Chị mang cái xe đẩy lại được không?"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4",
+              "vi": "\"Cart\" nghĩa là gì?"
+            },
+            {
+              "speaker": "boss",
+              "audio": "d5",
+              "vi": "Đây là cái xe đẩy."
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6",
+              "vi": "À, tôi hiểu rồi. Cái này tiếng Anh nói thế nào?"
+            },
+            {
+              "speaker": "boss",
+              "audio": "d7",
+              "vi": "Đó là cái thang."
+            },
+            {
+              "speaker": "lan",
+              "audio": "d8",
+              "vi": "Cái thang. Cảm ơn anh!"
+            }
+          ]
+        },
+        {
+          "type": "listen",
+          "pass": 3,
+          "title": "Ngày đầu đi làm, lượt 3: chỉ nghe",
+          "lines": [
+            {
+              "speaker": "boss",
+              "audio": "d1"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d2"
+            },
+            {
+              "speaker": "boss",
+              "audio": "d3"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d4"
+            },
+            {
+              "speaker": "boss",
+              "audio": "d5"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d6"
+            },
+            {
+              "speaker": "boss",
+              "audio": "d7"
+            },
+            {
+              "speaker": "lan",
+              "audio": "d8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoc",
+      "title": "Học",
+      "steps": [
+        {
+          "type": "text",
+          "title": "Khi không nghe kịp",
+          "body": [
+            "Ngoài Sorry? ở tuần 1, bạn có thể nói đủ câu {{say_again|Bạn nói lại được không?}}",
+            "Vẫn chưa hiểu thì bạn nói {{dont_understand|Tôi không hiểu.}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Khi không biết nghĩa một từ",
+          "body": [
+            "Khi nghe được một từ mà không biết nghĩa, bạn hỏi {{what_does_mean|\"Cart\" nghĩa là gì?}}",
+            "Bạn đặt từ ấy vào giữa câu và đọc nó rõ hơn các chữ còn lại, để người nghe biết bạn hỏi từ nào."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Khi muốn biết tên một vật",
+          "body": [
+            "Muốn biết tên tiếng Anh của một vật, bạn chỉ vào nó và hỏi {{how_do_you_say|Cái này tiếng Anh nói thế nào?}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nói lại từ mới",
+          "body": [
+            "Nghe xong từ mới, bạn nói lại từ ấy một lần, như Lan nói \"Ladder.\" Người kia sẽ sửa nếu bạn đọc sai, và bạn nhớ từ lâu hơn.",
+            "Hai từ trong bài: {{a_cart|xe đẩy}}, {{a_ladder|cái thang}}."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Nhờ viết ra",
+          "body": [
+            "Khi cần ghi lại một từ hay một con số, bạn nhờ {{write_down|Bạn viết ra giúp tôi được không?}}"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Can you…?",
+          "body": [
+            "Can you…? ở đầu câu là cách nhờ ai làm gì một cách lịch sự, như người quản lý nói {{bring_cart|Chị mang cái xe đẩy lại giúp tôi được không?}}",
+            "Thêm please ở cuối thì câu lịch sự hơn."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Biển tên phòng ở chỗ làm",
+          "body": [
+            "Ở chỗ làm, cửa phòng thường có biển. Bốn biển hay gặp: {{restroom|nhà vệ sinh}}, {{break_room|phòng nghỉ giữa giờ}}, {{office|văn phòng}}, {{exit|lối ra}}.",
+            "Gặp một biển chưa biết, bạn chỉ vào và hỏi What does … mean?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luyen",
+      "title": "Luyện",
+      "steps": [
+        {
+          "type": "choose",
+          "prompt": "Đồng nghiệp nói nhanh, bạn không nghe kịp. Bạn nói câu nào?",
+          "options": [
+            {
+              "text": "Can you say that again?",
+              "correct": true
+            },
+            {
+              "text": "What does cart mean?"
+            },
+            {
+              "text": "How do you say this in English?"
+            }
+          ],
+          "explain": "Can you say that again? nhờ người kia nói lại.",
+          "review": [
+            "w2-l6/say-again"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Bạn nghe rõ từ \"cart\" mà không biết nghĩa. Bạn nói câu nào?",
+          "options": [
+            {
+              "text": "Can you say that again?"
+            },
+            {
+              "text": "What does cart mean?",
+              "correct": true
+            },
+            {
+              "text": "How do you say this in English?"
+            }
+          ],
+          "explain": "What does … mean? hỏi nghĩa của một từ.",
+          "review": [
+            "w2-l6/what-does-mean"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Bạn cầm một vật và muốn biết tên tiếng Anh của nó. Bạn nói câu nào?",
+          "options": [
+            {
+              "text": "Can you say that again?"
+            },
+            {
+              "text": "What does cart mean?"
+            },
+            {
+              "text": "How do you say this in English?",
+              "correct": true
+            }
+          ],
+          "explain": "How do you say this in English? hỏi tên tiếng Anh của một vật.",
+          "review": [
+            "w2-l6/how-do-you-say"
+          ]
+        },
+        {
+          "type": "order",
+          "prompt": "Bấm lần lượt các chữ để xếp thành câu \"Cái này tiếng Anh nói thế nào?\".",
+          "words": [
+            "say",
+            "How",
+            "this",
+            "do",
+            "in English",
+            "you"
+          ],
+          "answer": [
+            "How",
+            "do",
+            "you",
+            "say",
+            "this",
+            "in English"
+          ],
+          "audio": "how_do_you_say",
+          "gloss": "Cái này tiếng Anh nói thế nào?",
+          "review": [
+            "w2-l6/how-do-you-say"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Bạn cần tìm nhà vệ sinh. Bạn đi theo biển nào?",
+          "options": [
+            {
+              "text": "RESTROOM",
+              "correct": true
+            },
+            {
+              "text": "BREAK ROOM"
+            },
+            {
+              "text": "OFFICE"
+            }
+          ],
+          "explain": "Restroom là nhà vệ sinh.",
+          "review": [
+            "w2-l6/restroom"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Đến giờ nghỉ, đồng nghiệp rủ bạn vào phòng nghỉ. Cửa phòng ấy ghi gì?",
+          "options": [
+            {
+              "text": "EXIT"
+            },
+            {
+              "text": "BREAK ROOM",
+              "correct": true
+            },
+            {
+              "text": "RESTROOM"
+            }
+          ],
+          "explain": "Break room là phòng nghỉ giữa giờ, nơi mọi người ăn trưa.",
+          "review": [
+            "w2-l6/break-room"
+          ]
+        },
+        {
+          "type": "choose",
+          "prompt": "Hết giờ làm, bạn tìm lối ra. Bạn đi theo biển nào?",
+          "options": [
+            {
+              "text": "OFFICE"
+            },
+            {
+              "text": "RESTROOM"
+            },
+            {
+              "text": "EXIT",
+              "correct": true
+            }
+          ],
+          "explain": "Exit là lối ra.",
+          "review": [
+            "w2-l6/exit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noi",
+      "title": "Nói",
+      "steps": [
+        {
+          "type": "text",
+          "body": [
+            "Bạn nghe câu mẫu, thu âm câu của mình, rồi nghe lại và so với mẫu."
+          ]
+        },
+        {
+          "type": "speak",
+          "id": "again",
+          "prompt": "Nhờ người kia nói lại.",
+          "model": "say_again",
+          "say": "Can you say that again?",
+          "focus": "Nghe xem giọng bạn có lên ở cuối câu không."
+        },
+        {
+          "type": "speak",
+          "id": "mean",
+          "prompt": "Hỏi nghĩa của từ cart.",
+          "model": "what_does_mean",
+          "say": "What does cart mean?",
+          "focus": "Nghe xem bạn có đọc cart rõ hơn các chữ khác, và có âm /t/ ở cuối không."
+        },
+        {
+          "type": "speak",
+          "id": "how",
+          "prompt": "Hỏi tên tiếng Anh của một vật.",
+          "model": "how_do_you_say",
+          "say": "How do you say this in English?",
+          "focus": "Nghe xem cuối English có âm /ʃ/ không."
+        },
+        {
+          "type": "speak",
+          "id": "write",
+          "prompt": "Nhờ người kia viết ra.",
+          "model": "write_down",
+          "say": "Can you write it down?",
+          "focus": "Nghe xem write it down có nối liền nhau không."
+        }
+      ]
+    },
+    {
+      "id": "viet",
+      "title": "Viết",
+      "steps": [
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w1",
+          "answer": "Can you say that again?",
+          "review": [
+            "w2-l6/say-again"
+          ]
+        },
+        {
+          "type": "write",
+          "mode": "dictation",
+          "prompt": "Nghe câu dưới đây rồi gõ lại.",
+          "audio": "w2",
+          "answer": "How do you say this in English?",
+          "review": [
+            "w2-l6/how-do-you-say"
+          ]
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "say-again",
+      "en": "Can you say that again?",
+      "vi": "Bạn nói lại được không?",
+      "audio": "say_again"
+    },
+    {
+      "id": "dont-understand",
+      "en": "I don't understand.",
+      "vi": "Tôi không hiểu.",
+      "audio": "dont_understand"
+    },
+    {
+      "id": "what-does-mean",
+      "en": "What does cart mean?",
+      "vi": "\"Cart\" nghĩa là gì?",
+      "audio": "what_does_mean"
+    },
+    {
+      "id": "how-do-you-say",
+      "en": "How do you say this in English?",
+      "vi": "Cái này tiếng Anh nói thế nào?",
+      "audio": "how_do_you_say"
+    },
+    {
+      "id": "write-down",
+      "en": "Can you write it down?",
+      "vi": "Bạn viết ra giúp tôi được không?",
+      "audio": "write_down"
+    },
+    {
+      "id": "can-you",
+      "en": "Can you bring the cart, please?",
+      "vi": "Bạn mang cái xe đẩy lại giúp tôi được không?",
+      "audio": "bring_cart"
+    },
+    {
+      "id": "cart",
+      "en": "a cart",
+      "vi": "xe đẩy",
+      "audio": "a_cart"
+    },
+    {
+      "id": "ladder",
+      "en": "a ladder",
+      "vi": "cái thang",
+      "audio": "a_ladder"
+    },
+    {
+      "id": "restroom",
+      "en": "Restroom",
+      "vi": "nhà vệ sinh",
+      "audio": "restroom"
+    },
+    {
+      "id": "break-room",
+      "en": "Break room",
+      "vi": "phòng nghỉ giữa giờ",
+      "audio": "break_room"
+    },
+    {
+      "id": "office",
+      "en": "Office",
+      "vi": "văn phòng",
+      "audio": "office"
+    },
+    {
+      "id": "exit",
+      "en": "Exit",
+      "vi": "lối ra",
+      "audio": "exit"
+    }
+  ],
+  "canDo": [
+    "Nhờ người khác nói lại bằng Can you say that again?",
+    "Hỏi nghĩa một từ bằng What does … mean?",
+    "Hỏi tên tiếng Anh của một vật bằng How do you say this in English?",
+    "Đọc được biển Restroom, Break room, Office, Exit."
+  ],
+  "realTask": "Hôm nay, bạn chỉ vào một vật ở chỗ làm và hỏi một đồng nghiệp How do you say this in English? rồi nói lại từ họ vừa dạy."
+}
