@@ -19,97 +19,97 @@
   "audio": {
     "l_f": {
       "text": "F",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɛf.",
       "speed": 0.9
     },
     "l_l": {
       "text": "L",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɛl.",
       "speed": 0.9
     },
     "l_m": {
       "text": "M",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɛm.",
       "speed": 0.9
     },
     "l_n": {
       "text": "N",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɛn.",
       "speed": 0.9
     },
     "l_s": {
       "text": "S",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɛs.",
       "speed": 0.9
     },
     "l_x": {
       "text": "X",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɛks.",
       "speed": 0.9
     },
     "l_i": {
       "text": "I",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈaɪ.",
       "speed": 0.9
     },
     "l_y": {
       "text": "Y",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "wˈaɪ.",
       "speed": 0.9
     },
     "l_o": {
       "text": "O",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈoʊ.",
       "speed": 0.9
     },
     "l_q": {
       "text": "Q",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "kjˈuː.",
       "speed": 0.9
     },
     "l_u": {
       "text": "U",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "jˈuː.",
       "speed": 0.9
     },
     "l_w": {
       "text": "W",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dˈʌbəljuː.",
       "speed": 0.9
     },
     "l_r": {
       "text": "R",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɑːɹ.",
       "speed": 0.9
     },
     "l_e": {
       "text": "E",
-      "voice": "af_heart",
-      "ipa": "ˈiː.",
+      "voice": "af_bella",
+      "ipa": "iː.",
       "speed": 0.9
     },
     "l_g": {
       "text": "G",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dʒˈiː.",
       "speed": 0.9
     },
     "l_a": {
       "text": "A",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈeɪ.",
       "speed": 0.9
     },
@@ -119,7 +119,7 @@
     },
     "d2": {
       "text": "Nguyen.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ŋwˈɪn."
     },
     "d3": {
@@ -128,13 +128,13 @@
     },
     "d4": {
       "text": "N, G, U, Y, E, N.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "ˈɛn.",
         "dʒˈiː.",
         "jˈuː.",
         "wˈaɪ.",
-        "ˈiː.",
+        "iː.",
         "ˈɛn."
       ],
       "gap": 0.4
@@ -142,16 +142,8 @@
     "d5": {
       "text": "Is that N-G-U-Y-E-N?",
       "voice": "af_jessica",
-      "spell": [
-        "ˈɪz ðˌæt",
-        "ˈɛn",
-        "dʒˈiː",
-        "jˈuː",
-        "wˈaɪ",
-        "ˈiː",
-        "ˈɛn?"
-      ],
-      "gap": 0.18
+      "ipa": "ɪz ðˈæt... ˈɛn... dʒˈiː... jˈuː... wˈaɪ... ˈiː... ˈɛn?",
+      "speed": 0.9
     },
     "d6": {
       "text": "Yes, that's right.",
@@ -163,7 +155,7 @@
     },
     "d8": {
       "text": "Lan. L, A, N.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "lˈɑːn.",
         "ˈɛl.",
@@ -199,7 +191,7 @@
     },
     "is_that": {
       "text": "Is that N-G-U-Y-E-N?",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "ˈɪz ðˌæt",
         "ˈɛn",
@@ -229,21 +221,21 @@
     },
     "m_last": {
       "text": "Nguyen. N, G, U, Y, E, N.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "ŋwˈɪn.",
         "ˈɛn.",
         "dʒˈiː.",
         "jˈuː.",
         "wˈaɪ.",
-        "ˈiː.",
+        "iː.",
         "ˈɛn."
       ],
       "gap": 0.4
     },
     "m_first": {
       "text": "Lan. L, A, N.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "lˈɑːn.",
         "ˈɛl.",

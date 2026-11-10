@@ -20,37 +20,38 @@
   "audio": {
     "eat": {
       "text": "eat",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈiːt.",
-      "speed": 0.9
+      "speed": 0.9,
+      "cut": true
     },
     "it": {
       "text": "it",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɪt.",
       "speed": 0.9
     },
     "seat": {
       "text": "seat",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "sˈiːt.",
       "speed": 0.9
     },
     "sit": {
       "text": "sit",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "sˈɪt.",
       "speed": 0.9
     },
     "feel": {
       "text": "feel",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "fˈiːl.",
       "speed": 0.9
     },
     "fill": {
       "text": "fill",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "fˈɪl.",
       "speed": 0.9
     },
@@ -70,42 +71,50 @@
     },
     "pool": {
       "text": "pool",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "pˈuːl.",
       "speed": 0.9
     },
     "pull": {
       "text": "pull",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "pˈʊl.",
       "speed": 0.9
     },
     "food": {
       "text": "food",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "fˈuːd.",
       "speed": 0.9
     },
     "good": {
       "text": "good",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ɡˈʊd.",
       "speed": 0.9
     },
     "p_eat": {
       "text": "eat, it, eat, it.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
-        "ˈiːt.",
+        {
+          "ipa": "ˈiːt",
+          "word": "eat",
+          "cut": "please"
+        },
         "ˈɪt.",
-        "ˈiːt.",
+        {
+          "ipa": "ˈiːt",
+          "word": "eat",
+          "cut": "please"
+        },
         "ˈɪt."
       ],
       "gap": 0.55
     },
     "p_seat": {
       "text": "seat, sit, seat, sit.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "sˈiːt.",
         "sˈɪt.",
@@ -116,7 +125,7 @@
     },
     "p_feel": {
       "text": "feel, fill, feel, fill.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "fˈiːl.",
         "fˈɪl.",
@@ -127,7 +136,7 @@
     },
     "p_leave": {
       "text": "leave, live, leave, live.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "lˈiːv.",
         "lˈɪv.",
@@ -138,7 +147,7 @@
     },
     "p_pool": {
       "text": "pool, pull, pool, pull.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "pˈuːl.",
         "pˈʊl.",
@@ -176,7 +185,7 @@
     },
     "m_seat": {
       "text": "seat, sit, seat, sit.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "sˈiːt.",
         "sˈɪt.",
@@ -187,7 +196,7 @@
     },
     "m_leave": {
       "text": "leave, live, leave, live.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "lˈiːv.",
         "lˈɪv.",
@@ -198,7 +207,7 @@
     },
     "m_pool": {
       "text": "pool, pull, pool, pull.",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "spell": [
         "pˈuːl.",
         "pˈʊl.",

@@ -598,127 +598,128 @@
   "audio": {
     "w_eat": {
       "text": "eat",
-      "voice": "af_heart",
-      "ipa": "ˈiːt"
+      "voice": "af_bella",
+      "ipa": "ˈiːt",
+      "cut": true
     },
     "w_see": {
       "text": "see",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "sˈiː"
     },
     "w_it": {
       "text": "it",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɪt"
     },
     "w_sit": {
       "text": "sit",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "sˈɪt"
     },
     "w_name": {
       "text": "name",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "nˈeɪm"
     },
     "w_day": {
       "text": "day",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dˈeɪ"
     },
     "w_bed": {
       "text": "bed",
-      "voice": "af_heart",
+      "voice": "af_sarah",
       "ipa": "bˈɛd"
     },
     "w_yes": {
       "text": "yes",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "jˈɛs"
     },
     "w_cat": {
       "text": "cat",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "kˈæt"
     },
     "w_apple": {
       "text": "apple",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈæpəl"
     },
     "w_hot": {
       "text": "hot",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "hˈɑːt"
     },
     "w_father": {
       "text": "father",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "fˈɑːðɚ"
     },
     "w_cup": {
       "text": "cup",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "kˈʌp"
     },
     "w_bus": {
       "text": "bus",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "bˈʌs"
     },
     "w_about": {
       "text": "about",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "əbˈaʊt"
     },
     "w_banana": {
       "text": "banana",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "bənˈænə"
     },
     "w_call": {
       "text": "call",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "kˈɔːl"
     },
     "w_walk": {
       "text": "walk",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "wˈɔːk"
     },
     "w_go": {
       "text": "go",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ɡˈoʊ"
     },
     "w_phone": {
       "text": "phone",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "fˈoʊn"
     },
     "w_good": {
       "text": "good",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ɡˈʊd"
     },
     "w_book": {
       "text": "book",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "bˈʊk"
     },
     "w_food": {
       "text": "food",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "fˈuːd"
     },
     "w_school": {
       "text": "school",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "skˈuːl"
     },
     "w_my": {
       "text": "my",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "mˈaɪ"
     },
     "w_five": {
@@ -729,82 +730,83 @@
     },
     "w_now": {
       "text": "now",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "nˈaʊ"
     },
     "w_house": {
       "text": "house",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "hˈaʊs"
     },
     "w_boy": {
       "text": "boy",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "bˈɔɪ"
     },
     "w_oil": {
       "text": "oil",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɔɪl"
     },
     "w_bird": {
       "text": "bird",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "bˈɜːɹd"
     },
     "w_work": {
       "text": "work",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "wˈɜːɹk"
     },
     "w_doctor": {
       "text": "doctor",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dˈɑːktɚ"
     },
     "w_mother": {
       "text": "mother",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "mˈʌðɚ"
     },
     "w_pen": {
       "text": "pen",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "pˈɛn"
     },
     "w_stop": {
       "text": "stop",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "stˈɑːp"
     },
     "w_job": {
       "text": "job",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dʒˈɑːb"
     },
     "w_ten": {
       "text": "ten",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "tˈɛn"
     },
     "w_key": {
       "text": "key",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "kˈiː"
     },
     "w_bag": {
       "text": "bag",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "bˈæɡ"
     },
     "w_fish": {
       "text": "fish",
-      "voice": "af_heart",
-      "ipa": "fˈɪʃ"
+      "voice": "af_bella",
+      "ipa": "fˈɪʃ",
+      "cut": true
     },
     "w_very": {
       "text": "very",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "vˈɛɹi"
     },
     "w_live": {
@@ -827,92 +829,92 @@
     },
     "w_this": {
       "text": "this",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ðˈɪs"
     },
     "w_zoo": {
       "text": "zoo",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "zˈuː"
     },
     "w_is": {
       "text": "is",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ˈɪz"
     },
     "w_she": {
       "text": "she",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ʃˈiː"
     },
     "w_usually": {
       "text": "usually",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "jˈuːʒuːəli"
     },
     "w_television": {
       "text": "television",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "tˈɛləvˌɪʒən"
     },
     "w_chair": {
       "text": "chair",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "tʃˈɛɹ"
     },
     "w_watch": {
       "text": "watch",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "wˈɑːtʃ"
     },
     "w_june": {
       "text": "June",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "dʒˈuːn"
     },
     "w_hat": {
       "text": "hat",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "hˈæt"
     },
     "w_map": {
       "text": "map",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "mˈæp"
     },
     "w_no": {
       "text": "no",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "nˈoʊ"
     },
     "w_sing": {
       "text": "sing",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "sˈɪŋ"
     },
     "w_ring": {
       "text": "ring",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ɹˈɪŋ"
     },
     "w_red": {
       "text": "red",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "ɹˈɛd"
     },
     "w_car": {
       "text": "car",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "kˈɑːɹ"
     },
     "w_we": {
       "text": "we",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "wˈiː"
     },
     "w_you": {
       "text": "you",
-      "voice": "af_heart",
+      "voice": "af_bella",
       "ipa": "jˈuː"
     }
   }
