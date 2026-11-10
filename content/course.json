@@ -52,8 +52,8 @@
       "id": 1,
       "title": "Những câu giao tiếp đầu tiên",
       "weeks": "Tuần 1–12",
-      "level": "A1",
-      "goal": "Nghe và nói được tên, số, địa chỉ; tự giới thiệu, hỏi giá, hỏi đường, và nhờ người khác nói lại hay nói chậm hơn.",
+      "level": "A1, nửa đầu",
+      "goal": "Tự giới thiệu được đầy đủ, điền được một mẫu đơn đăng ký, hỏi giờ, hỏi giá, hỏi một nơi ở đâu, hỏi lại khi chưa hiểu, và gọi được cấp cứu bằng vài câu ngắn.",
       "from": 1,
       "to": 12
     },
@@ -61,19 +61,20 @@
       "id": 2,
       "title": "Giao tiếp hằng ngày",
       "weeks": "Tuần 13–25",
-      "level": "A2",
-      "goal": "Hỏi và trả lời về những việc quen thuộc như mua sắm, sức khỏe, nhà ở và giấy tờ; gọi điện đặt hẹn; đọc tin nhắn và thông báo ngắn.",
+      "level": "A1",
+      "goal": "Mua hàng, gọi món, hỏi đường, kể được một ngày của mình, nói được giờ làm và báo được với chỗ làm khi phải nghỉ ốm.",
       "from": 13,
       "to": 25
     },
     {
       "id": 3,
-      "title": "Làm việc và trò chuyện",
+      "title": "Tự lo việc thường ngày",
       "weeks": "Tuần 26–50",
-      "level": "B1",
-      "goal": "Đi phỏng vấn xin việc, hiểu chỉ dẫn và trao đổi với đồng nghiệp, kể lại một chuyện, nêu ý kiến của mình, và viết email ngắn.",
+      "level": "A2",
+      "goal": "Gọi điện đặt hẹn, tự đi khám, làm việc với ngân hàng và chủ nhà, đọc thông báo của trường con, và điền các mẫu đơn thường gặp.",
       "from": 26,
       "to": 50
     }
-  ]
+  ],
+  "next": "Sau 50 tuần này sẽ có phần 2, Làm việc và trò chuyện, đưa bạn từ A2 lên B1 (trung cấp). Phần 2 đang được soạn."
 }
