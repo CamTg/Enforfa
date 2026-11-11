@@ -135,7 +135,8 @@
     },
     "k1": {
       "text": "Hi, I'm Kate. Where are you from?",
-      "voice": "af_jessica"
+      "voice": "af_jessica",
+      "ipa": "hˈaɪ, aɪm kˈeɪt. wˈɛɹ ɑːɹ juː fɹʌm"
     },
     "k2": {
       "text": "I'm from Vietnam.",

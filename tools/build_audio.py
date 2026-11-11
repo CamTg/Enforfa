@@ -14,7 +14,12 @@ Mỗi bài học (content/**/*.json) có mục "audio": { id: {text, voice, spee
 - Từ đứng riêng có "ipa" (một chữ cái, một từ) được đọc không dấu câu, không kéo
   chậm và cắt sát đuôi; ghi thêm "cut": true để cắt từ khỏi câu "<từ>, please."
   (cần pocketsphinx), hay "cut": "okay" để dùng câu "<từ>, okay." Xem word_mode.
-  Một phần của "spell" cũng có thể là {"ipa": ..., "cut": ...}.
+  Một phần của "spell" cũng có thể là {"ipa": ..., "cut": ...}, hay
+  {"text": "D... E... F.", "pick": 1, "of": 3} để lấy một chữ ra khỏi một chuỗi đọc liền.
+- Bộ ký hiệu của Kokoro ghi nguyên âm đôi bằng một chữ: A = eɪ, I = aɪ, O = oʊ,
+  W = aʊ, Y = ɔɪ. Viết "bˈɔɪ" thì máy đọc boy thành "bye"; viết "bˈY" thì đúng.
+- Giọng af_jessica thêm một âm "s" khi câu kết thúc bằng âm mũi rồi tới dấu câu
+  (from? thành "froms"); với câu như vậy, ghi "ipa" không có dấu câu cuối.
 - Mọi tệp được đưa về cùng một độ to (xem level), để người học không phải chỉnh
   âm lượng khi đổi giọng đọc.
 - "speed" nhỏ hơn 1 (ví dụ 0.85) làm câu chậm lại sau khi tạo, không đổi cao độ.
@@ -164,6 +169,38 @@ def level(audio, sr, target_db=-23.0, peak=0.89):
     return out
 
 
+def pick_from_list(kokoro, text, index, count, voice):
+    """Lấy một chữ ra khỏi một chuỗi đọc liền, như chữ E trong "D... E... F."
+
+    Tên chữ E đọc riêng hay bị méo thành /eɪ/; đọc giữa hai chữ khác thì đúng.
+    Chuỗi được tách ở các khoảng lặng; số đoạn phải bằng count.
+    """
+    samples, sr = kokoro.create(text, voice=voice, speed=0.9, lang="en-us")
+    f = int(sr * 0.005)
+    n = len(samples) // f
+    rms = np.sqrt(np.mean(samples[: n * f].reshape(n, f) ** 2, axis=1))
+    loud = rms > rms.max() * 0.03
+    segs, start, quiet = [], None, 0
+    for i, on in enumerate(loud):
+        if on:
+            start = i if start is None else start
+            quiet = 0
+        elif start is not None:
+            quiet += 1
+            if quiet * 0.005 >= 0.07:
+                segs.append((start, i - quiet + 1))
+                start = None
+    if start is not None:
+        segs.append((start, n))
+    if len(segs) != count:
+        raise RuntimeError(f"tách {text!r} được {len(segs)} đoạn, cần {count}")
+    a, b = segs[index]
+    out = samples[max(a - 4, 0) * f : (b + 6) * f].copy()
+    fade = int(sr * 0.02)
+    out[-fade:] *= np.linspace(1, 0, fade)
+    return out, sr
+
+
 def cut_from_carrier(kokoro, ipa, word, voice, carrier="please"):
     import os
     from pocketsphinx import Decoder, get_model_path
@@ -249,8 +286,10 @@ def main():
             elif spec.get("spell"):
                 pieces = []
                 for ipa in spec["spell"]:
-                    if isinstance(ipa, dict):
-                        # Một chữ cần cắt khỏi câu mẫu, như chữ E.
+                    if isinstance(ipa, dict) and "pick" in ipa:
+                        part, sr = pick_from_list(kokoro, ipa["text"], ipa["pick"], ipa["of"], spec["voice"])
+                    elif isinstance(ipa, dict):
+                        # Một chữ cần cắt khỏi câu mẫu.
                         part, sr = cut_from_carrier(kokoro, ipa["ipa"], ipa["word"], spec["voice"], ipa.get("cut", "please"))
                     elif is_single(ipa) and not ipa.strip().endswith(("?", ",", "!")):
                         # Một chữ cái, một từ: đọc như từ đứng riêng ở trên.

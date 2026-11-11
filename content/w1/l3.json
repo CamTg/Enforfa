@@ -134,16 +134,32 @@
         "dʒˈiː.",
         "jˈuː.",
         "wˈaɪ.",
-        "iː.",
+        {
+          "text": "D... E... F.",
+          "pick": 1,
+          "of": 3
+        },
         "ˈɛn."
       ],
       "gap": 0.4
     },
     "d5": {
       "text": "Is that N-G-U-Y-E-N?",
-      "voice": "af_jessica",
-      "ipa": "ɪz ðˈæt... ˈɛn... dʒˈiː... jˈuː... wˈaɪ... ˈiː... ˈɛn?",
-      "speed": 0.9
+      "voice": "af_bella",
+      "spell": [
+        "ˈɪz ðˌæt",
+        "ˈɛn",
+        "dʒˈiː",
+        "jˈuː",
+        "wˈaɪ",
+        {
+          "text": "D... E... F.",
+          "pick": 1,
+          "of": 3
+        },
+        "ˈɛn?"
+      ],
+      "gap": 0.18
     },
     "d6": {
       "text": "Yes, that's right.",
@@ -198,7 +214,11 @@
         "dʒˈiː",
         "jˈuː",
         "wˈaɪ",
-        "ˈiː",
+        {
+          "text": "D... E... F.",
+          "pick": 1,
+          "of": 3
+        },
         "ˈɛn?"
       ],
       "gap": 0.18
