@@ -147,6 +147,33 @@
       "text": "I'm at work.",
       "voice": "af_heart"
     },
+    "yes_i_do": {
+      "text": "Yes, I do.",
+      "voice": "af_heart"
+    },
+    "no_i_dont": {
+      "text": "No, I don't.",
+      "voice": "af_heart"
+    },
+    "q_pen": {
+      "text": "Do you have a pen?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "no_at_work": {
+      "text": "No, I'm not. I'm at work.",
+      "voice": "af_heart"
+    },
+    "q_rain": {
+      "text": "Is it raining over there?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "m_again": {
+      "text": "Sorry? Can you say that again?",
+      "voice": "af_heart",
+      "contour": "rise"
+    },
     "m_umbrella": {
       "text": "Yes, I do. It's in my bag.",
       "voice": "af_heart"
@@ -607,6 +634,59 @@
           "model": "m_umbrella",
           "say": "Yes, I do. It's in my bag.",
           "focus": "Nghe xem bạn có đọc đủ âm /ɡ/ ở cuối bag không."
+        },
+        {
+          "type": "quick",
+          "id": "call",
+          "prompt": "Đáp nhanh",
+          "context": [
+            "Bây giờ bạn tập đáp ngay. Giả sử bạn đang ở chỗ làm; trong túi bạn có một cái ô, và bạn không có bút. Minh gọi điện và hỏi theo thứ tự bất kỳ.",
+            "Có một câu bạn chưa học. Gặp câu không hiểu, bạn nói Sorry? Can you say that again?"
+          ],
+          "seconds": 4,
+          "items": [
+            {
+              "ask": "q_where",
+              "model": "m_where",
+              "say": "I'm at work.",
+              "review": [
+                "w2-l5/at-work"
+              ]
+            },
+            {
+              "ask": "r3",
+              "model": "yes_i_do",
+              "say": "Yes, I do.",
+              "review": [
+                "w2-l3/yes-i-do"
+              ]
+            },
+            {
+              "ask": "q_pen",
+              "model": "no_i_dont",
+              "say": "No, I don't.",
+              "review": [
+                "w2-l3/no-i-dont"
+              ]
+            },
+            {
+              "ask": "q_home",
+              "model": "no_at_work",
+              "say": "No, I'm not. I'm at work.",
+              "review": [
+                "w2-l5/no-im-not"
+              ]
+            },
+            {
+              "ask": "q_rain",
+              "model": "m_again",
+              "say": "Sorry? Can you say that again?",
+              "review": [
+                "w2-l6/say-again"
+              ],
+              "askVi": "Câu này nghĩa là \"Bên đó có đang mưa không?\" Bạn chưa học câu này, nên hỏi lại là cách đáp đúng."
+            }
+          ]
         },
         {
           "type": "compare",

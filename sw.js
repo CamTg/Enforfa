@@ -7,7 +7,7 @@
 // Mỗi lần đổi danh sách tệp dưới đây, tăng số phiên bản để máy người học
 // xóa bộ nhớ cũ.
 
-const VERSION = "enforfa-v13";
+const VERSION = "enforfa-v14";
 const SHELL = [
   "./",
   "index.html",

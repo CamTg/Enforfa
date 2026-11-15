@@ -107,6 +107,15 @@
       "voice": "af_bella",
       "ipa": "jˈʊɹ."
     },
+    "q_passport": {
+      "text": "Do you have a passport?",
+      "voice": "af_jessica",
+      "contour": "rise"
+    },
+    "q_card_please": {
+      "text": "Your insurance card, please.",
+      "voice": "af_jessica"
+    },
     "w1": {
       "text": "Do you have an appointment?",
       "voice": "af_jessica",
@@ -558,6 +567,50 @@
           "model": "no_passport",
           "say": "No, I don't. I have a passport.",
           "focus": "Nghe xem bạn có đọc âm /v/ ở cuối have không."
+        },
+        {
+          "type": "quick",
+          "id": "desk",
+          "prompt": "Đáp nhanh",
+          "context": [
+            "Bây giờ bạn tập đáp ngay. Bạn vẫn ở quầy tiếp tân: bạn có hẹn trước, có thẻ bảo hiểm và hộ chiếu, nhưng không có bằng lái xe. Có một câu nhân viên nói hơi khác bài học."
+          ],
+          "seconds": 4,
+          "items": [
+            {
+              "ask": "do_you_have_appt",
+              "model": "yes_i_do",
+              "say": "Yes, I do.",
+              "review": [
+                "w2-l3/yes-i-do"
+              ]
+            },
+            {
+              "ask": "do_you_have_license",
+              "model": "no_i_dont",
+              "say": "No, I don't.",
+              "review": [
+                "w2-l3/no-i-dont"
+              ]
+            },
+            {
+              "ask": "q_passport",
+              "model": "yes_here",
+              "say": "Yes, I do. Here you go.",
+              "review": [
+                "w2-l3/passport"
+              ]
+            },
+            {
+              "ask": "q_card_please",
+              "model": "here_you_go",
+              "say": "Here you go.",
+              "review": [
+                "w2-l3/here-you-go"
+              ],
+              "askVi": "Câu này không có Do you have, nhưng cũng là xin bạn đưa thẻ."
+            }
+          ]
         }
       ]
     },

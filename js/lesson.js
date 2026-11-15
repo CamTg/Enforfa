@@ -174,6 +174,10 @@ export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesso
     add(step.model);
     add(step.ask);
     (step.options || []).forEach((o) => add(o.audio));
+    (step.items || []).forEach((it) => {
+      add(it.ask);
+      add(it.model);
+    });
     (step.lines || []).forEach((l) => {
       add(l.audio);
       (l.chunks || []).forEach((c) => add(c.audio));
@@ -587,6 +591,169 @@ export function renderLesson(root, lesson, { onExit: exitLesson, next: nextLesso
         machine,
         marks
       );
+    },
+
+    // Đáp nhanh: người học nghe một câu hỏi rồi phải nói câu trả lời trong vài giây,
+    // như trong một cuộc trò chuyện thật. Các câu hỏi ra theo thứ tự ngẫu nhiên,
+    // nên người học phải nghe ra câu hỏi mới biết đáp gì. App thu âm trong lúc đếm
+    // giờ; hết giờ thì hiện câu hỏi, câu trả lời mẫu và bản thu để người học tự so.
+    // Câu nào chưa đáp kịp thì ra lại một lần ở cuối, và thẻ từ của nó lên đầu lịch ôn.
+    quick(step) {
+      const key = `${lesson.id}/${step.id}`;
+      const seconds = step.seconds || 5;
+      const box = h("div", { class: "quick-box" });
+      const view = h(
+        "section",
+        { class: "step step-quick" },
+        h("h1", {}, step.prompt || "Đáp nhanh"),
+        ...(step.context || []).map((p) => h("p", {}, ...richText(p))),
+        box
+      );
+      const alive = () => view.isConnected;
+      const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      let queue = [];
+      let total = 0;
+      let okCount = 0;
+      let asked = 0;
+      let clipUrl = null;
+      let stopFn = null;
+
+      function intro() {
+        const last = store.get("quick", key);
+        box.replaceChildren(
+          h(
+            "p",
+            {},
+            `Bạn sẽ nghe ${step.items.length} câu hỏi, theo thứ tự bất kỳ. Sau mỗi câu, bạn có ${seconds} giây để nói câu trả lời.`,
+            canRecord() ? " App thu âm trong lúc ấy để bạn nghe lại; bản thu chỉ nằm trên máy bạn." : ""
+          ),
+          h("p", { class: "hint" }, "Đừng lo nói sai. Việc cần tập ở đây là đáp ngay, kể cả khi câu chưa tròn."),
+          last ? h("p", { class: "hint" }, `Lần trước bạn đáp kịp ${last.ok} trên ${last.total} câu.`) : null,
+          h("button", { class: "btn btn-primary btn-wide", type: "button", onclick: start }, last ? "Làm lại" : "Bắt đầu")
+        );
+      }
+
+      async function start() {
+        // Xin quyền dùng micro ngay ở đây, để lời hỏi của trình duyệt không chen
+        // vào giữa câu hỏi đầu tiên và lúc đếm giờ.
+        if (canRecord()) {
+          try {
+            const stopNow = await startRecording();
+            await stopNow();
+          } catch (_) {}
+        }
+        if (!alive()) return;
+        queue = step.items.map((it) => ({ it, retry: false }));
+        for (let i = queue.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [queue[i], queue[j]] = [queue[j], queue[i]];
+        }
+        total = queue.length;
+        okCount = 0;
+        asked = 0;
+        round();
+      }
+
+      async function round() {
+        const { it, retry } = queue.shift();
+        asked += 1;
+        const label = retry ? "Nghe lại câu chưa kịp" : `Câu ${asked} trên ${total}`;
+        const state = h("p", { class: "quick-state", role: "status" }, "Nghe câu hỏi…");
+        const bar = h("div", { class: "quick-bar", hidden: true }, h("span", {}));
+        box.replaceChildren(h("p", { class: "quick-count" }, label), state, bar);
+        await wait(500);
+        if (!alive()) return;
+        await play(audioUrl(lesson.id, it.ask));
+        if (!alive()) return;
+        // Thu âm nếu được; không được thì người học vẫn nói to trong lúc đếm giờ.
+        let recording = false;
+        if (canRecord()) {
+          try {
+            stopFn = await startRecording();
+            recording = true;
+          } catch (_) {
+            stopFn = null;
+          }
+        }
+        if (!alive()) return cleanup();
+        state.textContent = recording ? "Đến lượt bạn. Nói câu trả lời." : "Đến lượt bạn. Nói to câu trả lời.";
+        state.classList.add("is-go");
+        bar.hidden = false;
+        bar.firstChild.style.animationDuration = `${seconds}s`;
+        bar.firstChild.classList.add("is-running");
+        await wait(seconds * 1000);
+        let blob = null;
+        if (stopFn) {
+          blob = await stopFn();
+          stopFn = null;
+        }
+        if (!alive()) return;
+        reveal(it, retry, blob);
+      }
+
+      function cleanup() {
+        if (stopFn) stopFn().catch(() => {});
+        stopFn = null;
+      }
+
+      function reveal(it, retry, blob) {
+        if (clipUrl) URL.revokeObjectURL(clipUrl);
+        clipUrl = blob ? URL.createObjectURL(blob) : null;
+        const done = (ok) => {
+          if (ok) okCount += retry ? 0 : 1;
+          else {
+            wrong(it);
+            if (!retry) queue.push({ it, retry: true });
+          }
+          if (queue.length) round();
+          else summary();
+        };
+        box.replaceChildren(
+          h("p", { class: "quick-count" }, "Hết giờ. Bạn so câu của mình với câu mẫu."),
+          h(
+            "div",
+            { class: "quick-reveal" },
+            h("p", { class: "quick-label" }, "Câu hỏi"),
+            h("p", { class: "say-target", lang: "en" }, text(it.ask)),
+            it.askVi ? h("p", { class: "hint" }, it.askVi) : null,
+            h("p", { class: "quick-label" }, "Câu trả lời mẫu"),
+            h("p", { class: "say-target", lang: "en" }, it.say)
+          ),
+          h(
+            "div",
+            { class: "speak-actions" },
+            h("button", { class: "btn btn-secondary", type: "button", onclick: (e) => sound(it.ask)(e.currentTarget) }, icon("play"), "Nghe lại câu hỏi"),
+            h("button", { class: "btn btn-secondary", type: "button", onclick: (e) => sound(it.model)(e.currentTarget) }, icon("play"), "Nghe câu trả lời mẫu"),
+            !clipUrl ? null : h("button", { class: "btn btn-secondary", type: "button", onclick: (e) => play(clipUrl, e.currentTarget) }, icon("play"), "Nghe bản của bạn")
+          ),
+          h(
+            "div",
+            { class: "marks" },
+            h("p", {}, "Bạn có đáp kịp và đúng ý không?"),
+            h("button", { class: "btn-mark", type: "button", onclick: () => done(true) }, "Đáp kịp"),
+            h("button", { class: "btn-mark", type: "button", onclick: () => done(false) }, "Chưa kịp")
+          )
+        );
+      }
+
+      function summary() {
+        store.put("quick", key, { ok: okCount, total, at: Date.now() });
+        if (okCount === total) chime();
+        box.replaceChildren(
+          h("p", { class: "quick-count" }, `Bạn đáp kịp ${okCount} trên ${total} câu ngay lần đầu.`),
+          h(
+            "p",
+            {},
+            okCount === total
+              ? "Bạn đã đáp được ngay cả khi không biết trước câu hỏi. Ngoài đời cũng là việc này."
+              : "Câu nào chưa kịp, thẻ từ của nó đã lên đầu lịch ôn. Bạn có thể làm lại ngay, hoặc đi tiếp."
+          ),
+          h("button", { class: "btn btn-outline btn-wide", type: "button", onclick: start }, "Làm lại")
+        );
+      }
+
+      intro();
+      return view;
     },
 
     write(step) {
