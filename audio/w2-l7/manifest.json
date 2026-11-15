@@ -3,12 +3,17 @@
   "bed__2": "3b7c124ec364",
   "bed__3": "e56c89bb3a43",
   "in_my_bag": "1a63341807cc",
+  "m_again": "9a90a8a9ddcd",
   "m_umbrella": "b240642ab736",
   "m_where": "8565b3780582",
   "my": "6fbbc2cafa1f",
+  "no_at_work": "687e93d1dd1f",
+  "no_i_dont": "03b249a2f26c",
   "q_home": "05b2be033847",
   "q_is_it": "60586087916f",
   "q_passport": "d307504f2cf8",
+  "q_pen": "ba430df03af7",
+  "q_rain": "052be076825a",
   "q_where": "c578360272d5",
   "r1": "5204aaf67211",
   "r2": "8565b3780582",
@@ -25,5 +30,6 @@
   "ship": "1c480a7520f0",
   "ship__2": "1442163a7d3e",
   "ship__3": "ebfb8caf4a70",
-  "ship__4": "c107f679d6c8"
+  "ship__4": "c107f679d6c8",
+  "yes_i_do": "7450f429b2d2"
 }

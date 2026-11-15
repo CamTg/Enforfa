@@ -301,6 +301,18 @@ a { color: var(--action); }
 }
 .say-focus { margin: 10px 0 14px; color: var(--ink-soft, var(--ink)); }
 .speak-actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+.quick-box { margin-top: 14px; }
+.quick-box .btn-wide { margin-top: 12px; }
+.quick-count { font-weight: 600; margin-bottom: 8px; }
+.quick-state { font-size: 1.125rem; margin: 18px 0 12px; }
+.quick-state.is-go { color: var(--rec); font-weight: 700; }
+.quick-bar { height: 12px; border-radius: 6px; background: var(--line); overflow: hidden; margin-bottom: 18px; }
+.quick-bar span { display: block; height: 100%; width: 100%; background: var(--rec); transform-origin: left; }
+.quick-bar span.is-running { animation-name: quick-run; animation-timing-function: linear; animation-fill-mode: forwards; }
+@keyframes quick-run { to { transform: scaleX(0); } }
+.quick-label { font-size: 0.875rem; color: var(--ink-2); margin: 10px 0 2px; }
+.quick-reveal { margin-bottom: 14px; }
+.quick-reveal .say-target { margin: 0 0 4px; }
 .btn-record { background: var(--rec); color: #fff; }
 .btn-record.is-recording { animation: pulse-rec 1.2s ease-in-out infinite; }
 @keyframes pulse-rec { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--rec) 30%, transparent); } }

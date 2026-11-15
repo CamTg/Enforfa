@@ -99,8 +99,21 @@
       "text": "No, I'm not.",
       "voice": "af_heart"
     },
+    "no_at_home": {
+      "text": "No, I'm not. I'm at home.",
+      "voice": "af_heart"
+    },
     "m_where": {
       "text": "I'm in the kitchen.",
+      "voice": "af_heart"
+    },
+    "q_bedroom": {
+      "text": "Are you in the bedroom?",
+      "voice": "am_michael",
+      "contour": "rise"
+    },
+    "no_kitchen": {
+      "text": "No, I'm not. I'm in the kitchen.",
       "voice": "af_heart"
     },
     "m_are": {
@@ -487,6 +500,50 @@
           "model": "m_are",
           "say": "Are you at home?",
           "focus": "Nghe xem giọng bạn có lên ở cuối câu không."
+        },
+        {
+          "type": "quick",
+          "id": "call",
+          "prompt": "Đáp nhanh",
+          "context": [
+            "Bây giờ bạn tập đáp ngay. Giả sử bạn đang ở nhà, trong bếp. Minh gọi điện và hỏi theo thứ tự bất kỳ."
+          ],
+          "seconds": 4,
+          "items": [
+            {
+              "ask": "where_are_you",
+              "model": "m_where",
+              "say": "I'm in the kitchen.",
+              "review": [
+                "w2-l5/kitchen"
+              ]
+            },
+            {
+              "ask": "are_you_at_home",
+              "model": "yes_i_am",
+              "say": "Yes, I am.",
+              "review": [
+                "w2-l5/yes-i-am"
+              ]
+            },
+            {
+              "ask": "are_you_at_work",
+              "model": "no_at_home",
+              "say": "No, I'm not. I'm at home.",
+              "review": [
+                "w2-l5/no-im-not"
+              ]
+            },
+            {
+              "ask": "q_bedroom",
+              "model": "no_kitchen",
+              "say": "No, I'm not. I'm in the kitchen.",
+              "review": [
+                "w2-l5/no-im-not",
+                "w2-l5/kitchen"
+              ]
+            }
+          ]
         }
       ]
     },

@@ -44,9 +44,20 @@ content/w1/l1.json  nội dung một bài (mỗi tuần có bảy bài, l1 đế
 audio/<id bài>/     âm thanh mẫu đã tạo sẵn
 tools/build_audio.py tạo âm thanh từ nội dung bài
 tools/check_audio.py cho máy nhận dạng nghe lại các tệp âm thanh
+soan/               nguồn soạn bài: từ tuần 2, mỗi bài là một tệp Python dựng ra tệp JSON
 ```
 
 ## Thêm hoặc sửa một bài
+
+Tuần 1 được sửa thẳng trong `content/w1/*.json`. Từ tuần 2, nguồn của mỗi bài là `soan/<tuần>/l<n>.py`; sửa ở đó rồi tạo lại tệp JSON:
+
+```sh
+python soan/soan.py w2
+```
+
+Trong `soan/` còn có `common.py` (khung soạn và các kiểu bước), `ipa.json` (phiên âm các từ đứng riêng), `giong.json` (giọng đọc đã chọn cho từng từ, do `chon_giong.py` tạo) và `ten.json` (phiên âm những câu có tên riêng). Soạn một tuần mới thì chép thư mục `soan/w2` làm mẫu.
+
+Các bước dưới đây áp dụng cho cả hai cách.
 
 1. Viết hoặc sửa tệp `content/<tuần>/<bài>.json`, theo mẫu `content/w1/l1.json`. Trong lời giảng, `{{mã}}` sẽ thành một cụm tiếng Anh bấm nghe được, với `mã` là một mục trong phần `audio` của bài.
 2. Khai báo bài trong `content/course.json` (thêm trường `file`).
@@ -68,7 +79,7 @@ tools/check_audio.py cho máy nhận dạng nghe lại các tệp âm thanh
 
    Dòng mở bằng `!!` là tệp máy nghe ra khác câu trong bài. Đó là danh sách tệp cần người nghe lại; với tệp hỏng thật, đổi `voice` của từ ấy (giọng `af_bella` đọc từ đứng riêng rõ nhất) hoặc thêm `"cut": true`.
 
-Các kiểu bước dùng được trong một bài: `text`, `listen` (lượt 1, 2, 3; `layout` là `grid` hay `pairs`), `choose` (`audio` có thể là danh sách để nghe nối nhau; `layout: "row"` cho lựa chọn ngắn), `order`, `speak` (`ask` là câu hỏi phát trước câu mẫu), `write` (`mode` là `dictation`, `intro`, `letters` hay `field`), `cloze`, `checklist`, `goal`, `compare`. Bước `choose` hay `write` có `"vary": true` thì mỗi lần mở, app phát ngẫu nhiên một trong các bản đọc của cùng một từ (mã `bed`, `bed__2`, `bed__3`… trong phần `audio`), để người học quen nhiều giọng. Bước `speak` có `focus` thì app hiện điều cần chú ý khi nghe lại bản thu; nút Cho máy nghe thử chỉ hiện ở câu từ ba chữ trở lên. Bước nào có `review` (danh sách mã thẻ) thì khi người học làm sai, các thẻ ấy lên đầu lịch ôn.
+Các kiểu bước dùng được trong một bài: `text`, `listen` (lượt 1, 2, 3; `layout` là `grid` hay `pairs`), `choose` (`audio` có thể là danh sách để nghe nối nhau; `layout: "row"` cho lựa chọn ngắn), `order`, `speak` (`ask` là câu hỏi phát trước câu mẫu), `write` (`mode` là `dictation`, `intro`, `letters` hay `field`), `cloze`, `checklist`, `goal`, `compare`, `quick`. Bước `quick` (Đáp nhanh) có `context`, `seconds` và danh sách `items`, mỗi mục gồm `ask` (mã âm thanh câu hỏi), `model` (mã âm thanh câu trả lời mẫu) và `say` (chữ của câu trả lời); app phát các câu hỏi theo thứ tự ngẫu nhiên, đếm giờ và thu âm câu trả lời, rồi cho người học tự so với câu mẫu. Bước `choose` hay `write` có `"vary": true` thì mỗi lần mở, app phát ngẫu nhiên một trong các bản đọc của cùng một từ (mã `bed`, `bed__2`, `bed__3`… trong phần `audio`), để người học quen nhiều giọng. Bước `speak` có `focus` thì app hiện điều cần chú ý khi nghe lại bản thu; nút Cho máy nghe thử chỉ hiện ở câu từ ba chữ trở lên. Bước nào có `review` (danh sách mã thẻ) thì khi người học làm sai, các thẻ ấy lên đầu lịch ôn.
 
 Với từ dùng để dạy phát âm, luôn ghi thêm trường `ipa` trong phần `audio`. Chuỗi đánh vần hay số điện thoại dùng trường `spell` (danh sách phiên âm từng phần) để mỗi phần được đọc riêng, cách nhau rõ ràng. Bộ đoán phiên âm tự động có lúc đọc sai, ví dụ đọc "live" thành /laɪv/.
 

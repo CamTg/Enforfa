@@ -710,6 +710,41 @@
           "check": false
         },
         {
+          "type": "quick",
+          "id": "desk",
+          "prompt": "Đáp nhanh",
+          "context": [
+            "Bây giờ bạn tập đáp ngay. Nhân viên thư viện hỏi họ, tên và số điện thoại của bạn theo thứ tự bất kỳ. Lần này bạn chỉ cần nói, chưa cần đánh vần."
+          ],
+          "seconds": 5,
+          "items": [
+            {
+              "ask": "ask_last",
+              "model": "m_last",
+              "say": "[họ của bạn]",
+              "review": [
+                "w1-l3/last-name"
+              ]
+            },
+            {
+              "ask": "ask_first",
+              "model": "m_first",
+              "say": "[tên của bạn]",
+              "review": [
+                "w1-l3/first-name"
+              ]
+            },
+            {
+              "ask": "ask_phone",
+              "model": "m_phone",
+              "say": "[số điện thoại của bạn]",
+              "review": [
+                "w1-l6/phone-number"
+              ]
+            }
+          ]
+        },
+        {
           "type": "speak",
           "id": "intro",
           "prompt": "Giới thiệu bạn, như ở bài 1.",
